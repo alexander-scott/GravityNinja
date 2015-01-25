@@ -39,9 +39,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppMain.cs" />
-    <Compile Include="PhysicsEntity.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="GameState.cs" />
+    <Compile Include="Maze.cs" />
+    <Compile Include="Background.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -58,18 +59,7 @@
   <ItemGroup>
     <Content Include="textures\Arena.png" />
     <Content Include="textures\Black.png" />
-    <Content Include="textures\EnemyAttack1.png" />
-    <Content Include="textures\EnemyAttack2.png" />
-    <Content Include="textures\enemySpriteLaser.png" />
-    <Content Include="textures\EnemyWalk1.png" />
-    <Content Include="textures\EnemyWalk2.png" />
     <Content Include="textures\Player.png" />
-    <Content Include="textures\PlayerFire1.png" />
-    <Content Include="textures\PlayerFire2.png" />
-    <Content Include="textures\PlayerWalk1.png" />
-    <Content Include="textures\PlayerWalk2.png" />
-    <Content Include="textures\SpriteLaser.png" />
-    <Content Include="textures\Trans.png" />
     <Content Include="textures\menuTextures\mainMenu.png" />
     <Content Include="textures\menuTextures\optionsO.png" />
     <Content Include="textures\menuTextures\optionsY.png" />
@@ -93,6 +83,9 @@
     <Content Include="audio\fire.wav" />
     <Content Include="audio\hit.wav" />
     <Content Include="audio\menu.mp3" />
+    <Content Include="textures\duck_PNG5021.png" />
+    <Content Include="textures\TestBlock.png" />
+    <Content Include="textures\background.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="textures\menuTextures\mainMenu.psd" />

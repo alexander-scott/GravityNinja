@@ -33,6 +33,8 @@ namespace GravDuck
 				Director.Instance.Update();
 				Director.Instance.Render();
 				
+				Update();
+				
 				Director.Instance.GL.Context.SwapBuffers();
 				Director.Instance.PostSwap();
 			}
@@ -51,8 +53,7 @@ namespace GravDuck
 		{
 			// Query gamepad for current state
 			var gamePadData = GamePad.GetData (0);
-			
-			gameScene.Update(0.0f);
+			gameScene.Update();
 		}
 
 		public static void Render ()
