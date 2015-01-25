@@ -1,11 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GravDuck\GameState.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GravDuck\Maze.cs">
     <Files>
       <File FileName="GravDuck\AppMain.cs" Line="37" Column="5" />
-      <File FileName="GravDuck\Player.cs" Line="44" Column="41" />
-      <File FileName="GravDuck\Maze.cs" Line="11" Column="2" />
-      <File FileName="GravDuck\GameState.cs" Line="60" Column="4" />
+      <File FileName="GravDuck\Player.cs" Line="32" Column="45" />
+      <File FileName="GravDuck\Maze.cs" Line="78" Column="64" />
+      <File FileName="GravDuck\GameState.cs" Line="14" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

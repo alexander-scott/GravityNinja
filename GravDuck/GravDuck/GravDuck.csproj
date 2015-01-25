@@ -54,7 +54,6 @@
   <Import Project="$(MSBuildExtensionsPath)\Sce\Sce.Psm.CSharp.targets" />
   <ItemGroup>
     <Folder Include="textures\" />
-    <Folder Include="audio\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="textures\Arena.png" />
@@ -78,11 +77,6 @@
     <Content Include="textures\winlosescreens\win\saveQuitO.png" />
     <Content Include="textures\winlosescreens\win\saveQuitY.png" />
     <Content Include="textures\winlosescreens\win\winScreen.png" />
-    <Content Include="audio\aaahhh.wav" />
-    <Content Include="audio\fight.mp3" />
-    <Content Include="audio\fire.wav" />
-    <Content Include="audio\hit.wav" />
-    <Content Include="audio\menu.mp3" />
     <Content Include="textures\duck_PNG5021.png" />
     <Content Include="textures\TestBlock.png" />
     <Content Include="textures\background.png" />

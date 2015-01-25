@@ -14,18 +14,20 @@ namespace GravDuck
 {
 	public class GameScene : Scene
 	{
-		private static TouchStatus currentTouchStatus; //Will be need for our touch gestures
+		private static TouchStatus currentTouchStatus; //Will be needed for our touch gestures
 		
-		private Player	player; //Our maze, player and background
+		private Player	player; //Our player, maze and background
 		private Maze maze;
 		private Background background;
-	
-		// Public
+		private Vector2 gravityVector; //The direction in which gravity is currently going
+		private Vector2 playerDirection; //Based on the rotation of the camera this is the direction the player is moving
+		private float cameraRotation; //The rotation of the camera
+		private float gravityVelocity; 
+		
 		public GameScene()
 		{
 			this.Camera.SetViewFromViewport();						
 			
-			//Setup all our entities
 			//Background
 			background = new Background(this);
 			
@@ -34,23 +36,19 @@ namespace GravDuck
 			
 			//Maze
 			maze = new Maze(this);
-					
-			
 		}
 		
 		public void Dispose()
 		{
-			
+			//TODO: Add dispose st00f
 		}
-		
-		public void SetUpSceneObjects()
-		{
-		}
-
+	
 		public void Update()
 		{
-			player.Update();
 			CheckInput();
+			player.Update(playerDirection);
+			UpdateCamera();
+			CheckCollisions();
 		}
 		
 		public void CheckInput()
@@ -59,15 +57,51 @@ namespace GravDuck
 			var gamePadData = GamePad.GetData(0);
 		}
 		
-		public void CheckCollisions()
-		{	
-			
+		//Camera. Focus on player. Don't let the camera show any off map area. If the player walks near the edge
+		//leave the edge of the camera on the edge of the map but let the player walk to the actual map edge.
+		//If the player isn't within screenwidth/2 or screen height/2 of a edge of the map then center on the
+		//player.
+		public void UpdateCamera() //@AS (max width and max height are currently unknown so set to 2000)
+		{
+			if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.5f) || (player.GetX() > 2000f - Director.Instance.GL.Context.GetViewport().Width*0.5f) ||
+					    (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.5f) || (player.GetY() > 2000f - Director.Instance.GL.Context.GetViewport().Height*0.5f))
+					{
+						if (player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.5f) //Near left side
+							this.Camera2D.SetViewY(new Vector2(0.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f), new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f, player.GetY()));
+						if (player.GetX() > 2000f - Director.Instance.GL.Context.GetViewport().Width*0.5f) //Near right side
+							this.Camera2D.SetViewY(new Vector2(0.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f), new Vector2(2000f - Director.Instance.GL.Context.GetViewport().Width*0.5f, player.GetY()));
+						if (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.5f) //Near bottom side
+							this.Camera2D.SetViewY(new Vector2(0.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f), new Vector2(player.GetX(), Director.Instance.GL.Context.GetViewport().Height*0.5f));
+						if (player.GetY() > 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.5f) //Near top side
+							this.Camera2D.SetViewY(new Vector2(0.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f), 
+							                            new Vector2(player.GetX(), 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.5f));
+						if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.5f) && (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.5f)) //Near bottom left corner
+							this.Camera2D.SetViewY(new Vector2(0.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f),
+							                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f, Director.Instance.GL.Context.GetViewport().Height*0.5f));
+						if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.5f) && (player.GetY() > 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.5f)) //Near top left corner
+							this.Camera2D.SetViewY(new Vector2(0.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f),
+							                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f, 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.5f));
+						if ((player.GetX() > 2000.0f - Director.Instance.GL.Context.GetViewport().Width*0.5f) && (player.GetY() > 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.5f)) //Near top right corner
+							this.Camera2D.SetViewY(new Vector2(0.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f),
+							                            new Vector2(2000.0f - Director.Instance.GL.Context.GetViewport().Width*0.5f, 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.5f));
+						if ((player.GetX() > 2000.0f -  Director.Instance.GL.Context.GetViewport().Width*0.5f) && (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.5f)) //Near bottom right corner
+							this.Camera2D.SetViewY(new Vector2(0.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f),
+							                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f, Director.Instance.GL.Context.GetViewport().Height*0.5f));
+					}
+					else
+						this.Camera2D.SetViewY(new Vector2(0.0f,Director.Instance.GL.Context.GetViewport().Height*0.5f), player.GetPos()); //Player not near an edge
 		}
 		
-		public void Reset()
-		{         			          
+		public void CheckCollisions() //@AS
+		{	if(player.GetX() % 50 == 0 || player.GetY() % 50 == 0) //If the player hits the side of the a tile
+			{													   //check if its a map boundary
+				if(maze.HasCollidedWithPlayer(player.Sprite))
+				{
+					//TODO: Invert the direction vector moving him back one space
+				}
+			}
+			
 		}
-	
 	}
 }
 

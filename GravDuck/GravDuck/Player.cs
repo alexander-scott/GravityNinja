@@ -29,18 +29,41 @@ namespace GravDuck
 			sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef; //Might need to make smaller or bigger in the future
-			sprite.Position = new Vector2(100.0f, 100.0f); //Starting position (will be changed)
+			sprite.Position = new Vector2(100.0f, 101.0f); //Starting position (will be changed)
 			sprite.CenterSprite(new Vector2(0.5f,0.5f)); //Set the origin of the sprite to the centre of the duck
 			alive = true; //Default alive true			
 			
 			scene.AddChild(sprite); //Add our FABULOUS duck to the scene
 		}
 		
-		public void Update()
+		public void Update(Vector2 direction)
 		{			
 			sprite.Position = new Vector2(sprite.Position.X + speed, sprite.Position.Y);
 		}
 					
+		public SpriteUV Sprite
+		{
+			get
+			{
+				return sprite;
+			}
+		}
+		
+		public float GetX()
+		{
+			return sprite.Position.X;
+		}
+		
+		public float GetY()
+		{
+			return sprite.Position.Y;
+		}
+		
+		public Vector2 GetPos()
+		{
+			return sprite.Position;
+		}
+		
 		public bool IsAlive(){ return alive; }
 	}
 }

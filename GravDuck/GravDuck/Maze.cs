@@ -34,7 +34,7 @@ namespace GravDuck
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, };
+							  {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, };
 			
 			for (int i = 0; i < mazeWidth; ++i) //Basic tile engine
 			{
@@ -62,6 +62,23 @@ namespace GravDuck
 		public void Dispose() //Dispose texture data
 		{
 			testBlock.Dispose();
+		}
+		
+		public bool HasCollidedWithPlayer(SpriteUV sprite)
+		{
+			Bounds2 player = sprite.GetlContentLocalBounds();
+			sprite.GetContentWorldBounds(ref player );
+			
+			foreach(SpriteUV spri in sprites)
+			{
+				Bounds2 mazeTile = sprite.GetlContentLocalBounds();
+				spri.GetContentWorldBounds(ref mazeTile);
+				
+				if (mazeTile.Overlaps(player))
+				   Console.WriteLine("OMFG COLLISION@@@@@@@@@@@@@@@@@@@@@@@");
+			}
+			return false;
+				
 		}
 	}
 }
