@@ -20,7 +20,7 @@ namespace GravDuck
 			testBlock = new TextureInfo("/Application/textures/TestBlock.png"); //Load in the textures here
 			sprites	= new SpriteUV[mazeWidth,mazeHeight]; //Initalise the sprites
 						
-			int[,] tileMap ={ {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //Basic layout for a map
+			int[,] tileMap ={ {1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0}, //Basic layout for a map
 						      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //Slight bug:
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //For some reason the layout is rotated
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //90 degrees to the left when rendered
@@ -34,7 +34,7 @@ namespace GravDuck
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-							  {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, };
+							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, };
 			
 			for (int i = 0; i < mazeWidth; ++i) //Basic tile engine
 			{
@@ -75,7 +75,10 @@ namespace GravDuck
 				spri.GetContentWorldBounds(ref mazeTile);
 				
 				if (mazeTile.Overlaps(player))
-				   Console.WriteLine("OMFG COLLISION@@@@@@@@@@@@@@@@@@@@@@@");
+				{
+				   return true;
+				
+				}
 			}
 			return false;
 				
