@@ -33,6 +33,8 @@ namespace GravDuck
 				Director.Instance.Update();
 				Director.Instance.Render();
 				
+				Update ();
+				
 				Director.Instance.GL.Context.SwapBuffers();
 				Director.Instance.PostSwap();
 			}

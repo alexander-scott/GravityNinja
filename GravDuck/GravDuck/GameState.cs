@@ -44,9 +44,20 @@ namespace GravDuck
 		// Public
 		public GameScene()
 		{
-			this.Camera.SetViewFromViewport();						
+			this.Camera2D.SetViewFromViewport();						
 				
+			
+			Matrix4 camera = this.Camera2D.GetTransform();
 
+			//this.Camera2D.SetTouchPlaneMatrix(new Matrix4(new Vector4(1.0f, 0.0f, 0.0f, 0.0f),	  new Vector4(0.0f, 1.0f, 1.0f, 0.0f),
+			//										new Vector4(0.0f, 0.0f, 1.0f, 0.0f),	new Vector4(480.0f, 272.0f, 0.0f, 2.0f)));
+			
+			this.Camera2D.SetViewY(new Vector2(0.0f, Director.Instance.GL.Context.GetViewport().Height * 0.5f),
+			                       new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f,Director.Instance.GL.Context.GetViewport().Height*0.5f));
+			
+			camera = this.Camera2D.GetTransform();
+			
+			
 			// Setup all entities and sprites    (0.0f * (background.Scale.X - 1.0f)
 			
 			// Background
@@ -130,6 +141,13 @@ namespace GravDuck
 		{
 			// Query gamepad for current state
 			var gamePadData = GamePad.GetData(0);
+			
+			this.Camera2D.SetViewY(new Vector2(gamePadData.AnalogLeftX * Director.Instance.GL.Context.GetViewport().Width,
+			                                   (Director.Instance.GL.Context.GetViewport().Height * 0.5f) * (1.0f - (1.0f * gamePadData.AnalogLeftX))),
+			                    					new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f,
+			            								Director.Instance.GL.Context.GetViewport().Height*0.5f));
+			
+			
 		}
 		
 		public void CheckBoundaries()
