@@ -93,6 +93,7 @@
     <Content Include="audio\fire.wav" />
     <Content Include="audio\hit.wav" />
     <Content Include="audio\menu.mp3" />
+    <Content Include="textures\Arrow.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="textures\menuTextures\mainMenu.psd" />

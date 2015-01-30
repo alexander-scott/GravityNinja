@@ -100,3 +100,7 @@ C:\Users\mizukami\Desktop\GravDuck\GravDuck\bin\Debug\GravDuck-signed\Applicatio
 C:\Users\mizukami\Desktop\GravDuck\GravDuck\bin\Debug\GravDuck-signed\Application\audio\fire.wav
 C:\Users\mizukami\Desktop\GravDuck\GravDuck\bin\Debug\GravDuck-signed\Application\audio\hit.wav
 C:\Users\mizukami\Desktop\GravDuck\GravDuck\bin\Debug\GravDuck-signed\Application\audio\menu.mp3
+C:\Users\mizukami\Desktop\GravDuck\GravDuck\bin\Debug\GravDuck-unsigned\Application\Sce.PlayStation.HighLevel.Physics2D.dll
+C:\Users\mizukami\Desktop\GravDuck\GravDuck\bin\Debug\GravDuck-signed\Application\Sce.PlayStation.HighLevel.Physics2D.dll
+C:\Users\mizukami\Desktop\GravDuck\GravDuck\bin\Debug\GravDuck-unsigned\Application\textures\Arrow.png
+C:\Users\mizukami\Desktop\GravDuck\GravDuck\bin\Debug\GravDuck-signed\Application\textures\Arrow.png

@@ -35,11 +35,19 @@ namespace GravDuck
 		private TextureInfo 		textureInfo2;
 		
 		private SpriteUV 			background;
-
+		
+		private SpriteUV			gravityArrow;
+		
 		// Score
 		private static int			highScore = 0;
 		private static int 			currentScore = 0;
 		
+		private static float        xComponent = 0.0f;
+		private static float		yComponent = 0.0f;
+		
+		private Vector2 gravityVector = new Vector2(0.0f, 0.0f);
+		
+		private bool		release = false;
 		
 		// Public
 		public GameScene()
@@ -58,6 +66,7 @@ namespace GravDuck
 			camera = this.Camera2D.GetTransform();
 			
 			
+			
 			// Setup all entities and sprites    (0.0f * (background.Scale.X - 1.0f)
 			
 			// Background
@@ -70,6 +79,17 @@ namespace GravDuck
 			background.Position = new Vector2((Director.Instance.GL.Context.GetViewport().Width*0.5f) + background.Quad.S.X*1.75f,
 			                                  (Director.Instance.GL.Context.GetViewport().Height*0.5f) - ((background.Quad.S.Y/2) - 55.0f));
 			AddChild(background);
+			
+			
+			textureInfo1 		= new TextureInfo("/Application/textures/Arrow.png");
+			gravityArrow 			= new SpriteUV();
+			gravityArrow 			= new SpriteUV(textureInfo1);
+			gravityArrow.Quad.S 	= textureInfo1.TextureSizef;
+			gravityArrow.Scale 		= new Vector2(1.0f, 1.0f);
+			gravityArrow.Pivot 		= new Vector2(gravityArrow.Quad.S.X/2, gravityArrow.Quad.S.Y);
+			gravityArrow.Position 	= new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f,
+			                                  (Director.Instance.GL.Context.GetViewport().Height*0.5f) - gravityArrow.Quad.S.Y);
+			AddChild(gravityArrow);
 			
 			
 			// Player
@@ -132,8 +152,15 @@ namespace GravDuck
 
 		public void Update(float dt)
 		{	
+			gravityVector = new Vector2(-xComponent * 0.01f, -FMath.Cos((xComponent * 0.5f) * FMath.PI) * 0.01f);		
+			
 			SortLabels();	
-			player.Update(dt);
+			
+			if(release)
+				player.Update(dt, gravityVector);
+			else
+				player.Update(dt, new Vector2(0.0f, 0.0f));
+			
 			CheckInput();
 		}
 		
@@ -142,12 +169,72 @@ namespace GravDuck
 			// Query gamepad for current state
 			var gamePadData = GamePad.GetData(0);
 			
-			this.Camera2D.SetViewY(new Vector2(gamePadData.AnalogLeftX * Director.Instance.GL.Context.GetViewport().Width,
-			                                   (Director.Instance.GL.Context.GetViewport().Height * 0.5f) * (1.0f - (1.0f * gamePadData.AnalogLeftX))),
-			                    					new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f,
-			            								Director.Instance.GL.Context.GetViewport().Height*0.5f));
+
+			xComponent += gamePadData.AnalogLeftX/100.0f;
 			
 			
+			if(xComponent < 0.0f)
+				yComponent += gamePadData.AnalogLeftX/-100.0f;
+			else
+				yComponent += gamePadData.AnalogLeftX/100.0f;
+			
+			
+		//	if(gamePadData.AnalogLeftX < 0.0f)
+		//	{
+		//		if(xComponent < 0.0f)
+		//			yComponent += gamePadData.AnalogLeftX/-100.0f;
+		//		else
+		//			yComponent += gamePadData.AnalogLeftX/100.0f;
+		//	}
+		//	else			
+		//		yComponent += gamePadData.AnalogLeftX/100.0f;
+				
+			 
+			if (xComponent > 1.0f)
+				xComponent = 1.0f;
+			else if (xComponent < -1.0f)
+					xComponent = -1.0f;
+			else{}
+			
+			if(yComponent < 0.0f)
+				yComponent = 0;
+			else if (yComponent > 1.0f)
+					yComponent = 1.0f;
+			else{}
+		
+			
+			gravityArrow.Angle = (-xComponent * 0.5f) * FMath.PI;
+			
+			
+			
+			//xComponent = gamePadData.AnalogLeftX; 
+			//
+			//
+			//if(gamePadData.AnalogLeftX < 0)
+			//	yComponent = gamePadData.AnalogLeftX * -1.0f;
+			//else
+			//	yComponent = gamePadData.AnalogLeftX;
+		
+									
+			//this.Camera2D.SetViewY(new Vector2(xComponent * Director.Instance.GL.Context.GetViewport().Width,
+			//                                   (Director.Instance.GL.Context.GetViewport().Height * 0.5f) * (1.0f - (1.0f * xComponent))),
+			//                    					new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f,
+			//            								Director.Instance.GL.Context.GetViewport().Height*0.5f));	
+			
+						this.Camera2D.SetViewY(new Vector2(FMath.Sin(xComponent) * Director.Instance.GL.Context.GetViewport().Width,
+			                                  (1.0f - yComponent) * Director.Instance.GL.Context.GetViewport().Height),
+			                   					new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f,
+			           								Director.Instance.GL.Context.GetViewport().Height*0.5f));
+			
+			if((gamePadData.Buttons & GamePadButtons.Left) != 0)
+			{
+				release = true;
+			}
+			
+			if((gamePadData.Buttons & GamePadButtons.Right) != 0)
+			{
+				bool d = true;
+			}
 		}
 		
 		public void CheckBoundaries()

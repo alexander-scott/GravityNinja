@@ -5,6 +5,9 @@ using Sce.PlayStation.Core.Graphics;
 
 using Sce.PlayStation.HighLevel.GameEngine2D;
 using Sce.PlayStation.HighLevel.GameEngine2D.Base;
+
+using Sce.PlayStation.HighLevel.Physics2D;
+
 using Sce.PlayStation.Core.Input;
 using Sce.PlayStation.Core.Audio;
 
@@ -34,13 +37,18 @@ namespace GravDuck
 		public Player (Scene currentScene, SpriteUV[,] importedSpriteSheet, TextureInfo textureInfo2)
 		{	
 			
+			position = new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f, Director.Instance.GL.Context.GetViewport().Height*0.5f);
+			velocity = new Vector2(0.0f, 0.0f);
+			acceleration = new Vector2(0.0f, 0.0f);
+			
+			
 			spriteSheet = importedSpriteSheet;
 			
 			// Main Sprite
 			charSprite	 			= new SpriteUV();
 			charSprite.TextureInfo  = spriteSheet[0,0].TextureInfo;	
 			charSprite.Quad.S 		= spriteSheet[0,0].TextureInfo.TextureSizef;
-			charSprite.Position 	= new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f,Director.Instance.GL.Context.GetViewport().Height*0.5f);
+			charSprite.Position 	= new Vector2(position.X, position.Y);
 			charSprite.Pivot 		= new Vector2(charSprite.Quad.S.X/2, (charSprite.Quad.S.Y/2) - 20.0f);
 			charSprite.Angle		= -FMath.PI/2.0f;					
 			
@@ -56,15 +64,23 @@ namespace GravDuck
 			currentScene.AddChild(collisionBox);
 		}
 		
-		public override void Update(float dt)
-		{			
-
+		public override void Update(float dt, Vector2 gravityVector)
+		{					
+			Move();		
+			
+			acceleration = gravityVector;
+		
+			charSprite.Position 	= new Vector2(position.X, position.Y);
+			
 			Animate();
 		}
 		
-		public override void Move(float x, float y)
-		{
-			charSprite.Position = new Vector2(charSprite.Position.X + x, charSprite.Position.Y + y);
+		public void Move()
+		{			
+			position = new Vector2(position.X + velocity.X + (0.5f * acceleration.X), position.Y + velocity.Y + (0.5f * acceleration.Y));
+			
+			velocity = new Vector2(velocity.X + acceleration.X, velocity.Y + acceleration.Y);
+			
 			collisionBox.Position = charSprite.Position;
 		}
 		
@@ -136,21 +152,7 @@ namespace GravDuck
 		
 		public void PathFind(SpriteUV playerSprite, SpriteUV scenery)
 		{			
-			// The player will be pushed back once collided with the scenery
 			
-			float xDiff = (playerSprite.Position.X + (playerSprite.Quad.S.X/2)) - (scenery.Position.X + (scenery.Quad.S.X/2));			
-			float yDiff = (playerSprite.Position.Y + (playerSprite.Quad.S.Y/2)) - (scenery.Position.Y + (scenery.Quad.S.Y/2));
-		
-			if(yDiff > 0)
-			{					
-				float angle = FMath.PI - FMath.Atan(xDiff/yDiff);				
-			 	Move(10.0f * FMath.Sin(angle), 10.0f * -FMath.Cos(angle));			
-			}
-			else
-			{
-				float angle = FMath.Atan(xDiff/-yDiff);				
-			 	Move(10.0f * FMath.Sin(angle), 10.0f * -FMath.Cos(angle));	
-			}		
 		}
 		
 		public void Reset()
@@ -164,7 +166,7 @@ namespace GravDuck
 			charSprite.Position = new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f,Director.Instance.GL.Context.GetViewport().Height*0.5f);
 		}
 		
-		public override SpriteUV GetSprite (){ return collisionBox; }
+		public SpriteUV GetSprite (){ return collisionBox; }
 		
 		public bool IsAlive(){ return alive; }
 

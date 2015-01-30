@@ -5,12 +5,15 @@ using Sce.PlayStation.Core.Graphics;
 
 using Sce.PlayStation.HighLevel.GameEngine2D;
 using Sce.PlayStation.HighLevel.GameEngine2D.Base;
+
+using Sce.PlayStation.HighLevel.Physics2D;
+
 using Sce.PlayStation.Core.Input;
 using Sce.PlayStation.Core.Audio;
 
 namespace GravDuck
 {
-	public abstract class PhysicsEntity
+	public abstract class PhysicsEntity : PhysicsBody
 	{
 		// All entities exhibit this properties
 		protected SpriteUV 	sprite;
@@ -19,7 +22,7 @@ namespace GravDuck
 		{			
 		}		
 		
-		public virtual void Update(float dt)
+		public virtual void Update(float dt, Vector2 gravityVector)
 		{
 		}
 		
