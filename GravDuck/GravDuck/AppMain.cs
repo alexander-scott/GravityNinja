@@ -44,7 +44,7 @@ namespace GravDuck
 		{
 			Director.Initialize ();	
 
-			// Create GameSTate
+			// Create Gamestate
 			gameScene = new GameScene();
 			Director.Instance.RunWithScene(gameScene, true);	
 		}

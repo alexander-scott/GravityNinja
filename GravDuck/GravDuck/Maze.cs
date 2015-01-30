@@ -20,10 +20,10 @@ namespace GravDuck
 			testBlock = new TextureInfo("/Application/textures/TestBlock.png"); //Load in the textures here
 			sprites	= new SpriteUV[mazeWidth,mazeHeight]; //Initalise the sprites
 						
-			int[,] tileMap ={ {1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0}, //Basic layout for a map
+			int[,] tileMap ={ {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, //Basic layout for a map
 						      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //Slight bug:
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //For some reason the layout is rotated
-							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //90 degrees to the left when rendered
+							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //90 degrees to the left when drawn
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //so when creating the array this needs
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //to be taken into account.
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //I'll fix it later
@@ -34,7 +34,7 @@ namespace GravDuck
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
 							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-							  {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, };
+							  {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, };
 			
 			for (int i = 0; i < mazeWidth; ++i) //Basic tile engine
 			{
@@ -50,7 +50,7 @@ namespace GravDuck
 					{
 						sprites[i,j] 			= new SpriteUV(testBlock);
 						sprites[i,j].Quad.S 		= testBlock.TextureSizef;
-						sprites[i,j].Position = new Vector2(-30.0f, -30.0f);
+						sprites[i,j].Position = new Vector2(-500.0f, -500.0f); //Temporary fix
 					}
 				}
 			}
@@ -64,17 +64,17 @@ namespace GravDuck
 			testBlock.Dispose();
 		}
 		
-		public bool HasCollidedWithPlayer(SpriteUV sprite)
+		public bool HasCollidedWithPlayer(SpriteUV sprite) //Check if the a sprite has hit a part of the maze
 		{
 			Bounds2 player = sprite.GetlContentLocalBounds();
-			sprite.GetContentWorldBounds(ref player );
+			sprite.GetContentWorldBounds(ref player ); //Get sprite bounds (player bounds)
 			
 			foreach(SpriteUV spri in sprites)
 			{
 				Bounds2 mazeTile = sprite.GetlContentLocalBounds();
-				spri.GetContentWorldBounds(ref mazeTile);
+				spri.GetContentWorldBounds(ref mazeTile); //Get all of the maze bounds
 				
-				if (mazeTile.Overlaps(player))
+				if (mazeTile.Overlaps(player)) //Return true if the player overlaps with the maze
 				{
 				   return true;
 				
