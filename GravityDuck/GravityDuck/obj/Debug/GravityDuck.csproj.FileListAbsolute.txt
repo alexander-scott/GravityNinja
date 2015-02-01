@@ -1,0 +1,110 @@
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\obj\Debug\GravityDuck.csprojResolveAssemblyReference.cache
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\testBlock.png
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\testBlock.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\testBlock.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\testBlock.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\obj\Debug\GravityDuck.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\testBlock.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\testBlock.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\obj\Debug\GravityDuck.csprojResolveAssemblyReference.cache
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
