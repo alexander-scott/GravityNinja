@@ -22,18 +22,15 @@ namespace GravityDuck
 		private static Maze maze;
 		private static Player player;
 		
-		private static float xComponent = 0.0f;
-		private static float yComponent = 0.0f;
 		private static Vector2 gravityVector = new Vector2(0.0f, -1.0f); //The direction in which gravity is currently going
 		private static SpriteUV	gravityArrow;
 		private static Vector2 playerDirection; //Based on the rotation of the maze this is the direction the player is moving
-		private static float   cameraRotation; //The rotation of the camera as a angle
-		private static float   gravityVelocity; //Gravity as a angle
-		private static bool reverseGravity = false;
 		
-		private static TouchStatus	currentTouchStatus;
-		private static Vector2 oldTouchPos = new Vector2( 0.0f, 0.0f );
-		private static Vector2 newTouchPos = new Vector2( 0.0f, 0.0f );
+		private static Vector2 oldTouchPos = new Vector2( 0.0f, 0.0f ); // Position of first touch on screen
+		private static Vector2 newTouchPos = new Vector2( 0.0f, 0.0f ); // Position of last touch on screen
+		
+		private static float cameraSupport = FMath.PI/2.0f; // The rotation of the camera as a angle, as well as other entities
+		private static float zoom = 1.0f; // How much of the game can be viewed
 				
 		public static void Main (string[] args)
 		{
@@ -123,72 +120,21 @@ namespace GravityDuck
 				
 				if(data.Status.Equals(TouchStatus.Move))
 				{
-					newTouchPos = new Vector2( data.X, data.Y );
+					newTouchPos = new Vector2( data.X, data.Y ); // Records the last position of swipe if movement is detected.	RMDS
 				}
 				
-				if(data.Status.Equals(TouchStatus.Up))
-				{
-					if((oldTouchPos.Y - newTouchPos.Y) > 0.30f) // Swipe Upwards
-					{
-						gravityVector = new Vector2(-gravityVector.X, -gravityVector.Y);
-					}
-				}
-				
-				currentTouchStatus = data.Status;
-			}		
+				if(data.Status.Equals(TouchStatus.Up))				
+					if((oldTouchPos.Y - newTouchPos.Y) > 0.30f) // Swipe Upwards.	RMDS					
+						cameraRotation += FMath.PI;								
+			}					
 			
-			// Old Gesture Code	RMDS
-			//FlickGestureDetector flickDetector = new FlickGestureDetector();
-			//
-			//if(flickDetector.Direction == FlickDirection.Vertical)	
-			//	gravityVector = new Vector2(-gravityVector.X, -gravityVector.Y);		
-			//	
-			//if(GestureEventArgs.Equals())
-			//{
-			//}
+			cameraRotation += gamePadData.AnalogLeftX / 100.0f;	// Rotates via the left analog stick (need to change the data read to be from the accelerometer).	RMDS	
 			
+			gravityArrow.Position = new Vector2(player.GetPos().X + 100.0f, player.GetPos().Y); // Keeps the arrow next to the player to show the direction of gravity.	RMDS		
+			gravityArrow.Angle = cameraRotation - (FMath.PI / 2.0f);			
+			gravityVector = new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation));					
 			
-			gravityArrow.Position = new Vector2(player.GetPos().X + 300.0f, player.GetPos().Y);
-			gravityArrow.Angle = (xComponent * 0.5f) * FMath.PI;
-			
-			xComponent += gamePadData.AnalogLeftX/100.0f;
-			
-			if(yComponent < 0.0f)
-				yComponent += gamePadData.AnalogLeftX/100.0f;
-			else
-				yComponent += gamePadData.AnalogLeftX/-100.0f;
-			
-			
-			if (xComponent > 1.0f)
-				xComponent = 1.0f;
-			else if (xComponent < -1.0f)
-					xComponent = -1.0f;
-			else{}
-			
-			if(yComponent < -1.0f)
-				yComponent = -1.0f;
-			else if (yComponent > 1.0f)
-					yComponent = 1.0f;
-			else{}
-			
-			gravityVector = new Vector2(xComponent, -1.0f + (2 * yComponent));
-			
-			if((gamePadData.Buttons & GamePadButtons.Cross) != 0)
-				reverseGravity = !reverseGravity;
-			
-			//if(reverseGravity)
-			//	gravityVector = new Vector2(gravityVector.X, -gravityVector.Y);
-			
-			
-			//if()
-			//	gravityVector = new Vector2(-gravityVector.X, -gravityVector.Y);
-			
-			
-			//if (Input2.GamePad0.Up.Down)
-			//{
-			//	cameraRotation += 2.5f;
-			//	//gravityVector = new Vector2(FMath.Cos (cameraRotation), FMath.Sin (cameraRotation)); Needs to be in radians
-			//}
+			//Console.WriteLine("X = " + FMath.Cos(cameraRotation) + "\nY = " + FMath.Sin(cameraRotation)); For debugging.	RMDS
 		}
 		
 		//Camera. Focus on player. Don't let the camera show any off map area. If the player walks near the edge
@@ -197,28 +143,40 @@ namespace GravityDuck
 		//player.
 		public static void UpdateCamera() //@AS (max width and max height are currently unknown so set to 2000)
 		{
-				if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.3f) || (player.GetX() > 2000f - Director.Instance.GL.Context.GetViewport().Width*0.3f) ||
-			   (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.3f) || (player.GetY() > 2000f - Director.Instance.GL.Context.GetViewport().Height*0.3f))
-			{
-				if (player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.4f) //Near left side
-					gameScene.Camera2D.SetViewY(new Vector2(cameraRotation,Director.Instance.GL.Context.GetViewport().Height*0.5f), new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, player.GetY()));
-				if (player.GetX() > 2000f - Director.Instance.GL.Context.GetViewport().Width*0.4f) //Near right side
-					gameScene.Camera2D.SetViewY(new Vector2(cameraRotation,Director.Instance.GL.Context.GetViewport().Height*0.5f), new Vector2(2000f - Director.Instance.GL.Context.GetViewport().Width*0.4f, player.GetY()));
-				if (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.4f) //Near bottom side
-					gameScene.Camera2D.SetViewY(new Vector2(cameraRotation,Director.Instance.GL.Context.GetViewport().Height*0.5f), new Vector2(player.GetX(), Director.Instance.GL.Context.GetViewport().Height*0.4f));
-				if (player.GetY() > 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f) //Near top side
-					gameScene.Camera2D.SetViewY(new Vector2(cameraRotation,Director.Instance.GL.Context.GetViewport().Height*0.5f), new Vector2(player.GetX(), 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.5f));
-				if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.4f) && (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.4f)) //Near bottom left corner
-					gameScene.Camera2D.SetViewY(new Vector2(cameraRotation,Director.Instance.GL.Context.GetViewport().Height*0.5f), new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, Director.Instance.GL.Context.GetViewport().Height*0.4f));
-				if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.4f) && (player.GetY() > 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f)) //Near top left corner
-					gameScene.Camera2D.SetViewY(new Vector2(cameraRotation,Director.Instance.GL.Context.GetViewport().Height*0.5f), new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f));
-				if ((player.GetX() > 2000.0f - Director.Instance.GL.Context.GetViewport().Width*0.4f) && (player.GetY() > 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f)) //Near top right corner
-					gameScene.Camera2D.SetViewY(new Vector2(cameraRotation,Director.Instance.GL.Context.GetViewport().Height*0.5f), new Vector2(2000.0f - Director.Instance.GL.Context.GetViewport().Width*0.4f, 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f));
-				if ((player.GetX() > 2000.0f -  Director.Instance.GL.Context.GetViewport().Width*0.4f) && (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.4f)) //Near bottom right corner
-					gameScene.Camera2D.SetViewY(new Vector2(cameraRotation,Director.Instance.GL.Context.GetViewport().Height*0.5f), new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, Director.Instance.GL.Context.GetViewport().Height*0.4f));
-			}
-			else
-				gameScene.Camera2D.SetViewY(new Vector2(cameraRotation,Director.Instance.GL.Context.GetViewport().Height*0.5f), player.GetPos()); //Player not near an edge
+			
+			// Commented Out this code for debugging and demonstrating gravity.	RMDS
+			
+			//	if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.3f) || (player.GetX() > 2000f - Director.Instance.GL.Context.GetViewport().Width*0.3f) ||
+			//   (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.3f) || (player.GetY() > 2000f - Director.Instance.GL.Context.GetViewport().Height*0.3f))
+			//{
+			//	if (player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.4f) //Near left side
+			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
+			//		                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, player.GetY()));
+			//	if (player.GetX() > 2000f - Director.Instance.GL.Context.GetViewport().Width*0.4f) //Near right side
+			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
+			//		                            new Vector2(2000f - Director.Instance.GL.Context.GetViewport().Width*0.4f, player.GetY()));
+			//	if (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.4f) //Near bottom side
+			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
+			//		                            new Vector2(player.GetX(), Director.Instance.GL.Context.GetViewport().Height*0.4f));
+			//	if (player.GetY() > 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f) //Near top side
+			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
+			//		                            new Vector2(player.GetX(), 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.5f));
+			//	if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.4f) && (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.4f)) //Near bottom left corner
+			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
+			//		                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, Director.Instance.GL.Context.GetViewport().Height*0.4f));
+			//	if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.4f) && (player.GetY() > 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f)) //Near top left corner
+			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
+			//		                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f));
+			//	if ((player.GetX() > 2000.0f - Director.Instance.GL.Context.GetViewport().Width*0.4f) && (player.GetY() > 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f)) //Near top right corner
+			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
+			//		                            new Vector2(2000.0f - Director.Instance.GL.Context.GetViewport().Width*0.4f, 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f));
+			//	if ((player.GetX() > 2000.0f -  Director.Instance.GL.Context.GetViewport().Width*0.4f) && (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.4f)) //Near bottom right corner
+			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
+			//		                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, Director.Instance.GL.Context.GetViewport().Height*0.4f));
+			//}
+			//else
+				gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation),
+			                                        (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); //Player not near an edge
 		}
 		
 		public static void CheckCollisions() //@AS
