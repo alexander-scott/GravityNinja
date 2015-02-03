@@ -42,7 +42,6 @@
     <Compile Include="Background.cs" />
     <Compile Include="Maze.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="Duck.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -57,10 +56,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="textures\" />
+    <Folder Include="textures\Level\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="textures\background.png" />
     <Content Include="textures\duck.png" />
-    <Content Include="textures\testBlock.png" />
+    <Content Include="textures\Level\groundBlock1.png" />
+    <Content Include="textures\Level\groundBlock2.png" />
+    <Content Include="textures\Level\treeBlock.png" />
+    <Content Include="textures\Level\ceilingBlock1.png" />
+    <Content Include="textures\Level\ceilingBlock2.png" />
   </ItemGroup>
 </Project>

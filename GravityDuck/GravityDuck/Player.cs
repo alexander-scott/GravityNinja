@@ -30,7 +30,7 @@ namespace GravityDuck
 			sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef; //Might need to make smaller or bigger in the future
-			sprite.Position = new Vector2(120.0f, 600.0f); //Starting position (will be changed)
+			sprite.Position = new Vector2(150.0f, 1000.0f); //Starting position (will be changed) 150 160
 			sprite.CenterSprite(new Vector2(0.5f,0.5f)); //Set the origin of the sprite to the centre of the duck
 			alive = true; //Default alive true	
 			
