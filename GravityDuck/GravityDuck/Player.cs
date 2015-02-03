@@ -10,7 +10,7 @@ using Sce.PlayStation.Core.Audio;
 
 namespace GravityDuck
 {
-	//Our Duck class V1.0 by @AS
+	//Our Duck class V2.0 by @AS
 	public class Player
 	{
 		private static SpriteUV 	sprite; //Our players sprite
@@ -21,8 +21,8 @@ namespace GravityDuck
 		private static float 		rotationAngle = 0.0f, movementAngle = 0.0f; //Default angles
 		private static float 		speed = 0.08f, maxSpeed = 3.0f, velocity = 0.05f; //Normal movement attributes
 		private static float		gravSpeed = 0.05f, maxGrav = 5.0f, gravVelocity = 0.3f; //Falling attributes
-		private static Vector2 		directionVector = new Vector2(1.0f, 0.0f); //This is the direction the player will move. It will change
-																			   //relative to the angle of the maze
+		public static Vector2 		directionVector = new Vector2(1.0f, 0.0f); //This is the direction the player will move. It will change relative to the angle of the maze
+		
 		public Player (Scene scene)
 		{	
 			textureInfo = new TextureInfo("/Application/textures/duck.png"); //Load in our lovely duck texture
@@ -30,9 +30,9 @@ namespace GravityDuck
 			sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef; //Might need to make smaller or bigger in the future
-			sprite.Position = new Vector2(120.0f, 600.0f); //Starting position (will be changed)
+			sprite.Position = new Vector2(100.0f, 700.0f); //Starting position (will be changed)
 			sprite.CenterSprite(new Vector2(0.5f,0.5f)); //Set the origin of the sprite to the centre of the duck
-			alive = true; //Default alive true	
+			alive = true; //Default alive = true	
 			
 			scene.AddChild(sprite); //Add our FABULOUS duck to the scene
 		}
@@ -41,15 +41,17 @@ namespace GravityDuck
 		{			
 			if(gravVelocity < 0.3f) //If not falling
 			{
-				if(velocity < maxSpeed) //Move forward
-					velocity += speed;
-				sprite.Position = new Vector2(sprite.Position.X + (directionVector.X) * velocity, sprite.Position.Y + (directionVector.Y) * velocity);
+				if(velocity < maxSpeed) //Increase the movement velocity
+					velocity += speed;	//Move the player a in the appropiate direction
+				sprite.Position = new Vector2(sprite.Position.X + (directionVector.X * velocity), sprite.Position.Y + (directionVector.Y * velocity));
 			}
 			else //Else falling
 			{
-				if(gravVelocity < maxGrav)
+				if(gravVelocity < maxGrav) //Increase the gravity velocity
 					gravVelocity += gravSpeed;
-				sprite.Position = new Vector2(sprite.Position.X + gravity.X * gravVelocity, sprite.Position.Y + gravity.Y * gravVelocity);
+				if(velocity > 0.0f) //Decrease the movement velocity so it doesn't immediatley stop when it comes to an edge
+					velocity -= speed/2;
+				sprite.Position = new Vector2(sprite.Position.X + (gravity.X * gravVelocity) + (directionVector.X * velocity), sprite.Position.Y + (gravity.Y * gravVelocity) + (directionVector.Y * velocity));
 			}
 		}
 				

@@ -14,17 +14,15 @@ namespace GravityDuck
 {
 	public class AppMain
 	{
-		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene 	gameScene;
-		private static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
-		private static Sce.PlayStation.HighLevel.UI.Label				scoreLabel;
-		
-		private static Background background;
-		private static Maze maze;
-		private static Player player;
+		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene 	gameScene; //Create the scene
+
+		private static Background background; //Create the background
+		private static Maze maze; //Create the maze
+		private static Player player; //Create the player
 		
 		private static Vector2 gravityVector = new Vector2(0.0f, -1.0f); //The direction in which gravity is currently going
 		private static Vector2 playerDirection; //Based on the rotation of the maze this is the direction the player is moving
-		private static float   cameraRotation; //The rotation of the camera as a angle
+		private static float   cameraRotation = 1; //The rotation of the camera as a angle
 		private static float   gravityVelocity; //Gravity as a angle
 				
 		public static void Main (string[] args)
@@ -80,22 +78,34 @@ namespace GravityDuck
 			//Determine whether the player tapped the screen
 			var touches = Touch.GetData(0);
 			
-			//CheckInput();
+			CheckInput();
 			player.Update(gravityVector);
 			UpdateCamera();
 			CheckCollisions();
 		}
 		
-		public static void CheckInput()
+		public static void CheckInput() //@AS
 		{
 			//Query gamepad for current state
 			var gamePadData = GamePad.GetData(0);
 			GamePadData data = GamePad.GetData(0);
 			
-			if (Input2.GamePad0.Up.Down)
+			if (Input2.GamePad0.Up.Down) //Rotates the camera to the right
 			{
-				cameraRotation += 2.5f;
-				//gravityVector = new Vector2(FMath.Cos (cameraRotation), FMath.Sin (cameraRotation)); Needs to be in radians
+				cameraRotation += 1f;
+				gravityVector = new Vector2(gravityVector.X - 0.01f, gravityVector.Y); //Make sure we change gravity
+			}
+			
+			if (Input2.GamePad0.Down.Down)
+			{
+				cameraRotation -= 1f;
+				gravityVector = new Vector2(gravityVector.X+ 0.01f, gravityVector.Y);
+			}
+			
+			if (Input2.GamePad0.Cross.Down) //Resets bird
+			{
+				player.SetPos(new Vector2(100.0f, 700.0f));
+				cameraRotation = 0f;
 			}
 		}
 		
@@ -105,8 +115,8 @@ namespace GravityDuck
 		//player.
 		public static void UpdateCamera() //@AS (max width and max height are currently unknown so set to 2000)
 		{
-				if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.3f) || (player.GetX() > 2000f - Director.Instance.GL.Context.GetViewport().Width*0.3f) ||
-			   (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.3f) || (player.GetY() > 2000f - Director.Instance.GL.Context.GetViewport().Height*0.3f))
+				if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.4f) || (player.GetX() > 2000f - Director.Instance.GL.Context.GetViewport().Width*0.4f) ||
+			   (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.4f) || (player.GetY() > 2000f - Director.Instance.GL.Context.GetViewport().Height*0.4f))
 			{
 				if (player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.4f) //Near left side
 					gameScene.Camera2D.SetViewY(new Vector2(cameraRotation,Director.Instance.GL.Context.GetViewport().Height*0.5f), new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, player.GetY()));
@@ -131,22 +141,19 @@ namespace GravityDuck
 		
 		public static void CheckCollisions() //@AS
 		{	
-		//if(player.GetX() % 50 == 0 || player.GetY() % 50 == 0) //If the player hits the side of the a tile
-		//{													     //check if its a map boundary
-			if(maze.HasCollidedWithPlayer(player.Sprite))
-			{
-				player.SetFalling(false);
-				player.SetPos(player.GetPos() - player.GetDirection());
+			if(maze.CheckCollision(player.Sprite)) //If the player is on a tile
+			{	//Check what direction the tile is to the player and move the player in the opposite direction
+				player.SetPos(player.GetPos() - maze.HasCollidedWithPlayer(player.Sprite) + new Vector2(0.0f, 0.00001f));
+				player.SetFalling(false); //If the bird is touching a tile it's not falling
 			}
 			else
 			{
-				player.SetFalling(true);
-				
+				player.SetFalling(true); //Bird is falling if it's not touching a tile
 			}
-		//}
+		
 		}
 		
-		public static Vector2 Vector2FromAngle(float angle, bool normalize = true)
+		public static Vector2 Vector2FromAngle(float angle, bool normalize = true) //Returns vector2 from a float
 		{
 		    Vector2 vector = new Vector2((float)FMath.Cos(angle), (float)FMath.Sin(angle));
 			
@@ -157,5 +164,6 @@ namespace GravityDuck
 			
 		    return vector;
 		}
+		
 	}
 }

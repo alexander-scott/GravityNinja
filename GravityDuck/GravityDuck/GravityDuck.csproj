@@ -36,13 +36,13 @@
     <Reference Include="Sce.PlayStation.Core" />
     <Reference Include="Sce.PlayStation.HighLevel.UI" />
     <Reference Include="Sce.PlayStation.HighLevel.GameEngine2D" />
+    <Reference Include="Sce.PlayStation.HighLevel.Physics2D" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppMain.cs" />
     <Compile Include="Background.cs" />
     <Compile Include="Maze.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="Duck.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />

@@ -21,7 +21,7 @@ namespace GravityDuck
 			sprite 			= new SpriteUV();
 			sprite 			= new SpriteUV(backgroundTexture);
 			sprite.Quad.S 	= backgroundTexture.TextureSizef;
-			sprite.Scale 	= new Vector2(3.0f, 3.0f); //Make
+			sprite.Scale 	= new Vector2(3.0f, 3.0f); //Make it bigger or smaller
 			sprite.Pivot 	= new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
 			sprite.Position = new Vector2(0.0f, 0.0f);
 			
