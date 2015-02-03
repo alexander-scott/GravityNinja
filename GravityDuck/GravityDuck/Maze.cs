@@ -19,7 +19,7 @@ namespace GravityDuck
 		
 		private TextureInfo treeBlock;
 		private SpriteUV[,] sprites; //Each block is a sprite
-		private int mazeWidth = 8, mazeHeight = 10; //Width and height for the maze
+		private int mazeWidth = 8, mazeHeight = 9; //Width and height for the maze
 						
 		public Maze (Scene scene)
 		{
@@ -36,14 +36,14 @@ namespace GravityDuck
 			treeBlock    = new TextureInfo("/Application/textures/Level/treeBlock.png");
 			sprites	= new SpriteUV[mazeWidth,mazeHeight]; //Initalise the sprites
 						
-			int[,] tileMap = { {5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, //Basic layout for a map
-						       {1, 0, 3, 1, 0, 0, 0, 0, 3, 5}, //Slight bug:
-							   {2, 0, 4, 2, 0, 3, 1, 0, 4, 5}, //For some reason the layout is rotated
-							   {1, 0, 3, 1, 0, 4, 2, 0, 3, 5}, //90 degrees to the left when drawn
-							   {2, 0, 4, 2, 0, 3, 1, 0, 4, 5}, //so when creating the array this needs
-							   {1, 0, 3, 1, 0, 4, 2, 0, 3, 5},
-							   {2, 0, 0, 0, 0, 3, 1, 0, 4, 5},
-							   {5, 5, 5, 5, 5, 5, 5, 5, 5, 5} };
+			int[,] tileMap = { {5, 5, 5, 5, 5, 5, 5, 5, 5}, //Basic layout for a map
+						       {1, 0, 3, 1, 0, 0, 0, 3, 5}, //Slight bug:
+							   {2, 0, 4, 2, 0, 3, 0, 4, 5}, //For some reason the layout is rotated
+							   {1, 0, 3, 1, 0, 4, 0, 3, 5}, //90 degrees to the left when drawn
+							   {2, 0, 4, 2, 0, 3, 0, 4, 5}, //so when creating the array this needs
+							   {1, 0, 3, 1, 0, 4, 0, 3, 5},
+							   {2, 0, 0, 0, 0, 3, 0, 4, 5},
+							   {5, 5, 5, 5, 5, 5, 5, 5, 5} };
 				
 			for (int i = 0; i < mazeWidth; ++i) //Basic tile engine
 			{
