@@ -63,13 +63,13 @@ namespace GravityDuck
 			gameScene.Camera.SetViewFromViewport();
 	
 			//Background
-			//background = new Background(gameScene);
-			
-			//Maze
-			maze = new Maze(gameScene);
+			background = new Background(gameScene);
 			
 			//Player
 			player = new Player(gameScene);
+			
+			//Maze
+			maze = new Maze(gameScene);
 			
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
