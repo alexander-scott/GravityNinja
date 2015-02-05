@@ -92,9 +92,10 @@ namespace GravityDuck
 			if (!play)
 			{
 				title.Update();
-				if (title.checkPlay())
+				if (title.CheckPlay())
 				{
 					play = true;
+					InitializeGame();
 				}
 			} else{
 				player.Update(gravityVector);
