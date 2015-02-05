@@ -62,5 +62,6 @@
     <Content Include="textures\background.png" />
     <Content Include="textures\duck.png" />
     <Content Include="textures\testBlock.png" />
+    <Content Include="textures\metalBlock.png" />
   </ItemGroup>
 </Project>

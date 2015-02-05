@@ -1,5 +1,18 @@
 Danger Ducks #SWAG
 
+Ideas:
+1) When duck comes into contact with a tile find the vector perpendicular to that tile
+2) Compare that vector to the gravity vector (possibly convert to angle)
+3) If the vector is too far from the opposite of the gravity vector (say more than 30 degrees out) then the duck must fall (set the ducks direction vector based off the angle of the tile)
+4) If the vector is similiar to the opposite of the gravity vector then the duck is able to walk
+
+1) Create a push vector that is constantly pushing the duck
+2) If the duck hits a tile set the push vector to the perpendicular of the tile
+3) Set the push vector back to 0 after the duck has been pushed by this vector
+
+1) Cross collision detection method. Two rectangles across the duck, one horizontal and one vertical
+2) Do normal collision detection to both of them
+
 Concept:
 Simple 2D platformer where you are unable to control the player but are able to manipulate the world around him including being able to rotate, 
 flip, change gravity the level he is on. The game will be played as a side scroller where you must navigate through a maze type map with all 

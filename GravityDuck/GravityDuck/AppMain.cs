@@ -14,7 +14,7 @@ namespace GravityDuck
 {
 	public class AppMain
 	{
-		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene 	gameScene; //Create the scene
+		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene gameScene; //Create the scene
 
 		private static Background background; //Create the background
 		private static Maze maze; //Create the maze
@@ -22,8 +22,12 @@ namespace GravityDuck
 		
 		private static Vector2 gravityVector = new Vector2(0.0f, -1.0f); //The direction in which gravity is currently going
 		private static Vector2 playerDirection; //Based on the rotation of the maze this is the direction the player is moving
+		private static Vector2 duckRotation = new Vector2(0.0f, 0.0f); //Rotation of the duck
 		private static float   cameraRotation = 1; //The rotation of the camera as a angle
 		private static float   gravityVelocity; //Gravity as a angle
+		
+		private static Vector2 oldTouchPos = new Vector2( 0.0f, 0.0f ); // Position of first touch on screen
+		private static Vector2 newTouchPos = new Vector2( 0.0f, 0.0f ); // Position of last touch on screen
 				
 		public static void Main (string[] args)
 		{
@@ -79,7 +83,7 @@ namespace GravityDuck
 			var touches = Touch.GetData(0);
 			
 			CheckInput();
-			player.Update(gravityVector);
+			player.Update(gravityVector, duckRotation);
 			UpdateCamera();
 			CheckCollisions();
 		}
@@ -88,24 +92,53 @@ namespace GravityDuck
 		{
 			//Query gamepad for current state
 			var gamePadData = GamePad.GetData(0);
-			GamePadData data = GamePad.GetData(0);
+			//GamePadData data = GamePad.GetData(0);
+			List<TouchData> touches = Touch.GetData(0);
+
+			foreach(TouchData touch in touches)
+			{
+				if(touch.Status.Equals(TouchStatus.Down))
+				{
+					oldTouchPos = new Vector2( touch.X, touch.Y );
+					newTouchPos = new Vector2( touch.X, touch.Y );
+				}
+				
+				if(touch.Status.Equals(TouchStatus.Move))
+				{
+					newTouchPos = new Vector2( touch.X, touch.Y ); // Records the last position of swipe if movement is detected.	RMDS
+				}
+				
+				if(touch.Status.Equals(TouchStatus.Up))				
+					if((oldTouchPos.Y - newTouchPos.Y) > 0.30f) // Swipe Upwards.	RMDS					
+						cameraRotation += FMath.PI;								
+			}	
+			//duckRotation = new Vector2 (FMath.Cos (-cameraRotation/100), FMath.Sin (-cameraRotation/100));
+			
+			//cameraRotation += gamePadData.AnalogLeftX / 100.0f;	// Rotates via the left analog stick (need to change the data read to be from the accelerometer).	RMDS	
+			//gravityVector = new Vector2(-FMath.Cos(cameraRotation + 0.6f), -FMath.Sin(cameraRotation));	
 			
 			if (Input2.GamePad0.Up.Down) //Rotates the camera to the right
 			{
-				cameraRotation += 1f;
+				cameraRotation += 6f;
 				gravityVector = new Vector2(gravityVector.X - 0.01f, gravityVector.Y); //Make sure we change gravity
 			}
 			
 			if (Input2.GamePad0.Down.Down)
 			{
-				cameraRotation -= 1f;
+				cameraRotation -= 6f;
 				gravityVector = new Vector2(gravityVector.X+ 0.01f, gravityVector.Y);
 			}
-			
+		
 			if (Input2.GamePad0.Cross.Down) //Resets bird
 			{
 				player.SetPos(new Vector2(100.0f, 700.0f));
+				gravityVector = new Vector2(0.0f, -1.0f);
 				cameraRotation = 0f;
+			}
+			if (Input2.GamePad0.Square.Down) //Inverts gravity
+			{
+				gravityVector = new Vector2(gravityVector.X, -gravityVector.Y);
+				
 			}
 		}
 		
@@ -143,14 +176,19 @@ namespace GravityDuck
 		{	
 			if(maze.CheckCollision(player.Sprite)) //If the player is on a tile
 			{	//Check what direction the tile is to the player and move the player in the opposite direction
-				player.SetPos(player.GetPos() - maze.HasCollidedWithPlayer(player.Sprite) + new Vector2(0.0f, 0.00001f));
-				player.SetFalling(false); //If the bird is touching a tile it's not falling
+				//player.SetPos(player.GetPos() + maze.HorizontalCollision(player.Sprite) + maze.VerticalCollision(player.Sprite));
+				player.SetPos(player.GetPos() - new Vector2(maze.HorizontalCollision(player.Sprite).X,maze.VerticalCollision(player.Sprite).Y));
+				//if (maze.birdWalking(player.Sprite) && ((maze.HorizontalCollision(player.Sprite).X == 0f) && (maze.HorizontalCollision(player.Sprite).Y == 0f)))
+				if (maze.birdWalking(player.Sprite))
+				{
+					player.SetFalling(false); //If the bird is touching the ground tile it's not falling
+				}	
 			}
 			else
 			{
 				player.SetFalling(true); //Bird is falling if it's not touching a tile
+				
 			}
-		
 		}
 		
 		public static Vector2 Vector2FromAngle(float angle, bool normalize = true) //Returns vector2 from a float
@@ -161,9 +199,7 @@ namespace GravityDuck
 			{
 		        vector.Normalize();
 			}
-			
 		    return vector;
 		}
-		
 	}
 }

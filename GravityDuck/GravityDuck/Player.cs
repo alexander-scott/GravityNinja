@@ -18,10 +18,11 @@ namespace GravityDuck
 		
 		private static bool			alive = true; //Changed if player dies
 		private static bool 		falling = true; //A different calculation will be required if the player is falling
-		private static float 		rotationAngle = 0.0f, movementAngle = 0.0f; //Default angles
+		private static float 		movementAngle = 0.0f; //Default angles
 		private static float 		speed = 0.08f, maxSpeed = 3.0f, velocity = 0.05f; //Normal movement attributes
-		private static float		gravSpeed = 0.05f, maxGrav = 5.0f, gravVelocity = 0.3f; //Falling attributes
+		private static float		gravSpeed = 0.1f, maxGrav = 6.0f, gravVelocity = 0.3f; //Falling attributes
 		public static Vector2 		directionVector = new Vector2(1.0f, 0.0f); //This is the direction the player will move. It will change relative to the angle of the maze
+		public static float 		duckRotation = 0.0f;
 		
 		public Player (Scene scene)
 		{	
@@ -37,13 +38,21 @@ namespace GravityDuck
 			scene.AddChild(sprite); //Add our FABULOUS duck to the scene
 		}
 		
-		public void Update(Vector2 gravity)
-		{			
+		public void Update(Vector2 gravity, Vector2 rotate)
+		{		
+			duckRotation = -(float)FMath.Atan2(rotate.X, rotate.Y);
+			sprite.Angle = duckRotation; //Rotate the duck so it's always facing upright
+			Vector2 tempDir;
+			//Console.WriteLine(gravity);
+			if (gravity.X < 0.2f && gravity.X > -0.2f) //Ensure that the duck moves
+				tempDir = new Vector2(1.0f, gravity.Y);
+			else
+				tempDir = new Vector2(gravity.X*3, gravity.Y);
 			if(gravVelocity < 0.3f) //If not falling
 			{
 				if(velocity < maxSpeed) //Increase the movement velocity
 					velocity += speed;	//Move the player a in the appropiate direction
-				sprite.Position = new Vector2(sprite.Position.X + (directionVector.X * velocity), sprite.Position.Y + (directionVector.Y * velocity));
+				sprite.Position = new Vector2(sprite.Position.X + ((directionVector.X * tempDir.X) * velocity), sprite.Position.Y + ((directionVector.Y * tempDir.Y) * velocity));
 			}
 			else //Else falling
 			{

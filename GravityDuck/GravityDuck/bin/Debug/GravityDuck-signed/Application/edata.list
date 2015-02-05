@@ -1,0 +1,14 @@
+shaders/Simple.cgx
+app.exe
+Sce.PlayStation.HighLevel.GameEngine2D.dll
+System.Json.dll
+System.Xml.dll
+System.Runtime.Serialization.dll
+System.Core.dll
+System.ServiceModel.Web.dll
+System.ServiceModel.dll
+Sce.PlayStation.HighLevel.UI.dll
+textures/background.png
+textures/duck.png
+textures/testBlock.png
+textures/metalBlock.png

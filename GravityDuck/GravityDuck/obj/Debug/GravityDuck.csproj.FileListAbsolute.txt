@@ -70,3 +70,5 @@ C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Da
 C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
 C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\obj\Debug\app.exe
 C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\metalBlock.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\metalBlock.png
