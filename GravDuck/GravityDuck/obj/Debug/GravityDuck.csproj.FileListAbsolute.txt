@@ -170,3 +170,5 @@ C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\Gr
 C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck.psdp
 C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
 C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png

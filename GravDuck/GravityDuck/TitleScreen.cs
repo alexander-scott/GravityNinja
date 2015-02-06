@@ -140,10 +140,6 @@ namespace GravityDuck
 
 			}
 			
-			
-			
-			
-			
 		}
 		
 		public bool CheckPlay()

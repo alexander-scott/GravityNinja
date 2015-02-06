@@ -22,6 +22,7 @@ namespace GravityDuck
 		private static Maze maze;
 		private static Player player;
 		private static TitleScreen title;
+		private static LevelComplete levelComplete;
 				
 		private static Vector2 gravityVector = new Vector2(0.0f, -1.0f); //The direction in which gravity is currently going
 		private static Vector2 playerDirection; //Based on the rotation of the maze this is the direction the player is moving
@@ -82,6 +83,7 @@ namespace GravityDuck
 			//Maze
 			maze = new Maze(gameScene);
 				
+			levelComplete = new LevelComplete(gameScene);
 		}
 		
 		public static void Update()
@@ -168,6 +170,13 @@ namespace GravityDuck
 				player.SetFalling(true);
 				
 			}
+			
+			if(player.GetX() > 700)
+			{
+				levelComplete.Show(player.GetX(), player.GetY());
+				
+			}
+			
 		//}
 		}
 		

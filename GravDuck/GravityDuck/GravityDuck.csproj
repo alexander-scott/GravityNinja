@@ -44,6 +44,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Duck.cs" />
     <Compile Include="TitleScreen.cs" />
+    <Compile Include="LevelComplete.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -70,5 +71,6 @@
     <Content Include="textures\controlsSelected.png" />
     <Content Include="textures\hiscoresSelected.png" />
     <Content Include="textures\playSelected.png" />
+    <Content Include="textures\levelComplete.png" />
   </ItemGroup>
 </Project>
