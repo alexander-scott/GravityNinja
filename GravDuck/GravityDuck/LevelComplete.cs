@@ -14,6 +14,11 @@ namespace GravityDuck
 	{
 		private TextureInfo completeTexture; //The background texture
 		private SpriteUV sprite; //The background sprite
+		
+		private TextureInfo stars1Texture; //The background texture
+		private TextureInfo stars2Texture; //The background texture
+		private TextureInfo stars3Texture; //The background texture
+		private SpriteUV starsSprite; //The background sprite
 				
 		private bool play = false;
 		
@@ -30,6 +35,16 @@ namespace GravityDuck
 			sprite.Position = new Vector2(0.0f, 0.0f);
 			scene.AddChild(sprite);
 			sprite.Visible = false;
+			
+			stars1Texture 	= new TextureInfo("/Application/textures/stars1.png");
+			stars2Texture 	= new TextureInfo("/Application/textures/stars2.png");
+			stars3Texture 	= new TextureInfo("/Application/textures/stars3.png");
+			starsSprite 			= new SpriteUV();
+			starsSprite 			= new SpriteUV(stars1Texture);
+			starsSprite.Quad.S 	= stars1Texture.TextureSizef;
+			starsSprite.Position = new Vector2(0.0f, 0.0f);
+			scene.AddChild(starsSprite);
+			starsSprite.Visible = false;
 		}
 		
 		public void Update()
@@ -37,11 +52,21 @@ namespace GravityDuck
 			//CheckInput();
 		}
 		
-		public void Show(float playerX, float playerY)
+		public void Show(float playerX, float playerY, int stars)
 		{
 			sprite.Position = new Vector2(playerX - (Director.Instance.GL.Context.GetViewport().Width/2), playerY - 150);
 			sprite.Visible = true;
 			
+			starsSprite.Position = new Vector2(sprite.Position.X + (sprite.TextureInfo.TextureSizef.X/2) - (starsSprite.TextureInfo.TextureSizef.X/2), sprite.Position.Y + 90);
+			
+			if(stars==1)
+				starsSprite.TextureInfo = stars1Texture;
+			if(stars==2)
+				starsSprite.TextureInfo = stars2Texture;
+			if(stars==3)
+				starsSprite.TextureInfo = stars3Texture;
+			
+			starsSprite.Visible = true;
 		}
 		
 		/*

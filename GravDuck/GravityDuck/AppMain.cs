@@ -177,7 +177,7 @@ namespace GravityDuck
 			
 			if(player.GetX() > 700)
 			{
-				levelComplete.Show(player.GetX(), player.GetY());
+				levelComplete.Show(player.GetX(), player.GetY(), 2);
 				pause = true;
 				
 			}

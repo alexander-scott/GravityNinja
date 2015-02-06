@@ -172,3 +172,9 @@ C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\obj\Debug\co
 C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\obj\Debug\app.pdb
 C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
 C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png

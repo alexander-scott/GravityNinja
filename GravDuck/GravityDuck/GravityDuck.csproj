@@ -72,5 +72,8 @@
     <Content Include="textures\hiscoresSelected.png" />
     <Content Include="textures\playSelected.png" />
     <Content Include="textures\levelComplete.png" />
+    <Content Include="textures\stars1.png" />
+    <Content Include="textures\stars2.png" />
+    <Content Include="textures\stars3.png" />
   </ItemGroup>
 </Project>
