@@ -38,11 +38,17 @@
     <Reference Include="Sce.PlayStation.HighLevel.GameEngine2D" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppMain.cs" />
-    <Compile Include="Background.cs" />
-    <Compile Include="Maze.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Duck.cs" />
+    <Compile Include="Classes\AppMain.cs" />
+    <Compile Include="Classes\Player.cs" />
+    <Compile Include="Classes\Level\Background.cs" />
+    <Compile Include="Classes\Level\Maze.cs" />
+    <Compile Include="Classes\Level\Collectables\Coin.cs" />
+    <Compile Include="Classes\Level\Collectables\Collectable.cs" />
+    <Compile Include="Classes\Level\Collectables\Gem.cs" />
+    <Compile Include="Classes\Level\Obstacles\Spikes.cs" />
+    <Compile Include="Classes\Level\Obstacles\Obstacles.cs" />
+    <Compile Include="Classes\TitleScreen.cs" />
+    <Compile Include="Classes\LevelComplete.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -57,10 +63,34 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="textures\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Classes\Level\" />
+    <Folder Include="Classes\Level\Obstacles\" />
+    <Folder Include="Classes\Level\Collectables\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="textures\background.png" />
     <Content Include="textures\duck.png" />
-    <Content Include="textures\testBlock.png" />
+    <Content Include="textures\arrow.png" />
+    <Content Include="textures\Level\ceilingBlock1.png" />
+    <Content Include="textures\Level\ceilingBlock2.png" />
+    <Content Include="textures\Level\gem.png" />
+    <Content Include="textures\Level\goldCoin.png" />
+    <Content Include="textures\Level\groundBlock1.png" />
+    <Content Include="textures\Level\groundBlock2.png" />
+    <Content Include="textures\Level\largeSpikes.png" />
+    <Content Include="textures\Level\smallSpikes.png" />
+    <Content Include="textures\Level\treeBlock.png" />
+    <Content Include="textures\controls.png" />
+    <Content Include="textures\controlsSelected.png" />
+    <Content Include="textures\hiscores.png" />
+    <Content Include="textures\hiscoresSelected.png" />
+    <Content Include="textures\levelComplete.png" />
+    <Content Include="textures\play.png" />
+    <Content Include="textures\playSelected.png" />
+    <Content Include="textures\stars1.png" />
+    <Content Include="textures\stars2.png" />
+    <Content Include="textures\stars3.png" />
+    <Content Include="textures\titleScreen.png" />
   </ItemGroup>
 </Project>
