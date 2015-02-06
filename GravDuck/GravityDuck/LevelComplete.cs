@@ -39,7 +39,7 @@ namespace GravityDuck
 		
 		public void Show(float playerX, float playerY)
 		{
-			sprite.Position = new Vector2(playerX - (Director.Instance.GL.Context.GetViewport().Width/2), playerY - (Director.Instance.GL.Context.GetViewport().Height/2));
+			sprite.Position = new Vector2(playerX - (Director.Instance.GL.Context.GetViewport().Width/2), playerY - 150);
 			sprite.Visible = true;
 			
 		}

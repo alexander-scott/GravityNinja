@@ -30,6 +30,7 @@ namespace GravityDuck
 		private static float   gravityVelocity; //Gravity as a angle
 		
 		private static bool play = false;
+		private static bool pause = false;
 				
 		public static void Main (string[] args)
 		{
@@ -100,9 +101,12 @@ namespace GravityDuck
 					InitializeGame();
 				}
 			} else{
-				player.Update(gravityVector);
-				UpdateCamera();
-				CheckCollisions();
+				if (!pause)
+				{
+					player.Update(gravityVector);
+					UpdateCamera();
+					CheckCollisions();
+				}
 			}
 		}
 		
@@ -174,6 +178,7 @@ namespace GravityDuck
 			if(player.GetX() > 700)
 			{
 				levelComplete.Show(player.GetX(), player.GetY());
+				pause = true;
 				
 			}
 			
