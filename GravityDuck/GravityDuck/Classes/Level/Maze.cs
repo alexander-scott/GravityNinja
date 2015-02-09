@@ -289,7 +289,7 @@ namespace GravityDuck
 			return false;
 		}
 		
-		public bool HasHitSide(SpriteUV sprite) //Checks if the player has hit the side of the maze and not the floor
+		public bool HasHitSide(SpriteUV sprite, int gravity) //Checks if the player has hit the side of the maze and not the floor
 		{
 			Bounds2 player = sprite.GetlContentLocalBounds();
 			sprite.GetContentWorldBounds(ref player ); //Get sprite bounds (player bounds)
@@ -300,7 +300,7 @@ namespace GravityDuck
 				spri.GetContentWorldBounds(ref mazeTile); //Get all of the maze bounds
 				if (player.Overlaps(mazeTile)) //Return true if the player overlaps with the maze
 				{
-					if (checkSides(sprite, spri)) //Return true if the player has come into contact with a side
+					if (checkSides(sprite, spri, gravity)) //Return true if the player has come into contact with a side
 					{
 					   return true;
 					}
@@ -309,23 +309,64 @@ namespace GravityDuck
 			return false;
 		}
 		
-		public bool checkSides(SpriteUV sprite, SpriteUV sprite2) //Compares 2 sprites to see is the left or right side has intersected
+		public bool checkSides(SpriteUV sprite, SpriteUV sprite2, int gravity) //Compares 2 sprites to see is the left or right side has intersected
 		{
 			Bounds2 player = sprite.GetlContentLocalBounds();
 			sprite.GetContentWorldBounds(ref player ); //Get sprite bounds 
 			
 			Bounds2 mazeTile = sprite2.GetlContentLocalBounds();
 			sprite2.GetContentWorldBounds(ref mazeTile); 
-				
-			if (((player.Point01.X < mazeTile.Point11.X) || (player.Point11.X > mazeTile.Point01.X)))
-			{ //If the left side of the player is past the right side of the tile and vica versa
-				if ((player.Point01.Y) < mazeTile.Point01.Y) //If the tile is above the player
-					return true;
+			if (gravity == 1) //Down
+			{
+				if (((player.Point01.X < mazeTile.Point11.X) || (player.Point11.X > mazeTile.Point01.X)))
+				{ //If the left side of the player is past the right side of the tile and vica versa
+					if ((player.Point01.Y) < mazeTile.Point01.Y) //If the tile is above the player
+						return true;	
+					else
+						return false;
+				}
 				else
-					return false;	
+						return false;
+			}
+			else if (gravity == 2) // Right
+			{
+				if (((player.Point10.Y < mazeTile.Point10.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
+				{ //If the left side of the player is past the right side of the tile and vica versa
+					if ((player.Point11.X) < mazeTile.Point11.X) //If the tile is above the player
+						return true;	
+					else
+						return false;
+				}
+				else
+						return false;
+			}
+			else if (gravity == 3) // Up
+			{
+				if (((player.Point10.X < mazeTile.Point00.X) || (player.Point00.X > mazeTile.Point10.X)))
+				{ //If the left side of the player is past the right side of the tile and vica versa
+					if ((player.Point10.Y) < mazeTile.Point10.Y) //If the tile is above the player
+						return true;
+					else
+						return false;
+				}
+				else
+						return false;
+			}
+			else if (gravity == 4) // Left
+			{
+				if (((player.Point10.Y < mazeTile.Point10.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
+				{ //If the left side of the player is past the right side of the tile and vica versa
+					if ((player.Point11.X) < mazeTile.Point11.X) //If the tile is above the player
+						return true;	
+					else
+						return false;
+				}
+				else
+						return false;
 			}
 			else
 				return false;
+				
+			}
 		}
 	}
-}

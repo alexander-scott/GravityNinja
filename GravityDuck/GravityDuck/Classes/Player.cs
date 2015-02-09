@@ -56,15 +56,15 @@ namespace GravityDuck
 			}
 		
 			if(gravVelocity < maxGrav) //Increase the gravity velocity
-				gravVelocity += gravSpeed;
-			else if (gravVelocity>6f) //Velocity limits
-				gravVelocity = 6f;
-			else if  (gravVelocity < -6f)
-				gravVelocity = -6f;
-	
-			if(velocity > 0.0f) //Decrease the movement velocity so it doesn't immediatley stop
-				velocity -= speed/2;
-			
+			{
+				if(gravVelocity > -1.0f && gravVelocity < 1.0f)
+					gravVelocity = 1f;
+				else if (gravVelocity > 4f)
+					gravVelocity += gravSpeed/2;
+				else
+					gravVelocity += gravSpeed;
+			}
+							
 			//Move the duck
 			sprite.Position = new Vector2(sprite.Position.X + ((tempDir.X) * gravVelocity), sprite.Position.Y + ((tempDir.Y) * gravVelocity));	
 		}

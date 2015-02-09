@@ -40,6 +40,7 @@ namespace GravityDuck
 		private static bool play = false;
 		private static bool pause = false;
 		private static bool invert = false;
+		public static int currGrav = 1;
 		
 		public static void Main (string[] args)
 		{
@@ -138,6 +139,8 @@ namespace GravityDuck
 			//Query gamepad for current state
 			var gamePadData = GamePad.GetData(0);
 			
+			var motionData = Motion.GetData(0);
+			
 			//Determine whether the player tapped the screen
 			List<TouchData> touches = Touch.GetData(0);			
 			
@@ -154,34 +157,73 @@ namespace GravityDuck
 					newTouchPos = new Vector2( data.X, data.Y ); // Records the last position of swipe if movement is detected.	RMDS
 				}
 				
-				if(data.Status.Equals(TouchStatus.Up))				
-					if((oldTouchPos.Y - newTouchPos.Y) > 0.30f) // Swipe Upwards.	RMDS					
-						cameraRotation += FMath.PI;								
+				if(data.Status.Equals(TouchStatus.Up))		
+				{
+					if((oldTouchPos.Y - newTouchPos.Y) > 0.30f) // Swipe Upwards.	RMDS	
+					{
+						cameraRotation += FMath.PI;
+				
+					}
+				}
+				
+				
+				if(data.Status.Equals(TouchStatus.Up))	
+				{
+					if((newTouchPos.Y - oldTouchPos.Y) > 0.30f) // Swipe downwards.	RMDS	
+					{
+						cameraRotation += FMath.PI;
+					
+					}
+				}
+				
+				if(data.Status.Equals(TouchStatus.Up))	
+				{
+					if((oldTouchPos.X - newTouchPos.X) > 0.30f) // Swipe left. SM	
+					{
+						cameraRotation -= FMath.PI/2;
+				
+					}
+				}
+				
+				if(data.Status.Equals(TouchStatus.Up))	
+				{
+					if((newTouchPos.X - oldTouchPos.X) > 0.30f) // Swipe right. SM	
+					{
+						cameraRotation += FMath.PI/2;	
+				
+					}
+				}
 			}	
-			if (Input2.GamePad0.Up.Down) //Rotates the camera to the right
-			{
-				if(gravityVector.X>-1f)
-				{
-					cameraRotation += 0.08f;
-					gravityVector = new Vector2(gravityVector.X - 0.01f, gravityVector.Y); //Make sure we change gravity
-				}
-			}
-			
-			if (Input2.GamePad0.Down.Down)
-			{
-				if(gravityVector.X<1f)
-				{
-					cameraRotation -= 0.08f;
-					gravityVector = new Vector2(gravityVector.X+ 0.01f, gravityVector.Y);
-				}
-			}
+//			if (Input2.GamePad0.Up.Down) //Rotates the camera to the right
+//			{
+//				if(gravityVector.X>-1f)
+//				{
+//					cameraRotation += 0.08f;
+//					gravityVector = new Vector2(gravityVector.X - 0.01f, gravityVector.Y); //Make sure we change gravity
+//				}
+//			}
+//			
+//			if (Input2.GamePad0.Down.Down)
+//			{
+//				if(gravityVector.X<1f)
+//				{
+//					cameraRotation -= 0.08f;
+//					gravityVector = new Vector2(gravityVector.X+ 0.01f, gravityVector.Y);
+//				}
+//			}
 			if(play)
 			{
 				cameraRotation += gamePadData.AnalogLeftX / 100.0f;	// Rotates via the left analog stick (need to change the data read to be from the accelerometer).	RMDS	
 			
 				gravityArrow.Position = new Vector2(player.GetPos().X, player.GetPos().Y); // Keeps the arrow next to the player to show the direction of gravity.	RMDS		
-				gravityArrow.Angle = cameraRotation - (FMath.PI / 2.0f);			
-				gravityVector = new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation));		
+				gravityArrow.Angle = motionData.Acceleration.X + cameraRotation - (FMath.PI / 2.0f);			
+				gravityVector = new Vector2(-FMath.Cos(cameraRotation) + motionData.Acceleration.X, -FMath.Sin(cameraRotation));	
+				if (gravityVector.Y == 1f)
+					currGrav = 3;
+				else 
+					currGrav = 1;
+						
+				duckRotation = -gravityVector;
 			}
 			
 			//Console.WriteLine("X = " + FMath.Cos(cameraRotation) + "\nY = " + FMath.Sin(cameraRotation)); For debugging.	RMDS
@@ -233,13 +275,18 @@ namespace GravityDuck
 		{	
 			if(maze.HasCollidedWithPlayer(player.Sprite)) //If the player has collided with a tile
 			{	
-				if (maze.HasHitSide(player.Sprite)) //Check if it's a side tile
+				if (maze.HasHitSide(player.Sprite, currGrav)) //Check if it's a side tile
 					invert = true;
 				else
 					invert = false;
-							
+						
 				if (player.GetVelocity() > -6.1f && player.GetVelocity() < 6.1f)
-					player.SetVelocity(-3.0f); //Invert the velocity (will be changed later)
+				{
+					if(player.GetVelocity() > 3f)
+						player.SetVelocity(-player.GetVelocity()); //Invert the velocity (will be changed later)
+					else 
+						player.SetVelocity(-3.0f);
+				}
 			}
 		}
 	}
