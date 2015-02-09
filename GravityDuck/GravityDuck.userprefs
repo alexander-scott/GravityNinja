@@ -1,10 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\AppMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\AppMain.cs">
     <Files>
-      <File FileName="GravityDuck\AppMain.cs" Line="219" Column="6" />
-      <File FileName="GravityDuck\Player.cs" Line="23" Column="86" />
-      <File FileName="GravityDuck\Maze.cs" Line="204" Column="4" />
+      <File FileName="GravityDuck\Classes\Level\Collectables\Coin.cs" Line="22" Column="32" />
+      <File FileName="GravityDuck\Classes\Level\Collectables\Collectable.cs" Line="38" Column="5" />
+      <File FileName="GravityDuck\Classes\Level\Collectables\Gem.cs" Line="42" Column="2" />
+      <File FileName="GravityDuck\Classes\Level\Obstacles\Obstacles.cs" Line="23" Column="3" />
+      <File FileName="GravityDuck\Classes\Player.cs" Line="21" Column="41" />
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="22" Column="28" />
+      <File FileName="GravityDuck\Classes\Level\Maze.cs" Line="322" Column="83" />
+      <File FileName="GravityDuck\Classes\TitleScreen.cs" Line="35" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
