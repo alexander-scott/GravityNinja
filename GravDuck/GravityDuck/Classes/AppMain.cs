@@ -139,6 +139,8 @@ namespace GravityDuck
 			//Query gamepad for current state
 			var gamePadData = GamePad.GetData(0);
 			
+			var motionData = Motion.GetData(0);
+			
 			
 			//Determine whether the player tapped the screen
 			List<TouchData> touches = Touch.GetData(0);			
@@ -180,8 +182,9 @@ namespace GravityDuck
 				cameraRotation += gamePadData.AnalogLeftX / 100.0f;	// Rotates via the left analog stick (need to change the data read to be from the accelerometer).	RMDS	
 			
 				gravityArrow.Position = new Vector2(player.GetPos().X, player.GetPos().Y); // Keeps the arrow next to the player to show the direction of gravity.	RMDS		
-				gravityArrow.Angle = cameraRotation - (FMath.PI / 2.0f);			
-				gravityVector = new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation));		
+				gravityArrow.Angle = motionData.Acceleration.X + cameraRotation - (FMath.PI / 2.0f);			
+				gravityVector = new Vector2(-FMath.Cos(cameraRotation) + motionData.Acceleration.X, -FMath.Sin(cameraRotation));
+				
 			}
 			
 			//Console.WriteLine("X = " + FMath.Cos(cameraRotation) + "\nY = " + FMath.Sin(cameraRotation)); For debugging.	RMDS

@@ -70,6 +70,7 @@ namespace GravityDuck
 				if(velocity < maxSpeed) //Increase the movement velocity
 					velocity += speed;	//Move the player a in the appropiate direction
 				sprite.Position = new Vector2(sprite.Position.X + ((directionVector.X * tempDir.X) * velocity), sprite.Position.Y + ((directionVector.Y * tempDir.Y) * velocity));
+			
 			}
 			else //Else falling
 			{
@@ -78,6 +79,7 @@ namespace GravityDuck
 				if(velocity > 0.0f) //Decrease the movement velocity so it doesn't immediatley stop when it comes to an edge
 					velocity -= speed/2;
 				sprite.Position = new Vector2(sprite.Position.X + (gravity.X * gravVelocity) + (directionVector.X * velocity), sprite.Position.Y + (gravity.Y * gravVelocity) + (directionVector.Y * velocity));
+			
 			}
 		}
 				
