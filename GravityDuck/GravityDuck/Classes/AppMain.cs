@@ -38,8 +38,13 @@ namespace GravityDuck
 		private static float cameraRotation = FMath.PI/2.0f; // The rotation of the camera as a angle, as well as other entities
 		private static float zoom = 1.0f; // How much of the game can be viewed
 		
+		private static float upperCameraRange = FMath.PI/4;
+		private static float lowerCameraRange = -FMath.PI/4;
+		
 		private static bool play = false;
 		private static bool pause = false;
+		private static bool invert = false;
+		public static int currGrav = 1;
 				
 		public static void Main (string[] args)
 		{
@@ -48,7 +53,7 @@ namespace GravityDuck
 			//Game loop
 			bool quitGame = false;
 			while (!quitGame) 
-			{
+			{ 
 				SystemEvents.CheckEvents ();				
 				
 				Update ();
@@ -77,8 +82,6 @@ namespace GravityDuck
 			//Set game scene
 			gameScene = new Sce.PlayStation.HighLevel.GameEngine2D.Scene();
 			gameScene.Camera.SetViewFromViewport();
-	
-			
 			
 			
 			title = new TitleScreen(gameScene);
@@ -138,7 +141,7 @@ namespace GravityDuck
 			} else{
 				if (!pause)
 				{
-					player.Update(gravityVector, gravityArrow.Angle);
+					player.Update(gravityVector, playerDirection, invert);
 					UpdateCamera();
 					CheckCollisions();
 				}
@@ -150,7 +153,7 @@ namespace GravityDuck
 			//Query gamepad for current state
 			var gamePadData = GamePad.GetData(0);
 			
-			
+			var motionData = Motion.GetData(0);
 			//Determine whether the player tapped the screen
 			List<TouchData> touches = Touch.GetData(0);			
 			
@@ -167,20 +170,70 @@ namespace GravityDuck
 					newTouchPos = new Vector2( data.X, data.Y ); // Records the last position of swipe if movement is detected.	RMDS
 				}
 				
-				if(data.Status.Equals(TouchStatus.Up))				
+				if(data.Status.Equals(TouchStatus.Up))	
+				{				
 					if((oldTouchPos.Y - newTouchPos.Y) > 0.30f) // Swipe Upwards.	RMDS					
-						cameraRotation += FMath.PI;								
-			}					
+						cameraRotation = FlipCamera(FMath.PI);	
+					
+					// Values added at the end to avoid the camera from flipping 180 degrees instead of 90.	
+					if((oldTouchPos.X - newTouchPos.X) > 0.30f)					
+						cameraRotation = FlipCamera(-FMath.PI/2);	
+					
+					if((oldTouchPos.X - newTouchPos.X) < -0.30f)					
+						cameraRotation = FlipCamera(FMath.PI/2);	
+					
+					CalcCamRestrictions();
+					
+				}						
+			}	
+			
 			if(play)
-			{
-				cameraRotation += gamePadData.AnalogLeftX / 100.0f;	// Rotates via the left analog stick (need to change the data read to be from the accelerometer).	RMDS	
-			
+			{			
+				cameraRotation += gamePadData.AnalogLeftX / 10.0f;	// Rotates via the left analog stick (need to change the data read to be from the accelerometer).	RMDS				
+				
+				if(cameraRotation > 6.283184f)
+				{
+					cameraRotation = 0.0f;
+					upperCameraRange = 0.785398f;
+					lowerCameraRange = -0.1f;	
+				}					
+				else if (cameraRotation < 0)
+				{
+					cameraRotation = 6.283184f;
+					upperCameraRange = 6.3f;
+					lowerCameraRange = 5.497786f;	
+				}
+					
+				
+				if(cameraRotation > upperCameraRange)
+					cameraRotation = upperCameraRange;
+				else if(cameraRotation < lowerCameraRange)
+						cameraRotation = lowerCameraRange;	
+				
 				gravityArrow.Position = new Vector2(player.GetPos().X, player.GetPos().Y); // Keeps the arrow next to the player to show the direction of gravity.	RMDS		
-				gravityArrow.Angle = cameraRotation - (FMath.PI / 2.0f);			
-				gravityVector = new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation));		
+				gravityArrow.Angle = motionData.Acceleration.X + cameraRotation - (FMath.PI / 2.0f);			
+				gravityVector = new Vector2(-FMath.Cos(cameraRotation) + motionData.Acceleration.X, -FMath.Sin(cameraRotation));	
 			}
+				
+			Console.WriteLine("Camera Rotation = " + cameraRotation + "\nX = " + FMath.Cos(cameraRotation) +
+			                  "\nY = " + FMath.Sin(cameraRotation) + "\nUpper = " + upperCameraRange +
+			                  "\nLower = " +lowerCameraRange); // For debugging.	RMDS
+		}
+		
+		public static float FlipCamera(float rotation)
+		{
+			float change = cameraRotation + rotation;
 			
-			//Console.WriteLine("X = " + FMath.Cos(cameraRotation) + "\nY = " + FMath.Sin(cameraRotation)); For debugging.	RMDS
+			if(change < 0.0f)
+			{
+				return change + 6.283184f;
+			}
+			else if(change > 6.283184f)
+				{
+					return change - 6.283184f;
+				}
+			
+			return change;
 		}
 		
 		//Camera. Focus on player. Don't let the camera show any off map area. If the player walks near the edge
@@ -225,45 +278,84 @@ namespace GravityDuck
 			                                        (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); //Player not near an edge
 		}
 		
-		public static void CheckCollisions() //@AS
+		public static void CalcCamRestrictions()
 		{	
-		//if(player.GetX() % 50 == 0 || player.GetY() % 50 == 0) //If the player hits the side of the a tile
-		//{													     //check if its a map boundary
-			if(maze.circleCollision(player.GetPos(), 100))
-				Console.WriteLine("hi");
-			if(maze.CheckCollision(player.Sprite)) //If the player is on a tile
-			{	//Check what direction the tile is to the player and move the player in the opposite direction
-				player.SetPos(player.GetPos() - new Vector2(maze.HorizontalCollision(player.Sprite).X,maze.VerticalCollision(player.Sprite).Y));
-				
-				
-				float displacement = player.GetPos() - maze
-				
-				
-				
-				
-				if (maze.birdWalking(player.Sprite))
+			if(FMath.Cos(cameraRotation) >= 0)
+				if(FMath.Sin(cameraRotation) > 0.45f)
 				{
-					if (maze.HorizontalCollision(player.Sprite).X > 0f)
+					// Lower quadrant.	RMDS
+				
+					upperCameraRange = 2.356194f;
+					lowerCameraRange = 0.785398f;	
+				}
+				else if(FMath.Sin(cameraRotation) > -0.45f)
 					{
-						player.SetFalling(false, new Vector2(0.0f, 1.0f));
+						// Left quadrant.	RMDS
+		
+						// Determined later within CheckInput(), so these values are placed
+						// to cause no events and to be later changed.
+					
+						if(cameraRotation < 5.497786f)
+						{
+							upperCameraRange = 0.785398f;
+							lowerCameraRange = -0.1f;
+						}
+						else
+						{
+							upperCameraRange = 7.0f;
+							lowerCameraRange = 5.497786f;
+						}
 					}
 					else
-						player.SetFalling(false, new Vector2(1.0f, 0.0f)); //If the bird is touching the ground tile it's not falling
-				}	
-			}
-			else
-			{
-				player.SetFalling(true, new Vector2(1.0f, 0.0f)); //Bird is falling if it's not touching a tile
+					{
+						// Upper quadrant.	RMDS
 				
-			}
-			/*
-			if(player.GetX() > 700)
-			{
-				levelComplete.Show(player.GetX(), player.GetY(), 2);
-				pause = true;
+						upperCameraRange = 5.497786f;
+						lowerCameraRange = 3.926990f;
+					}
+			else if(FMath.Sin(cameraRotation) > 0.45f)
+				{
+					// Lower quadrant.	RMDS
 				
-			}*/
-		//}
+					upperCameraRange = 2.356194f;
+					lowerCameraRange = 0.785398f;
+				}
+				else if(FMath.Sin(cameraRotation) > -0.45f)
+					{
+						// Right quadrant.	RMDS
+				
+						upperCameraRange = 3.926990f;
+						lowerCameraRange = 2.356194f;	
+					}
+					else
+					{
+						// Upper quadrant.	RMDS
+				
+						upperCameraRange = 5.497786f;
+						lowerCameraRange = 3.926990f;
+					}
+				
+					
+					
+		}
+		
+		public static void CheckCollisions() //@AS
+		{	
+		if(maze.HasCollidedWithPlayer(player.Sprite)) //If the player has collided with a tile
+			{	
+				if (maze.HasHitSide(player.Sprite, currGrav)) //Check if it's a side tile
+					invert = true;
+				else
+					invert = false;
+						
+				if (player.GetVelocity() > -6.1f && player.GetVelocity() < 6.1f)
+				{
+					if(player.GetVelocity() > 3f)
+						player.SetVelocity(-player.GetVelocity()); //Invert the velocity (will be changed later)
+					else 
+						player.SetVelocity(-3.0f);
+				}
+			}
 		}
 		
 		public static Vector2 Vector2FromAngle(float angle, bool normalize = true)
