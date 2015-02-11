@@ -69,7 +69,7 @@ namespace GravityDuck
 		}
 		
 		//Play selected sound from soundList
-		public static bool PlaySound(string key, bool isLooping, float volume, float playbackRate, float pan)
+		public static bool PlaySound(string key, bool isLooping, float volume, float playbackRate)
 		{
 			if (soundList.ContainsKey(key))
 			{
@@ -77,7 +77,6 @@ namespace GravityDuck
 				soundPlayer.Volume = volume;
 				soundPlayer.Loop = isLooping;
 				soundPlayer.PlaybackRate = playbackRate;
-				soundPlayer.Pan = pan;
 				soundPlayer.Play();
 				soundPlayers.Add(soundPlayer);
 				return true;

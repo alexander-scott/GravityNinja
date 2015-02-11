@@ -31,3 +31,12 @@ textures/stars1.png
 textures/stars2.png
 textures/stars3.png
 textures/titleScreen.png
+textures/Ninja.png
+textures/ninja2.png
+sounds/Effects/bounce.wav
+sounds/Effects/coinGrab.wav
+sounds/Effects/levelFinish.wav
+sounds/Effects/screenFlip.wav
+sounds/Effects/spikesDeath.wav
+sounds/Music/levelMusic.mp3
+textures/Level/levelFlag.png
