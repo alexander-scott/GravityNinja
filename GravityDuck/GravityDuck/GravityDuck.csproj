@@ -50,6 +50,8 @@
     <Compile Include="Classes\Level\Obstacles\Obstacles.cs" />
     <Compile Include="Classes\TitleScreen.cs" />
     <Compile Include="Classes\LevelComplete.cs" />
+    <Compile Include="Classes\AudioManager.cs" />
+    <Compile Include="QuadTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />

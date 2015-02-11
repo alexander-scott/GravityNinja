@@ -8,7 +8,7 @@ using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 
 namespace GravityDuck
 {
-	//Our Maze class V1.1 by @AW
+	//Our Maze class V2 by @AW && @AS
 	public class Maze
 	{
 		private TextureInfo groundBlock1;
@@ -289,206 +289,84 @@ namespace GravityDuck
 			return false;
 		}
 		
-		
-		public bool birdWalking(SpriteUV aSprite) //Gets the Vector that the player
-        {				
-			Bounds2 aBounds = aSprite.GetlContentLocalBounds();
-			aSprite.GetContentWorldBounds(ref aBounds ); 
-			foreach(SpriteUV spri in sprites)
-			{
-				Bounds2 bSprite = spri.GetlContentLocalBounds();
-				spri.GetContentWorldBounds(ref bSprite); //Get all of the maze bounds
-			
-	            Vector2 amin = aBounds.Point01; //Get the min and max boundaries of the sprites
-	            Vector2 amax = aBounds.Point10;
-	            Vector2 bmin = bSprite.Point01;
-	            Vector2 bmax = bSprite.Point10;
-	
-	            float left = (bmin.X - amax.X); //Calculate the floats between each side of the sprites
-	            float right = (bmax.X - amin.X);
-	            float top = (bmin.Y - amax.Y);
-	            float bottom = (bmax.Y - amin.Y);
-	 
-	            if (FMath.Abs(top) > bottom)
-	                return true;		
-			}	
-			return false;
-        }
-		
-		public Vector2 checkVertical(SpriteUV aSprite, SpriteUV bSprite) //Gets the Vector that the player
-        {																	  //needs to be moved in
-			Bounds2 aBounds = aSprite.GetlContentLocalBounds();
-			aSprite.GetContentWorldBounds(ref aBounds ); //Get sprite A bounds
-			
-			Bounds2 bBounds = bSprite.GetlContentLocalBounds();
-			bSprite.GetContentWorldBounds(ref bBounds ); //Get sprite B bounds
-			
-            Vector2 amin = new Vector2(aBounds.Point01.X, aBounds.Point01.Y); //Get the min and max boundaries of the sprites
-            Vector2 amax = new Vector2(aBounds.Point10.X, aBounds.Point10.Y);
-            Vector2 bmin = new Vector2(bBounds.Point01.X, bBounds.Point01.Y);
-            Vector2 bmax = new Vector2(bBounds.Point10.X, bBounds.Point10.Y);
- 
-            Vector2 mtd = new Vector2(); //Intalise the vector
-  
-            float left = (bmin.X - amax.X); //Calculate the floats between each side of the sprites
-            float right = (bmax.X - amin.X);
-            float top = (bmin.Y - amax.Y);
-            float bottom = (bmax.Y - amin.Y);
- 
-            //Work out which direction has the smallest distance (aka the sides that connected)
-            if (FMath.Abs(left) < right)
-                mtd.X = left + 0.00001f;
-            else
-                mtd.X = right - 0.00001f;
- 
-            if (FMath.Abs(top) < bottom)
-                mtd.Y = top + 0.00001f;
-            else
-                mtd.Y = bottom - 0.00001f;
- 
-            //Set the axis that didn't touch to 0
-            if (FMath.Abs(mtd.X) < FMath.Abs(mtd.Y))
-                mtd.Y = 0;
-            else
-                mtd.X = 0; 
-			return mtd;
-        }
-		
-		public Vector2 checkHorizontal(SpriteUV aSprite, SpriteUV bSprite) //Gets the Vector that the player
-        {																	  //needs to be moved in
-			Bounds2 aBounds = aSprite.GetlContentLocalBounds();
-			aSprite.GetContentWorldBounds(ref aBounds ); //Get sprite A bounds
-			
-			Bounds2 bBounds = bSprite.GetlContentLocalBounds();
-			bSprite.GetContentWorldBounds(ref bBounds ); //Get sprite B bounds
-			
-            Vector2 amin = new Vector2(aBounds.Point01.X, aBounds.Point01.Y ); //Get the min and max boundaries of the sprites
-            Vector2 amax = new Vector2(aBounds.Point10.X, aBounds.Point10.Y );
-            Vector2 bmin = new Vector2(bBounds.Point01.X, bBounds.Point01.Y );
-            Vector2 bmax = new Vector2(bBounds.Point10.X, bBounds.Point10.Y );
- 
-            Vector2 mtd = new Vector2(); //Intalise the vector
-  
-            float left = (bmin.X - amax.X); //Calculate the floats between each side of the sprites
-            float right = (bmax.X - amin.X);
-            float top = (bmin.Y - amax.Y);
-            float bottom = (bmax.Y - amin.Y);
- 
-            //Work out which direction has the smallest distance (aka the sides that connected)
-            if (FMath.Abs(left) < right)
-			{
-				mtd.X = left + 0.00001f;
-			}
-            else
-			{
-				mtd.X = right - 0.00001f;
-			}
-     
-            if (FMath.Abs(top) < bottom)
-                mtd.Y = top + 0.00001f;
-            else
-                mtd.Y = bottom - 0.00001f;
- 
-            //Set the axis that didn't touch to 0
-            if (FMath.Abs(mtd.X) < FMath.Abs(mtd.Y))
-                mtd.Y = 0;
-            else
-                mtd.X = 0; 
-			
-			return mtd;
-        }
-		
-		public bool CheckCollision(SpriteUV sprite) //Check if the a sprite has hit a part of the maze
+		public bool HasHitSide(SpriteUV sprite, int gravity) //Checks if the player has hit the side of the maze and not the floor
 		{
 			Bounds2 player = sprite.GetlContentLocalBounds();
 			sprite.GetContentWorldBounds(ref player ); //Get sprite bounds (player bounds)
 			
 			foreach(SpriteUV spri in sprites)
 			{
-				Bounds2 mazeTile = sprite.GetlContentLocalBounds();
+				Bounds2 mazeTile = spri.GetlContentLocalBounds();
 				spri.GetContentWorldBounds(ref mazeTile); //Get all of the maze bounds
-				
-				if (mazeTile.Overlaps(player)) //Return true if the player overlaps with the maze
+				if (player.Overlaps(mazeTile)) //Return true if the player overlaps with the maze
 				{
-				   return true;
-				   
+					if (checkSides(sprite, spri, gravity)) //Return true if the player has come into contact with a side
+					{
+					   return true;
+					}
 				}
 			}
 			return false;
 		}
-		public Vector2 VerticalCollision(SpriteUV sprite) //Check if the a sprite has hit a part of the maze
+		
+		public bool checkSides(SpriteUV sprite, SpriteUV sprite2, int gravity) //Compares 2 sprites to see is the left or right side has intersected
 		{
 			Bounds2 player = sprite.GetlContentLocalBounds();
-			sprite.GetContentWorldBounds(ref player ); //Get sprite bounds (player bounds)
+			sprite.GetContentWorldBounds(ref player ); //Get sprite bounds 
 			
-			foreach(SpriteUV spri in sprites)
+			Bounds2 mazeTile = sprite2.GetlContentLocalBounds();
+			sprite2.GetContentWorldBounds(ref mazeTile); 
+			if (gravity == 1) //Down
 			{
-				Bounds2 mazeTile = sprite.GetlContentLocalBounds();
-				spri.GetContentWorldBounds(ref mazeTile); //Get all of the maze bounds
-				
-				if (mazeTile.Overlaps(player)) 
-				{
-				   return checkVertical(spri, sprite); //Return the direction that the player needs to be moved
-				   
+				if (((player.Point01.X < mazeTile.Point11.X) || (player.Point11.X > mazeTile.Point01.X)))
+				{ //If the left side of the player is past the right side of the tile and vica versa
+					if ((player.Point01.Y) < mazeTile.Point01.Y) //If the tile is above the player
+						return true;	
+					else
+						return false;
 				}
+				else
+						return false;
 			}
-			return new Vector2(0.0f, 0.0f); //If theres no overlap then don't move the player
-		}
-		public Vector2 HorizontalCollision(SpriteUV sprite) //Check if the a sprite has hit a part of the maze
-		{
-			Bounds2 player = sprite.GetlContentLocalBounds();
-			sprite.GetContentWorldBounds(ref player ); //Get sprite bounds (player bounds)
-			
-			foreach(SpriteUV spri in sprites)
+			else if (gravity == 2) // Right
 			{
-				Bounds2 mazeTile = sprite.GetlContentLocalBounds();
-				spri.GetContentWorldBounds(ref mazeTile); //Get all of the maze bounds
-				
-				if (mazeTile.Overlaps(player)) 
-				{
-				   return checkHorizontal(spri, sprite); //Return the direction that the player needs to be moved
-				   
+				if (((player.Point10.Y < mazeTile.Point10.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
+				{ //If the left side of the player is past the right side of the tile and vica versa
+					if ((player.Point11.X) < mazeTile.Point11.X) //If the tile is above the player
+						return true;	
+					else
+						return false;
 				}
+				else
+						return false;
 			}
-			return new Vector2(0.0f, 0.0f); //If theres no overlap then don't move the player
-		}
-		
-		
-		public bool circleCollision(Vector2 centre, float radius)
-		{
-			foreach(SpriteUV spri in sprites)
+			else if (gravity == 3) // Up
 			{
-				Bounds2 bBounds = spri.GetlContentLocalBounds();
-				spri.GetContentWorldBounds(ref bBounds );
-				
-				Vector2 bmin = new Vector2(bBounds.Point01.X, bBounds.Point01.Y );
-            	Vector2 bmax = new Vector2(bBounds.Point10.X, bBounds.Point10.Y );
-				
-				float cx = FMath.Abs(centre.X - bBounds.Center.X - ((bBounds.Point11.X - bBounds.Point01.X)/2));
-				float xDist = ((bBounds.Point11.X - bBounds.Point01.X)/2) + radius;
-				if (cx > xDist)
-					return false;
-				
-				float cy = FMath.Abs(centre.Y - bBounds.Center.Y - ((bBounds.Point00.Y - bBounds.Point01.Y)/2));
-				float yDist = ((bBounds.Point11.Y - bBounds.Point10.Y)/2) + radius;
-				if (cy > yDist)
-					return false;
-				
-				if (((cx <= (bBounds.Point11.X - bBounds.Point01.X)/2)) || (cy <= (bBounds.Point00.Y - bBounds.Point01.Y)/2))
-				{
-					return true;
+				if (((player.Point10.X < mazeTile.Point00.X) || (player.Point00.X > mazeTile.Point10.X)))
+				{ //If the left side of the player is past the right side of the tile and vica versa
+					if ((player.Point10.Y) < mazeTile.Point10.Y) //If the tile is above the player
+						return true;
+					else
+						return false;
 				}
-				
-				float xCornerDist = cx - ((bBounds.Point11.X - bBounds.Point01.X)/2);
-			    float yCornerDist = cy - ((bBounds.Point00.Y - bBounds.Point01.Y)/2);
-			    float xCornerDistSq = xCornerDist * xCornerDist;
-			    float yCornerDistSq = yCornerDist * yCornerDist;
-			    float maxCornerDistSq = radius * radius;
-			    	return xCornerDistSq + yCornerDistSq <= maxCornerDistSq;
+				else
+						return false;
 			}
-			return false;
-			
-			
+			else if (gravity == 4) // Left
+			{
+				if (((player.Point10.Y < mazeTile.Point10.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
+				{ //If the left side of the player is past the right side of the tile and vica versa
+					if ((player.Point11.X) < mazeTile.Point11.X) //If the tile is above the player
+						return true;	
+					else
+						return false;
+				}
+				else
+						return false;
+			}
+			else
+				return false;
+				
+			}
 		}
 	}
-}
