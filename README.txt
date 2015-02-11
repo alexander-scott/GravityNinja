@@ -1,5 +1,42 @@
-Danger Ducks #SWAG
-TODO: Add accelerometer support, add gesture support, ensure when the camera is flipped via gestures that the duck is rotated appropiately.
+Gravity Ninja
+Change Log:
+February 11th:
+- Test and optimise the game for the Vita
+- Redesign and recreate the collision engine
+- Make the camera rotate much more smoother to the desired angle
+- Add our new sprites and new screens
+
+February 9th:
+- Include sounds and music in our game
+- Design new sprites for our game
+
+February 8th:
+- Switch the player movement to be controlled by the Vita's acceleromter
+- Adapt our solution to enable motion support
+
+February 6th: 
+- Design and implement the most efficient collision detective system
+- Place the pickups strategically in the level
+
+February 5th:
+- Draw up title and death screens
+- Impelement the level into the tile engine
+
+February 3rd:
+- Allow touch screen gestures to rotate the camera
+- Set up a timer
+
+February 2nd:
+- Create a tile engine
+- Design a level and come up with appropiate positions of pickups
+
+February 1st:
+- Implement gravity and basic movement
+
+Janurary 30th: 
+- Ensure the camera follows the player
+- Create the base framework
+
 Concept:
 Simple 2D platformer where you are unable to control the player but are able to manipulate the world around him including being able to rotate, 
 flip, change gravity the level he is on. The game will be played as a side scroller where you must navigate through a maze type map with all 

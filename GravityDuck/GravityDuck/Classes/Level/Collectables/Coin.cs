@@ -19,6 +19,8 @@ namespace GravityDuck
 			
 			tileIndex = 0;
 			
+			scoreValue = 5;
+			
 			sprite.ScheduleInterval( (dt) => 
 			{
 				if(tileIndex >= 6)
@@ -31,12 +33,6 @@ namespace GravityDuck
 			}, 0.10f);
 			
 			scene.AddChild(sprite);
-		}
-		
-		public int Collected()
-		{
-			collected = true;
-			return 5;
 		}
 	}
 }
