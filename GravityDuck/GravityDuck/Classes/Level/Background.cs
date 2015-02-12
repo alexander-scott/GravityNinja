@@ -32,5 +32,7 @@ namespace GravityDuck
 		{
 			backgroundTexture.Dispose();
 		}
+		
+		public SpriteUV GetSprite(){ return sprite; }
 	}
 }

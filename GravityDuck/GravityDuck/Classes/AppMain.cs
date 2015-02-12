@@ -46,6 +46,8 @@ namespace GravityDuck
 		private static bool pause = false;
 		private static bool invert = false;
 		public static int currGrav = 1;
+		
+		public static QuadTree quadTree;
 				
 		public static void Main (string[] args)
 		{
@@ -130,6 +132,7 @@ namespace GravityDuck
 			                           			Director.Instance.GL.Context.GetViewport().Width*2,
 			                          			 	Director.Instance.GL.Context.GetViewport().Height*2);
 			
+			quadTree = new QuadTree(gameScene, 1, background.GetSprite());			
 		}
 		
 		public static void Update()
@@ -147,6 +150,7 @@ namespace GravityDuck
 				if (!pause)
 				{
 					player.Update(gravityVector, playerDirection, invert);
+					quadTree.Update(background.GetSprite());
 					UpdateCamera();
 					CheckCollisions();
 				}
