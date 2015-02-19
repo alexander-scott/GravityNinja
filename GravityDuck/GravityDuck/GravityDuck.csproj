@@ -95,6 +95,5 @@
     <Content Include="textures\stars2.png" />
     <Content Include="textures\stars3.png" />
     <Content Include="textures\titleScreen.png" />
-    <Content Include="textures\quadTree.png" />
   </ItemGroup>
 </Project>

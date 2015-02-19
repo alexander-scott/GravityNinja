@@ -10,10 +10,7 @@ namespace GravityDuck
 {
 	public class QuadTree
 	{
-		// Further code is required for different scales of the background.	RMDS
-		
-		
-		QuadTree[] child;
+		//QuadTree[] child;
 		private Rectangle[] quadSection;
 		
 		//FOR DEBUGGING	RMDS
@@ -29,86 +26,78 @@ namespace GravityDuck
 			// Set their size to half the background size
 			for(int i = 0; i < 4; i++)
 			{
-				quadSection[i] = new Rectangle(new Vector2(0.0f, 0.0f), new Vector2((background.TextureInfo.TextureSizef.X * background.Scale.X) / 2,
-				                                                          (background.TextureInfo.TextureSizef.Y * background.Scale.Y) / 2));
+				quadSection[i] = new Rectangle(new Vector2(0.0f, 0.0f), new Vector2(background.TextureInfo.TextureSizef.X/2,
+				                                                          background.TextureInfo.TextureSizef.Y/2)) ;
 			}
 			
-			// Set their position to each corner of the background							
-			quadSection[0].Position = new Vector2(background.Position.X - ((background.TextureInfo.TextureSizef.X/2) * (background.Scale.X - 1)),
-			                                      (background.Position.Y + ((background.TextureInfo.TextureSizef.Y/2) * (background.Scale.Y - 1)))/2);						
-			quadSection[1].Position = new Vector2(background.Position.X - ((background.TextureInfo.TextureSizef.X/2) * (background.Scale.X - 1)),
-			                                      background.Position.Y - ((background.TextureInfo.TextureSizef.Y/2) * (background.Scale.Y - 1)));							
-			quadSection[2].Position = new Vector2((background.Position.X + ((background.TextureInfo.TextureSizef.X/2) * (background.Scale.X - 1)))/2,
-			                                      (background.Position.Y + ((background.TextureInfo.TextureSizef.Y/2) * (background.Scale.Y - 1)))/2);		
-			quadSection[3].Position = new Vector2((background.Position.X + ((background.TextureInfo.TextureSizef.X/2) * (background.Scale.X - 1)))/2,
-			                                      background.Position.Y - ((background.TextureInfo.TextureSizef.Y/2) * (background.Scale.Y - 1)));	
+			//Background SCALE IS * 3
 			
-			
-			
+			// Set their position to each corner of the background		
+			quadSection[0].Position = background.Position;
+			quadSection[1].Position = new Vector2(background.Position.X + background.TextureInfo.TextureSizef.X/2,
+			                                  	background.Position.Y);
+			quadSection[2].Position = new Vector2(background.Position.X + background.TextureInfo.TextureSizef.X/2,
+			                                  background.Position.Y + background.TextureInfo.TextureSizef.Y/2 );
+			quadSection[3].Position = new Vector2(background.Position.X,
+			                                  background.Position.Y + background.TextureInfo.TextureSizef.Y/2 );
 			
 			
 			// FOR DEBUGGING
 			visibleZone = new SpriteUV[4];
-			quadTexture = new TextureInfo("/Application/textures/quadTree.png");
+			quadTexture = new TextureInfo("/Application/textures/background.png");
 			
 			for(int i = 0; i < 4; i++)
 			{
 				visibleZone[i] = new SpriteUV();
 				visibleZone[i] = new SpriteUV(quadTexture);
 				visibleZone[i].Quad.S = new Vector2(quadSection[i].Width, quadSection[i].Height);
-				visibleZone[i].Color = new Vector4(1.0f - i, i / 3, i / 2, 1.0f);		
+				visibleZone[i].Color = Colors.Red;		
 				visibleZone[i].Position = quadSection[i].Position;
 			}
 			
 			for(int i = 0; i < 4; i++)
 				scene.AddChild(visibleZone[i]);
 			
-			QuadTree[] child = new QuadTree[4];	
-			
-			foreach(QuadTree node in child)
-			{
-				// This shall be the number of quads the player/objects will be checked through.
-				if(numberOfQuadTreesToTraverse > 1)
-				{
-					numberOfQuadTreesToTraverse--;
-					
-					SpriteUV smallerBackground = background;
-					
-					for(int i = 0; i < 4; i++)
-					{
-						smallerBackground.Scale = new Vector2(0.5f, 0.5f);
-						smallerBackground.Position = quadSection[i].Position;
-						child[i] = new QuadTree(scene,
-						                     numberOfQuadTreesToTraverse, 
-						                     	smallerBackground);
-					}
-			
-					
-					// May need to multiply the background.TextureInfo value by the background's scale value,
-					// further testing is required.	RMDS
-				}
-				else
-				{
-					child = null; // So the quad tree doesn't have to check against a smaller quad tree.
-				}			
-			}										
+			//QuadTree[] child = new QuadTree[4];	
+			//
+			//foreach(QuadTree node in child)
+			//{
+			//	// This shall be the number of quads the player/objects will be checked through.
+			//	if(numberOfQuadTreesToTraverse > 1)
+			//	{
+			//		numberOfQuadTreesToTraverse--;
+			//		
+			//		SpriteUV smallerBackground = background;
+			//		
+			//		for(int i = 0; i < 4; i++)
+			//		{
+			//			smallerBackground.Scale = new Vector2(0.5f, 0.5f);
+			//			smallerBackground.Position = quadSection[i].Position;
+			//			child[i] = new QuadTree(scene,
+			//			                     numberOfQuadTreesToTraverse, 
+			//			                     	smallerBackground);
+			//		}
+			//
+			//		
+			//		// May need to multiply the background.TextureInfo value by the background's scale value,
+			//		// further testing is required.	RMDS
+			//	}
+			//	else
+			//	{
+			//		child = null; // So the quad tree doesn't have to check against a smaller quad tree.
+			//	}			
+			//}										
 		}
 		
 		public void Update(SpriteUV background)
 		{		
-			quadSection[0].Position = new Vector2(background.Position.X - ((background.TextureInfo.TextureSizef.X/2) * (background.Scale.X - 1)),
-			                                      (background.Position.Y + ((background.TextureInfo.TextureSizef.Y/2) * (background.Scale.Y - 1)))/2);					
-			quadSection[1].Position = new Vector2(background.Position.X - ((background.TextureInfo.TextureSizef.X/2) * (background.Scale.X - 1)),
-			                                      background.Position.Y - ((background.TextureInfo.TextureSizef.Y/2) * (background.Scale.Y - 1)));							
-			quadSection[2].Position = new Vector2((background.Position.X + ((background.TextureInfo.TextureSizef.X/2) * (background.Scale.X - 1)))/2,
-			                                      (background.Position.Y + ((background.TextureInfo.TextureSizef.Y/2) * (background.Scale.Y - 1)))/2);		
-			quadSection[3].Position = new Vector2((background.Position.X + ((background.TextureInfo.TextureSizef.X/2) * (background.Scale.X - 1)))/2,
-			                                      background.Position.Y - ((background.TextureInfo.TextureSizef.Y/2) * (background.Scale.Y - 1)));
-			
-			//quadSection[0].Position = background.Position;
-			//quadSection[1].Position = background.Position;
-			//quadSection[2].Position = background.Position;
-			//quadSection[3].Position = background.Position;
+			quadSection[0].Position = background.Position;
+			quadSection[1].Position = new Vector2(background.Position.X + background.TextureInfo.TextureSizef.X/2,
+			                                  	background.Position.Y);
+			quadSection[2].Position = new Vector2(background.Position.X + background.TextureInfo.TextureSizef.X/2,
+			                                  background.Position.Y + background.TextureInfo.TextureSizef.Y/2 );
+			quadSection[3].Position = new Vector2(background.Position.X,
+			                                  background.Position.Y + background.TextureInfo.TextureSizef.Y/2 );
 			
 			// FOR DEBUGGING					
 			for(int i = 0; i < 4; i++)			

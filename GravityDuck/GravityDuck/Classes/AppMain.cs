@@ -47,10 +47,7 @@ namespace GravityDuck
 		private static bool invert = false;
 		public static int currGrav = 1;
 		
-		//public static QuadTree quadTree;
-		
-		public static float lastTime = 0.0f;
-		public static bool zoomedIn = true;
+		public static QuadTree quadTree;
 				
 		public static void Main (string[] args)
 		{
@@ -135,13 +132,12 @@ namespace GravityDuck
 			                           			Director.Instance.GL.Context.GetViewport().Width*2,
 			                          			 	Director.Instance.GL.Context.GetViewport().Height*2);
 			
-			//quadTree = new QuadTree(gameScene, 2, background.GetSprite());			
+			quadTree = new QuadTree(gameScene, 1, background.GetSprite());			
 		}
 		
 		public static void Update()
 		{		
 			CheckInput();
-			
 			if (!play)
 			{
 				title.Update();
@@ -151,24 +147,14 @@ namespace GravityDuck
 					InitializeGame();
 				}
 			} else{
-				time = (float)timer.Milliseconds();
-				
 				if (!pause)
 				{
 					player.Update(gravityVector, playerDirection, invert);
-					//quadTree.Update(background.GetSprite());
+					quadTree.Update(background.GetSprite());
 					UpdateCamera();
 					CheckCollisions();
 				}
-				else
-				{
-					BeginPause();
-				}
 			}
-		}
-		
-		public static void BeginPause()
-		{
 		}
 		
 		public static void CheckInput()
@@ -207,29 +193,11 @@ namespace GravityDuck
 					
 					CalcCamRestrictions();
 					
-					if (play)
-					{
-						if(lastTime == 0)
-							lastTime = time;
-						else if((time - lastTime) < 300.0f) // May need to replace value
-							{
-								zoomedIn = !zoomedIn;
-								lastTime = 0;
-							}
-							else
-							{
-								lastTime = time;
-							}
-					}
-				}
+				}						
 			}	
 			
 			if(play)
 			{			
-				if((gamePadData.Buttons & GamePadButtons.Start) != 0)
-					pause = !pause;
-				
-				
 				cameraRotation += gamePadData.AnalogLeftX / 10.0f;	// Rotates via the left analog stick (need to change the data read to be from the accelerometer).	RMDS				
 				
 				if(cameraRotation > 6.283184f)
@@ -256,9 +224,9 @@ namespace GravityDuck
 				gravityVector = new Vector2(-FMath.Cos(cameraRotation) + motionData.Acceleration.X, -FMath.Sin(cameraRotation));	
 			}
 				
-			//Console.WriteLine("Camera Rotation = " + cameraRotation + "\nX = " + FMath.Cos(cameraRotation) +
-			//                  "\nY = " + FMath.Sin(cameraRotation) + "\nUpper = " + upperCameraRange +
-			//                  "\nLower = " +lowerCameraRange); // For debugging.	RMDS
+			Console.WriteLine("Camera Rotation = " + cameraRotation + "\nX = " + FMath.Cos(cameraRotation) +
+			                  "\nY = " + FMath.Sin(cameraRotation) + "\nUpper = " + upperCameraRange +
+			                  "\nLower = " +lowerCameraRange); // For debugging.	RMDS
 		}
 		
 		public static float FlipCamera(float rotation)
@@ -315,25 +283,8 @@ namespace GravityDuck
 			//		                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, Director.Instance.GL.Context.GetViewport().Height*0.4f));
 			//}
 			//else
-			
-			if(zoomedIn)
-			{
-				zoom = 0.75f;
-				gameScene.Camera2D.SetViewY(new Vector2(0.0f,
-			                                        (Director.Instance.GL.Context.GetViewport().Height)),
-				                            new Vector2(Director.Instance.GL.Context.GetViewport().Width/2,
-				            					Director.Instance.GL.Context.GetViewport().Height/2)); //Player not near an edge
-		
-			}
-			else
-			{
-				zoom = 2.0f;
 				gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation),
 			                                        (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); //Player not near an edge
-		
-			
-				
-			}
 		}
 		
 		public static void CalcCamRestrictions()
@@ -401,18 +352,18 @@ namespace GravityDuck
 		{	
 		if(maze.HasCollidedWithPlayer(player.Sprite)) //If the player has collided with a tile
 			{	
-				//if (maze.HasHitSide(player.Sprite, currGrav)) //Check if it's a side tile
-				//	invert = true;
-				//else
-				//	invert = false;
-				//		
-				//if (player.GetVelocity() > -6.1f && player.GetVelocity() < 6.1f)
-				//{
-				//	if(player.GetVelocity() > 3f)
-				//		player.SetVelocity(-player.GetVelocity()); //Invert the velocity (will be changed later)
-				//	else 
-				//		player.SetVelocity(-3.0f);
-				//}
+				if (maze.HasHitSide(player.Sprite, currGrav)) //Check if it's a side tile
+					invert = true;
+				else
+					invert = false;
+						
+				if (player.GetVelocity() > -6.1f && player.GetVelocity() < 6.1f)
+				{
+					if(player.GetVelocity() > 3f)
+						player.SetVelocity(-player.GetVelocity()); //Invert the velocity (will be changed later)
+					else 
+						player.SetVelocity(-3.0f);
+				}
 			}
 		}
 		

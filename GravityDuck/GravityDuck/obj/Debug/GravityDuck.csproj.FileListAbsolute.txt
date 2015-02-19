@@ -374,5 +374,3 @@ C:\Users\m008455c\NewGravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cg
 C:\Users\m008455c\NewGravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
 C:\Users\m008455c\NewGravityDuck\GravityDuck\obj\Debug\app.exe
 C:\Users\m008455c\NewGravityDuck\GravityDuck\obj\Debug\app.pdb
-C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\quadTree.png
-C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\quadTree.png

@@ -1,18 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\AppMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\QuadTree.cs">
     <Files>
       <File FileName="GravityDuck\Classes\Level\Collectables\Coin.cs" Line="42" Column="2" />
       <File FileName="GravityDuck\Classes\Level\Collectables\Collectable.cs" Line="38" Column="5" />
       <File FileName="GravityDuck\Classes\Level\Collectables\Gem.cs" Line="42" Column="2" />
       <File FileName="GravityDuck\Classes\Level\Obstacles\Spikes.cs" Line="30" Column="2" />
       <File FileName="GravityDuck\Classes\Level\Obstacles\Obstacles.cs" Line="23" Column="3" />
-      <File FileName="GravityDuck\Classes\Player.cs" Line="76" Column="39" />
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="299" Column="38" />
+      <File FileName="GravityDuck\Classes\Player.cs" Line="20" Column="61" />
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="69" Column="34" />
       <File FileName="GravityDuck\Classes\Level\Maze.cs" Line="284" Column="24" />
       <File FileName="GravityDuck\app.xml" Line="12" Column="1" />
-      <File FileName="GravityDuck\QuadTree.cs" Line="55" Column="5" />
-      <File FileName="GravityDuck\Classes\Level\Background.cs" Line="24" Column="39" />
+      <File FileName="GravityDuck\QuadTree.cs" Line="33" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
