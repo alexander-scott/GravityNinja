@@ -72,6 +72,8 @@ namespace GravityDuck
 							
 			//Move the duck
 			sprite.Position = new Vector2(sprite.Position.X + ((tempDir.X) * gravVelocity), sprite.Position.Y + ((tempDir.Y) * gravVelocity));	
+			
+			Console.WriteLine(sprite.Position);
 		}                  
 				          
 		public void SetFalling(bool fall, Vector2 baseDirection) //Allows us to set whether the duck is falling or not
