@@ -9,16 +9,16 @@ using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 
 namespace GravityDuck
 {
-	//Our Background class V1.0 by @AS
+	
 	public class LevelComplete
 	{
-		private TextureInfo completeTexture; //The background texture
-		private SpriteUV sprite; //The background sprite
+		private TextureInfo completeTexture; 
+		private SpriteUV sprite; 
 		
-		private TextureInfo stars1Texture; //The background texture
-		private TextureInfo stars2Texture; //The background texture
-		private TextureInfo stars3Texture; //The background texture
-		private SpriteUV starsSprite; //The background sprite
+		private TextureInfo stars1Texture; 
+		private TextureInfo stars2Texture; 
+		private TextureInfo stars3Texture; 
+		private SpriteUV starsSprite; 
 				
 		private bool play = false;
 		

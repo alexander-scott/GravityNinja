@@ -36,6 +36,7 @@
     <Reference Include="Sce.PlayStation.Core" />
     <Reference Include="Sce.PlayStation.HighLevel.UI" />
     <Reference Include="Sce.PlayStation.HighLevel.GameEngine2D" />
+    <Reference Include="Sce.PlayStation.HighLevel.Physics2D" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\AppMain.cs" />
@@ -49,6 +50,9 @@
     <Compile Include="Classes\Level\Obstacles\Obstacles.cs" />
     <Compile Include="Classes\TitleScreen.cs" />
     <Compile Include="Classes\LevelComplete.cs" />
+    <Compile Include="Classes\AudioManager.cs" />
+    <Compile Include="Classes\Level\Collectables\LevelFlag.cs" />
+    <Compile Include="Classes\GameOverScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -67,6 +71,9 @@
     <Folder Include="Classes\Level\" />
     <Folder Include="Classes\Level\Obstacles\" />
     <Folder Include="Classes\Level\Collectables\" />
+    <Folder Include="sounds\" />
+    <Folder Include="sounds\Effects\" />
+    <Folder Include="sounds\Music\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="textures\background.png" />
@@ -92,5 +99,16 @@
     <Content Include="textures\stars2.png" />
     <Content Include="textures\stars3.png" />
     <Content Include="textures\titleScreen.png" />
+    <Content Include="textures\Ninja.png" />
+    <Content Include="textures\ninja2.png" />
+    <Content Include="sounds\Effects\bounce.wav" />
+    <Content Include="sounds\Effects\coinGrab.wav" />
+    <Content Include="sounds\Effects\levelFinish.wav" />
+    <Content Include="sounds\Effects\screenFlip.wav" />
+    <Content Include="sounds\Effects\spikesDeath.wav" />
+    <Content Include="sounds\Music\levelMusic.mp3" />
+    <Content Include="textures\Level\levelFlag.png" />
+    <Content Include="textures\gameOver.png" />
+    <Content Include="textures\restartButton.png" />
   </ItemGroup>
 </Project>
