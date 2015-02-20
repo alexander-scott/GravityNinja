@@ -344,9 +344,10 @@ namespace GravityDuck
 			}
 			else if (gravity == 3) // Up
 			{
-				if (((player.Point10.X < mazeTile.Point00.X) || (player.Point00.X > mazeTile.Point10.X)))
+				//if (((player.Point10.X < mazeTile.Point00.X) || (player.Point00.X > mazeTile.Point10.X)))
+				if (((player.Point01.X < mazeTile.Point11.X) || (player.Point11.X > mazeTile.Point01.X)))
 				{ //If the left side of the player is past the right side of the tile and vica versa
-					if ((player.Point10.Y) < mazeTile.Point10.Y) //If the tile is above the player
+					if ((player.Point10.Y) > mazeTile.Point10.Y) //If the tile is above the player
 						return true;
 					else
 						return false;
@@ -356,7 +357,7 @@ namespace GravityDuck
 			}
 			else if (gravity == 4) // Left
 			{
-				if (((player.Point10.Y < mazeTile.Point10.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
+				if (((player.Point11.Y < mazeTile.Point10.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
 				{ //If the left side of the player is past the right side of the tile and vica versa
 					if ((player.Point11.X) < mazeTile.Point11.X) //If the tile is above the player
 						return true;	

@@ -52,7 +52,7 @@ namespace GravityDuck
 			if (!falling)
 			{
 				if(!invert)
-					tempDir = movement*4; //Normal movement caused by tilting the device
+					tempDir = movement*5; //Normal movement caused by tilting the device
 				else
 					tempDir = new Vector2(0.0f, 0.0f); //Stop player moving
 			}
