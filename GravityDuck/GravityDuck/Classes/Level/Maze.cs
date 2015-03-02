@@ -28,18 +28,27 @@ namespace GravityDuck
 		private int spikeCount;
 		private Spikes[] spikes;
 		
+		private int windTunnelCount;
+		private WindTunnel[] windTunnels;
+		
+		private LevelFlag levelFlag;
+		private bool levelFinished;
+		
 		private SpriteUV[,] 	sprites; //Each block is a sprite
 		int[,] mazeLevel;
 		private int mazeWidth, mazeHeight; //Width and height for the maze
 						
 		public Maze (Scene scene)
 		{
+			levelFinished = false;
+			
 			//Maze height and width
 			mazeWidth = 8;
 			mazeHeight = 11;
 			coinCount = 20; 
 			gemCount = 3;
-			spikeCount = 6;
+			spikeCount = 5;
+			windTunnelCount = 1;
 			
 			//Load in the textures here
 			//Ground Block Textures
@@ -80,6 +89,12 @@ namespace GravityDuck
 			spikes[3].setPosition(new Vector2(50.0f, 1075.0f));
 			spikes[3].getSprite().Rotate(-1.5707963268f);
 			spikes[4].setPosition(new Vector2(270.0f, 1050.0f));
+			
+			// Initialise and position wind tunnels
+			windTunnels = new WindTunnel[windTunnelCount];
+			
+			windTunnels[0] = new WindTunnel(scene, WindTunnel.Direction.LEFT);
+			windTunnels[0].setPosition(new Vector2(900.0f, 340.0f));
 			
 			//Initialise maze tiles
 			for (int i = 0; i < mazeWidth; ++i) //Basic tile engine
@@ -170,6 +185,11 @@ namespace GravityDuck
 			gems[0].setPosition(new Vector2(850.0f, 550.0f));
 			gems[1].setPosition(new Vector2(220.0f, 900.0f));
 			gems[2].setPosition(new Vector2(325.0f, 1250.0f));
+			
+			//Initialise and position Level Flag
+			levelFlag = new LevelFlag(scene);
+			
+			levelFlag.setPosition(new Vector2(820.0f, 1130.0f));
 		}
 		
 		public void LoadLevel(Scene scene, int levelNum)
@@ -271,11 +291,8 @@ namespace GravityDuck
 			treeBlock.Dispose();
 		}
 		
-		public bool HasCollidedWithPlayer(SpriteUV sprite) //Check if the a sprite has hit a part of the maze
+		public bool HasCollidedWithPlayer(Bounds2 player) //Check if the a sprite has hit a part of the maze
 		{
-			Bounds2 player = sprite.GetlContentLocalBounds();
-			sprite.GetContentWorldBounds(ref player ); //Get sprite bounds (player bounds)
-			
 			foreach(SpriteUV spri in sprites)
 			{
 				Bounds2 mazeTile = spri.GetlContentLocalBounds();
@@ -287,20 +304,18 @@ namespace GravityDuck
 				}
 			}
 			return false;
+	
 		}
 		
-		public bool HasHitSide(SpriteUV sprite, int gravity) //Checks if the player has hit the side of the maze and not the floor
+		public bool HasHitSide(Bounds2 player, int gravity) //Checks if the player has hit the side of the maze and not the floor
 		{
-			Bounds2 player = sprite.GetlContentLocalBounds();
-			sprite.GetContentWorldBounds(ref player ); //Get sprite bounds (player bounds)
-			
 			foreach(SpriteUV spri in sprites)
 			{
 				Bounds2 mazeTile = spri.GetlContentLocalBounds();
 				spri.GetContentWorldBounds(ref mazeTile); //Get all of the maze bounds
 				if (player.Overlaps(mazeTile)) //Return true if the player overlaps with the maze
 				{
-					if (checkSides(sprite, spri, gravity)) //Return true if the player has come into contact with a side
+					if (checkSides(player, spri, gravity)) //Return true if the player has come into contact with a side
 					{
 					   return true;
 					}
@@ -309,11 +324,8 @@ namespace GravityDuck
 			return false;
 		}
 		
-		public bool checkSides(SpriteUV sprite, SpriteUV sprite2, int gravity) //Compares 2 sprites to see is the left or right side has intersected
+		public bool checkSides(Bounds2 player, SpriteUV sprite2, int gravity) //ComparrightRotation = false;es 2 sprites to see is the left or right side has intersected
 		{
-			Bounds2 player = sprite.GetlContentLocalBounds();
-			sprite.GetContentWorldBounds(ref player ); //Get sprite bounds 
-			
 			Bounds2 mazeTile = sprite2.GetlContentLocalBounds();
 			sprite2.GetContentWorldBounds(ref mazeTile); 
 			if (gravity == 1) //Down
@@ -342,9 +354,10 @@ namespace GravityDuck
 			}
 			else if (gravity == 3) // Up
 			{
-				if (((player.Point10.X < mazeTile.Point00.X) || (player.Point00.X > mazeTile.Point10.X)))
+				//if (((player.Point10.X < mazeTile.Point00.X) || (player.Point00.X > mazeTile.Point10.X)))
+				if (((player.Point01.X < mazeTile.Point11.X) || (player.Point11.X > mazeTile.Point01.X)))
 				{ //If the left side of the player is past the right side of the tile and vica versa
-					if ((player.Point10.Y) < mazeTile.Point10.Y) //If the tile is above the player
+					if ((player.Point10.Y) > mazeTile.Point10.Y) //If the tile is above the player
 						return true;
 					else
 						return false;
@@ -354,7 +367,7 @@ namespace GravityDuck
 			}
 			else if (gravity == 4) // Left
 			{
-				if (((player.Point10.Y < mazeTile.Point10.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
+				if (((player.Point11.Y < mazeTile.Point10.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
 				{ //If the left side of the player is past the right side of the tile and vica versa
 					if ((player.Point11.X) < mazeTile.Point11.X) //If the tile is above the player
 						return true;	
@@ -368,5 +381,84 @@ namespace GravityDuck
 				return false;
 				
 			}
+		
+		//Check Collectable Collisions
+		public int CheckCollectableCollision(SpriteUV sprite, Scene scene)
+		{
+			foreach(Coin coin in coins)
+			{
+				bool collide = coin.HasCollidedWithPlayer(sprite);
+				
+				if (collide)
+				{
+					int scoreValue = coin.Collected(scene);
+					return scoreValue;
+				}
+			}
+			
+			foreach(Gem gem in gems)
+			{
+				bool collide = gem.HasCollidedWithPlayer(sprite);
+				
+				if (collide)
+				{
+					int scoreValue = gem.Collected(scene);
+					return scoreValue;
+				}
+			}
+			//If no collisions occur
+			return 0;
+		}
+		
+		//Check Obstacle Collisions
+		public bool CheckObstacleCollisions(SpriteUV sprite)
+		{
+			foreach(Spikes spike in spikes)
+			{
+				bool collide = spike.HasCollidedWithPlayer(sprite);
+				
+				if (collide)
+				{
+				   return true;
+				}
+			}
+			return false;
+		}
+		
+		//Check Level Flag Collisions
+		public bool CheckFlagCollision(SpriteUV sprite)
+		{
+			bool collide = levelFlag.HasCollidedWithPlayer(sprite);
+				
+			if (collide)
+			{
+				return true;
+			}
+			return false;
+		}
+		
+		//Returns Level Complete Boolean
+		public bool IsLevelComplete()
+		{
+			return levelFinished;
+		}
+		
+		//Set Level Complete Boolean
+		public void SetLevelFinished(bool newLevelFinished)
+		{
+			levelFinished = newLevelFinished;
+		}
+		
+		public Vector2 CheckWindTunnel(Player player)
+		{
+			Vector2 force = new Vector2(0.0f, 0.0f);
+			
+			for(int i = 0; i < windTunnelCount; i++)
+				if(windTunnels[0].CheckPlayerPos(player))
+					force = windTunnels[0].CalculateForce(player);
+			
+			return force;
 		}
 	}
+	
+}
