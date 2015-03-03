@@ -1,5 +1,22 @@
 Gravity Ninja
 Change Log:
+March 3rd:
+- Fixed the issue where the movement controls would invert
+
+February 18th: 
+- Add an additional camera mode which can be toggled between
+
+February 16th:
+- Add the score to the HUD
+- Add the timer to the HUD
+- Create the HUD and ensure it stays rotateded correctly
+
+February 15th:
+- Implement a timer and scoring system
+
+February 13th:
+- Simplify the collision detection method that's being used
+
 February 11th:
 - Test and optimise the game for the Vita
 - Redesign and recreate the collision engine

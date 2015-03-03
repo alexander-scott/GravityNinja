@@ -8,7 +8,7 @@ using Sce.PlayStation.HighLevel.GameEngine2D;
 using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 
 namespace GravityDuck
-{
+{ 
 	//Our Background class V1.0 by @AS
 	public class TitleScreen
 	{
