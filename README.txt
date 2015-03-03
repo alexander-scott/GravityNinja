@@ -1,6 +1,9 @@
 Gravity Ninja
 Change Log:
 March 3rd:
+- Added developer controls for use with the simulator (arrow keys)
+
+March 2nd:
 - Fixed the issue where the movement controls would invert
 
 February 18th: 

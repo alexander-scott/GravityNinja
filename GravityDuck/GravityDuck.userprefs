@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\AppMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\Level\Maze.cs">
     <Files>
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="460" Column="8" />
-      <File FileName="GravityDuck\Classes\Level\Maze.cs" Line="348" Column="90" />
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="337" Column="10" />
+      <File FileName="GravityDuck\Classes\Level\Maze.cs" Line="357" Column="5" />
       <File FileName="GravityDuck\Classes\Player.cs" Line="59" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>

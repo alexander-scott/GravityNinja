@@ -332,7 +332,7 @@ namespace GravityDuck
 				{
 					currGrav = 3;
 					movementVector = new Vector2(-motionData.Acceleration.X + keyboardVector.X, 0.0f);	
-					gravityVector = new Vector2(-FMath.Cos(cameraRotation) + motionData.Acceleration.X, -FMath.Sin(cameraRotation));
+					gravityVector = new Vector2(-FMath.Cos(cameraRotation) + motionData.Acceleration.X + keyboardVector.X, -FMath.Sin(cameraRotation));
 				}
 				else 
 				{
@@ -343,19 +343,19 @@ namespace GravityDuck
 						{
 							movementVector = new Vector2(0.0f, -motionData.Acceleration.X - keyboardVector.X);
 							currGrav = 2;
-							gravityVector = new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation) + motionData.Acceleration.X);
+							gravityVector = new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation) - motionData.Acceleration.X - keyboardVector.X);
 						}
 						else if (-FMath.Cos(cameraRotation) == -1f) //Left
 						{
 							movementVector = new Vector2(0.0f, motionData.Acceleration.X + keyboardVector.X);
 							currGrav = 4;
-							gravityVector = new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation) + motionData.Acceleration.X);
+							gravityVector = new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation) + motionData.Acceleration.X + keyboardVector.X);
 						}
 						else //Down
 						{
 							movementVector = new Vector2(motionData.Acceleration.X - keyboardVector.X, 0.0f);
 							currGrav = 1;
-							gravityVector = new Vector2(-FMath.Cos(cameraRotation) + motionData.Acceleration.X, -FMath.Sin(cameraRotation));
+							gravityVector = new Vector2(-FMath.Cos(cameraRotation) + motionData.Acceleration.X - keyboardVector.X, -FMath.Sin(cameraRotation));
 						}
 					//}		
 				}
