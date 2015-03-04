@@ -42,7 +42,7 @@ namespace GravityDuck
 			scene.AddChild(sprite); //Add our FABULOUS duck to the scene
 		}
 		
-		//Update player V2.0 @AS
+		//Update player V2.1 @AS
 		public void Update(Vector2 gravity, Vector2 rotate, Vector2 movement, bool invert, bool falling)
 		{	        
 			duckRotation = -(float)FMath.Atan2(rotate.X, rotate.Y);
