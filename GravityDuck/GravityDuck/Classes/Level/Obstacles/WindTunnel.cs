@@ -17,8 +17,6 @@ namespace GravityDuck
 		private const float windDistance = 400.0f;
 		private const float forceModifier = 5.0f; 
 		
-		SpriteUV areaOfWind;
-		
 		public WindTunnel(Scene scene, Direction direction) : base(scene)
 		{
 			windDirection = direction;
@@ -27,10 +25,6 @@ namespace GravityDuck
 
 			sprite          = new SpriteUV(textureInfo);
 			sprite.Quad.S   = textureInfo.TextureSizef;
-			
-			areaOfWind   = new SpriteUV();
-			areaOfWind.Quad.S = new Vector2(200.0f, textureInfo.TextureSizef.Y);
-			areaOfWind.Position = new Vector2(sprite.Position.X - windDistance, sprite.Position.Y);
 			
 			if(windDirection == Direction.LEFT)
 			{
@@ -46,9 +40,6 @@ namespace GravityDuck
 						sprite.Rotate(-FMath.PI/2);
 					}
 						
-			
-			
-			
 			
 			scene.AddChild(sprite);
 		}

@@ -31,6 +31,9 @@ namespace GravityDuck
 		private int windTunnelCount;
 		private WindTunnel[] windTunnels;
 		
+		private int blackHoleCount;
+		private BlackHole[] blackHoles;
+		
 		private LevelFlag levelFlag;
 		private bool levelFinished;
 		
@@ -49,6 +52,7 @@ namespace GravityDuck
 			gemCount = 3;
 			spikeCount = 5;
 			windTunnelCount = 1;
+			//blackHoleCount = 1;
 			
 			//Load in the textures here
 			//Ground Block Textures
@@ -95,6 +99,14 @@ namespace GravityDuck
 			
 			windTunnels[0] = new WindTunnel(scene, WindTunnel.Direction.LEFT);
 			windTunnels[0].setPosition(new Vector2(900.0f, 340.0f));
+			
+			////	Initialise and position black holes		RMDS
+			//blackHoles = new BlackHole[blackHoleCount];
+			//
+			//blackHoles[0] = new BlackHole(scene);
+			//blackHoles[0].setPosition(new Vector2(800.0f, 340.0f));
+			
+			
 			
 			//Initialise maze tiles
 			for (int i = 0; i < mazeWidth; ++i) //Basic tile engine
@@ -459,6 +471,16 @@ namespace GravityDuck
 			
 			return force;
 		}
-	}
-	
+		
+		//public Vector2 CheckBlackHole(Player player)
+		//{
+		//	Vector2 force = new Vector2(0.0f, 0.0f);
+		//	
+		//	for(int i = 0; i < blackHoleCount; i++)
+		//		if(blackHoles[0].CheckPlayerPos(player))
+		//			force = blackHoles[0].CalculateForce(player);
+		//	
+		//	return force;
+		//}
+	}	
 }

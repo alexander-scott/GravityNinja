@@ -40,3 +40,5 @@ sounds/Effects/screenFlip.wav
 sounds/Effects/spikesDeath.wav
 sounds/Music/levelMusic.mp3
 textures/Level/levelFlag.png
+textures/Level/windFan.png
+textures/Level/blackHole.png

@@ -53,6 +53,7 @@
     <Compile Include="Classes\AudioManager.cs" />
     <Compile Include="Classes\Level\Collectables\LevelFlag.cs" />
     <Compile Include="Classes\Level\Obstacles\WindTunnel.cs" />
+    <Compile Include="Classes\Level\Obstacles\BlackHole.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -109,5 +110,6 @@
     <Content Include="sounds\Music\levelMusic.mp3" />
     <Content Include="textures\Level\levelFlag.png" />
     <Content Include="textures\Level\windFan.png" />
+    <Content Include="textures\Level\blackHole.png" />
   </ItemGroup>
 </Project>
