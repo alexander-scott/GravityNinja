@@ -2,11 +2,11 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\Level\Maze.cs">
     <Files>
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="570" Column="58" />
-      <File FileName="GravityDuck\Classes\Level\Maze.cs" Line="69" Column="7" />
-      <File FileName="GravityDuck\Classes\Player.cs" Line="47" Column="13" />
-      <File FileName="GravityDuck\Classes\Level\Obstacles\WindTunnel.cs" Line="108" Column="18" />
-      <File FileName="GravityDuck\Classes\Level\Obstacles\BlackHole.cs" Line="21" Column="47" />
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="16" Column="3" />
+      <File FileName="GravityDuck\Classes\Level\Maze.cs" Line="105" Column="52" />
+      <File FileName="GravityDuck\Classes\Player.cs" Line="82" Column="5" />
+      <File FileName="GravityDuck\Classes\Level\Obstacles\WindTunnel.cs" Line="30" Column="1" />
+      <File FileName="GravityDuck\Classes\Level\Obstacles\BlackHole.cs" Line="71" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -559,7 +559,7 @@ namespace GravityDuck
 				AudioManager.PlaySound("Level Finished", false, 1.0f, 1.0f);
 			}
 			
-			additionalForces = maze.CheckWindTunnel(player);
+			additionalForces = maze.CheckBlackHole(player);
 		}
 		
 		public static void UI()

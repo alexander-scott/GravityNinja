@@ -83,6 +83,8 @@ namespace GravityDuck
 			//Move the player
 			sprite.Position = new Vector2(sprite.Position.X + ((tempDir.X) * gravVelocity) + additionalForces.X,
 			                              sprite.Position.Y + ((tempDir.Y) * gravVelocity) + additionalForces.Y);	
+			
+			Console.WriteLine(sprite.Position);
 		}                  
 		
 		public void Bounce(float side)
