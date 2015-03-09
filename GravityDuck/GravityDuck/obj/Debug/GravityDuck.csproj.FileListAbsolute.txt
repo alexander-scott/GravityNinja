@@ -1207,3 +1207,5 @@ E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\M
 E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\levelFlag.png
 E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\windFan.png
 E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\blackHole.png
+C:\Users\mizukami\Desktop\TechGames\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\laserGate.png
+C:\Users\mizukami\Desktop\TechGames\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\laserGate.png

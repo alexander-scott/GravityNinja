@@ -66,7 +66,8 @@ namespace GravityDuck
 		
 		public static Vector2 additionalForces = new Vector2(0.0f, 0.0f);
 		
-				
+		public static int debugCount = 0;		
+		
 		public static void Main (string[] args)
 		{
 			Initialize();
@@ -255,6 +256,7 @@ namespace GravityDuck
 						sideRotation = false;
 						rightRotation = false;
 						falling = true;
+						debugCount++;
 					}
 					
 					if((oldTouchPos.X - newTouchPos.X) > 0.20f)	//Swipe Left @AS @SM			
@@ -266,6 +268,7 @@ namespace GravityDuck
 						sideRotation = true;
 						rightRotation = false;
 						falling = true;
+						debugCount++;
 					}
 					if((oldTouchPos.X - newTouchPos.X) < -0.20f) //Swipe Right @AS @SM
 					{
@@ -276,6 +279,7 @@ namespace GravityDuck
 						sideRotation = true;
 						rightRotation = true;
 						falling = true;
+						debugCount++;
 					}
 					//falling = true;
 					//CalcCamRestrictions();
@@ -324,6 +328,7 @@ namespace GravityDuck
 				
 				playerDirection = -gravityVector;
 				Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- PlayerDir: " + playerDirection);
+				Console.WriteLine("Number of swipes : " + debugCount);
 			}
 				
 			if (rotating) //If we're rotating the camera
@@ -549,6 +554,15 @@ namespace GravityDuck
 				player.Dead();
 			}
 			
+			// Check Laser Gate collision		RMDS
+			collide = maze.CheckLaserGates(player);
+				
+			if(collide && player.IsAlive())
+			{
+				AudioManager.PlaySound("Spikes Death", false, 1.0f, 1.0f);
+				player.Dead();
+			}
+			
 			collide = maze.CheckFlagCollision(player.Sprite);
 			
 			if(collide && maze.IsLevelComplete() == false)
@@ -558,7 +572,7 @@ namespace GravityDuck
 				maze.SetLevelFinished(true);
 				AudioManager.PlaySound("Level Finished", false, 1.0f, 1.0f);
 			}
-			
+		
 			additionalForces = maze.CheckBlackHole(player);
 		}
 		

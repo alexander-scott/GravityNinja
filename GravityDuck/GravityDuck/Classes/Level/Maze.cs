@@ -34,6 +34,9 @@ namespace GravityDuck
 		private int blackHoleCount;
 		private BlackHole[] blackHoles;
 		
+		private int laserGateCount;
+		private LaserGate[] laserGates;
+		
 		private LevelFlag levelFlag;
 		private bool levelFinished;
 		
@@ -52,7 +55,8 @@ namespace GravityDuck
 			gemCount = 3;
 			spikeCount = 5;
 			windTunnelCount = 1;
-			 blackHoleCount = 1;
+			blackHoleCount = 1;
+			laserGateCount = 1;
 			
 			//Load in the textures here
 			//Ground Block Textures
@@ -92,17 +96,24 @@ namespace GravityDuck
 			spikes[3].getSprite().Rotate(-1.5707963268f);
 			spikes[4].setPosition(new Vector2(270.0f, 1050.0f));
 			
-			//// Initialise and position wind tunnels
+			//// Initialise and position wind tunnels	RMDS
 			//windTunnels = new WindTunnel[windTunnelCount];
 			//
 			//windTunnels[0] = new WindTunnel(scene, WindTunnel.Direction.LEFT);
 			//windTunnels[0].setPosition(new Vector2(800.0f, 340.0f));
 			
-			//	Initialise and position black holes		RMDS
-			blackHoles = new BlackHole[blackHoleCount];
+			////	Initialise and position black holes		RMDS
+			//blackHoles = new BlackHole[blackHoleCount];
+			//
+			//blackHoles[0] = new BlackHole(scene, BlackHole.Direction.UP);
+			//blackHoles[0].setPosition(new Vector2(800.0f, 280.0f));
 			
-			blackHoles[0] = new BlackHole(scene, BlackHole.Direction.UP);
-			blackHoles[0].setPosition(new Vector2(800.0f, 280.0f));
+			//	Initialise and position laser gates		RMDS
+			laserGates = new LaserGate[laserGateCount];
+			
+			laserGates[0] = new LaserGate(scene, LaserGate.Direction.UP);
+			laserGates[0].setPosition(new Vector2(300.0f, 270.0f));
+			
 					
 			
 			//Initialise maze tiles
@@ -458,26 +469,47 @@ namespace GravityDuck
 			levelFinished = newLevelFinished;
 		}
 		
-		//public Vector2 CheckWindTunnel(Player player)
-		//{
-		//	Vector2 force = new Vector2(0.0f, 0.0f);
-		//	
-		//	for(int i = 0; i < windTunnelCount; i++)
-		//		if(windTunnels[0].CheckPlayerPos(player))
-		//			force = windTunnels[0].CalculateForce(player);
-		//	
-		//	return force;
-		//}
+		// Check collision between player and the wind force exerted by the Wind Tunnels	RMDS
+		public Vector2 CheckWindTunnel(Player player)
+		{
+			Vector2 force = new Vector2(0.0f, 0.0f);
+			
+			if(windTunnels != null)
+			{
+				for(int i = 0; i < windTunnelCount; i++)
+					if(windTunnels[0].CheckPlayerPos(player))
+						force = windTunnels[0].CalculateForce(player);		
+			}
+
+			return force;
+		}
 		
+		// Check collision between player and Black Hole gravitational pulls	RMDS
 		public Vector2 CheckBlackHole(Player player)
 		{
 			Vector2 force = new Vector2(0.0f, 0.0f);
 			
-			for(int i = 0; i < blackHoleCount; i++)
-				if(blackHoles[0].CheckPlayerPos(player))
-					force = blackHoles[0].CalculateForce(player);
+			if(blackHoles != null)
+			{
+				for(int i = 0; i < blackHoleCount; i++)
+					if(blackHoles[0].CheckPlayerPos(player))
+						force = blackHoles[0].CalculateForce(player);
+			}
 			
 			return force;
+		}
+		
+		// Check collision between player and Laser Gates	RMDS
+		public bool CheckLaserGates(Player player)
+		{
+			if(laserGates != null)
+			{
+				for(int i = 0; i < laserGateCount; i++)
+					if(laserGates[0].CheckPlayerPos(player))
+						return true;
+			}
+			
+			return false;
 		}
 	}	
 }

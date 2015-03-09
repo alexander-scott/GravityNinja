@@ -1,0 +1,3 @@
+If the camera rotation has a magntitude of 60, the camera will no longer rotate at a 90 degree angle.
+
+When swiped >115 times, the audio manager crashes.
