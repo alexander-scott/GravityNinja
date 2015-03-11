@@ -36,6 +36,9 @@ namespace GravityDuck
 		
 		private int laserGateCount;
 		private LaserGate[] laserGates;
+				
+		private int breakableWallCount;
+		private BreakableWall[] breakableWalls;
 		
 		private LevelFlag levelFlag;
 		private bool levelFinished;
@@ -57,6 +60,7 @@ namespace GravityDuck
 			windTunnelCount = 1;
 			blackHoleCount = 1;
 			laserGateCount = 1;
+			breakableWallCount = 1;
 			
 			//Load in the textures here
 			//Ground Block Textures
@@ -108,11 +112,17 @@ namespace GravityDuck
 			//blackHoles[0] = new BlackHole(scene, BlackHole.Direction.UP);
 			//blackHoles[0].setPosition(new Vector2(800.0f, 280.0f));
 			
-			//	Initialise and position laser gates		RMDS
-			laserGates = new LaserGate[laserGateCount];
+			////	Initialise and position laser gates		RMDS
+			//laserGates = new LaserGate[laserGateCount];
+			//
+			//laserGates[0] = new LaserGate(scene, LaserGate.Direction.UP);
+			//laserGates[0].setPosition(new Vector2(300.0f, 270.0f));
 			
-			laserGates[0] = new LaserGate(scene, LaserGate.Direction.UP);
-			laserGates[0].setPosition(new Vector2(300.0f, 270.0f));
+			//	Initialise and position breakable walls		RMDS
+			breakableWalls = new BreakableWall[breakableWallCount];
+			
+			breakableWalls[0] = new BreakableWall(scene, BreakableWall.Direction.LEFT, 60.0f);
+			breakableWalls[0].setPosition(new Vector2(800.0f, 500.0f));
 			
 					
 			
@@ -511,5 +521,17 @@ namespace GravityDuck
 			
 			return false;
 		}
+		
+		public bool CheckBreakableWalls(Player player)
+		{
+			if(breakableWalls != null)
+			{
+				for(int i = 0; i < breakableWallCount; i++)
+					if(breakableWalls[i].HasCollidedWithPlayer(player.Sprite))	
+						return breakableWalls[i].CheckIfBreak(player.GetMomentum());
+			}
+			
+			return false;
+		}		
 	}	
 }

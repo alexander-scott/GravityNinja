@@ -1209,3 +1209,5 @@ E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures
 E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\blackHole.png
 C:\Users\mizukami\Desktop\TechGames\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\laserGate.png
 C:\Users\mizukami\Desktop\TechGames\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\laserGate.png
+C:\Users\mizukami\Desktop\TechGames\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\breakableWall.png
+C:\Users\mizukami\Desktop\TechGames\DangerDucks\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\breakableWall.png

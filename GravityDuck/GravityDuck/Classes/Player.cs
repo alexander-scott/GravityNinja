@@ -26,6 +26,9 @@ namespace GravityDuck
 		private static float     	duckRotation = 0.0f;
 		private static float		gravSpeed = 0.4f, maxGrav = 6.0f, gravVelocity = 0.5f;
 		
+		private static float 		momentum = 0.0f;
+		private static float 		mass = 10.0f;
+		
 		public Player (Scene scene)
 		{	
 			textureInfo = new TextureInfo("/Application/textures/ninja2.png"); //Load in our lovely duck texture
@@ -79,12 +82,16 @@ namespace GravityDuck
 				}
 			
 			}
-							
-			//Move the player
-			sprite.Position = new Vector2(sprite.Position.X + ((tempDir.X) * gravVelocity) + additionalForces.X,
-			                              sprite.Position.Y + ((tempDir.Y) * gravVelocity) + additionalForces.Y);	
 			
-			Console.WriteLine(sprite.Position);
+			Vector2 velocityChange = new Vector2((tempDir.X* gravVelocity) + additionalForces.X,
+			                                     (tempDir.Y * gravVelocity) + additionalForces.Y);
+			
+			
+			//Move the player
+			sprite.Position = new Vector2(sprite.Position.X + velocityChange.X,
+			                              sprite.Position.Y + velocityChange.Y);	
+			
+			momentum = 	velocityChange.Length() * mass;
 		}                  
 		
 		public void Bounce(float side)
@@ -138,6 +145,8 @@ namespace GravityDuck
 		public float GetVelocity() { return gravVelocity; }
 		
 		public Vector2 GetPos()	{ return sprite.Position; }
+		
+		public float GetMomentum() { return momentum; }
 		
 		public bool IsAlive(){ return alive; }
 		

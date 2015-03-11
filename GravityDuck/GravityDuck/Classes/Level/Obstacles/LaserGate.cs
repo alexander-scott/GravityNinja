@@ -15,10 +15,7 @@ namespace GravityDuck
 		private Direction laserDirection;
 		
 		private bool laserOn = true;
-		
-		//private const float laserDistance = 200.0f;
-		//private const float forceModifier = 3.0f; 
-		
+			
 		public LaserGate(Scene scene, Direction direction) : base(scene)
 		{
 			textureInfo = new TextureInfo("/Application/textures/Level/laserGate.png");

@@ -55,6 +55,7 @@
     <Compile Include="Classes\Level\Obstacles\WindTunnel.cs" />
     <Compile Include="Classes\Level\Obstacles\BlackHole.cs" />
     <Compile Include="Classes\Level\Obstacles\LaserGate.cs" />
+    <Compile Include="Classes\Level\Obstacles\BreakableWall.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -113,5 +114,6 @@
     <Content Include="textures\Level\windFan.png" />
     <Content Include="textures\Level\blackHole.png" />
     <Content Include="textures\Level\laserGate.png" />
+    <Content Include="textures\Level\breakableWall.png" />
   </ItemGroup>
 </Project>

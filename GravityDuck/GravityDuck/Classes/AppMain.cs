@@ -573,6 +573,43 @@ namespace GravityDuck
 				AudioManager.PlaySound("Level Finished", false, 1.0f, 1.0f);
 			}
 		
+			
+			// Check Breakable Wall collision
+			
+			collide = maze.CheckBreakableWalls(player);
+			
+			if(collide) //If the box has collided with a tile
+			{	
+				if (maze.HasHitSide(playerBox, currGrav)) //Check if it's a side tile
+				{
+					invert = true; //Set invert to true so the Y axis gets inverted
+					player.SetPos(player.GetPos() - movementVector*10);
+				}
+				else
+				{
+					if (currGrav == 3 || currGrav == 1)
+						invert = false; //Set invert to false so the X axis gets inverted
+					else
+						invert = true;
+				}
+							
+				//if (player.GetVelocity() > -6.1f && player.GetVelocity() < 6.1f)
+				//{
+					if (player.GetVelocity() > -2.0f && player.GetVelocity() < 2.0f)
+					{
+						falling = false; //If he's moving too slowly stop him falling
+					}
+					else
+					{
+						player.SetVelocity(-player.GetVelocity()); //Invert the velocity so the player rebounds
+					}
+					
+				//}
+			}
+			else
+				falling = true; //If no intersection then we are falling
+			
+			
 			additionalForces = maze.CheckBlackHole(player);
 		}
 		
