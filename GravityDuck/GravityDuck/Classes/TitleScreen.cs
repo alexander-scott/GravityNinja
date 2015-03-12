@@ -15,6 +15,8 @@ namespace GravityDuck
 		private TextureInfo titleTexture; //The background texture
 		private SpriteUV sprite; //The background sprite
 		
+		private TextureInfo loadingTexture;
+		
 		private TextureInfo playTexture; //The background texture
 		private TextureInfo playSelectTexture;
 		private SpriteUV playSprite; //The background sprite
@@ -44,6 +46,8 @@ namespace GravityDuck
 			sprite 			= new SpriteUV(titleTexture);
 			sprite.Quad.S 	= titleTexture.TextureSizef;
 			sprite.Position = new Vector2(0.0f, 0.0f);
+			
+			loadingTexture 	= new TextureInfo("/Application/textures/Level1Load.png");
 			
 			playTexture 		= new TextureInfo("/Application/textures/play.png");
 			playSelectTexture 	= new TextureInfo("/Application/textures/playSelected.png");
@@ -87,7 +91,7 @@ namespace GravityDuck
 			var touches = Touch.GetData(0);	
 			
 			var touchPos = Input2.Touch00.Pos;
-			
+
 			Bounds2 touchBox = new Bounds2();
 		
 			touchBox.Min.X = (touchPos.X * (Director.Instance.GL.Context.GetViewport().Width / 2))
@@ -102,7 +106,7 @@ namespace GravityDuck
 			if(touchBox.Overlaps(playBox) && touches.Count != 0)
 			{
 				play = true;
-				RemoveAll();
+				LoadingLevel();
 			}
 			
 			if (Input2.GamePad0.Cross.Release && playSprite.TextureInfo == playSelectTexture)
@@ -147,9 +151,17 @@ namespace GravityDuck
 			return play;
 		}
 		
-		private void RemoveAll()
+		public void RemoveAll()
 		{
 			scene1.RemoveChild(sprite, true);
+			scene1.RemoveChild(playSprite, true);
+			scene1.RemoveChild(controlSprite, true);
+			scene1.RemoveChild(hiscoreSprite, true);
+		}
+		
+		private void LoadingLevel()
+		{
+			sprite.TextureInfo = loadingTexture;
 			scene1.RemoveChild(playSprite, true);
 			scene1.RemoveChild(controlSprite, true);
 			scene1.RemoveChild(hiscoreSprite, true);

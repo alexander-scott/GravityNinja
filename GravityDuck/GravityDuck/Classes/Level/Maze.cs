@@ -334,7 +334,7 @@ namespace GravityDuck
 			{
 				if (((player.Point10.Y < mazeTile.Point11.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
 				{ //If the left side of the player is past the right side of the tile and vica versa
-					if ((player.Point11.X) > mazeTile.Point11.X) //If the tile is above the player
+					if ((player.Point10.X) > mazeTile.Point11.X) //If the tile is above the player
 						return true;	
 					else
 						return false;

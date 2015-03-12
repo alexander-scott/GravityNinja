@@ -52,6 +52,7 @@
     <Compile Include="Classes\LevelComplete.cs" />
     <Compile Include="Classes\AudioManager.cs" />
     <Compile Include="Classes\Level\Collectables\LevelFlag.cs" />
+    <Compile Include="Classes\LoadingScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -107,5 +108,7 @@
     <Content Include="sounds\Effects\spikesDeath.wav" />
     <Content Include="sounds\Music\levelMusic.mp3" />
     <Content Include="textures\Level\levelFlag.png" />
+    <Content Include="textures\Level1Load.png" />
+    <Content Include="sounds\Effects\click.wav" />
   </ItemGroup>
 </Project>

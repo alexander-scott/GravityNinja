@@ -1,5 +1,22 @@
 Gravity Ninja
 Change Log:
+March 12th:
+- Ensured the user could only move off the level loading screen once all assets are loaded
+- Made the loading message on the loading screen change to ready once loaded
+
+March 11th:
+- Added a label saying 'Loading...' and a busy symbol respresnting the game loading
+- Change the game initalisation so that the bulk of it is done during the loading screen
+
+March 10th:
+- Implemeted a loading screen which currently displays a introduction/narrative to the game
+
+March 6th:
+- Added a sound for menu clicks
+
+March 4th:
+- Tweaked how the HUD was being created to improve FPS on the Vita
+
 March 3rd:
 - Added developer controls for use with the simulator (arrow keys)
 

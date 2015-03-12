@@ -29,6 +29,7 @@ namespace GravityDuck
 		private static Player player;
 		private static TitleScreen title;
 		private static LevelComplete levelComplete;
+		private static LoadingScreen loadingScreen;
 		
 		//------ HUD ------\\
 		private static Timer timer;
@@ -42,10 +43,10 @@ namespace GravityDuck
 		private static Vector2 playerDirection; //Rotation of the player sprite
 		private static Vector2 movementVector = new Vector2(0.0f, 0.0f); //Direction player is moving when not falling
 		private static Vector2 keyboardVector = new Vector2(0.0f, 0.0f); //Keyboard input
-		private static bool invert = false;
-		private static bool falling = true;
+		private static bool invert = false; //To switch between the Y and X axis movement
+		private static bool falling = true; //If the player isn't touching a tile then he's falling
 		private static Bounds2 playerBox; //Non-rotatable bounds that encompass the player
-		public static int currGrav = 1;
+		public static int currGrav = 1; //ID for the 4 types of camera rotation
 		
 		//------ Touch Data ------\\
 		private static Vector2 oldTouchPos = new Vector2( 0.0f, 0.0f ); // Position of first touch on screen
@@ -66,6 +67,9 @@ namespace GravityDuck
 		//------ Menu Data ------\\
 		private static bool play = false;
 		private static bool pause = false;
+		private static bool loaded = false;
+		private static bool startLoading = false;
+		private static int timeStamp1, timeStamp2;
 		
 		public static void Main (string[] args)
 		{
@@ -108,6 +112,7 @@ namespace GravityDuck
 			AudioManager.AddSound("/Application/sounds/Effects/spikesDeath.wav", "Spikes Death");
 			AudioManager.AddSound("/Application/sounds/Effects/coinGrab.wav", "Coin Grab");
 			AudioManager.AddSound("/Application/sounds/Effects/levelFinish.wav", "Level Finished");
+			AudioManager.AddSound("/Application/sounds/Effects/click.wav", "Click");
 			
 			AudioManager.PlayMusic("Level1", true, 1.0f, 1.0f);
 			
@@ -115,7 +120,13 @@ namespace GravityDuck
 			gameScene = new Sce.PlayStation.HighLevel.GameEngine2D.Scene();
 			gameScene.Camera.SetViewFromViewport();
 			
-			title = new TitleScreen(gameScene);
+			
+			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
+			
+			title = new TitleScreen(gameScene);	
+			
+			loadingScreen = new LoadingScreen(gameScene, uiScene);
+			loadingScreen.SetVisible(false);
 			
 			//Begin Timer
 			timer = new Timer();
@@ -126,6 +137,7 @@ namespace GravityDuck
 		
 		public static void InitializeGame()
 		{
+			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
 			//Background
 			background = new Background(gameScene);
 			
@@ -134,7 +146,7 @@ namespace GravityDuck
 			
 			//Maze
 			maze = new Maze(gameScene);
-				
+
 			TextureInfo texture = new TextureInfo("/Application/textures/arrow.png");
 			gravityArrow 			= new SpriteUV();
 			gravityArrow 			= new SpriteUV(texture);
@@ -149,34 +161,47 @@ namespace GravityDuck
 			levelComplete = new LevelComplete(gameScene);
 			playerBox = player.getBounds();
 			
-			//Set the HUD
-			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
-			
 			scoreLabel = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Score Label
 			scoreLabel.X = 34.0f;
 			scoreLabel.Y = 33.0f;
 			scoreLabel.Text = "Score";
+			scoreLabel.Visible = false;
 			uiScene.RootWidget.AddChildLast(scoreLabel);
 			
 			levelScore = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Score 
 			levelScore.X = 118.0f;
 			levelScore.Y = 33.0f;
 			levelScore.Text = "" + score;
+			levelScore.Visible = false;
 			uiScene.RootWidget.AddChildLast(levelScore);
 			
 			timerLabel = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Timer Label
 			timerLabel.X = 743.0f;
 			timerLabel.Y = 33.0f;
 			timerLabel.Text = "Time";
+			timerLabel.Visible = false;
 			uiScene.RootWidget.AddChildLast(timerLabel);
 			
 			levelTimer = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Timer
 			levelTimer.X = 819.0f;
 			levelTimer.Y = 33.0f;
+			levelTimer.Visible = false;
 			levelTimer.Text = "" + currentTime;
+			
 			
 			uiScene.RootWidget.AddChildLast(levelTimer);
 			UISystem.SetScene(uiScene);
+		}
+		
+		public static void StartLevel()
+		{
+			loadingScreen.SetVisible(false);
+			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); 
+			scoreLabel.Visible = true;
+			timerLabel.Visible = true;
+			levelTimer.Visible = true;
+			levelScore.Visible = true;
+			timer.Reset();
 		}
 		
 		public static void Update()
@@ -184,17 +209,40 @@ namespace GravityDuck
 			CheckInput();
 			if (!play)
 			{
-				title.Update();
-				if (title.CheckPlay())
+				if (!loaded)
+					title.Update();
+				else
+					loadingScreen.Update((int)timer.Milliseconds());
+				if (title.CheckPlay() && !loaded && !startLoading)
 				{
-					play = true;
-					InitializeGame();
+					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+					loadingScreen.SetVisible(true);
+					startLoading = true;
+					timeStamp1 = (int)timer.Milliseconds() + 1;
 				}
-			} else{
+				if (startLoading && timer.Milliseconds() > timeStamp1)
+				{
+					InitializeGame();
+					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 3000);
+					loaded = true;
+					startLoading = false;
+					title.RemoveAll();
+				}
+				if (loaded && loadingScreen.CheckPlay())
+				{
+					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+					StartLevel();
+					play = true;
+				}
+			} 
+			else
+			{
+				
 				if (!pause)
 				{
 					time = (int)timer.Seconds();
 					player.Update(gravityVector, playerDirection, movementVector, invert, falling);
+					
 					UpdateCamera();
 					CheckCollisions();
 					currentTime = time;
@@ -212,10 +260,12 @@ namespace GravityDuck
 			
 			//Determine whether the player tapped the screen
 			List<TouchData> touches = Touch.GetData(0);			
+			UISystem.Update(touches);
 			
 			if (Input2.GamePad0.Triangle.Down) //Reset player
 			{
 				player.SetPos(new Vector2(190.0f, 330.0f));
+				player.SetVelocity(0.5f);
 				cameraRotation = FMath.PI/2.0f;
 			}
 			
@@ -223,6 +273,12 @@ namespace GravityDuck
 			{
 				gravityArrow.Visible = true;
 			}
+			
+			if (Input2.GamePad0.Circle.Down) //Include gravity arrow
+			{
+				Director.Terminate();
+			}
+			
 			if (Input2.GamePad0.Square.Down) //Change camera zoom
 			{
 				if (play)
@@ -385,9 +441,9 @@ namespace GravityDuck
 				}
 				
 				playerDirection = -gravityVector; //Rotation is the invert of the gravity vector
-				for( int i = 0; i < 25; i++ ) //Output details to console
-			    	Console.WriteLine("");
-				Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- PlayerDir: " + playerDirection);
+				//for( int i = 0; i < 25; i++ ) //Output details to console
+			    // 	Console.WriteLine("");
+				//Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- PlayerDir: " + playerDirection);
 			}
 		}
 
@@ -437,68 +493,11 @@ namespace GravityDuck
 			else
 			{
 				//zoom = 0.5f;
-				gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); //Player not near an edge				
+				//gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); //Player not near an edge				
+				gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); 
 			}
 		}
-		
-		public static void CalcCamRestrictions()
-		{	
-			if(FMath.Cos(cameraRotation) >= 0)
-				if(FMath.Sin(cameraRotation) > 0.45f)
-				{
-					// Lower quadrant.	RMDS
-				
-					upperCameraRange = 2.356194f;
-					lowerCameraRange = 0.785398f;	
-				}
-				else if(FMath.Sin(cameraRotation) > -0.45f)
-					{
-						// Left quadrant.	RMDS
-		
-						// Determined later within CheckInput(), so these values are placed
-						// to cause no events and to be later changed.
-					
-						if(cameraRotation < 5.497786f)
-						{
-							upperCameraRange = 0.785398f;
-							lowerCameraRange = -0.1f;
-						}
-						else
-						{
-							upperCameraRange = 7.0f;
-							lowerCameraRange = 5.497786f;
-						}
-					}
-					else
-					{
-						// Upper quadrant.	RMDS
-				
-						upperCameraRange = 5.497786f;
-						lowerCameraRange = 3.926990f;
-					}
-			else if(FMath.Sin(cameraRotation) > 0.45f)
-				{
-					// Lower quadrant.	RMDS
-				
-					upperCameraRange = 2.356194f;
-					lowerCameraRange = 0.785398f;
-				}
-				else if(FMath.Sin(cameraRotation) > -0.45f)
-					{
-						// Right quadrant.	RMDS
-				
-						upperCameraRange = 3.926990f;
-						lowerCameraRange = 2.356194f;	
-					}
-					else
-					{
-						// Upper quadrant.	RMDS
-				
-						upperCameraRange = 5.497786f;
-						lowerCameraRange = 3.926990f;
-					}
-		}
-		
+			
 		public static void CheckCollisions() //V2.1 @AS @AW
 		{	
 			playerBox.Min.X = player.GetPos().X - 25; //Non-rotatable bounding box around the player
@@ -521,16 +520,16 @@ namespace GravityDuck
 						invert = true;
 				}
 
-					if (player.GetVelocity() > -2.0f && player.GetVelocity() < 2.0f)
-					{
-						falling = false; //If he's moving too slowly stop him bounces
-						if (player.GetVelocity() < 0)
-							player.SetVelocity(-player.GetVelocity()); 
-					}
-					else
-					{
-						player.SetVelocity(-player.GetVelocity()); //Invert the velocity so the player bounces
-					}
+				if (player.GetVelocity() > -2.0f && player.GetVelocity() < 2.0f)
+				{
+					falling = false; //If he's moving too slowly stop him bouncing
+					if (player.GetVelocity() < 0)
+						player.SetVelocity(-player.GetVelocity()); 
+				}
+				else
+				{
+					player.SetVelocity(-player.GetVelocity()); //Invert the velocity so the player bounces
+				}
 	
 			}
 			else
