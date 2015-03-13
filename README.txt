@@ -3,6 +3,8 @@ Change Log:
 March 12th:
 - Ensured the user could only move off the level loading screen once all assets are loaded
 - Made the loading message on the loading screen change to ready once loaded
+- Added an options screen to the main menu
+- Added the ability to reset the level once dead
 
 March 11th:
 - Added a label saying 'Loading...' and a busy symbol respresnting the game loading
@@ -11,8 +13,19 @@ March 11th:
 March 10th:
 - Implemeted a loading screen which currently displays a introduction/narrative to the game
 
+March 8th:
+- Implement the ability to load levels via XML
+
+March 7th:
+- Add a new obstacle: Laser gate
+- Add a new obstacle: Breakable walls
+
 March 6th:
+- Add a new obstacle:  Black hole
 - Added a sound for menu clicks
+
+March 5th:
+- Add a new obstacle: Wind Tunnel
 
 March 4th:
 - Tweaked how the HUD was being created to improve FPS on the Vita

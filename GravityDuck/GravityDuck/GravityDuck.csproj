@@ -53,6 +53,12 @@
     <Compile Include="Classes\AudioManager.cs" />
     <Compile Include="Classes\Level\Collectables\LevelFlag.cs" />
     <Compile Include="Classes\LoadingScreen.cs" />
+    <Compile Include="Classes\GameOverScreen.cs" />
+    <Compile Include="Classes\OptionsScreen.cs" />
+    <Compile Include="Classes\Level\Obstacles\BlackHole.cs" />
+    <Compile Include="Classes\Level\Obstacles\BreakableWall.cs" />
+    <Compile Include="Classes\Level\Obstacles\LaserGate.cs" />
+    <Compile Include="Classes\Level\Obstacles\WindTunnel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -110,5 +116,12 @@
     <Content Include="textures\Level\levelFlag.png" />
     <Content Include="textures\Level1Load.png" />
     <Content Include="sounds\Effects\click.wav" />
+    <Content Include="textures\gameOver.png" />
+    <Content Include="textures\restartButton.png" />
+    <Content Include="textures\options.png" />
+    <Content Include="textures\Level\blackHole.png" />
+    <Content Include="textures\Level\breakableWall.png" />
+    <Content Include="textures\Level\laserGate.png" />
+    <Content Include="textures\Level\windFan.png" />
   </ItemGroup>
 </Project>

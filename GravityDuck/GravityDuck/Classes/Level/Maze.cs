@@ -8,7 +8,7 @@ using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 
 namespace GravityDuck
 {
-	//Our Maze class V2.1 by @AW && @AS
+	//Our Maze class V2 by @AW && @AS
 	public class Maze
 	{
 		private TextureInfo groundBlock1;
@@ -28,6 +28,19 @@ namespace GravityDuck
 		private int spikeCount;
 		private Spikes[] spikes;
 		
+		private int windTunnelCount;
+		private WindTunnel[] windTunnels;
+		
+		private int blackHoleCount;
+		private BlackHole[] blackHoles;
+		
+		private int laserGateCount;
+		private LaserGate[] laserGates;
+				
+		private int breakableWallCount;
+		private BreakableWall[] breakableWalls;
+		
+		
 		private LevelFlag levelFlag;
 		private bool levelFinished;
 		
@@ -45,6 +58,10 @@ namespace GravityDuck
 			coinCount = 20; 
 			gemCount = 3;
 			spikeCount = 5;
+			windTunnelCount = 0;
+			blackHoleCount = 0;
+			laserGateCount = 0;
+			breakableWallCount = 0;
 			
 			//Load in the textures here
 			//Ground Block Textures
@@ -85,6 +102,44 @@ namespace GravityDuck
 			spikes[3].setPosition(new Vector2(50.0f, 1075.0f));
 			spikes[3].getSprite().Rotate(-1.5707963268f);
 			spikes[4].setPosition(new Vector2(270.0f, 1050.0f));
+			
+			// Initialise and position wind tunnels	RMDS
+			if(windTunnelCount > 0)
+			{
+				windTunnels = new WindTunnel[windTunnelCount];
+				
+				windTunnels[0] = new WindTunnel(scene, WindTunnel.Direction.LEFT);
+				windTunnels[0].setPosition(new Vector2(800.0f, 340.0f));
+			}
+			
+			//	Initialise and position black holes		RMDS
+			if(blackHoleCount > 0)
+			{
+				blackHoles = new BlackHole[blackHoleCount];
+				
+				blackHoles[0] = new BlackHole(scene, BlackHole.Direction.UP);
+				blackHoles[0].setPosition(new Vector2(800.0f, 280.0f));
+			}
+			
+			//	Initialise and position laser gates		RMDS
+			if(laserGateCount > 0)
+			{
+				laserGates = new LaserGate[laserGateCount];
+				
+				laserGates[0] = new LaserGate(scene, LaserGate.Direction.UP);
+				laserGates[0].setPosition(new Vector2(300.0f, 270.0f));	
+			}
+			
+			//	Initialise and position breakable walls		RMDS
+			if(breakableWallCount > 0)
+			{
+				breakableWalls = new BreakableWall[breakableWallCount];
+				
+				breakableWalls[0] = new BreakableWall(scene, BreakableWall.Direction.UP, 60.0f);
+				breakableWalls[0].setPosition(new Vector2(300.0f, 270.0f));
+			}
+
+			
 			
 			//Initialise maze tiles
 			for (int i = 0; i < mazeWidth; ++i) //Basic tile engine
@@ -438,5 +493,60 @@ namespace GravityDuck
 		{
 			levelFinished = newLevelFinished;
 		}
+		
+		// Check collision between player and the wind force exerted by the Wind Tunnels	RMDS
+		public Vector2 CheckWindTunnel(Player player)
+		{
+			Vector2 force = new Vector2(0.0f, 0.0f);
+			
+			if(windTunnels != null)
+			{
+				for(int i = 0; i < windTunnelCount; i++)
+					if(windTunnels[0].CheckPlayerPos(player))
+						force = windTunnels[0].CalculateForce(player);		
+			}
+		
+			return force;
 		}
+		
+		// Check collision between player and Black Hole gravitational pulls	RMDS
+		public Vector2 CheckBlackHole(Player player)
+		{
+			Vector2 force = new Vector2(0.0f, 0.0f);
+			
+			if(blackHoles != null)
+			{
+				for(int i = 0; i < blackHoleCount; i++)
+					if(blackHoles[0].CheckPlayerPos(player))
+						force = blackHoles[0].CalculateForce(player);
+			}
+			
+			return force;
+		}
+		
+		// Check collision between player and Laser Gates	RMDS
+		public bool CheckLaserGates(Player player)
+		{
+			if(laserGates != null)
+			{
+				for(int i = 0; i < laserGateCount; i++)
+					if(laserGates[0].CheckPlayerPos(player))
+						return true;
+			}
+			
+			return false;
+		}
+		
+		public bool CheckBreakableWalls(Player player)
+		{
+			if(breakableWalls != null)
+			{
+				for(int i = 0; i < breakableWallCount; i++)
+					if(breakableWalls[i].HasCollidedWithPlayer(player.Sprite))	
+						return breakableWalls[i].CheckIfBreak(player.GetMomentum());
+			}
+			
+			return false;
+		}	
 	}
+}

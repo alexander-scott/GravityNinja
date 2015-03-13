@@ -11,7 +11,6 @@ using Sce.PlayStation.HighLevel.UI;
 
 namespace GravityDuck
 {
-	//Loading screen class V1 @AS
 	public class LoadingScreen
 	{
 		private static BusyIndicator loadingSymbol;
@@ -120,7 +119,7 @@ namespace GravityDuck
 		
 		public void Dispose()
 		{
-			loadingTexture.Dispose();	
+			//loadingTexture.Dispose();	
 		}
 		
 		public void SetLoadTime(int time)
