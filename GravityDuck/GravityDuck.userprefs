@@ -1,14 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\LoadingScreen.cs">
-    <Files>
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="64" Column="1" />
-      <File FileName="GravityDuck\Classes\Level\Maze.cs" Line="11" Column="23" />
-      <File FileName="GravityDuck\Classes\Player.cs" Line="14" Column="25" />
-      <File FileName="GravityDuck\Classes\LoadingScreen.cs" Line="6" Column="24" />
-      <File FileName="GravityDuck\Classes\TitleScreen.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

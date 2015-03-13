@@ -13,10 +13,10 @@
     <rating type="ESRB" value="3" age="3" code="" />
     <rating type="PEGIEX" value="3" age="3" code="" />
   </rating_list>
-  <images />
+  <images splash_854x480="..\..\..\..\..\..\..\Desktop\DD.png" />
   <genre_list>
-    <genre value="Games:Adventure" />
     <genre value="Games:Puzzle" />
+    <genre value="Games:Adventure" />
   </genre_list>
   <developer>
     <name value="" />
