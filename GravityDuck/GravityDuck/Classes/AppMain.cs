@@ -61,15 +61,13 @@ namespace GravityDuck
 		private static float endRotation;
 		public static float lastTime = 0.0f;
 		public static bool zoomedIn = false;
-		private static float upperCameraRange = FMath.PI/4;
-		private static float lowerCameraRange = -FMath.PI/4;
-		
+
 		//------ Menu Data ------\\
-		private static bool play = false;
-		private static bool pause = false;
-		private static bool loaded = false;
-		private static bool startLoading = false;
-		private static int timeStamp1, timeStamp2;
+		private static bool play = false; //Used to prevent the game from actually being playable
+		private static bool pause = false; //Boolean logic used to pause and play the game
+		private static bool startLoading = false; //Boolean that's true when the assets are loading
+		private static bool loaded = false; //Boolean that's true when all the assets are loaded
+		private static int timeStamp1; //Timestamp used with the loading screen
 		
 		public static void Main (string[] args)
 		{
@@ -94,6 +92,8 @@ namespace GravityDuck
 			background.Dispose();
 			maze.Dispose();
 			player.Dispose();
+			title.Dispose();	
+			loadingScreen.Dispose();
 			
 			Director.Terminate ();
 		}
@@ -120,11 +120,13 @@ namespace GravityDuck
 			gameScene = new Sce.PlayStation.HighLevel.GameEngine2D.Scene();
 			gameScene.Camera.SetViewFromViewport();
 			
-			
+			//Set the UI scene
 			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
 			
+			//Initalise the title screen
 			title = new TitleScreen(gameScene);	
 			
+			//Initalise the loading screen and make it invisible
 			loadingScreen = new LoadingScreen(gameScene, uiScene);
 			loadingScreen.SetVisible(false);
 			
@@ -137,7 +139,9 @@ namespace GravityDuck
 		
 		public static void InitializeGame()
 		{
+			//Focus on where the title/loading screens are located for the first initalisation
 			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
+			
 			//Background
 			background = new Background(gameScene);
 			
@@ -188,13 +192,13 @@ namespace GravityDuck
 			levelTimer.Visible = false;
 			levelTimer.Text = "" + currentTime;
 			
-			
 			uiScene.RootWidget.AddChildLast(levelTimer);
 			UISystem.SetScene(uiScene);
 		}
 		
 		public static void StartLevel()
 		{
+			//This function resets all the variables and makes the game playable
 			loadingScreen.SetVisible(false);
 			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); 
 			scoreLabel.Visible = true;
@@ -207,28 +211,32 @@ namespace GravityDuck
 		public static void Update()
 		{		
 			CheckInput();
-			if (!play)
+			if (!play) //The title screen/inital initalisation update loop
 			{
-				if (!loaded)
-					title.Update();
-				else
-					loadingScreen.Update((int)timer.Milliseconds());
-				if (title.CheckPlay() && !loaded && !startLoading)
+				if (!loaded) //If we're on the inital title screen
+				{
+					title.Update(); //Update the title screen (check for user clicks)
+				}
+				else //Else if we're on the loading screen
+				{
+					loadingScreen.Update((int)timer.Milliseconds()); //Update the loading screen
+				}
+				if (title.CheckPlay() && !loaded && !startLoading) //If we're progressing from the title screen to the loading screen
 				{
 					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-					loadingScreen.SetVisible(true);
-					startLoading = true;
-					timeStamp1 = (int)timer.Milliseconds() + 1;
+					loadingScreen.SetVisible(true); //Display the loading screen
+					startLoading = true; //Tell the game to load the game assets
+					timeStamp1 = (int)timer.Milliseconds() + 1; //Add a small delay to allow the screens to change
 				}
-				if (startLoading && timer.Milliseconds() > timeStamp1)
+				if (startLoading && timer.Milliseconds() > timeStamp1) //If we're loading assets
 				{
-					InitializeGame();
-					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 3000);
+					InitializeGame(); //Load the assets
+					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 3000); //Set the time that the player must wait
 					loaded = true;
 					startLoading = false;
-					title.RemoveAll();
+					title.RemoveAll(); //Remove the title screen
 				}
-				if (loaded && loadingScreen.CheckPlay())
+				if (loaded && loadingScreen.CheckPlay()) //If the assets have loaded and the user presses play
 				{
 					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
 					StartLevel();
@@ -237,12 +245,10 @@ namespace GravityDuck
 			} 
 			else
 			{
-				
-				if (!pause)
+				if (!pause) //The main game update loop
 				{
 					time = (int)timer.Seconds();
 					player.Update(gravityVector, playerDirection, movementVector, invert, falling);
-					
 					UpdateCamera();
 					CheckCollisions();
 					currentTime = time;
@@ -256,10 +262,12 @@ namespace GravityDuck
 			//Query gamepad for current state
 			var gamePadData = GamePad.GetData(0);
 			
+			//Query touchscreen for touch data
 			var motionData = Motion.GetData(0);
 			
 			//Determine whether the player tapped the screen
-			List<TouchData> touches = Touch.GetData(0);			
+			List<TouchData> touches = Touch.GetData(0);	
+			
 			UISystem.Update(touches);
 			
 			if (Input2.GamePad0.Triangle.Down) //Reset player
@@ -297,11 +305,11 @@ namespace GravityDuck
 				}
 			}
 			
-			if (Input2.GamePad0.Right.Down) //Move right
+			if (Input2.GamePad0.Right.Down) //Move right (SIMULATOR USE)
 			{
 				keyboardVector = new Vector2(-1.0f, 0.0f);	
 			}
-			else if (Input2.GamePad0.Left.Down) //Move left
+			else if (Input2.GamePad0.Left.Down) //Move left (SIMULATOR USE)
 			{
 				keyboardVector = new Vector2(1.0f, 0.0f);	
 			}
@@ -357,8 +365,6 @@ namespace GravityDuck
 						rightRotation = true;
 						falling = true;
 					}
-					//falling = true;
-					//CalcCamRestrictions();
 				}						
 			}	
 			
@@ -411,7 +417,6 @@ namespace GravityDuck
 				gravityArrow.Position = new Vector2(player.GetPos().X, player.GetPos().Y); // Keeps the arrow next to the player to show the direction of gravity.	RMDS		
 				gravityArrow.Angle = motionData.Acceleration.X + cameraRotation - (FMath.PI / 2.0f);			
 					
-				
 				if (-FMath.Sin(cameraRotation) == 1f) //Up
 				{
 					currGrav = 3;
@@ -441,9 +446,10 @@ namespace GravityDuck
 				}
 				
 				playerDirection = -gravityVector; //Rotation is the invert of the gravity vector
-				//for( int i = 0; i < 25; i++ ) //Output details to console
-			    // 	Console.WriteLine("");
-				//Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- PlayerDir: " + playerDirection);
+				
+				for( int i = 0; i < 25; i++ ) //Output details to console
+			     	Console.WriteLine("");
+				Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- PlayerDir: " + playerDirection);
 			}
 		}
 
@@ -453,38 +459,6 @@ namespace GravityDuck
 		//player.
 		public static void UpdateCamera() //@AS (max width and max height are currently unknown so set to 2000)
 		{
-			// Commented Out this code for debugging and demonstrating gravity.	RMDS
-			
-			//	if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.3f) || (player.GetX() > 2000f - Director.Instance.GL.Context.GetViewport().Width*0.3f) ||
-			//   (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.3f) || (player.GetY() > 2000f - Director.Instance.GL.Context.GetViewport().Height*0.3f))
-			//{
-			//	if (player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.4f) //Near left side
-			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
-			//		                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, player.GetY()));
-			//	if (player.GetX() > 2000f - Director.Instance.GL.Context.GetViewport().Width*0.4f) //Near right side
-			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
-			//		                            new Vector2(2000f - Director.Instance.GL.Context.GetViewport().Width*0.4f, player.GetY()));
-			//	if (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.4f) //Near bottom side
-			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
-			//		                            new Vector2(player.GetX(), Director.Instance.GL.Context.GetViewport().Height*0.4f));
-			//	if (player.GetY() > 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f) //Near top side
-			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
-			//		                            new Vector2(player.GetX(), 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.5f));
-			//	if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.4f) && (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.4f)) //Near bottom left corner
-			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
-			//		                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, Director.Instance.GL.Context.GetViewport().Height*0.4f));
-			//	if ((player.GetX() < Director.Instance.GL.Context.GetViewport().Width*0.4f) && (player.GetY() > 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f)) //Near top left corner
-			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
-			//		                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f));
-			//	if ((player.GetX() > 2000.0f - Director.Instance.GL.Context.GetViewport().Width*0.4f) && (player.GetY() > 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f)) //Near top right corner
-			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
-			//		                            new Vector2(2000.0f - Director.Instance.GL.Context.GetViewport().Width*0.4f, 2000.0f - Director.Instance.GL.Context.GetViewport().Height*0.4f));
-			//	if ((player.GetX() > 2000.0f -  Director.Instance.GL.Context.GetViewport().Width*0.4f) && (player.GetY() < Director.Instance.GL.Context.GetViewport().Height*0.4f)) //Near bottom right corner
-			//		gameScene.Camera2D.SetViewY(new Vector2(cameraRotationX,Director.Instance.GL.Context.GetViewport().Height*supportVectorYValue),
-			//		                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, Director.Instance.GL.Context.GetViewport().Height*0.4f));
-			//}
-			//else
-			
 			if(zoomedIn)
 			{
 				zoom = 2.0f;
@@ -504,7 +478,8 @@ namespace GravityDuck
 			playerBox.Max.X = player.GetPos().X + 25;
 			playerBox.Min.Y = player.GetPos().Y - 25;
 			playerBox.Max.Y = player.GetPos().Y + 25;
-				
+			
+			//Player and maze collisions V2 @AS
 			if(maze.HasCollidedWithPlayer(playerBox)) //If the box has collided with a tile
 			{	
 				if (maze.HasHitSide(playerBox, currGrav)) //Check if it's a side tile

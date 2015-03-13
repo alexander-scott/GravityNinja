@@ -11,7 +11,7 @@ using Sce.PlayStation.Core.Audio;
 
 namespace GravityDuck
 {
-	//Our Player class V2.0 by @AS
+	//Our Player class V2.1 by @AS
 	public class Player
 	{
 		private static SpriteUV 	sprite; //Our players sprite

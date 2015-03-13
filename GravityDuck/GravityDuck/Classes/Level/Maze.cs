@@ -8,7 +8,7 @@ using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 
 namespace GravityDuck
 {
-	//Our Maze class V2 by @AW && @AS
+	//Our Maze class V2.1 by @AW && @AS
 	public class Maze
 	{
 		private TextureInfo groundBlock1;
