@@ -9,16 +9,16 @@ using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 
 namespace GravityDuck
 {
-	
+	//Our Background class V1.0 by @AS
 	public class LevelComplete
 	{
-		private TextureInfo completeTexture; 
-		private SpriteUV sprite; 
+		private TextureInfo completeTexture; //The background texture
+		private SpriteUV sprite; //The background sprite
 		
-		private TextureInfo stars1Texture; 
-		private TextureInfo stars2Texture; 
-		private TextureInfo stars3Texture; 
-		private SpriteUV starsSprite; 
+		private TextureInfo stars1Texture; //The background texture
+		private TextureInfo stars2Texture; //The background texture
+		private TextureInfo stars3Texture; //The background texture
+		private SpriteUV starsSprite; //The background sprite
 				
 		private bool play = false;
 		
@@ -54,7 +54,7 @@ namespace GravityDuck
 		
 		public void Show(float playerX, float playerY, int stars)
 		{
-			sprite.Position = new Vector2(playerX - (Director.Instance.GL.Context.GetViewport().Width/2), playerY - 150);
+			sprite.Position = new Vector2(playerX - (Director.Instance.GL.Context.GetViewport().Width/2), playerY-270);
 			sprite.Visible = true;
 			
 			starsSprite.Position = new Vector2(sprite.Position.X + (sprite.TextureInfo.TextureSizef.X/2) - (starsSprite.TextureInfo.TextureSizef.X/2), sprite.Position.Y + 90);

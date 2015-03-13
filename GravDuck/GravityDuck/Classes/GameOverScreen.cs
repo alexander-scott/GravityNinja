@@ -80,7 +80,7 @@ namespace GravityDuck
 		
 		public void Show(float playerX, float playerY)
 		{
-			sprite.Position = new Vector2(playerX - (Director.Instance.GL.Context.GetViewport().Width/2), playerY - 150);
+			sprite.Position = new Vector2(playerX - (Director.Instance.GL.Context.GetViewport().Width/2), playerY-270);
 			sprite.Visible = true;
 			
 			restartButtonSprite.Position = new Vector2(sprite.Position.X + (sprite.TextureInfo.TextureSizef.X/2) - (restartButtonSprite.TextureInfo.TextureSizef.X/2), sprite.Position.Y + 90);

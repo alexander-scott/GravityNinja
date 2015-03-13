@@ -42,51 +42,49 @@ namespace GravityDuck
 			scene.AddChild(sprite); //Add our FABULOUS duck to the scene
 		}
 		
-		//Update player V2.0 @AS
+		//Update player V2.1 @AS
 		public void Update(Vector2 gravity, Vector2 rotate, Vector2 movement, bool invert, bool falling)
 		{	        
-			if(alive)
+			duckRotation = -(float)FMath.Atan2(rotate.X, rotate.Y);
+			sprite.Angle = duckRotation; //Rotate the duck so it's always facing upright
+			
+			Vector2 tempDir; //Initalise the interchangable temp vector
+			if (!falling)
 			{
-				duckRotation = -(float)FMath.Atan2(rotate.X, rotate.Y);
-				sprite.Angle = duckRotation; //Rotate the duck so it's always facing upright
-				
-				Vector2 tempDir; //Initalise the interchangable temp vector
-				if (!falling)
-				{
-					if(!invert)
-						tempDir = movement*4; //Normal movement caused by tilting the device
-					else
-						tempDir = new Vector2(0.0f, 0.0f); //Stop player moving
-				}
+				if(!invert)
+					tempDir = movement*5; //Normal movement caused by tilting the device
 				else
 				{
-					if (gravVelocity>-1.0f) //If he isn't moving backwards from a collision
-						tempDir = new Vector2(gravity.X, gravity.Y); //Normal gravity
+					tempDir = movement*5; //Stop player moving
+				}
+			}
+			else
+			{
+				if (gravVelocity>-1.0f) //If he isn't moving backwards from a collision
+					tempDir = new Vector2(gravity.X, gravity.Y); //Normal gravity
+				else
+				{
+					if (invert) //If inverted
+						tempDir = new Vector2(gravity.X, -gravity.Y); //Rebound in the Y axis (SIDES)
 					else
-					{
-						if (invert) //If inverted
-							tempDir = new Vector2(gravity.X, -gravity.Y); //Rebound in the Y axis (SIDES)
-						else
-							tempDir = new Vector2(-gravity.X, gravity.Y); //Else rebound in the X axis (FLOOR)
-					}
-					
-					if(gravVelocity < maxGrav) //Increase the gravity velocity
-					{
-						if(gravVelocity > -0.5f && gravVelocity < 0.5f)
-							gravVelocity = 1f;
-						else if (gravVelocity > 1f)
-							gravVelocity += gravSpeed/3;
-						else
-							gravVelocity += gravSpeed;
-					}
+						tempDir = new Vector2(-gravity.X, gravity.Y); //Else rebound in the X axis (FLOOR)
+				}
 				
+				if(gravVelocity < maxGrav) //Increase the gravity velocity
+				{
+					if(gravVelocity > -0.5f && gravVelocity < 0.5f)
+						gravVelocity = 1f;
+					else if (gravVelocity > 1f)
+						gravVelocity += gravSpeed/3;
+					else
+						gravVelocity += gravSpeed;
 				}
 			
+			}
 							
 			//Move the player
 			sprite.Position = new Vector2(sprite.Position.X + ((tempDir.X) * gravVelocity), sprite.Position.Y + ((tempDir.Y) * gravVelocity));	
-			}      
-		}
+		}                  
 		
 		public void Bounce(float side)
 		{
