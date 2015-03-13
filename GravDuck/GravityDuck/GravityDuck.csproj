@@ -54,6 +54,7 @@
     <Compile Include="Classes\Level\Collectables\LevelFlag.cs" />
     <Compile Include="Classes\LoadingScreen.cs" />
     <Compile Include="Classes\GameOverScreen.cs" />
+    <Compile Include="Classes\OptionsScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -113,5 +114,6 @@
     <Content Include="sounds\Effects\click.wav" />
     <Content Include="textures\gameOver.png" />
     <Content Include="textures\restartButton.png" />
+    <Content Include="textures\options.png" />
   </ItemGroup>
 </Project>

@@ -52,6 +52,7 @@ namespace GravityDuck
 		public void Update()
 		{
 			CheckInput();
+			
 		}
 		
 		public void CheckInput()
@@ -70,8 +71,14 @@ namespace GravityDuck
 				+ (Director.Instance.GL.Context.GetViewport().Height / 2);
 			touchBox.Max.Y = (touchPos.Y * (Director.Instance.GL.Context.GetViewport().Height / 2))
 				+ (Director.Instance.GL.Context.GetViewport().Height / 2);
-		
+			
+			
 			if(touchBox.Overlaps(restartBox) && touches.Count != 0)
+			{
+				restart = true;
+			}
+			
+			if (Input2.GamePad0.Square.Release)
 			{
 				restart = true;
 			}
@@ -84,8 +91,8 @@ namespace GravityDuck
 			sprite.Visible = true;
 			
 			restartButtonSprite.Position = new Vector2(sprite.Position.X + (sprite.TextureInfo.TextureSizef.X/2) - (restartButtonSprite.TextureInfo.TextureSizef.X/2), sprite.Position.Y + 90);
-			restartBox.Min = restartButtonSprite.Position;
-			restartBox.Max = restartButtonSprite.Position + restartButtonSprite.TextureInfo.TextureSizef;
+			restartBox.Min = new Vector2(playerX - (Director.Instance.GL.Context.GetViewport().Width/2), playerY-270);
+			restartBox.Max = new Vector2(playerX + 500, playerY + 500);
 			restartButtonSprite.Visible = true;
 		}
 		
