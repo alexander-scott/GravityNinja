@@ -10,7 +10,7 @@ namespace GravityDuck
 {
 	public class LevelFlag : Collectable
 	{
-		public LevelFlag (Scene scene) : base(scene)
+		public LevelFlag () : base()
 		{
 			textureInfo = new TextureInfo(new Texture2D("/Application/textures/Level/levelFlag.png", false), new Vector2i(4, 1));
 			
@@ -30,8 +30,6 @@ namespace GravityDuck
 				sprite.TileIndex2D = new Vector2i(tileIndex, 0);
 				tileIndex++;
 			}, 0.12f);
-			
-			scene.AddChild(sprite);
 		}
 	}
 }

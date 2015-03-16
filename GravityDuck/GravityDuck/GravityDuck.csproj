@@ -50,8 +50,11 @@
     <Compile Include="Classes\Level\Obstacles\Obstacles.cs" />
     <Compile Include="Classes\TitleScreen.cs" />
     <Compile Include="Classes\LevelComplete.cs" />
-    <Compile Include="Classes\AudioManager.cs" />
     <Compile Include="Classes\Level\Collectables\LevelFlag.cs" />
+    <Compile Include="Classes\XMLLoader.cs" />
+    <Compile Include="Classes\Managers\AudioManager.cs" />
+    <Compile Include="Classes\Managers\TileManager.cs" />
+    <Compile Include="Classes\Level\LevelLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -73,6 +76,7 @@
     <Folder Include="sounds\" />
     <Folder Include="sounds\Effects\" />
     <Folder Include="sounds\Music\" />
+    <Folder Include="Classes\Managers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="textures\background.png" />

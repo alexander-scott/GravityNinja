@@ -19,8 +19,8 @@ namespace GravityDuck
 		
 		private static bool			alive = true; //Changed if player dies
 		private static bool 		falling = true; //A different calculation will be required if the player is falling
-		private const  float		    maxSpeed = 3.0f;
-		private const  float			gravityConst = 0.1f;
+		private const  float		maxSpeed = 3.0f;
+		private const  float		gravityConst = 0.1f;
 		private static Vector2      velocity = new Vector2(0.0f, 0.0f);
 		private static Vector2      acceleration = new Vector2(0.0f, 0.0f);
 		private static float     	duckRotation = 0.0f;

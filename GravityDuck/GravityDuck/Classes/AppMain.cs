@@ -38,7 +38,7 @@ namespace GravityDuck
 		private static Vector2 newTouchPos = new Vector2( 0.0f, 0.0f ); // Position of last touch on screen
 		
 		private static float cameraRotation = FMath.PI/2.0f; // The rotation of the camera as a angle, as well as other entities
-		private static float zoom = 0.5f; // How much of the game can be viewed
+		private static float zoom = 2.0f; // How much of the game can be viewed
 		
 		private static float upperCameraRange = FMath.PI/4;
 		private static float lowerCameraRange = -FMath.PI/4;
@@ -99,7 +99,7 @@ namespace GravityDuck
 			AudioManager.AddSound("/Application/sounds/Effects/coinGrab.wav", "Coin Grab");
 			AudioManager.AddSound("/Application/sounds/Effects/levelFinish.wav", "Level Finished");
 			
-			AudioManager.PlayMusic("Level1", true, 1.0f, 1.0f);
+			AudioManager.PlayMusic("Level1", true, 0.0f, 1.0f);
 			
 			//Set game scene
 			gameScene = new Sce.PlayStation.HighLevel.GameEngine2D.Scene();

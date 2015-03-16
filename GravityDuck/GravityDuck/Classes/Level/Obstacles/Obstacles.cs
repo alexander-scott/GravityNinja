@@ -15,7 +15,7 @@ namespace GravityDuck
 		
 		protected Vector2 position;
 		
-		public Obstacle(Scene scene)
+		public Obstacle()
 		{
 			
 		}
@@ -42,7 +42,13 @@ namespace GravityDuck
 			sprite.Position = newPosition;
 		}
 		
-		public SpriteUV getSprite()
+		public void setRotation(float rotation)
+		{
+			float degreesToRad = (rotation * Sce.PlayStation.HighLevel.GameEngine2D.Base.Math.Pi) / 180;
+			sprite.Rotate(degreesToRad);
+		}
+		
+		public SpriteUV GetSprite()
 		{
 			return sprite;
 		}
