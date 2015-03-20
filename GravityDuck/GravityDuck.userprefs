@@ -1,19 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\Level\Obstacles\Obstacles.cs">
-    <Files>
-      <File FileName="GravityDuck\Classes\Level\Maze.cs" Line="199" Column="32" />
-      <File FileName="GravityDuck\Classes\Managers\TileManager.cs" Line="16" Column="1" />
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="549" Column="1" />
-      <File FileName="GravityDuck\Classes\Level\LevelLoader.cs" Line="204" Column="48" />
-      <File FileName="GravityDuck\Classes\Level\Obstacles\Obstacles.cs" Line="8" Column="1" />
-      <File FileName="GravityDuck\Classes\Level\Obstacles\BlackHole.cs" Line="32" Column="5" />
-      <File FileName="GravityDuck\Classes\Level\Obstacles\Spikes.cs" Line="25" Column="47" />
-      <File FileName="GravityDuck\Classes\Level\Obstacles\BreakableWall.cs" Line="25" Column="27" />
-      <File FileName="GravityDuck\Classes\Level\Obstacles\WindTunnel.cs" Line="22" Column="21" />
-      <File FileName="GravityDuck\Classes\Level\Obstacles\LaserGate.cs" Line="19" Column="20" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -57,7 +57,7 @@ namespace GravityDuck
 		
 		//------ Camera Data ------\\
 		private static float cameraRotation = FMath.PI/2.0f; // The rotation of the camera as a angle, as well as other entities
-		private static float zoom = 0.5f; // How much of the game can be viewed
+		private static float zoom = 2.0f; // How much of the game can be viewed
 		private static bool rotating = false; //Camera rotations bools
 		private static bool sideRotation = false;
 		private static bool rightRotation = false;
@@ -162,7 +162,7 @@ namespace GravityDuck
 			player = new Player(gameScene);
 			
 			//Maze
-			maze = new Maze(gameScene);
+			maze = new Maze(gameScene, currentLevel);
 
 			TextureInfo texture = new TextureInfo("/Application/textures/arrow.png");
 			gravityArrow 			= new SpriteUV();

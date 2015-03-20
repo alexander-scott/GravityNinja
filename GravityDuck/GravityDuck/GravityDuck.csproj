@@ -88,6 +88,7 @@
     <Folder Include="Classes\Screens\" />
     <Folder Include="Classes\Managers\" />
     <Folder Include="textures\LoadingScreens\" />
+    <Folder Include="maps\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="textures\background.png" />
@@ -130,7 +131,6 @@
     <Content Include="textures\Level\breakableWall.png" />
     <Content Include="textures\Level\laserGate.png" />
     <Content Include="textures\Level\windFan.png" />
-    <Content Include="maps\level1.tmx" />
     <Content Include="textures\LoadingScreens\Level0Load.png" />
     <Content Include="textures\LoadingScreens\Level1Load.png" />
     <Content Include="textures\LoadingScreens\Level2Load.png" />
@@ -139,5 +139,7 @@
     <Content Include="textures\LoadingScreens\Level5Load.png" />
     <Content Include="textures\GravityNina.png" />
     <Content Include="textures\LevelSelectBackground.png" />
+    <Content Include="maps\level0.tmx" />
+    <Content Include="maps\level1.tmx" />
   </ItemGroup>
 </Project>

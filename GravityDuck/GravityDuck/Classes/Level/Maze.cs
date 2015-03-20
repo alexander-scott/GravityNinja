@@ -31,9 +31,9 @@ namespace GravityDuck
 		
 		private bool levelFinished;
 						
-		public Maze (Scene scene)
+		public Maze (Scene scene, int currentLevel)
 		{
-			LoadLevel(scene, 1);
+			LoadLevel(scene, currentLevel);
 			levelFinished = false;
 		}
 		
