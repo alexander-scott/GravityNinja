@@ -10,7 +10,7 @@ namespace GravityDuck
 {
 	public class Spikes : Obstacle
 	{
-		public Spikes(Scene scene, int spikeType) : base(scene)
+		public Spikes(int spikeType) : base()
 		{
 			if(spikeType == 1)
 			{
@@ -23,8 +23,7 @@ namespace GravityDuck
 			
 			sprite          = new SpriteUV(textureInfo);
 			sprite.Quad.S   = textureInfo.TextureSizef;
-			
-			scene.AddChild(sprite);
+			sprite.Pivot 	= new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
 		}
 	}
 }

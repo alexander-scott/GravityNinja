@@ -15,18 +15,41 @@ namespace GravityDuck
 		private Direction halfRadialDirection;
 		
 		private const float radialDistance = 200.0f;
-		private const float forceModifier = 3.0f; 
+		private const float forceModifier = 3.0f;
 		
-		public BlackHole(Scene scene, Direction direction) : base(scene)
+		public BlackHole() : base()
 		{
 			textureInfo = new TextureInfo("/Application/textures/Level/blackHole.png");
 			
-			halfRadialDirection = direction;
-			
 			sprite          = new SpriteUV(textureInfo);
 			sprite.Quad.S   = textureInfo.TextureSizef;
-			
-			sprite.Pivot = new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
+			sprite.Pivot 	= new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
+		}
+		
+		public void setDirection(int rotation)
+		{
+			switch(rotation)
+			{
+				case 0:
+					halfRadialDirection = Direction.UP;
+				break;
+				
+				case 360:
+					halfRadialDirection = Direction.UP;
+				break;
+					
+				case 90:
+					halfRadialDirection = Direction.LEFT;
+				break;
+				
+				case 180:
+					halfRadialDirection = Direction.DOWN;
+				break;
+				
+				case 270:
+					halfRadialDirection = Direction.RIGHT;
+				break;
+			}
 			
 			if(halfRadialDirection == Direction.LEFT)
 			{
@@ -41,8 +64,6 @@ namespace GravityDuck
 					{
 						sprite.Rotate(-FMath.PI/2);
 					}
-			
-			scene.AddChild(sprite);
 		}
 		
 		public Vector2 CalculateForce(Player player)

@@ -48,19 +48,22 @@
     <Compile Include="Classes\Level\Collectables\Gem.cs" />
     <Compile Include="Classes\Level\Obstacles\Spikes.cs" />
     <Compile Include="Classes\Level\Obstacles\Obstacles.cs" />
-    <Compile Include="Classes\AudioManager.cs" />
     <Compile Include="Classes\Level\Collectables\LevelFlag.cs" />
     <Compile Include="Classes\Level\Obstacles\BlackHole.cs" />
     <Compile Include="Classes\Level\Obstacles\BreakableWall.cs" />
     <Compile Include="Classes\Level\Obstacles\LaserGate.cs" />
     <Compile Include="Classes\Level\Obstacles\WindTunnel.cs" />
-    <Compile Include="Classes\Level\Screens\GameOverScreen.cs" />
-    <Compile Include="Classes\Level\Screens\LevelComplete.cs" />
-    <Compile Include="Classes\Level\Screens\LoadingScreen.cs" />
-    <Compile Include="Classes\Level\Screens\OptionsScreen.cs" />
-    <Compile Include="Classes\Level\Screens\TitleScreen.cs" />
-    <Compile Include="Classes\Level\Screens\Screen.cs" />
-    <Compile Include="Classes\Level\Screens\LevelSelectScreen.cs" />
+    <Compile Include="Classes\Managers\AudioManager.cs" />
+    <Compile Include="Classes\Level\LevelLoader.cs" />
+    <Compile Include="Classes\XMLLoader.cs" />
+    <Compile Include="Classes\Managers\TileManager.cs" />
+    <Compile Include="Classes\Screens\GameOverScreen.cs" />
+    <Compile Include="Classes\Screens\LevelComplete.cs" />
+    <Compile Include="Classes\Screens\LevelSelectScreen.cs" />
+    <Compile Include="Classes\Screens\LoadingScreen.cs" />
+    <Compile Include="Classes\Screens\OptionsScreen.cs" />
+    <Compile Include="Classes\Screens\Screen.cs" />
+    <Compile Include="Classes\Screens\TitleScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -82,13 +85,23 @@
     <Folder Include="sounds\" />
     <Folder Include="sounds\Effects\" />
     <Folder Include="sounds\Music\" />
-    <Folder Include="Classes\Level\Screens\" />
+    <Folder Include="Classes\Screens\" />
+    <Folder Include="Classes\Managers\" />
     <Folder Include="textures\LoadingScreens\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="textures\background.png" />
     <Content Include="textures\duck.png" />
     <Content Include="textures\arrow.png" />
+    <Content Include="textures\Level\ceilingBlock1.png" />
+    <Content Include="textures\Level\ceilingBlock2.png" />
+    <Content Include="textures\Level\gem.png" />
+    <Content Include="textures\Level\goldCoin.png" />
+    <Content Include="textures\Level\groundBlock1.png" />
+    <Content Include="textures\Level\groundBlock2.png" />
+    <Content Include="textures\Level\largeSpikes.png" />
+    <Content Include="textures\Level\smallSpikes.png" />
+    <Content Include="textures\Level\treeBlock.png" />
     <Content Include="textures\controls.png" />
     <Content Include="textures\controlsSelected.png" />
     <Content Include="textures\hiscores.png" />
@@ -108,31 +121,23 @@
     <Content Include="sounds\Effects\screenFlip.wav" />
     <Content Include="sounds\Effects\spikesDeath.wav" />
     <Content Include="sounds\Music\levelMusic.mp3" />
+    <Content Include="textures\Level\levelFlag.png" />
     <Content Include="sounds\Effects\click.wav" />
     <Content Include="textures\gameOver.png" />
     <Content Include="textures\restartButton.png" />
     <Content Include="textures\options.png" />
-    <Content Include="textures\LevelSelectBackground.png" />
-    <Content Include="textures\GravityNina.png" />
+    <Content Include="textures\Level\blackHole.png" />
+    <Content Include="textures\Level\breakableWall.png" />
+    <Content Include="textures\Level\laserGate.png" />
+    <Content Include="textures\Level\windFan.png" />
+    <Content Include="maps\level1.tmx" />
     <Content Include="textures\LoadingScreens\Level0Load.png" />
     <Content Include="textures\LoadingScreens\Level1Load.png" />
     <Content Include="textures\LoadingScreens\Level2Load.png" />
     <Content Include="textures\LoadingScreens\Level3Load.png" />
     <Content Include="textures\LoadingScreens\Level4Load.png" />
     <Content Include="textures\LoadingScreens\Level5Load.png" />
-    <Content Include="textures\Level\ceilingBlock1.png" />
-    <Content Include="textures\Level\ceilingBlock2.png" />
-    <Content Include="textures\Level\gem.png" />
-    <Content Include="textures\Level\goldCoin.png" />
-    <Content Include="textures\Level\groundBlock1.png" />
-    <Content Include="textures\Level\groundBlock2.png" />
-    <Content Include="textures\Level\largeSpikes.png" />
-    <Content Include="textures\Level\smallSpikes.png" />
-    <Content Include="textures\Level\treeBlock.png" />
-    <Content Include="textures\Level\levelFlag.png" />
-    <Content Include="textures\Level\blackHole.png" />
-    <Content Include="textures\Level\breakableWall.png" />
-    <Content Include="textures\Level\laserGate.png" />
-    <Content Include="textures\Level\windFan.png" />
+    <Content Include="textures\GravityNina.png" />
+    <Content Include="textures\LevelSelectBackground.png" />
   </ItemGroup>
 </Project>

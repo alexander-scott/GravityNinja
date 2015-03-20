@@ -21,7 +21,7 @@ namespace GravityDuck
 		
 		protected int scoreValue;
 		
-		public Collectable (Scene scene)
+		public Collectable ()
 		{
 			collected = false;
 		}
@@ -45,10 +45,21 @@ namespace GravityDuck
 			return false;
 		}
 		
+		public SpriteTile GetSprite()
+		{
+			return sprite;	
+		}
+		
 		public void setPosition(Vector2 newPosition)
 		{
 			position = newPosition;
 			sprite.Position = newPosition;
+		}
+		
+		public void setRotation(float rotation)
+		{
+			float degreesToRad = (rotation * Sce.PlayStation.HighLevel.GameEngine2D.Base.Math.Pi) / 180;
+			sprite.Rotate(degreesToRad);
 		}
 		
 		public int Collected(Scene scene)

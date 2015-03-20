@@ -98,9 +98,7 @@ namespace GravityDuck
 				Director.Instance.GL.Context.SwapBuffers();
 				Director.Instance.PostSwap();
 			}
-		
-			Dispose();
-			
+	
 			Director.Terminate ();
 		}
 		
@@ -145,7 +143,7 @@ namespace GravityDuck
 			
 			loadingScreen = new LoadingScreen(gameScene, uiScene);
 			loadingScreen.SetVisible(false, currentLevel);
-
+			
 			//Begin Timer
 			timer = new Timer();
 			
@@ -170,12 +168,13 @@ namespace GravityDuck
 			gravityArrow 			= new SpriteUV();
 			gravityArrow 			= new SpriteUV(texture);
 			gravityArrow.Quad.S 	= texture.TextureSizef;
-			gravityArrow.Scale 		= new Vector2(1.0f, 1.0f);
+			gravityArrow.Scale 		= new Vector2(0.5f, .5f);
 			gravityArrow.Pivot 		= new Vector2(gravityArrow.Quad.S.X/2, gravityArrow.Quad.S.Y);
 			gravityArrow.Position 	= new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f,
 			                                  (Director.Instance.GL.Context.GetViewport().Height*0.5f) - gravityArrow.Quad.S.Y);
-			gravityArrow.Visible = false;
+			
 			gameScene.AddChild(gravityArrow);
+			gravityArrow.Visible = false;
 			
 			levelComplete = new LevelComplete(gameScene);
 			gameOverScreen = new GameOverScreen(gameScene);
@@ -293,8 +292,7 @@ namespace GravityDuck
 					CheckCollisions();
 					currentTime = time;
 					UpdateUI ();
-				}
-				else if (!player.IsAlive())
+				}else if (!player.IsAlive())
 				{
 					gameOverScreen.Update();
 					if (gameOverScreen.CheckRestart())

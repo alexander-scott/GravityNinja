@@ -16,16 +16,40 @@ namespace GravityDuck
 		
 		private bool laserOn = true;
 			
-		public LaserGate(Scene scene, Direction direction) : base(scene)
+		public LaserGate() : base()
 		{
 			textureInfo = new TextureInfo("/Application/textures/Level/laserGate.png");
-			
-			laserDirection = direction;
 			
 			sprite          = new SpriteUV(textureInfo);
 			sprite.Quad.S   = textureInfo.TextureSizef;
 			
 			sprite.Pivot = new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
+		}
+		
+		public void setDirection(int rotation)
+		{
+			switch(rotation)
+			{
+				case 0:
+					laserDirection = Direction.UP;
+				break;
+				
+				case 360:
+					laserDirection = Direction.UP;
+				break;
+					
+				case 90:
+					laserDirection = Direction.LEFT;
+				break;
+				
+				case 180:
+					laserDirection = Direction.DOWN;
+				break;
+				
+				case 270:
+					laserDirection = Direction.RIGHT;
+				break;
+			}
 			
 			if(laserDirection == Direction.LEFT)
 			{
@@ -40,8 +64,6 @@ namespace GravityDuck
 					{
 						sprite.Rotate(-FMath.PI/2);
 					}
-			
-			scene.AddChild(sprite);
 		}
 		
 		public bool CheckPlayerPos(Player player)
