@@ -31,6 +31,7 @@ namespace GravityDuck
 		private static LevelComplete levelComplete;
 		private static LoadingScreen loadingScreen;
 		private static GameOverScreen gameOverScreen;
+		private static LevelSelectScreen levelSelectScreen;
 				
 		//------ HUD ------\\
 		private static Timer timer;
@@ -71,7 +72,12 @@ namespace GravityDuck
 		private static bool pause = false;
 		private static bool loaded = false;
 		private static bool startLoading = false;
-		private static int timeStamp1, timeStamp2;
+		private static bool levelSelect = false;
+		private static bool levelSelected = false;
+		private static int timeStamp1;
+		
+		//------ Level Data ------\\
+		private static int currentLevel = 0;
 		
 		public static void Main (string[] args)
 		{
@@ -92,12 +98,21 @@ namespace GravityDuck
 				Director.Instance.GL.Context.SwapBuffers();
 				Director.Instance.PostSwap();
 			}
+		
+			Dispose();
 			
+			Director.Terminate ();
+		}
+		
+		public static void Dispose()
+		{	
 			background.Dispose();
 			maze.Dispose();
 			player.Dispose();
-			
-			Director.Terminate ();
+			gameOverScreen.Dispose();
+			levelComplete.Dispose();
+			levelSelectScreen.Dispose();
+			loadingScreen.Dispose();	
 		}
 
 		public static void Initialize ()
@@ -125,9 +140,12 @@ namespace GravityDuck
 			
 			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
 			
-			loadingScreen = new LoadingScreen(gameScene, uiScene);
-			loadingScreen.SetVisible(false);
+			levelSelectScreen = new LevelSelectScreen(gameScene, uiScene);
+			levelSelectScreen.SetVisible(false, currentLevel);
 			
+			loadingScreen = new LoadingScreen(gameScene, uiScene);
+			loadingScreen.SetVisible(false, currentLevel);
+
 			//Begin Timer
 			timer = new Timer();
 			
@@ -138,6 +156,7 @@ namespace GravityDuck
 		public static void InitializeGame()
 		{
 			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
+			
 			//Background
 			background = new Background(gameScene);
 			
@@ -189,14 +208,13 @@ namespace GravityDuck
 			levelTimer.Visible = false;
 			levelTimer.Text = "" + currentTime;
 			
-			
 			uiScene.RootWidget.AddChildLast(levelTimer);
 			UISystem.SetScene(uiScene);
 		}
 		
 		public static void StartLevel()
 		{
-			loadingScreen.SetVisible(false);
+			loadingScreen.SetVisible(false, currentLevel);
 			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); 
 			scoreLabel.Visible = true;
 			timerLabel.Visible = true;
@@ -210,26 +228,53 @@ namespace GravityDuck
 			CheckInput();
 			if (!play)
 			{
-				if (!loaded)
+				if (!loaded) //Update title screen
 					title.Update();
-				else
-					loadingScreen.Update((int)timer.Milliseconds());
-				if (title.CheckPlay() && !loaded && !startLoading)
+				else if (levelSelect) //Update level select screen
+					levelSelectScreen.Update();
+				else //Update loading screen
+					loadingScreen.Update((int)timer.Milliseconds()); 
+				
+				if (title.CheckPlay() && !loaded && !startLoading) //If we have clicked play on the title screen
+				{
+					levelSelectScreen.SetVisible(true, currentLevel);
+					title.RemoveAll();
+					levelSelected = true;
+				}
+				
+				if (levelSelected && levelSelectScreen.Selected()) //If we have picked a level
 				{
 					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-					loadingScreen.SetVisible(true);
-					startLoading = true;
-					timeStamp1 = (int)timer.Milliseconds() + 1;
+					levelSelect = true;
+					currentLevel = levelSelectScreen.levelSelected;
 				}
-				if (startLoading && timer.Milliseconds() > timeStamp1)
+				else if (levelSelected && levelSelectScreen.BackPressed())
 				{
+					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+					levelSelected = false;
+				}
+				
+				if (levelSelect && !loaded && !startLoading)
+				{
+					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+					startLoading = true;
+					loadingScreen.SetVisible(true, currentLevel);
+					timeStamp1 = (int)timer.Milliseconds() + 1;
+					levelSelect = false;
+					levelSelected = false;
+				}
+				
+				if (startLoading && timer.Milliseconds() > timeStamp1) //If the level has loaded
+				{
+					levelSelectScreen.SetVisible(false, currentLevel);
 					InitializeGame();
-					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 3000);
+					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
 					loaded = true;
 					startLoading = false;
 					title.RemoveAll();
 				}
-				if (loaded && loadingScreen.CheckPlay())
+				
+				if (loaded && loadingScreen.CheckPlay()) //If the play button has been clicked on the loading screen
 				{
 					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
 					StartLevel();
@@ -248,7 +293,8 @@ namespace GravityDuck
 					CheckCollisions();
 					currentTime = time;
 					UpdateUI ();
-				}else if (!player.IsAlive())
+				}
+				else if (!player.IsAlive())
 				{
 					gameOverScreen.Update();
 					if (gameOverScreen.CheckRestart())

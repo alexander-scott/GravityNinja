@@ -10,28 +10,21 @@ using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 namespace GravityDuck
 {
 	//Our Background class V1.0 by @AS
-	public class LevelComplete
+	public class LevelComplete : Screen
 	{
-		private TextureInfo completeTexture; //The background texture
-		private SpriteUV sprite; //The background sprite
-		
 		private TextureInfo stars1Texture; //The background texture
 		private TextureInfo stars2Texture; //The background texture
 		private TextureInfo stars3Texture; //The background texture
 		private SpriteUV starsSprite; //The background sprite
 				
 		private bool play = false;
-		
-		private Scene scene1;
-			
-		public LevelComplete (Scene scene)
+
+		public LevelComplete (Scene scene) : base(scene)
 		{
-			scene1 = scene;
-			
-			completeTexture 	= new TextureInfo("/Application/textures/levelComplete.png");
+			textureInfo 	= new TextureInfo("/Application/textures/levelComplete.png");
 			sprite 			= new SpriteUV();
-			sprite 			= new SpriteUV(completeTexture);
-			sprite.Quad.S 	= completeTexture.TextureSizef;
+			sprite 			= new SpriteUV(textureInfo);
+			sprite.Quad.S 	= textureInfo.TextureSizef;
 			sprite.Position = new Vector2(0.0f, 0.0f);
 			scene.AddChild(sprite);
 			sprite.Visible = false;
@@ -135,16 +128,18 @@ namespace GravityDuck
 		{
 			return play;
 		}
-		
-		private void RemoveAll()
+//		
+//		private void RemoveAll()
+//		{
+//			scene1.RemoveChild(sprite, true);
+//		}
+//		
+		public new void Dispose()
 		{
-			scene1.RemoveChild(sprite, true);
-		}
-		
-		public void Dispose()
-		{
-			completeTexture.Dispose();
-				
+			textureInfo.Dispose();
+			stars1Texture.Dispose();
+			stars2Texture.Dispose();
+			stars3Texture.Dispose();
 		}
 	}
 }

@@ -10,29 +10,21 @@ using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 namespace GravityDuck
 {
 	
-	public class GameOverScreen
+	public class GameOverScreen : Screen
 	{
-		private TextureInfo gameOverTexture; 
-		private SpriteUV sprite; 
-		
 		private TextureInfo restartButtonTexture; 
 		private SpriteUV restartButtonSprite; 
 				
 		private bool restart = false;
-		
-		private Scene scene1;
-		
+
 		private Bounds2 restartBox;
 		
-			
-		public GameOverScreen (Scene scene)
+		public GameOverScreen (Scene scene) :base(scene)
 		{
-			scene1 = scene;
-			
-			gameOverTexture	= new TextureInfo("/Application/textures/gameOver.png");
+			textureInfo		= new TextureInfo("/Application/textures/gameOver.png");
 			sprite 			= new SpriteUV();
-			sprite 			= new SpriteUV(gameOverTexture);
-			sprite.Quad.S 	= gameOverTexture.TextureSizef;
+			sprite 			= new SpriteUV(textureInfo);
+			sprite.Quad.S 	= textureInfo.TextureSizef;
 			sprite.Position = new Vector2(0.0f, 0.0f);
 			scene.AddChild(sprite);
 			sprite.Visible = false;
@@ -44,9 +36,6 @@ namespace GravityDuck
 			restartButtonSprite.Position = new Vector2(0.0f, 0.0f);
 			scene.AddChild(restartButtonSprite);
 			restartButtonSprite.Visible = false;
-			
-			
-			
 		}
 		
 		public void Update()
@@ -108,17 +97,17 @@ namespace GravityDuck
 			var touches = Touch.GetData(0);	
 			restart = false;
 		}
+//		
+//		public void RemoveAll()
+//		{
+//			scene.RemoveChild(sprite, true);
+//			scene.RemoveChild(restartButtonSprite, true);
+//			
+//		}
 		
-		public void RemoveAll()
+		public new void Dispose()
 		{
-			scene1.RemoveChild(sprite, true);
-			scene1.RemoveChild(restartButtonSprite, true);
-			
-		}
-		
-		public void Dispose()
-		{
-			gameOverTexture.Dispose();
+			textureInfo.Dispose();
 			restartButtonTexture.Dispose();		
 		}
 	}

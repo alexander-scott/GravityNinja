@@ -10,11 +10,8 @@ using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 namespace GravityDuck
 { 
 	//Our Background class V1.0 by @AS
-	public class OptionsScreen
+	public class OptionsScreen : Screen
 	{
-		private TextureInfo optionsTexture; //The background texture
-		private SpriteUV sprite; //The background sprite
-		
 //		private TextureInfo loadingTexture;
 //		
 //		private TextureInfo playTexture; //The background texture
@@ -38,15 +35,12 @@ namespace GravityDuck
 //		private Bounds2 hiscoreBox;
 		bool options = false;
 		
-		public OptionsScreen (Scene scene)
+		public OptionsScreen (Scene scene) : base(scene)
 		{
-			//scene1 = scene;
-		
-			
-			optionsTexture 	= new TextureInfo("/Application/textures/options.png");
+			textureInfo 	= new TextureInfo("/Application/textures/options.png");
 			sprite 			= new SpriteUV();
-			sprite 			= new SpriteUV(optionsTexture);
-			sprite.Quad.S 	= optionsTexture.TextureSizef;
+			sprite 			= new SpriteUV(textureInfo);
+			sprite.Quad.S 	= textureInfo.TextureSizef;
 			sprite.Position = new Vector2(0.0f, 0.0f);
 			sprite.Visible = false;
 //			loadingTexture 	= new TextureInfo("/Application/textures/Level1Load.png");
@@ -115,15 +109,6 @@ namespace GravityDuck
 			
 		}
 		
-		
-		public void RemoveAll()
-		{
-//			scene1.RemoveChild(sprite, true);
-//			scene1.RemoveChild(playSprite, true);
-//			scene1.RemoveChild(controlSprite, true);
-//			scene1.RemoveChild(hiscoreSprite, true);
-		}
-		
 		public void Show()
 		{
 			sprite.Visible = true;
@@ -143,11 +128,6 @@ namespace GravityDuck
 			else
 				return false;
 			
-		}
-				
-		public void Dispose()
-		{
-							
 		}
 	}
 }
