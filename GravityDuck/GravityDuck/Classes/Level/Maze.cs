@@ -38,7 +38,7 @@ namespace GravityDuck
 		private LaserGate[] laserGates;
 				
 		private int breakableWallCount;
-		private BreakableWall[] breakableWalls;
+		private BreakableWall[] breakableWalls;	
 		
 		private LevelFlag levelFlag;
 		private bool levelFinished;
@@ -57,10 +57,10 @@ namespace GravityDuck
 			coinCount = 20; 
 			gemCount = 3;
 			spikeCount = 5;
-			windTunnelCount = 1;
-			blackHoleCount = 1;
-			laserGateCount = 1;
-			breakableWallCount = 1;
+			windTunnelCount = 0;
+			blackHoleCount = 0;
+			laserGateCount = 0;
+			breakableWallCount = 0;
 			
 			//Load in the textures here
 			//Ground Block Textures
@@ -95,36 +95,50 @@ namespace GravityDuck
 			spikes[4] = new Spikes(scene, 1);
 			
 			spikes[0].setPosition(new Vector2(500.0f, 215.0f));
-		 	spikes[2].setPosition(new Vector2(360.0f, 620.0f));
+			spikes[1].setPosition(new Vector2(690.0f, 690.0f));
+			spikes[1].getSprite().Rotate(-1.5707963268f);
+			spikes[2].setPosition(new Vector2(360.0f, 620.0f));
 			spikes[3].setPosition(new Vector2(50.0f, 1075.0f));
 			spikes[3].getSprite().Rotate(-1.5707963268f);
 			spikes[4].setPosition(new Vector2(270.0f, 1050.0f));
 			
-			//// Initialise and position wind tunnels	RMDS
-			//windTunnels = new WindTunnel[windTunnelCount];
-			//
-			//windTunnels[0] = new WindTunnel(scene, WindTunnel.Direction.LEFT);
-			//windTunnels[0].setPosition(new Vector2(800.0f, 340.0f));
+			// Initialise and position wind tunnels	RMDS
+			if(windTunnelCount > 0)
+			{
+				windTunnels = new WindTunnel[windTunnelCount];
+				
+				windTunnels[0] = new WindTunnel(scene, WindTunnel.Direction.LEFT);
+				windTunnels[0].setPosition(new Vector2(800.0f, 340.0f));
+			}
 			
-			////	Initialise and position black holes		RMDS
-			//blackHoles = new BlackHole[blackHoleCount];
-			//
-			//blackHoles[0] = new BlackHole(scene, BlackHole.Direction.UP);
-			//blackHoles[0].setPosition(new Vector2(800.0f, 280.0f));
+			//	Initialise and position black holes		RMDS
+			if(blackHoleCount > 0)
+			{
+				blackHoles = new BlackHole[blackHoleCount];
+				
+				blackHoles[0] = new BlackHole(scene, BlackHole.Direction.UP);
+				blackHoles[0].setPosition(new Vector2(800.0f, 280.0f));
+			}
 			
-			////	Initialise and position laser gates		RMDS
-			//laserGates = new LaserGate[laserGateCount];
-			//
-			//laserGates[0] = new LaserGate(scene, LaserGate.Direction.UP);
-			//laserGates[0].setPosition(new Vector2(300.0f, 270.0f));
+			//	Initialise and position laser gates		RMDS
+			if(laserGateCount > 0)
+			{
+				laserGates = new LaserGate[laserGateCount];
+				
+				laserGates[0] = new LaserGate(scene, LaserGate.Direction.UP);
+				laserGates[0].setPosition(new Vector2(300.0f, 270.0f));	
+			}
 			
 			//	Initialise and position breakable walls		RMDS
-			breakableWalls = new BreakableWall[breakableWallCount];
+			if(breakableWallCount > 0)
+			{
+				breakableWalls = new BreakableWall[breakableWallCount];
+				
+				breakableWalls[0] = new BreakableWall(scene, BreakableWall.Direction.UP, 60.0f);
+				breakableWalls[0].setPosition(new Vector2(300.0f, 270.0f));
+			}
+
 			
-			breakableWalls[0] = new BreakableWall(scene, BreakableWall.Direction.LEFT, 60.0f);
-			breakableWalls[0].setPosition(new Vector2(800.0f, 500.0f));
-			
-					
 			
 			//Initialise maze tiles
 			for (int i = 0; i < mazeWidth; ++i) //Basic tile engine
@@ -372,9 +386,9 @@ namespace GravityDuck
 			}
 			else if (gravity == 2) // Right
 			{
-				if (((player.Point10.Y < mazeTile.Point10.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
+				if (((player.Point10.Y < mazeTile.Point11.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
 				{ //If the left side of the player is past the right side of the tile and vica versa
-					if ((player.Point11.X) < mazeTile.Point11.X) //If the tile is above the player
+					if ((player.Point10.X) > mazeTile.Point11.X) //If the tile is above the player
 						return true;	
 					else
 						return false;
@@ -397,7 +411,7 @@ namespace GravityDuck
 			}
 			else if (gravity == 4) // Left
 			{
-				if (((player.Point11.Y < mazeTile.Point10.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
+				if (((player.Point10.Y < mazeTile.Point11.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
 				{ //If the left side of the player is past the right side of the tile and vica versa
 					if ((player.Point11.X) < mazeTile.Point11.X) //If the tile is above the player
 						return true;	
@@ -490,7 +504,7 @@ namespace GravityDuck
 					if(windTunnels[0].CheckPlayerPos(player))
 						force = windTunnels[0].CalculateForce(player);		
 			}
-
+		
 			return force;
 		}
 		
@@ -532,6 +546,6 @@ namespace GravityDuck
 			}
 			
 			return false;
-		}		
-	}	
+		}	
+	}
 }
