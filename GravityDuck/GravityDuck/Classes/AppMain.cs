@@ -10,6 +10,8 @@ using Sce.PlayStation.Core.Input;
 using Sce.PlayStation.HighLevel.GameEngine2D;
 using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 using Sce.PlayStation.HighLevel.UI;
+using System.Xml.Serialization;
+using System.Xml;
 	
 namespace GravityDuck
 {
@@ -17,7 +19,7 @@ namespace GravityDuck
 	{
 		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene 	gameScene;
 		
-		private static string SAVE_DATA = "/Documents/savedata.dat";
+		private static string SAVE_DATA = "/Documents/savedata.xml";
 		private static bool	doesDataFileExist = false;
 				
 		private static int DEBUGHIGHSCORE = 0;
@@ -79,6 +81,10 @@ namespace GravityDuck
 		private static bool loaded = false;
 		private static bool startLoading = false;
 		private static int timeStamp1, timeStamp2;
+		
+		//------ Level Data ------\\
+		private static int TotalNumOfLevels = 10;
+		private static List<Highscore> loadedHighscores;
 
 		public static void Main (string[] args)
 		{
@@ -688,25 +694,57 @@ namespace GravityDuck
 		}
 		
 		
-		public static void SaveData() // Save the game data (highscore)	RMDS
-		{				
-			if(System.IO.File.Exists(@SAVE_DATA) == true)
-			{	
-				System.IO.File.Delete(@SAVE_DATA);
-				doesDataFileExist = false;
-			}
+		public static void SaveData() // Save the game data (highscore)		RMDS
+		{						
+			List<int> allId = new List<int>();
 			
-			using (System.IO.FileStream hStream = System.IO.File.Open(@SAVE_DATA, FileMode.Create))
-			{				
-				using(BinaryWriter w = new BinaryWriter(hStream))
-				{
-					
-					w.Write(DEBUGHIGHSCORE);
-				}	
+			XmlDocument doc = new XmlDocument();
+			
+			if(System.IO.File.Exists(@SAVE_DATA) == true)
+				doc.Load(@SAVE_DATA);
+			
+			
+			XmlNodeList list = doc.SelectNodes("game/level");
+
+			int numOfCompletedLevels = loadedHighscores.Count;
+			
+			for(int i = 0; i < numOfCompletedLevels; i++)
+			{
+				XmlNode currentNode = doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]");
 				
-				hStream.Close();
-				doesDataFileExist = true;
-			}
+				// If the level data exists then append its children	RMDS
+				if(currentNode != null)
+				{
+					// Append highscore with player name
+					doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(0).InnerText =
+						loadedHighscores[i].GetPlayerName();
+					doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(1).InnerText =
+						loadedHighscores[i].GetScore().ToString();
+				}
+		
+		        doc.Save(@SAVE_DATA);			
+			}		
+							
+//	private void SerializeElement(string filename){
+//    XmlSerializer ser = new XmlSerializer(typeof(XmlElement));
+//    XmlElement myElement= 
+//    new XmlDocument().CreateElement("MyElement", "ns");
+//    myElement.InnerText = "Hello World";
+//    TextWriter writer = new StreamWriter(filename);
+//    ser.Serialize(writer, myElement);
+//    writer.Close();
+//}
+//
+//private void SerializeNode(string filename){
+//    XmlSerializer ser = new XmlSerializer(typeof(XmlNode));
+//    XmlNode myNode= new XmlDocument().
+//    CreateNode(XmlNodeType.Element, "MyNode", "ns");
+//    myNode.InnerText = "Hello Node";
+//    TextWriter writer = new StreamWriter(filename);
+//    ser.Serialize(writer, myNode);
+//    writer.Close();
+//}
+
 			
 		}
 		
@@ -714,15 +752,51 @@ namespace GravityDuck
 		public static bool LoadData() // Load the game data (highscore)	RMDS
 		{
 			if(System.IO.File.Exists(@SAVE_DATA) == true)
-			{	
-				using (System.IO.FileStream hStream = System.IO.File.Open(@SAVE_DATA, FileMode.Open))				
-					if(hStream != null)
-						using(BinaryReader r = new BinaryReader(hStream))
-						{
-							DEBUGHIGHSCORE = r.ReadInt32();	
-							return true;
-						}
+			{		
+				// The XML file loaded has data for each level about their highscore and the player
+				// that acquired that highscore.	RMDS
+				
+				
+				XmlDocument doc = new XmlDocument();
+				List<int> allLevelIds = new List<int>();
+				doc.Load(@SAVE_DATA);
+				
+				// This will provide a list of all the levels that the player has currently earned a highscore in,
+				// therefore the player's total progress.	RMDS
+				loadedHighscores = new List<Highscore>();
+				
+				
+				int level = 1;
+				
+				XmlNode currentNode = doc.SelectSingleNode("game/level[@id=\"" + level.ToString() + "\"]");
+					
+			
+				while(currentNode != null)
+				{
+
+					string playerName = currentNode.ChildNodes.Item(0).InnerText;
+					int highscore = Int32.Parse(currentNode.ChildNodes.Item(1).InnerText);
+					
+					Highscore currentLoad = new Highscore(level, highscore, playerName);
+					
+					loadedHighscores.Add(currentLoad);
+					
+					// Load the next level data from the saved data file.	RMDS
+					level++;
+								
+					currentNode.Attributes.GetNamedItem("player");												
+					currentNode = doc.SelectSingleNode("game/level[@id=\"" + level.ToString() + "\"]");					
+				}		
+				
+				
+				int numOfLevels = level - 1;
+				
+				if(numOfLevels > TotalNumOfLevels)
+					return false; // Should throw exception.	RMDS
 			}
+			else
+				return true;
+				 
 			return false;
 			
 		}

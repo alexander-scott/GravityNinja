@@ -1,0 +1,22 @@
+<game>
+  <level id="1">
+    <player>Rui</player>
+    <highscore>142424</highscore>
+  </level>
+  <level id="2">
+    <player>Alex</player>
+    <highscore>1</highscore>
+  </level>
+  <level id="3">
+    <player>Alex</player>
+    <highscore>1</highscore>
+  </level>
+  <level id="4">
+    <player>Alex</player>
+    <highscore>1</highscore>
+  </level>
+  <level id="5">
+    <player>Alex</player>
+    <highscore>1</highscore>
+  </level>
+</game>

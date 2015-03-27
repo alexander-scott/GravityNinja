@@ -59,6 +59,7 @@
     <Compile Include="Classes\Level\Obstacles\BreakableWall.cs" />
     <Compile Include="Classes\Level\Obstacles\LaserGate.cs" />
     <Compile Include="Classes\Level\Obstacles\WindTunnel.cs" />
+    <Compile Include="Classes\Highscore.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
