@@ -79,6 +79,7 @@ namespace GravityDuck
 			backButton.SetSize(100, 50);
 			backButton.Text = "BACK";
 			backButton.BackgroundFilterColor = new UIColor(255.0f, 255.0f, 0.0f, 1.0f);
+			backButton.ButtonAction += HandleBackButtonAction;
 			uiScene.RootWidget.AddChildLast(backButton);
 				
 			scene.AddChild(sprite);

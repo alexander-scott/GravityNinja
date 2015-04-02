@@ -57,7 +57,7 @@ namespace GravityDuck
 		
 		//------ Camera Data ------\\
 		private static float cameraRotation = FMath.PI/2.0f; // The rotation of the camera as a angle, as well as other entities
-		private static float zoom = 2.0f; // How much of the game can be viewed
+		private static float zoom = 0.5f; // How much of the game can be viewed
 		private static bool rotating = false; //Camera rotations bools
 		private static bool sideRotation = false;
 		private static bool rightRotation = false;
@@ -158,11 +158,11 @@ namespace GravityDuck
 			//Background
 			background = new Background(gameScene);
 			
-			//Player
-			player = new Player(gameScene);
-			
 			//Maze
 			maze = new Maze(gameScene, currentLevel);
+			
+			//Player
+			player = new Player(gameScene, maze.GetSpawnPoint());
 
 			TextureInfo texture = new TextureInfo("/Application/textures/arrow.png");
 			gravityArrow 			= new SpriteUV();
@@ -251,6 +251,8 @@ namespace GravityDuck
 				{
 					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
 					levelSelected = false;
+					levelSelectScreen.SetVisible(false, currentLevel);
+					title = new TitleScreen(gameScene);	
 				}
 				
 				if (levelSelect && !loaded && !startLoading)
@@ -557,35 +559,38 @@ namespace GravityDuck
 			playerBox.Min.Y = player.GetPos().Y - 25;
 			playerBox.Max.Y = player.GetPos().Y + 25;
 				
-			if(maze.HasCollidedWithPlayer(playerBox)) //If the box has collided with a tile
-			{	
-				if (maze.HasHitSide(playerBox, currGrav)) //Check if it's a side tile
-				{
-					invert = true; //Set invert to true so the Y axis gets inverted
-					player.SetPos(player.GetPos() - movementVector*10); //Bounce the player off the sides (WILL MAKE SMOOTHER)
-				}
-				else
-				{
-					if (currGrav == 3 || currGrav == 1)
-						invert = false; //Set invert to false so the X axis gets inverted
+			if (play)
+			{
+				if(maze.HasCollidedWithPlayer(playerBox)) //If the box has collided with a tile
+				{	
+					if (maze.HasHitSide(playerBox, currGrav)) //Check if it's a side tile
+					{
+						invert = true; //Set invert to true so the Y axis gets inverted
+						player.SetPos(player.GetPos() - movementVector*10); //Bounce the player off the sides (WILL MAKE SMOOTHER)
+					}
 					else
-						invert = true;
-				}
-
-				if (player.GetVelocity() > -2.0f && player.GetVelocity() < 2.0f)
-				{
-					falling = false; //If he's moving too slowly stop him bouncing
-					if (player.GetVelocity() < 0)
-						player.SetVelocity(-player.GetVelocity()); 
+					{
+						if (currGrav == 3 || currGrav == 1)
+							invert = false; //Set invert to false so the X axis gets inverted
+						else
+							invert = true;
+					}
+	
+					if (player.GetVelocity() > -2.0f && player.GetVelocity() < 2.0f)
+					{
+						falling = false; //If he's moving too slowly stop him bouncing
+						if (player.GetVelocity() < 0)
+							player.SetVelocity(-player.GetVelocity()); 
+					}
+					else
+					{
+						player.SetVelocity(-player.GetVelocity()); //Invert the velocity so the player bounces
+					}
+		
 				}
 				else
-				{
-					player.SetVelocity(-player.GetVelocity()); //Invert the velocity so the player bounces
-				}
-	
+					falling = true; //If no intersection then we are falling
 			}
-			else
-				falling = true; //If no intersection then we are falling
 			
 			//Scoring collsions @AW
 			int prevScore = score;

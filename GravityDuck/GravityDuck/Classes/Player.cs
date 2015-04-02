@@ -28,14 +28,14 @@ namespace GravityDuck
 		private static float 		momentum = 0.0f;
 		private static float 		mass = 10.0f;
 		
-		public Player (Scene scene)
+		public Player (Scene scene, Vector2 spawnPoint)
 		{	
 			textureInfo = new TextureInfo("/Application/textures/ninja2.png"); //Load in our lovely duck texture
 			
 			sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef; //Might need to make smaller or bigger in the future
-			sprite.Position = new Vector2(190.0f, 330.0f);; //Starting position (will be changed)
+			sprite.Position = spawnPoint; //Starting position (will be changed)
 			sprite.CenterSprite(new Vector2(0.5f,0.5f)); //Set the origin of the sprite to the centre of the duck
 			sprite.Scale    = new Vector2(0.5f, 0.5f);
 			sprite.Angle = 0.0f;
@@ -137,7 +137,7 @@ namespace GravityDuck
 		
 		public void resetPosition()
 		{
-			sprite.Position = new Vector2(190.0f, 330.0f);
+			sprite.Position = new Vector2(175.0f, 184.0f);
 		}
 		
 		public void setAlive()

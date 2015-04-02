@@ -1,6 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\Level\LevelLoader.cs">
+    <Files>
+      <File FileName="GravityDuck\Classes\Level\LevelLoader.cs" Line="38" Column="12" />
+      <File FileName="c:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\Classes\AppMain.cs" Line="166" Column="4" />
+      <File FileName="c:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\Classes\Level\Maze.cs" Line="237" Column="22" />
+      <File FileName="GravityDuck\Classes\Player.cs" Line="38" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

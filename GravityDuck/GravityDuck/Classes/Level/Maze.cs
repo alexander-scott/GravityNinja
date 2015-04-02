@@ -11,6 +11,8 @@ namespace GravityDuck
 	//Our Maze class V2 by @AW && @AS
 	public class Maze
 	{		
+		public static Vector2 spawnPoint;
+		
 		// Level Loader
 		private LevelLoader level;
 		
@@ -62,6 +64,9 @@ namespace GravityDuck
 			// Collectables
 			coins = level.LoadInCoins(scene);
 			gems = level.LoadInGems(scene);
+			
+			//Player Position
+			spawnPoint = level.playerPos;
 			
 			levelFlag = level.LoadInFlag(scene);
 			
@@ -125,7 +130,7 @@ namespace GravityDuck
 			{
 				if (((player.Point10.Y < mazeTile.Point11.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
 				{ //If the left side of the player is past the right side of the tile and vica versa
-					if ((player.Point10.X) > mazeTile.Point11.X) //If the tile is above the player
+					if ((player.Point00.X) > mazeTile.Point00.X) //If the tile is above the player
 						return true;	
 					else
 						return false;
@@ -194,13 +199,16 @@ namespace GravityDuck
 		//Check Obstacle Collisions
 		public bool CheckObstacleCollisions(SpriteUV sprite)
 		{
-			foreach(Spikes spike in spikes)
+			if (spikes != null)
 			{
-				bool collide = spike.HasCollidedWithPlayer(sprite);
-				
-				if (collide)
+				foreach(Spikes spike in spikes)
 				{
-				   return true;
+					bool collide = spike.HasCollidedWithPlayer(sprite);
+					
+					if (collide)
+					{
+					   return true;
+					}
 				}
 			}
 			return false;
@@ -222,6 +230,11 @@ namespace GravityDuck
 		public bool IsLevelComplete()
 		{
 			return levelFinished;
+		}
+		
+		public Vector2 GetSpawnPoint()
+		{
+			return spawnPoint;
 		}
 		
 		//Set Level Complete Boolean

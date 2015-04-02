@@ -141,5 +141,10 @@
     <Content Include="textures\LevelSelectBackground.png" />
     <Content Include="maps\level0.tmx" />
     <Content Include="maps\level1.tmx" />
+    <Content Include="textures\Level\leftBlock1.png" />
+    <Content Include="textures\Level\leftBlock2.png" />
+    <Content Include="textures\Level\rightBlock1.png" />
+    <Content Include="textures\Level\rightBlock2.png" />
+    <Content Include="maps\level2.tmx" />
   </ItemGroup>
 </Project>

@@ -31,7 +31,7 @@ namespace GravityDuck
 		private List<Spikes> spikes;
 		private List<WindTunnel> windTunnels;
 		
-		private Vector2 playerPos;
+		public Vector2 playerPos;
 		
 		public LevelLoader ()
 		{
@@ -207,7 +207,7 @@ namespace GravityDuck
 				break;
 				
 				// Player Position
-				case "":
+				case "Player":
 					playerPos = new Vector2(x, y);
 				break;
 			}
@@ -279,6 +279,38 @@ namespace GravityDuck
 							SpriteUV spriteTB = TileManager.GetTileType("TreeBlock");
 							sprites[i,ii] = new SpriteUV(spriteTB.TextureInfo);
 							sprites[i,ii].Quad.S = spriteTB.Quad.S;
+							sprites[i,ii].Position = new Vector2(128.0f*ii, 142.0f*i);
+							scene.AddChild(sprites[i,ii]);
+						break;
+						
+						case 6:
+							SpriteUV spriteLB1 = TileManager.GetTileType("LeftBlock1");
+							sprites[i,ii] = new SpriteUV(spriteLB1.TextureInfo);
+							sprites[i,ii].Quad.S = spriteLB1.Quad.S;
+							sprites[i,ii].Position = new Vector2(128.0f*ii, 142.0f*i);
+							scene.AddChild(sprites[i,ii]);
+						break;
+						
+						case 7:
+							SpriteUV spriteLB2 = TileManager.GetTileType("LeftBlock2");
+							sprites[i,ii] = new SpriteUV(spriteLB2.TextureInfo);
+							sprites[i,ii].Quad.S = spriteLB2.Quad.S;
+							sprites[i,ii].Position = new Vector2(128.0f*ii, 142.0f*i);
+							scene.AddChild(sprites[i,ii]);
+						break;
+						
+						case 8:
+							SpriteUV spriteRB1 = TileManager.GetTileType("RightBlock1");
+							sprites[i,ii] = new SpriteUV(spriteRB1.TextureInfo);
+							sprites[i,ii].Quad.S = spriteRB1.Quad.S;
+							sprites[i,ii].Position = new Vector2(128.0f*ii, 142.0f*i);
+							scene.AddChild(sprites[i,ii]);
+						break;
+						
+						case 9:
+							SpriteUV spriteRB2 = TileManager.GetTileType("RightBlock2");
+							sprites[i,ii] = new SpriteUV(spriteRB2.TextureInfo);
+							sprites[i,ii].Quad.S = spriteRB2.Quad.S;
 							sprites[i,ii].Position = new Vector2(128.0f*ii, 142.0f*i);
 							scene.AddChild(sprites[i,ii]);
 						break;
