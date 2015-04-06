@@ -14,18 +14,25 @@ namespace GravityDuck
 		private TextureInfo backgroundTexture; //The background texture
 		private SpriteUV sprite; //The background sprite
 		
-		public Background (Scene scene)
+		public Background (Scene scene, Vector2 centrePos)
 		{
-			backgroundTexture 	= new TextureInfo("/Application/textures/background.png");
+			backgroundTexture 	= new TextureInfo("/Application/textures/bground.png");
 			
 			sprite 			= new SpriteUV();
 			sprite 			= new SpriteUV(backgroundTexture);
-			sprite.Quad.S 	= backgroundTexture.TextureSizef*2;
-			sprite.Scale 	= new Vector2(3.0f, 3.0f); //Make
-			sprite.Pivot 	= new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
-			sprite.Position = new Vector2(0.0f, 0.0f);
+			sprite.Quad.S 	= backgroundTexture.TextureSizef;
+			//sprite.Pivot 	= new Vector2(sprite.Quad.S.X, sprite.Quad.S.Y);
+			sprite.CenterSprite(new Vector2(0.5f,0.5f));
+			sprite.Position = centrePos;
+			sprite.Angle = 0.0f;
 			
 			scene.AddChild(sprite);
+		}
+		
+		public void Update(Vector2 centrePos, Vector2 rotation)
+		{
+			sprite.Position = centrePos;
+			sprite.Angle = -(float)FMath.Atan2(rotation.X, rotation.Y);
 		}
 		
 		public void Dispose()

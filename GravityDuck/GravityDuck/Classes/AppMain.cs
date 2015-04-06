@@ -159,7 +159,7 @@ namespace GravityDuck
 		public static void InitializeGame()
 		{
 			//Background
-			background = new Background(gameScene);
+			background = new Background(gameScene, new Vector2(190.0f, 1215f));
 			
 			//Maze
 			maze = new Maze(gameScene, currentLevel);
@@ -233,9 +233,9 @@ namespace GravityDuck
 				case Screens.TITLE:
 				{
 					title.Update();
-				
 					if (title.CheckPlay())
 				    {
+						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
 						levelSelectScreen.SetVisible(true, currentLevel);
 						title.RemoveAll();
 						currentScreen = Screens.LEVELSELECT;
@@ -246,6 +246,7 @@ namespace GravityDuck
 				{
 					if (levelSelectScreen.Selected()) 
 					{
+						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
 						currentLevel = levelSelectScreen.levelSelected;
 						loadingScreen.SetVisible(true, currentLevel);
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
@@ -277,6 +278,7 @@ namespace GravityDuck
 					loadingScreen.Update((int)timer.Milliseconds());
 					if (loadingScreen.CheckPlay())
 					{
+						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
 						StartLevel();
 						currentScreen = Screens.PLAYING;
 						play = true;
@@ -289,7 +291,7 @@ namespace GravityDuck
 					{
 						time = (int)timer.Seconds();
 						player.Update(gravityVector, playerDirection, movementVector, invert, falling, additionalForces);
-						
+						background.Update(player.GetPos(), -new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation)));
 						UpdateCamera();
 						CheckCollisions();
 						currentTime = time;
@@ -411,9 +413,9 @@ namespace GravityDuck
 				gravityArrow.Visible = true;
 			}
 			
-			if (Input2.GamePad0.Circle.Down) //Include gravity arrow
+			if (Input2.GamePad0.Circle.Down) //Exits app
 			{
-				Director.Terminate();
+				//Director.Terminate();
 			}
 			
 			if (Input2.GamePad0.Square.Down) //Change camera zoom
@@ -555,7 +557,7 @@ namespace GravityDuck
 					movementVector = new Vector2(-motionData.Acceleration.X + keyboardVector.X, 0.0f);	
 					gravityVector = new Vector2(-FMath.Cos(cameraRotation) - motionData.Acceleration.X + keyboardVector.X, -FMath.Sin(cameraRotation));
 				}
-				else 
+				else  
 				{
 						if (-FMath.Cos(cameraRotation) == 1f) //Right
 						{
@@ -649,7 +651,7 @@ namespace GravityDuck
 					if (maze.HasHitSide(playerBox, currGrav)) //Check if it's a side tile
 					{
 						invert = true; //Set invert to true so the Y axis gets inverted
-						player.SetPos(player.GetPos() - movementVector*10); //Bounce the player off the sides (WILL MAKE SMOOTHER)
+						player.SetPos(player.GetPos() - movementVector*9.65f); //Bounce the player off the sides (WILL MAKE SMOOTHER) 
 					}
 					else
 					{
@@ -669,7 +671,6 @@ namespace GravityDuck
 					{
 						player.SetVelocity(-player.GetVelocity()); //Invert the velocity so the player bounces
 					}
-		
 				}
 				else
 					falling = true; //If no intersection then we are falling
