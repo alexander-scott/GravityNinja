@@ -64,20 +64,23 @@ namespace GravityDuck
 		private static float endRotation;
 		public static float lastTime = 0.0f;
 		public static bool zoomedIn = false;
-		private static float upperCameraRange = FMath.PI/4;
-		private static float lowerCameraRange = -FMath.PI/4;
+//		private static float upperCameraRange = FMath.PI/4;
+//		private static float lowerCameraRange = -FMath.PI/4;
 		
 		//------ Menu Data ------\\
 		private static bool play = false;
 		private static bool pause = false;
-		private static bool loaded = false;
-		private static bool startLoading = false;
-		private static bool levelSelect = false;
-		private static bool levelSelected = false;
 		private static int timeStamp1;
+		private enum Screens {TITLE, LEVELSELECT, LOADING, LOADED, PLAYING};
+		private static Screens currentScreen;
+//		private static bool loaded = false;
+//		private static bool startLoading = false;
+//		private static bool levelSelect = false;
+//		private static bool levelSelected = false;
 		
 		//------ Level Data ------\\
-		private static int currentLevel = 0;
+		private static int currentLevel = 0; //The level to load
+		private static int highestUnlockedLevel = 5; //Read this in from file eventually (local highscores)
 		
 		public static void Main (string[] args)
 		{
@@ -133,12 +136,14 @@ namespace GravityDuck
 			gameScene = new Sce.PlayStation.HighLevel.GameEngine2D.Scene();
 			gameScene.Camera.SetViewFromViewport();
 			
+			currentScreen = Screens.TITLE;
+			
 			title = new TitleScreen(gameScene);	
 			AudioManager.PlayMusic("Level1", true, 1.0f, 1.0f);
 			
 			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
 			
-			levelSelectScreen = new LevelSelectScreen(gameScene, uiScene);
+			levelSelectScreen = new LevelSelectScreen(gameScene, uiScene, highestUnlockedLevel);
 			levelSelectScreen.SetVisible(false, currentLevel);
 			
 			loadingScreen = new LoadingScreen(gameScene, uiScene);
@@ -153,8 +158,6 @@ namespace GravityDuck
 		
 		public static void InitializeGame()
 		{
-			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
-			
 			//Background
 			background = new Background(gameScene);
 			
@@ -225,84 +228,164 @@ namespace GravityDuck
 		public static void Update()
 		{		
 			CheckInput();
-			if (!play)
+			switch (currentScreen)
 			{
-				if (!loaded) //Update title screen
+				case Screens.TITLE:
+				{
 					title.Update();
-				else if (levelSelect) //Update level select screen
-					levelSelectScreen.Update();
-				else //Update loading screen
-					loadingScreen.Update((int)timer.Milliseconds()); 
 				
-				if (title.CheckPlay() && !loaded && !startLoading) //If we have clicked play on the title screen
-				{
-					levelSelectScreen.SetVisible(true, currentLevel);
-					title.RemoveAll();
-					levelSelected = true;
-				}
-				
-				if (levelSelected && levelSelectScreen.Selected()) //If we have picked a level
-				{
-					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-					levelSelect = true;
-					currentLevel = levelSelectScreen.levelSelected;
-				}
-				else if (levelSelected && levelSelectScreen.BackPressed())
-				{
-					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-					levelSelected = false;
-					levelSelectScreen.SetVisible(false, currentLevel);
-					title = new TitleScreen(gameScene);	
-				}
-				
-				if (levelSelect && !loaded && !startLoading)
-				{
-					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-					startLoading = true;
-					loadingScreen.SetVisible(true, currentLevel);
-					timeStamp1 = (int)timer.Milliseconds() + 1;
-					levelSelect = false;
-					levelSelected = false;
-				}
-				
-				if (startLoading && timer.Milliseconds() > timeStamp1) //If the level has loaded
-				{
-					levelSelectScreen.SetVisible(false, currentLevel);
-					InitializeGame();
-					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
-					loaded = true;
-					startLoading = false;
-					title.RemoveAll();
-				}
-				
-				if (loaded && loadingScreen.CheckPlay()) //If the play button has been clicked on the loading screen
-				{
-					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-					StartLevel();
-					play = true;
-				}
-			} 
-			else
-			{
-				
-				if (!pause && player.IsAlive())
-				{
-					time = (int)timer.Seconds();
-					player.Update(gravityVector, playerDirection, movementVector, invert, falling, additionalForces);
-					
-					UpdateCamera();
-					CheckCollisions();
-					currentTime = time;
-					UpdateUI ();
-				}else if (!player.IsAlive())
-				{
-					gameOverScreen.Update();
-					if (gameOverScreen.CheckRestart())
-					{
-						restartGame();
+					if (title.CheckPlay())
+				    {
+						levelSelectScreen.SetVisible(true, currentLevel);
+						title.RemoveAll();
+						currentScreen = Screens.LEVELSELECT;
 					}
+				break;
+				}
+				case Screens.LEVELSELECT:
+				{
+					if (levelSelectScreen.Selected()) 
+					{
+						currentLevel = levelSelectScreen.levelSelected;
+						loadingScreen.SetVisible(true, currentLevel);
+						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
+						timeStamp1 = (int)timer.Milliseconds() + 1;
+						levelSelectScreen.SetVisible(false, currentLevel);
+						loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
+						currentScreen = Screens.LOADING;
+						title.RemoveAll();
+					}
+					if (levelSelectScreen.BackPressed())
+					{
+						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+						currentScreen = Screens.TITLE;
+						levelSelectScreen.SetVisible(false, currentLevel);
+						title = new TitleScreen(gameScene);	
+					}
+					levelSelectScreen.Update();
+				break;
+				}
+				case Screens.LOADING:
+				{
+					loadingScreen.SetVisible(true, currentLevel);
+					currentScreen = Screens.LOADED;
+					InitializeGame();
+				break;
+				}
+				case Screens.LOADED:
+				{
+					loadingScreen.Update((int)timer.Milliseconds());
+					if (loadingScreen.CheckPlay())
+					{
+						StartLevel();
+						currentScreen = Screens.PLAYING;
+						play = true;
+					}
+				break;
+				}
+				case Screens.PLAYING:
+				{
+					if (!pause && player.IsAlive())
+					{
+						time = (int)timer.Seconds();
+						player.Update(gravityVector, playerDirection, movementVector, invert, falling, additionalForces);
+						
+						UpdateCamera();
+						CheckCollisions();
+						currentTime = time;
+						UpdateUI ();
+					}
+					else if (!player.IsAlive())
+					{
+						gameOverScreen.Update();
+						if (gameOverScreen.CheckRestart())
+						{
+							restartGame();
+						}
+					}
+				break;
 				}
 			}
+			
+//			if (!play)
+//			{
+//				if (!loaded) //Update title screen
+//					title.Update();
+//				else if (levelSelect) //Update level select screen
+//					levelSelectScreen.Update();
+//				else //Update loading screen
+//					loadingScreen.Update((int)timer.Milliseconds()); 
+//				
+//				if (title.CheckPlay() && !loaded && !startLoading) //If we have clicked play on the title screen
+//				{
+//					levelSelectScreen.SetVisible(true, currentLevel);
+//					title.RemoveAll();
+//					levelSelected = true;
+//				}
+//				
+//				if (levelSelected && levelSelectScreen.Selected()) //If we have picked a level
+//				{
+//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+//					levelSelect = true;
+//					currentLevel = levelSelectScreen.levelSelected;
+//				}
+//				else if (levelSelected && levelSelectScreen.BackPressed())
+//				{
+//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+//					levelSelected = false;
+//					levelSelectScreen.SetVisible(false, currentLevel);
+//					title = new TitleScreen(gameScene);	
+//				}
+//				
+//				if (levelSelect && !loaded && !startLoading)
+//				{
+//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+//					startLoading = true;
+//					loadingScreen.SetVisible(true, currentLevel);
+//					timeStamp1 = (int)timer.Milliseconds() + 1;
+//					levelSelect = false;
+//					levelSelected = false;
+//				}
+//				
+//				if (startLoading && timer.Milliseconds() > timeStamp1) //If the level has loaded
+//				{
+//					levelSelectScreen.SetVisible(false, currentLevel);
+//					InitializeGame();
+//					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
+//					loaded = true;
+//					startLoading = false;
+//					title.RemoveAll();
+//				}
+//				
+//				if (loaded && loadingScreen.CheckPlay()) //If the play button has been clicked on the loading screen
+//				{
+//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+//					StartLevel();
+//					play = true;
+//				}
+//			} 
+//			else
+//			{
+//				
+//				if (!pause && player.IsAlive())
+//				{
+//					time = (int)timer.Seconds();
+//					player.Update(gravityVector, playerDirection, movementVector, invert, falling, additionalForces);
+//					
+//					UpdateCamera();
+//					CheckCollisions();
+//					currentTime = time;
+//					UpdateUI ();
+//				}
+//				else if (!player.IsAlive())
+//				{
+//					gameOverScreen.Update();
+//					if (gameOverScreen.CheckRestart())
+//					{
+//						restartGame();
+//					}
+//				}
+//			}
 		}
 		
 		public static void CheckInput()

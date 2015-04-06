@@ -20,10 +20,12 @@ namespace GravityDuck
 		private bool play = false;
 		private bool back = false;
 		private static int numOfLevels = 27;
+		private static int highestUnlockedLevel = 0;
 		public int levelSelected = 0;
 		
-		public LevelSelectScreen (Sce.PlayStation.HighLevel.GameEngine2D.Scene scene, Sce.PlayStation.HighLevel.UI.Scene uiScene) : base(scene)
+		public LevelSelectScreen (Sce.PlayStation.HighLevel.GameEngine2D.Scene scene, Sce.PlayStation.HighLevel.UI.Scene uiScene, int maxLevel) : base(scene)
 		{
+			highestUnlockedLevel = maxLevel;
 			textureInfo 	= new TextureInfo("/Application/textures/LevelSelectBackground.png");
 			sprite 			= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);
@@ -58,8 +60,6 @@ namespace GravityDuck
 				if (i <= 8)
 				{
 					levelButtons[i].SetPosition(108f * i + 18, 180f);
-					if (i < 6)
-						levelButtons[i].BackgroundFilterColor = new UIColor(0.0f, 191.0f, 255.0f, 1.0f);
 				}
 				if (i > 8 && i <= 17)
 				{
@@ -69,6 +69,8 @@ namespace GravityDuck
 				{
 					levelButtons[i].SetPosition(108f * (i-18) + 18, 380f);
 				}
+				if (i <= highestUnlockedLevel)
+						levelButtons[i].BackgroundFilterColor = new UIColor(0.0f, 191.0f, 255.0f, 1.0f);
 					
 				levelButtons[i].SetSize(65,65);
 				uiScene.RootWidget.AddChildFirst(levelButtons[i]);
@@ -119,7 +121,7 @@ namespace GravityDuck
 			if (b.Length>0)
 			    levelSelected = int.Parse(b);
 			
-			if (levelSelected < 6)
+			if (levelSelected <= highestUnlockedLevel)
 			{
 				play = true;
 				backButton.Dispose();

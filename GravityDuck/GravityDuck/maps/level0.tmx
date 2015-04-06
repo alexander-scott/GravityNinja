@@ -298,7 +298,7 @@
     <property name="Type" value="Level"/>
    </properties>
   </object>
-  <object id="44" x="190" y="1225" width="50" height="50">
+  <object id="44" x="190" y="1215" width="50" height="50">
    <properties>
     <property name="Rotation" value="0"/>
     <property name="Type" value="Player"/>
