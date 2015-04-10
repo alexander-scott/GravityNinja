@@ -1,6 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\Screens\LevelSelectScreen.cs">
+    <Files>
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="82" Column="40" />
+      <File FileName="GravityDuck\Classes\Screens\LevelSelectScreen.cs" Line="157" Column="33" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

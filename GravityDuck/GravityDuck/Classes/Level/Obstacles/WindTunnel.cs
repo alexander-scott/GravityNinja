@@ -19,15 +19,39 @@ namespace GravityDuck
 		private const float smallestDistance = 100.0f;	// This is to stop the distance being so small that the calculation will
 														//	increase the player's velocity by enormous amounts
 		
-		public WindTunnel(Scene scene, Direction direction) : base(scene)
-		{
-			windDirection = direction;
-			
+		public WindTunnel() : base()
+		{			
 			textureInfo = new TextureInfo("/Application/textures/Level/windFan.png");
 
 			sprite          = new SpriteUV(textureInfo);
 			sprite.Quad.S   = textureInfo.TextureSizef;
 			sprite.Pivot = new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
+		}
+		
+		public void setDirection(int rotation)
+		{
+			switch(rotation)
+			{
+				case 0:
+					windDirection = Direction.UP;
+				break;
+				
+				case 360:
+					windDirection = Direction.UP;
+				break;
+					
+				case 90:
+					windDirection = Direction.LEFT;
+				break;
+				
+				case 180:
+					windDirection = Direction.DOWN;
+				break;
+				
+				case 270:
+					windDirection = Direction.RIGHT;
+				break;
+			}
 			
 			if(windDirection == Direction.LEFT)
 			{
@@ -42,10 +66,7 @@ namespace GravityDuck
 					{
 						sprite.Rotate(-FMath.PI/2);
 					}
-						
-			
-			scene.AddChild(sprite);
-		}
+		}	
 		
 		public Vector2 CalculateForce(Player player)
 		{

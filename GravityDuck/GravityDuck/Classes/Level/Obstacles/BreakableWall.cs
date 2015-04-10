@@ -14,38 +14,49 @@ namespace GravityDuck
 		
 		private Direction wallSpanDirection;
 		
+		float breakThreshold;
+		
 		private bool intact = true;
 		
 		private float requiredMomentum = 0.0f;
 		
-		public BreakableWall(Scene scene, Direction direction, float breakThreshold) : base(scene)
+		public BreakableWall() : base()
 		{
-			textureInfo = new TextureInfo("/Application/textures/Level/breakableWall.png");
+			breakThreshold = 50.0f;
 			
-			wallSpanDirection = direction;
-						
-			requiredMomentum = breakThreshold;
+			textureInfo = new TextureInfo("/Application/textures/Level/breakableWall.png");
 			
 			sprite          = new SpriteUV(textureInfo);
 			sprite.Quad.S   = textureInfo.TextureSizef;
 			
 			sprite.Pivot = new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
-			
-			if(wallSpanDirection == Direction.LEFT)
+		}
+		
+		public void setDirection(int rotation)
+		{
+			switch(rotation)
 			{
-				sprite.Rotate(FMath.PI/2);
+				case 0:
+					wallSpanDirection = Direction.UP;
+				break;
 				
+				case 360:
+					wallSpanDirection = Direction.UP;
+				break;
+					
+				case 90:
+					wallSpanDirection = Direction.LEFT;
+				break;
+				
+				case 180:
+					wallSpanDirection = Direction.DOWN;
+				break;
+				
+				case 270:
+					wallSpanDirection = Direction.RIGHT;
+				break;
 			}
-			else if(wallSpanDirection == Direction.DOWN)
-				{
-					sprite.Rotate(FMath.PI);
-				}
-				else if(wallSpanDirection == Direction.RIGHT)
-					{
-						sprite.Rotate(-FMath.PI/2);
-					}
 			
-			scene.AddChild(sprite);
 		}
 		
 		public bool CheckIfBreak(float momentum)

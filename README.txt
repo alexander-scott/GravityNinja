@@ -1,55 +1,22 @@
-Gravity Ninja
-Change Log:
-February 18th: 
-- Add an additional camera mode which can be toggled between
+#Gravity Ninja
+Story:
 
-February 16th:
-- Add the score to the HUD
-- Add the timer to the HUD
-- Create the HUD and ensure it stays rotateded correctly
+The first 6 levels tell the journey of the average citizen becoming a gravity ninja. We find out that a corporation called DD has invested a whole load of money into
+a programme that invovles gravity manipulation and the player has been chosen to take part. The player learns all about the required skills that are necessary to becoming
+a gravity ninja and is encouraged fully by the Royal Institue of Ninja Training. Once the player has progressed through these levels he set's out into the wild,
+continuing to build up his Gravity Manipulation skills.
 
-February 15th:
-- Implement a timer and scoring system
+Immediately the feel of the game changes. The game goes from grassy lands and a feeling of safety to a much darker environment. The corporation is still in contact with us
+however, telling us how things are progressing with the programme. We learn that they have taken on 2 new students who are training to become gravity ninjas. Their
+training is going well and are looking to soon reach the skill level of the player. Suddenly one of the new students dies in a freak accident. The player is told that
+the student died because he fell into a wind fan, but the way the message is written makes the player doubtful. The messages then continue to come through until one
+day out of the blue the player recieves a message from a person known as 'X' which tells the player than the student was killed by DD. The messages recieved after that
+make it obvious that there is huge conflict at DD, a kind of revolt. The player learns that DD are harnessing gravity changes to generate energy and the reason why
+they were so heavily for the Gravity Ninja programme was so they could make money. The public were not happy with this because as a result of tampering with gravity 
+has affected tides and water levels all over the world, killing millions. 
 
-February 13th:
-- Simplify the collision detection method that's being used
-
-February 11th:
-- Test and optimise the game for the Vita
-- Redesign and recreate the collision engine
-- Make the camera rotate much more smoother to the desired angle
-- Add our new sprites and new screens
-
-February 9th:
-- Include sounds and music in our game
-- Design new sprites for our game
-
-February 8th:
-- Switch the player movement to be controlled by the Vita's acceleromter
-- Adapt our solution to enable motion support
-
-February 6th: 
-- Design and implement the most efficient collision detective system
-- Place the pickups strategically in the level
-
-February 5th:
-- Draw up title and death screens
-- Impelement the level into the tile engine
-
-February 3rd:
-- Allow touch screen gestures to rotate the camera
-- Set up a timer
-
-February 2nd:
-- Create a tile engine
-- Design a level and come up with appropiate positions of pickups
-
-February 1st:
-- Implement gravity and basic movement
-
-Janurary 30th: 
-- Ensure the camera follows the player
-- Create the base framework
+The remaining levels tell the story of the DD corporation being raided and destroyed with the penultimate level being a news report and the final level being a wise
+message from 'X'.
 
 Concept:
 Simple 2D platformer where you are unable to control the player but are able to manipulate the world around him including being able to rotate, 

@@ -15,7 +15,7 @@ namespace GravityDuck
 		
 		protected Vector2 position;
 		
-		public Obstacle(Scene scene)
+		public Obstacle()
 		{
 			
 		}
@@ -28,6 +28,9 @@ namespace GravityDuck
 			Bounds2 coinBounds = sprite.GetlContentLocalBounds();
 			sprite.GetContentWorldBounds(ref coinBounds); //Get all of the maze bounds
 			
+			coinBounds.Max = coinBounds.Max - 15.0f;
+			coinBounds.Min = coinBounds.Min + 15.0f;
+			
 			if(playerBounds.Overlaps(coinBounds))
 			{
 				return true;
@@ -36,10 +39,21 @@ namespace GravityDuck
 			return false;
 		}
 		
+		public SpriteUV GetSprite()
+		{
+			return sprite;	
+		}
+		
 		public void setPosition(Vector2 newPosition)
 		{
 			position = newPosition;
 			sprite.Position = newPosition;
+		}
+		
+		public void setRotation(float rotation)
+		{
+			float degreesToRad = (rotation * Sce.PlayStation.HighLevel.GameEngine2D.Base.Math.Pi) / 180;
+			sprite.Rotate(degreesToRad);
 		}
 		
 		public SpriteUV getSprite()
