@@ -57,19 +57,6 @@ namespace GravityDuck
 				break;
 			}
 			
-			if(wallSpanDirection == Direction.LEFT)
-			{
-				sprite.Rotate(FMath.PI/2);
-				
-			}
-			else if(wallSpanDirection == Direction.DOWN)
-				{
-					sprite.Rotate(FMath.PI);
-				}
-				else if(wallSpanDirection == Direction.RIGHT)
-					{
-						sprite.Rotate(-FMath.PI/2);
-					}
 		}
 		
 		public bool CheckIfBreak(float momentum)

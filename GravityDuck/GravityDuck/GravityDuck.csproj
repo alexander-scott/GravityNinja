@@ -64,6 +64,7 @@
     <Compile Include="Classes\Screens\OptionsScreen.cs" />
     <Compile Include="Classes\Screens\Screen.cs" />
     <Compile Include="Classes\Screens\TitleScreen.cs" />
+    <Compile Include="Classes\Level\Highscore.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -148,5 +149,7 @@
     <Content Include="maps\level1.tmx" />
     <Content Include="maps\level0.tmx" />
     <Content Include="textures\bground.png" />
+    <Content Include="maps\level4.tmx" />
+    <Content Include="textures\highscoreTab.png" />
   </ItemGroup>
 </Project>

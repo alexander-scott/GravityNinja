@@ -9,6 +9,8 @@ using Sce.PlayStation.Core.Input;
 using Sce.PlayStation.HighLevel.GameEngine2D;
 using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 using Sce.PlayStation.HighLevel.UI;
+using System.Xml.Serialization;
+using System.Xml;
 	
 namespace GravityDuck
 {
@@ -16,9 +18,13 @@ namespace GravityDuck
 	{
 		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene 	gameScene;
 		
+		private static string SAVE_DATA = "/Documents/savedata.xml";
+		private static bool	doesDataFileExist = false;
+		
 		//------ UI ------\\
 		private static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
 		private static Sce.PlayStation.HighLevel.UI.Label				scoreLabel;
+		private static Sce.PlayStation.HighLevel.UI.Label[]				highscoreLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				levelScore;
 		private static Sce.PlayStation.HighLevel.UI.Label				timerLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				levelTimer;
@@ -39,6 +45,7 @@ namespace GravityDuck
 		private static int currentTime;
 		private static int score;
 		private static SpriteUV	gravityArrow;
+		private static SpriteUV highscoreTab;
 		
 		//------ Player Movement ------\\
 		private static Vector2 gravityVector = new Vector2(0.0f, -1.0f); //The direction in which gravity is currently going
@@ -79,8 +86,11 @@ namespace GravityDuck
 //		private static bool levelSelected = false;
 		
 		//------ Level Data ------\\
-		private static int currentLevel = 0; //The level to load
-		private static int highestUnlockedLevel = 5; //Read this in from file eventually (local highscores)
+		private static int currentLevel = 1; //The level to load
+		private static int highestUnlockedLevel = 4; //Read this in from file eventually (local highscores)
+		private static int totalNumOfLevels = 5;
+		private static List<List<Highscore>> loadedLevelHighscores;
+		private static Highscore currentScore;
 		
 		public static void Main (string[] args)
 		{
@@ -158,6 +168,12 @@ namespace GravityDuck
 		
 		public static void InitializeGame()
 		{
+			//Load game data
+			if(doesDataFileExist = System.IO.File.Exists(SAVE_DATA))
+			{
+				LoadData();
+			}
+			
 			//Background
 			background = new Background(gameScene, new Vector2(190.0f, 1215f));
 			
@@ -197,6 +213,38 @@ namespace GravityDuck
 			levelScore.Visible = false;
 			uiScene.RootWidget.AddChildLast(levelScore);
 			
+			texture = new TextureInfo("/Application/textures/highscoreTab.png");
+			highscoreTab 				= new SpriteUV();
+			highscoreTab 				= new SpriteUV(texture);
+			highscoreTab.Quad.S 		= texture.TextureSizef;
+			highscoreTab.Scale 		= new Vector2(1.0f, 1.0f);
+			highscoreTab.Pivot 		= new Vector2(highscoreTab.Quad.S.X/2, highscoreTab.Quad.S.Y);
+			highscoreTab.Position 	= new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f, Director.Instance.GL.Context.GetViewport().Height*0.5f);
+			highscoreTab.Visible = false;
+			gameScene.AddChild(highscoreTab);
+			
+			highscoreLabel = new Sce.PlayStation.HighLevel.UI.Label[5];
+			
+			for(int i = 0; i < 5; i++)
+			{
+				highscoreLabel[i] = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Score Label
+				highscoreLabel[i].X = 50.0f;
+				highscoreLabel[i].Y = 350.0f + (i * 30.0f);
+				
+				if(i == 0)
+					highscoreLabel[i].Text = "1st :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+				else if(i == 1)
+					highscoreLabel[i].Text = "2nd : " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+				else if(i == 2)
+					highscoreLabel[i].Text = "3rd :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+				else if(i == 3)
+					highscoreLabel[i].Text = "4th :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+				else 
+					highscoreLabel[i].Text = "5th :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+				
+				highscoreLabel[i].Visible = false;
+				uiScene.RootWidget.AddChildLast(highscoreLabel[i]);
+			}
 			timerLabel = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Timer Label
 			timerLabel.X = 743.0f;
 			timerLabel.Y = 33.0f;
@@ -216,6 +264,8 @@ namespace GravityDuck
 		
 		public static void StartLevel()
 		{
+			currentScore = new Highscore(currentLevel, 0, "player");
+			
 			loadingScreen.SetVisible(false, currentLevel);
 			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); 
 			scoreLabel.Visible = true;
@@ -678,7 +728,22 @@ namespace GravityDuck
 			
 			//Scoring collsions @AW
 			int prevScore = score;
-			score += maze.CheckCollectableCollision(player.Sprite, gameScene);
+			if(time < 20)
+			{
+				score += (int)(maze.CheckCollectableCollision(player.Sprite, gameScene));
+			}
+			else if(time < 40 && time >= 20)
+			{
+				score += (int)(maze.CheckCollectableCollision(player.Sprite, gameScene) * 0.75);
+			}
+			else if(time < 60 && time >= 40)
+			{
+				score += (int)(maze.CheckCollectableCollision(player.Sprite, gameScene) * 0.50);
+			}
+			else if(time >= 60)
+			{
+				score += (int)(maze.CheckCollectableCollision(player.Sprite, gameScene) * 0.25);
+			}
 			
 			if(score != prevScore)
 			{
@@ -703,10 +768,47 @@ namespace GravityDuck
 			{
 				cameraRotation = FMath.PI/2.0f;
 				UpdateCamera();
-				levelComplete.Show(player.GetX(), player.GetY(), 3);
+				int starScore = 0;
+				if(score <= 500)
+				{
+					starScore = 1;
+				}
+				else if(score > 500 && score <= 800)
+				{
+					starScore = 2;
+				}
+				else if(score > 800 && score <= 1000)
+				{
+					starScore = 3;
+				}
+				levelComplete.Show(player.GetX(), player.GetY(), starScore);
 				pause = true;
 				maze.SetLevelFinished(true);
 				AudioManager.PlaySound("Level Finished", false, 1.0f, 1.0f);
+				
+				currentScore.SetScore(score);
+				
+				SaveData();
+				
+				highscoreTab.Position 	= new Vector2(player.GetPos().X - 600.0f, player.GetPos().Y - 300.0f);
+				
+				highscoreTab.Visible = true;
+				
+				for(int i = 0; i < 5; i++)
+				{
+					if(i == 0)
+						highscoreLabel[i].Text = "1st :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+					else if(i == 1)
+						highscoreLabel[i].Text = "2nd : " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+					else if(i == 2)
+						highscoreLabel[i].Text = "3rd :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+					else if(i == 3)
+						highscoreLabel[i].Text = "4th :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+					else 
+						highscoreLabel[i].Text = "5th :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+					
+					highscoreLabel[i].Visible = true;
+				}
 			}
 			
 			// Check Laser Gate collision		RMDS
@@ -764,10 +866,17 @@ namespace GravityDuck
 			play = true;
 			pause = false;
 			score = 0;
+			
+			highscoreTab.Visible = false;
+			
+			for(int i = 0; i < 5; i++)
+					highscoreLabel[i].Visible = false;	
+			
+			
 			timer.Reset();
 			//endRotation = FMath.PI/2.0f;
 			//cameraRotation = FMath.PI/2.0f;
-			
+			SaveData();	
 		}
 		
 		
@@ -801,6 +910,164 @@ namespace GravityDuck
 //			
 //			uiScene.RootWidget.AddChildLast(levelTimer);
 //			UISystem.SetScene(uiScene);
+		}
+		
+		public static void SaveData() // Save the game data (highscore)		RMDS
+		{			
+			// Amend highscores of this current level
+			//currentHighscore
+			
+			int level = currentScore.GetLevel();
+			int highscorePos = -1;
+			
+			for(int i = 0; i < 5; i++)
+			{
+				if(currentScore.GetScore() > loadedLevelHighscores[level - 1][i].GetScore())
+				{
+					highscorePos = i;
+					break;
+				}		
+			}
+			
+			if(highscorePos != -1)
+			{			
+				for(int i = 4; i > highscorePos; i--)
+				{
+					int movedScore = loadedLevelHighscores[level - 1][i - 1].GetScore();
+					
+					loadedLevelHighscores[level - 1][i].SetScore(movedScore);
+				}
+				
+				loadedLevelHighscores[level - 1][highscorePos].SetScore(currentScore.GetScore());
+				loadedLevelHighscores[level - 1][highscorePos].SetPlayerName(currentScore.GetPlayerName());
+			}
+			
+			
+			
+			List<int> allId = new List<int>();
+			
+			XmlDocument doc = new XmlDocument();
+			
+			if(System.IO.File.Exists(@SAVE_DATA) == true)
+				doc.Load(@SAVE_DATA);
+			
+			
+			XmlNodeList list = doc.SelectNodes("game/level");
+
+			int numOfCompletedLevels = loadedLevelHighscores.Count;
+			
+			for(int i = 0; i < numOfCompletedLevels; i++)
+			{
+				XmlNode currentNode = doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]");
+				
+				// If the level data exists then append its children	RMDS
+				if(currentNode != null)
+				{
+					for(int j = 0; j < 5; j++)
+					{
+						//// Append highscores
+						//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(0).InnerText =
+						//	loadedHighscores[i].GetPlayerName();
+						//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(1).InnerText =
+						//	loadedHighscores[i].GetScore().ToString();	
+						
+						currentNode.ChildNodes.Item(0 + (j * 2)).InnerText =
+							loadedLevelHighscores[i][j].GetPlayerName();
+						currentNode.ChildNodes.Item(1 + (j * 2)).InnerText =
+							loadedLevelHighscores[i][j].GetScore().ToString();	
+					}		
+				}				
+		
+		        doc.Save(@SAVE_DATA);			
+			}		
+									
+		}
+		
+		public static bool LoadData() // Load the game data (highscore)	RMDS
+		{
+			if(System.IO.File.Exists(@SAVE_DATA) == true)
+			{		
+				// The XML file loaded has data for each level about their highscore and the player
+				// that acquired that highscore.	RMDS
+							
+				XmlDocument doc = new XmlDocument();
+				doc.Load(@SAVE_DATA);
+				
+				// This will provide a list of all the levels that the player has currently earned a highscore in,
+				// therefore the player's total progress.	RMDS
+				loadedLevelHighscores = new List<List<Highscore>>();
+						
+				int level = 1;
+				
+				XmlNode currentNode = doc.SelectSingleNode("game/level[@id=\"" + level.ToString() + "\"]");
+					
+			
+				while(currentNode != null)
+				{			
+					string playerName;
+					int highscore;
+					List<Highscore> levelHighscores = new List<Highscore>();
+					
+					for(int i = 0; i < 5; i++)
+					{
+						playerName = currentNode.ChildNodes.Item(0 + (i * 2)).InnerText;
+						
+						highscore = 0;
+						
+						if(!currentNode.ChildNodes.Item(1 + (i * 2)).InnerText.Equals(""))
+							highscore = Int32.Parse(currentNode.ChildNodes.Item(1 + (i * 2)).InnerText);
+						
+						Highscore currentLoad = new Highscore(level, highscore, playerName);
+						
+						levelHighscores.Add(currentLoad);
+					}	
+					
+						loadedLevelHighscores.Add(levelHighscores);
+						
+						// Load the next level data from the saved data file.	RMDS
+						level++;
+									
+						currentNode.Attributes.GetNamedItem("player");												
+						currentNode = doc.SelectSingleNode("game/level[@id=\"" + level.ToString() + "\"]");	
+				}			
+				
+				int numOfLevels = level - 1;
+				
+				if(numOfLevels > totalNumOfLevels)
+					return false; // Should throw exception.	RMDS
+			}
+			else
+				return true;
+				 
+			return false;
+			
+		}
+		
+		public static bool DeleteData()
+		{
+			XmlDocument doc = new XmlDocument();
+			doc.Load(@SAVE_DATA);
+					
+			for(int i = 0; i < totalNumOfLevels; i++)
+			{		
+				XmlNode currentNode = doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]");
+				
+				if(currentNode != null)
+				{
+					for(int j = 0; j < 5; j++)
+					{
+						currentNode.ChildNodes.Item(0 + (j * 2)).InnerText = "";
+						currentNode.ChildNodes.Item(1 + (j * 2)).InnerText = "";	
+					}		
+				}
+				//// Reset all values
+				//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(0).InnerText = "";
+				//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(1).InnerText = "";
+					
+		        doc.Save(@SAVE_DATA);			
+			}
+			
+			return true;
 		}
 	}
 }

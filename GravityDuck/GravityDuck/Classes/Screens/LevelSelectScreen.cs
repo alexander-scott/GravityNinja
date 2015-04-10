@@ -69,9 +69,11 @@ namespace GravityDuck
 				{
 					levelButtons[i].SetPosition(108f * (i-18) + 18, 380f);
 				}
-				if (i <= highestUnlockedLevel)
-						levelButtons[i].BackgroundFilterColor = new UIColor(0.0f, 191.0f, 255.0f, 1.0f);
-					
+				if (i < highestUnlockedLevel)
+						levelButtons[i].BackgroundFilterColor = new UIColor(0.0f, 255.0f, 0.0f, 1.0f);
+				if (i == highestUnlockedLevel)
+					levelButtons[i].BackgroundFilterColor = new UIColor(0.0f, 191.0f, 255.0f, 1.0f);
+				
 				levelButtons[i].SetSize(65,65);
 				uiScene.RootWidget.AddChildFirst(levelButtons[i]);
 			}
@@ -130,31 +132,33 @@ namespace GravityDuck
 					levelButtons[i].Dispose();
 				}
 			}
-			
-			if (levelSelected == 0)
+			if (levelSelected <= highestUnlockedLevel)
 			{
-				sprite.TextureInfo = loadingTexture0;
-			}	
-			else if (levelSelected == 1)
-			{
-				sprite.TextureInfo = loadingTexture1;
-			}
-			else if (levelSelected == 2)
-			{
-				sprite.TextureInfo = loadingTexture2;
-			}
-			else if (levelSelected == 3)
-			{
-				sprite.TextureInfo = loadingTexture3;
-			}
-			else if (levelSelected == 4)
-			{
-				sprite.TextureInfo = loadingTexture4;
-			}
-			else if (levelSelected == 5)
-			{
-				sprite.TextureInfo = loadingTexture5;
-			}	
+				if (levelSelected == 0)
+				{
+					sprite.TextureInfo = loadingTexture0;
+				}	
+				else if (levelSelected == 1)
+				{
+					sprite.TextureInfo = loadingTexture1;
+				}
+				else if (levelSelected == 2)
+				{
+					sprite.TextureInfo = loadingTexture2;
+				}
+				else if (levelSelected == 3)
+				{
+					sprite.TextureInfo = loadingTexture3;
+				}
+				else if (levelSelected == 4)
+				{
+					sprite.TextureInfo = loadingTexture4;
+				}
+				else if (levelSelected == 5)
+				{
+					sprite.TextureInfo = loadingTexture5;
+				}
+			}		
 		}
 		
 		public void SetVisible(bool vis, int level)

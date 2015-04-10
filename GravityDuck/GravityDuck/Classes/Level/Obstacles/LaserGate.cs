@@ -50,20 +50,6 @@ namespace GravityDuck
 					laserDirection = Direction.RIGHT;
 				break;
 			}
-			
-			if(laserDirection == Direction.LEFT)
-			{
-				sprite.Rotate(FMath.PI/2);
-				
-			}
-			else if(laserDirection == Direction.DOWN)
-				{
-					sprite.Rotate(FMath.PI);
-				}
-				else if(laserDirection == Direction.RIGHT)
-					{
-						sprite.Rotate(-FMath.PI/2);
-					}
 		}
 		
 		public bool CheckPlayerPos(Player player)

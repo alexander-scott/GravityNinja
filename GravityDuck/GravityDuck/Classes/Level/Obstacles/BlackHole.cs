@@ -51,19 +51,6 @@ namespace GravityDuck
 				break;
 			}
 			
-			if(halfRadialDirection == Direction.LEFT)
-			{
-				sprite.Rotate(FMath.PI/2);
-				
-			}
-			else if(halfRadialDirection == Direction.DOWN)
-				{
-					sprite.Rotate(FMath.PI);
-				}
-				else if(halfRadialDirection == Direction.RIGHT)
-					{
-						sprite.Rotate(-FMath.PI/2);
-					}
 		}
 		
 		public Vector2 CalculateForce(Player player)

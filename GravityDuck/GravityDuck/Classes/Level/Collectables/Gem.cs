@@ -19,7 +19,7 @@ namespace GravityDuck
 			
 			tileIndex = 0;
 			
-			scoreValue = 20;
+			scoreValue = 200;
 			
 			sprite.ScheduleInterval( (dt) => 
 			{
