@@ -78,8 +78,8 @@ namespace GravityDuck
 		private static bool play = false;
 		private static bool pause = false;
 		private static int timeStamp1;
-		private enum Screens {TITLE, LEVELSELECT, LOADING, LOADED, PLAYING};
-		private static Screens currentScreen;
+		private enum States {TITLE, LEVELSELECT, LOADING, LOADED, PLAYING, LEVELCOMPLETE};
+		private static States currentState;
 //		private static bool loaded = false;
 //		private static bool startLoading = false;
 //		private static bool levelSelect = false;
@@ -118,7 +118,7 @@ namespace GravityDuck
 		public static void Dispose()
 		{	
 			background.Dispose();
-			maze.Dispose();
+			//maze.Dispose();
 			player.Dispose();
 			gameOverScreen.Dispose();
 			levelComplete.Dispose();
@@ -146,7 +146,7 @@ namespace GravityDuck
 			gameScene = new Sce.PlayStation.HighLevel.GameEngine2D.Scene();
 			gameScene.Camera.SetViewFromViewport();
 			
-			currentScreen = Screens.TITLE;
+			currentState = States.TITLE;
 			
 			title = new TitleScreen(gameScene);	
 			AudioManager.PlayMusic("Level1", true, 1.0f, 1.0f);
@@ -195,7 +195,7 @@ namespace GravityDuck
 			gameScene.AddChild(gravityArrow);
 			gravityArrow.Visible = false;
 			
-			levelComplete = new LevelComplete(gameScene);
+			levelComplete = new LevelComplete(gameScene, uiScene);
 			gameOverScreen = new GameOverScreen(gameScene);
 			playerBox = player.getBounds();
 			
@@ -278,9 +278,9 @@ namespace GravityDuck
 		public static void Update()
 		{		
 			CheckInput();
-			switch (currentScreen)
+			switch (currentState)
 			{
-				case Screens.TITLE:
+				case States.TITLE:
 				{
 					title.Update();
 					if (title.CheckPlay())
@@ -288,11 +288,11 @@ namespace GravityDuck
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
 						levelSelectScreen.SetVisible(true, currentLevel);
 						title.RemoveAll();
-						currentScreen = Screens.LEVELSELECT;
+						currentState = States.LEVELSELECT;
 					}
 				break;
 				}
-				case Screens.LEVELSELECT:
+				case States.LEVELSELECT:
 				{
 					if (levelSelectScreen.Selected()) 
 					{
@@ -303,39 +303,39 @@ namespace GravityDuck
 						timeStamp1 = (int)timer.Milliseconds() + 1;
 						levelSelectScreen.SetVisible(false, currentLevel);
 						loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
-						currentScreen = Screens.LOADING;
+						currentState = States.LOADING;
 						title.RemoveAll();
 					}
 					if (levelSelectScreen.BackPressed())
 					{
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-						currentScreen = Screens.TITLE;
+						currentState = States.TITLE;
 						levelSelectScreen.SetVisible(false, currentLevel);
 						title = new TitleScreen(gameScene);	
 					}
 					levelSelectScreen.Update();
 				break;
 				}
-				case Screens.LOADING:
+				case States.LOADING:
 				{
 					loadingScreen.SetVisible(true, currentLevel);
-					currentScreen = Screens.LOADED;
+					currentState = States.LOADED;
 					InitializeGame();
 				break;
 				}
-				case Screens.LOADED:
+				case States.LOADED:
 				{
 					loadingScreen.Update((int)timer.Milliseconds());
 					if (loadingScreen.CheckPlay())
 					{
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
 						StartLevel();
-						currentScreen = Screens.PLAYING;
+						currentState = States.PLAYING;
 						play = true;
 					}
 				break;
 				}
-				case Screens.PLAYING:
+				case States.PLAYING:
 				{
 					if (!pause && player.IsAlive())
 					{
@@ -355,6 +355,77 @@ namespace GravityDuck
 							restartGame();
 						}
 					}
+				break;
+				}
+				case States.LEVELCOMPLETE:
+				{
+				if (levelComplete.GetState() == 0) //Waiting for the user to make a choice
+				{
+					
+				}
+				else if (levelComplete.GetState() == 1) //Back to level select screen
+				{
+					currentLevel++;
+					maze.RemoveLevel();
+					levelSelectScreen.SetVisible(true, currentLevel);
+					//loadingScreen.SetVisible(false, currentLevel-1);
+					currentState = States.LEVELSELECT;
+					play = false;
+					pause = false;
+					scoreLabel.Visible = false;
+					timerLabel.Visible = false;
+					levelTimer.Visible = false;
+					levelScore.Visible = false;
+					levelComplete.HideScreen();
+					for(int i = 0; i < 5; i++)
+					{
+						highscoreLabel[i].Visible = false;
+					}
+					highscoreTab.Visible = false;
+					background.SetVisible(false);
+					
+				}
+				else if (levelComplete.GetState() == 2) //Replay the current level
+				{
+					maze.RemoveLevel();
+					maze.LoadLevel(gameScene, currentLevel);
+					player.SetPos(maze.GetSpawnPoint());
+					play = true;
+					pause = false;
+					levelComplete.HideScreen();
+					for(int i = 0; i < 5; i++)
+					{
+						highscoreLabel[i].Visible = false;
+					}
+					highscoreTab.Visible = false;
+					currentState = States.PLAYING;
+					timer.Reset();
+					score = 0;
+				}
+				else if (levelComplete.GetState() == 3) //Play the next level
+				{
+					gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
+					currentLevel++;
+					maze.RemoveLevel();
+					maze.LoadLevel(gameScene, currentLevel);
+					loadingScreen.SetVisible(true, currentLevel);
+					timeStamp1 = (int)timer.Milliseconds() + 1;
+					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
+					currentState = States.LOADED;
+					play = false;
+					pause = false;
+					scoreLabel.Visible = false;
+					timerLabel.Visible = false;
+					levelTimer.Visible = false;
+					levelScore.Visible = false;
+					levelComplete.HideScreen();
+					for(int i = 0; i < 5; i++)
+					{
+						highscoreLabel[i].Visible = false;
+					}
+					highscoreTab.Visible = false;
+					player.SetPos(maze.GetSpawnPoint());
+				}
 				break;
 				}
 			}
@@ -809,6 +880,8 @@ namespace GravityDuck
 					
 					highscoreLabel[i].Visible = true;
 				}
+				currentState = States.LEVELCOMPLETE;
+				collide = false;
 			}
 			
 			// Check Laser Gate collision		RMDS

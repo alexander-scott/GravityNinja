@@ -65,6 +65,11 @@ namespace GravityDuck
 		{
 			textureInfo.Dispose();	
 		}
+		
+		public void HideSprite()
+		{
+			sprite.Visible = false;
+		}
 	}
 }
 

@@ -39,5 +39,13 @@ namespace GravityDuck
 		{
 			backgroundTexture.Dispose();
 		}
+		
+		public void SetVisible(bool visible)
+		{
+			if (visible)
+				sprite.Visible = true;
+			else
+				sprite.Visible = false;
+		}
 	}
 }

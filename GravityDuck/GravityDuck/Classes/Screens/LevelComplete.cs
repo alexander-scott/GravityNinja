@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 using Sce.PlayStation.Core;
 using Sce.PlayStation.Core.Graphics;
@@ -6,20 +7,28 @@ using Sce.PlayStation.Core.Input;
 
 using Sce.PlayStation.HighLevel.GameEngine2D;
 using Sce.PlayStation.HighLevel.GameEngine2D.Base;
+using Sce.PlayStation.HighLevel.UI;
 
 namespace GravityDuck
 {
-	//Our Background class V1.0 by @AS
+	//Our Background class V2.0 by @AS
 	public class LevelComplete : Screen
 	{
 		private TextureInfo stars1Texture; //The background texture
 		private TextureInfo stars2Texture; //The background texture
 		private TextureInfo stars3Texture; //The background texture
 		private SpriteUV starsSprite; //The background sprite
+		
+		private static Button backToLevelSelect;
+		private static Button replayLevel;
+		private static Button nextLevel;
+		
+		private enum State {WAITING, BACKTOLEVELSELECT, REPLAYLEVEL, NEXTLEVEL};
+		private static State nextState;
 				
 		private bool play = false;
 
-		public LevelComplete (Scene scene) : base(scene)
+		public LevelComplete (Sce.PlayStation.HighLevel.GameEngine2D.Scene scene, Sce.PlayStation.HighLevel.UI.Scene uiScene) : base(scene)
 		{
 			textureInfo 	= new TextureInfo("/Application/textures/levelComplete.png");
 			sprite 			= new SpriteUV();
@@ -38,6 +47,58 @@ namespace GravityDuck
 			starsSprite.Position = new Vector2(0.0f, 0.0f);
 			scene.AddChild(starsSprite);
 			starsSprite.Visible = false;
+			
+			CustomButtonImageSettings customNextLevelImg = new CustomButtonImageSettings();
+			customNextLevelImg.BackgroundNormalImage = new ImageAsset("/Application/assets/buttons/NextLevel.png");
+			customNextLevelImg.BackgroundPressedImage = new ImageAsset("/Application/assets/buttons/NextLevelPressed.png");
+			customNextLevelImg.BackgroundDisabledImage = new ImageAsset("/Application/assets/buttons/NextLevel.png");
+			
+			CustomButtonImageSettings customReplayImg = new CustomButtonImageSettings();
+			customReplayImg.BackgroundNormalImage = new ImageAsset("/Application/assets/buttons/Replay.png");
+			customReplayImg.BackgroundPressedImage = new ImageAsset("/Application/assets/buttons/ReplayPressed.png");
+			customReplayImg.BackgroundDisabledImage = new ImageAsset("/Application/assets/buttons/Replay.png");
+			
+			CustomButtonImageSettings customBackImg = new CustomButtonImageSettings();
+			customBackImg.BackgroundNormalImage = new ImageAsset("/Application/assets/buttons/BackToLevelSelect.png");
+			customBackImg.BackgroundPressedImage = new ImageAsset("/Application/assets/buttons/BackToLevelSelectPressed.png");
+			customBackImg.BackgroundDisabledImage = new ImageAsset("/Application/assets/buttons/BackToLevelSelect.png");
+			
+			backToLevelSelect = new Button();
+			backToLevelSelect.SetPosition(750, 480);
+			//backToLevelSelect.Text = "B";
+			backToLevelSelect.SetSize(60,60);
+			//backToLevelSelect.BackgroundNinePatchMargin = new NinePatchMargin(10,10,10,10);
+			backToLevelSelect.CustomImage = customBackImg;
+			backToLevelSelect.Style = ButtonStyle.Custom;
+			//backToLevelSelect.BackgroundFilterColor = new UIColor(255.0f, 255.0f, 0.0f, 1.0f);
+			backToLevelSelect.ButtonAction += HandleBackButton;
+			backToLevelSelect.Visible = false;
+			uiScene.RootWidget.AddChildLast(backToLevelSelect);
+			
+			replayLevel = new Button();
+			replayLevel.SetPosition(820, 480);
+			//replayLevel.Text = "R";
+			replayLevel.SetSize(60,60);
+			replayLevel.CustomImage = customReplayImg;
+			replayLevel.Style = ButtonStyle.Custom;
+			//replayLevel.BackgroundFilterColor = new UIColor(255.0f, 255.0f, 0.0f, 1.0f);
+			replayLevel.ButtonAction += HandleReplayButton;
+			replayLevel.Visible = false;
+			uiScene.RootWidget.AddChildLast(replayLevel);
+			
+			nextLevel = new Button();
+			nextLevel.SetPosition(890, 480);
+			//nextLevel.Text = "N";
+			nextLevel.SetSize(60,60);
+			nextLevel.CustomImage = customNextLevelImg;
+			nextLevel.Style = ButtonStyle.Custom;
+			//nextLevel.BackgroundFilterColor = new UIColor(255.0f, 255.0f, 0.0f, 1.0f);
+			nextLevel.ButtonAction += HandleNextLevelButton;
+			nextLevel.Visible = false;
+			uiScene.RootWidget.AddChildLast(nextLevel);
+			
+			UISystem.SetScene(uiScene);
+			nextState = State.WAITING;
 		}
 		
 		public void Update()
@@ -60,6 +121,10 @@ namespace GravityDuck
 				starsSprite.TextureInfo = stars3Texture;
 			
 			starsSprite.Visible = true;
+			
+			backToLevelSelect.Visible = true;
+			nextLevel.Visible = true;
+			replayLevel.Visible = true;
 		}
 		
 		/*
@@ -128,6 +193,38 @@ namespace GravityDuck
 		{
 			return play;
 		}
+		
+		public void HandleNextLevelButton(object sender, TouchEventArgs e)
+		{
+		 	nextState = State.NEXTLEVEL;
+		}
+		
+		public void HandleReplayButton(object sender, TouchEventArgs e)
+		{
+		 	nextState = State.REPLAYLEVEL;
+		}
+		
+		public void HandleBackButton(object sender, TouchEventArgs e)
+		{
+		 	nextState = State.BACKTOLEVELSELECT;
+		}
+		
+		public int GetState()
+		{
+			return (int)nextState;
+		}
+		
+		public void HideScreen()
+		{
+			sprite.Visible = false;
+			starsSprite.Visible = false;
+			
+			backToLevelSelect.Visible = false;
+			nextLevel.Visible = false;
+			replayLevel.Visible = false;
+			nextState = State.WAITING;
+		}
+		
 //		
 //		private void RemoveAll()
 //		{

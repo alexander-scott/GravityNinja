@@ -68,3 +68,9 @@ textures/bground.png
 maps/level4.tmx
 textures/highscoreTab.png
 maps/level5.tmx
+assets/buttons/NextLevel.png
+assets/buttons/NextLevelPressed.png
+assets/buttons/BackToLevelSelect.png
+assets/buttons/BackToLevelSelectPressed.png
+assets/buttons/Replay.png
+assets/buttons/ReplayPressed.png

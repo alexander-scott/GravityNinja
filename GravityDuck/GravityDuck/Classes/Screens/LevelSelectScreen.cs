@@ -181,6 +181,8 @@ namespace GravityDuck
 				{
 					levelButtons[i].Visible = false;
 				}
+				play = false;
+				back = false;
 			}
 		}
 		
