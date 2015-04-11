@@ -87,8 +87,8 @@ namespace GravityDuck
 		
 		//------ Level Data ------\\
 		private static int currentLevel = 1; //The level to load
-		private static int highestUnlockedLevel = 4; //Read this in from file eventually (local highscores)
-		private static int totalNumOfLevels = 5;
+		private static int highestUnlockedLevel = 5; //Read this in from file eventually (local highscores)
+		private static int totalNumOfLevels = 6;
 		private static List<List<Highscore>> loadedLevelHighscores;
 		private static Highscore currentScore;
 		
