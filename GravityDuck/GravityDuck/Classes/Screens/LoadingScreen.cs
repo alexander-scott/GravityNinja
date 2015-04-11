@@ -153,6 +153,7 @@ namespace GravityDuck
 				loadingLabel.Visible = false;
 				loadingSymbol.Visible = false;
 				readyButton.Visible = false;
+				play = false;
 			}
 		}
 		

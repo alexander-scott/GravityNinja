@@ -325,6 +325,34 @@ namespace GravityDuck
 			return sprites;
 		}
 		
+		public void Dispose()
+		{
+			level.Clear();
+			coins.Clear();
+			gems.Clear();
+			levelFlag.Dispose();
+			blackHoles.Clear();
+			breakableWalls.Clear();
+			laserGates.Clear();
+			spikes.Clear();
+			windTunnels.Clear();
+			
+			foreach(int num in level)
+				level.RemoveAt(num);
+			
+			
+			
+			level = null;
+			coins = null;
+			gems = null;
+			levelFlag = null;
+			blackHoles = null;
+			breakableWalls = null;
+			laserGates = null;
+			spikes = null;
+			windTunnels = null;
+		}
+		
 		public Coin[] LoadInCoins(Scene scene)
 		{
 			Coin[] coinsObj = new Coin[coins.Count];

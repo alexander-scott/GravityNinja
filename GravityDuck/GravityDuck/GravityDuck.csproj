@@ -90,6 +90,7 @@
     <Folder Include="Classes\Managers\" />
     <Folder Include="textures\LoadingScreens\" />
     <Folder Include="maps\" />
+    <Folder Include="assets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="textures\background.png" />
@@ -151,5 +152,12 @@
     <Content Include="textures\bground.png" />
     <Content Include="maps\level4.tmx" />
     <Content Include="textures\highscoreTab.png" />
+    <Content Include="maps\level5.tmx" />
+    <Content Include="assets\buttons\NextLevel.png" />
+    <Content Include="assets\buttons\NextLevelPressed.png" />
+    <Content Include="assets\buttons\BackToLevelSelect.png" />
+    <Content Include="assets\buttons\BackToLevelSelectPressed.png" />
+    <Content Include="assets\buttons\Replay.png" />
+    <Content Include="assets\buttons\ReplayPressed.png" />
   </ItemGroup>
 </Project>
