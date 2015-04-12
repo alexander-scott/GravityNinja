@@ -131,7 +131,6 @@
     <Content Include="textures\options.png" />
     <Content Include="textures\Level\breakableWall.png" />
     <Content Include="textures\Level\laserGate.png" />
-    <Content Include="textures\Level\windFan.png" />
     <Content Include="textures\LoadingScreens\Level0Load.png" />
     <Content Include="textures\LoadingScreens\Level1Load.png" />
     <Content Include="textures\LoadingScreens\Level2Load.png" />
@@ -160,5 +159,6 @@
     <Content Include="textures\LoadingScreens\Level5Load.png" />
     <Content Include="textures\Level\BlackHoles.png" />
     <Content Include="textures\Level\WindFans.png" />
+    <Content Include="textures\Level\LaserBeams.png" />
   </ItemGroup>
 </Project>

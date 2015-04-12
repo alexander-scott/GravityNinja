@@ -337,11 +337,11 @@ namespace GravityDuck
 				}
 				case States.PLAYING:
 				{
+				
 					if (!pause && player.IsAlive())
 					{
 						time = (int)timer.Seconds();
 						player.Update(gravityVector, playerDirection, movementVector, invert, falling, additionalForces);
-						background.Update(player.GetPos(), -new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation)));
 						UpdateCamera();
 						CheckCollisions();
 						currentTime = time;
@@ -349,6 +349,7 @@ namespace GravityDuck
 					}
 					else if (!player.IsAlive())
 					{
+						UpdateCamera();
 						gameOverScreen.Update();
 						if (gameOverScreen.CheckRestart())
 						{
@@ -359,73 +360,73 @@ namespace GravityDuck
 				}
 				case States.LEVELCOMPLETE:
 				{
-				if (levelComplete.GetState() == 0) //Waiting for the user to make a choice
-				{
-					
-				}
-				else if (levelComplete.GetState() == 1) //Back to level select screen
-				{
-					currentLevel++;
-					maze.RemoveLevel();
-					levelSelectScreen.SetVisible(true, currentLevel);
-					//loadingScreen.SetVisible(false, currentLevel-1);
-					currentState = States.LEVELSELECT;
-					play = false;
-					pause = false;
-					scoreLabel.Visible = false;
-					timerLabel.Visible = false;
-					levelTimer.Visible = false;
-					levelScore.Visible = false;
-					levelComplete.HideScreen();
-					for(int i = 0; i < 5; i++)
+					if (levelComplete.GetState() == 0) //Waiting for the user to make a choice
 					{
-						highscoreLabel[i].Visible = false;
+						
 					}
-					highscoreTab.Visible = false;
-					background.SetVisible(false);
-					
-				}
-				else if (levelComplete.GetState() == 2) //Replay the current level
-				{
-					maze.RemoveLevel();
-					maze.LoadLevel(gameScene, currentLevel);
-					player.SetPos(maze.GetSpawnPoint());
-					play = true;
-					pause = false;
-					levelComplete.HideScreen();
-					for(int i = 0; i < 5; i++)
+					else if (levelComplete.GetState() == 1) //Back to level select screen
 					{
-						highscoreLabel[i].Visible = false;
+						currentLevel++;
+						maze.RemoveLevel();
+						levelSelectScreen.SetVisible(true, currentLevel);
+						//loadingScreen.SetVisible(false, currentLevel-1);
+						currentState = States.LEVELSELECT;
+						play = false;
+						pause = false;
+						scoreLabel.Visible = false;
+						timerLabel.Visible = false;
+						levelTimer.Visible = false;
+						levelScore.Visible = false;
+						levelComplete.HideScreen();
+						for(int i = 0; i < 5; i++)
+						{
+							highscoreLabel[i].Visible = false;
+						}
+						highscoreTab.Visible = false;
+						background.SetVisible(false);
+						
 					}
-					highscoreTab.Visible = false;
-					currentState = States.PLAYING;
-					timer.Reset();
-					score = 0;
-				}
-				else if (levelComplete.GetState() == 3) //Play the next level
-				{
-					gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
-					currentLevel++;
-					maze.RemoveLevel();
-					maze.LoadLevel(gameScene, currentLevel);
-					loadingScreen.SetVisible(true, currentLevel);
-					timeStamp1 = (int)timer.Milliseconds() + 1;
-					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
-					currentState = States.LOADED;
-					play = false;
-					pause = false;
-					scoreLabel.Visible = false;
-					timerLabel.Visible = false;
-					levelTimer.Visible = false;
-					levelScore.Visible = false;
-					levelComplete.HideScreen();
-					for(int i = 0; i < 5; i++)
+					else if (levelComplete.GetState() == 2) //Replay the current level
 					{
-						highscoreLabel[i].Visible = false;
+						maze.RemoveLevel();
+						maze.LoadLevel(gameScene, currentLevel);
+						player.SetPos(maze.GetSpawnPoint());
+						play = true;
+						pause = false;
+						levelComplete.HideScreen();
+						for(int i = 0; i < 5; i++)
+						{
+							highscoreLabel[i].Visible = false;
+						}
+						highscoreTab.Visible = false;
+						currentState = States.PLAYING;
+						timer.Reset();
+						score = 0;
 					}
-					highscoreTab.Visible = false;
-					player.SetPos(maze.GetSpawnPoint());
-				}
+					else if (levelComplete.GetState() == 3) //Play the next level
+					{
+						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
+						currentLevel++;
+						maze.RemoveLevel();
+						maze.LoadLevel(gameScene, currentLevel);
+						loadingScreen.SetVisible(true, currentLevel);
+						timeStamp1 = (int)timer.Milliseconds() + 1;
+						loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
+						currentState = States.LOADED;
+						play = false;
+						pause = false;
+						scoreLabel.Visible = false;
+						timerLabel.Visible = false;
+						levelTimer.Visible = false;
+						levelScore.Visible = false;
+						levelComplete.HideScreen();
+						for(int i = 0; i < 5; i++)
+						{
+							highscoreLabel[i].Visible = false;
+						}
+						highscoreTab.Visible = false;
+						player.SetPos(maze.GetSpawnPoint());
+					}
 				break;
 				}
 			}
@@ -744,7 +745,7 @@ namespace GravityDuck
 			//		                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, Director.Instance.GL.Context.GetViewport().Height*0.4f));
 			//}
 			//else
-			
+			background.Update(player.GetPos(), -new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation)));
 			if(zoomedIn)
 			{
 				zoom = 2.0f;
@@ -771,7 +772,10 @@ namespace GravityDuck
 				{	
 					if (maze.HasHitSide(playerBox, currGrav)) //Check if it's a side tile
 					{
-						invert = true; //Set invert to true so the Y axis gets inverted
+						if (currGrav == 3 || currGrav == 1)
+							invert = true; //Set invert to false so the X axis gets inverted
+						else
+							invert = false;
 						player.SetPos(player.GetPos() - movementVector*9.65f); //Bounce the player off the sides (WILL MAKE SMOOTHER) 
 					}
 					else
@@ -790,7 +794,10 @@ namespace GravityDuck
 					}
 					else
 					{
-						player.SetVelocity(-player.GetVelocity()); //Invert the velocity so the player bounces
+						if (player.GetVelocity() > 6f)
+							player.SetVelocity(-6f);
+						else
+							player.SetVelocity(-player.GetVelocity()); //Invert the velocity so the player bounces
 					}
 				}
 				else
@@ -885,7 +892,7 @@ namespace GravityDuck
 			}
 			
 			// Check Laser Gate collision		RMDS
-			collide = maze.CheckLaserGates(player);
+			//collide = maze.CheckLaserGates(player);
 				
 			if(collide && player.IsAlive())
 			{
@@ -926,15 +933,14 @@ namespace GravityDuck
 			}
 			//else
 			//	falling = true; //If no intersection then we are falling
-					
 			additionalForces = maze.CheckBlackHole(player) + maze.CheckWindTunnel(player);
 		}
 		
 		public static void restartGame()
 		{
-			cameraRotation = FMath.PI/2.0f;
+			//cameraRotation = FMath.PI/2.0f;
 			player.setAlive();
-			player.resetPosition();
+			player.SetPos(maze.GetSpawnPoint());
 			gameOverScreen.Reset();
 			play = true;
 			pause = false;

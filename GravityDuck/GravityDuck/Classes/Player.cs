@@ -24,7 +24,7 @@ namespace GravityDuck
 		private static Vector2      velocity = new Vector2(0.0f, 0.0f);
 		private static Vector2      acceleration = new Vector2(0.0f, 0.0f);
 		private static float     	duckRotation = 0.0f;
-		private static float		gravSpeed = 0.4f, maxGrav = 10.0f, gravVelocity = 2.0f;
+		private static float		gravSpeed = 0.5f, maxGrav = 10.0f, gravVelocity = 2.5f;
 		private static float 		momentum = 0.0f;
 		private static float 		mass = 10.0f;
 		

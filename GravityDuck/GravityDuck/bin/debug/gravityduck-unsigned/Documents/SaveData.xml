@@ -3,39 +3,35 @@
     <player1>player</player1>
     <highscore1>2450</highscore1>
     <player2>player</player2>
-    <highscore2>1350</highscore2>
+    <highscore2>1500</highscore2>
     <player3>player</player3>
-    <highscore3>1300</highscore3>
+    <highscore3>1350</highscore3>
     <player4>player</player4>
-    <highscore4>1250</highscore4>
+    <highscore4>1300</highscore4>
     <player5>player</player5>
     <highscore5>1250</highscore5>
   </level>
   <level id="2">
-    <player1>
-    </player1>
-    <highscore1>0</highscore1>
-    <player2>
-    </player2>
-    <highscore2>0</highscore2>
-    <player3>
-    </player3>
-    <highscore3>0</highscore3>
-    <player4>
-    </player4>
-    <highscore4>0</highscore4>
+    <player1>player</player1>
+    <highscore1>1994</highscore1>
+    <player2>player</player2>
+    <highscore2>450</highscore2>
+    <player3>player</player3>
+    <highscore3>450</highscore3>
+    <player4>player</player4>
+    <highscore4>450</highscore4>
     <player5>
     </player5>
-    <highscore5>0</highscore5>
+    <highscore5>450</highscore5>
   </level>
   <level id="3">
     <player1>player</player1>
-    <highscore1>150</highscore1>
+    <highscore1>550</highscore1>
     <player2>player</player2>
-    <highscore2>100</highscore2>
+    <highscore2>150</highscore2>
     <player3>
     </player3>
-    <highscore3>0</highscore3>
+    <highscore3>100</highscore3>
     <player4>
     </player4>
     <highscore4>0</highscore4>

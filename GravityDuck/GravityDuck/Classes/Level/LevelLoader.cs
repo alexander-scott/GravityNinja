@@ -440,7 +440,7 @@ namespace GravityDuck
 			for (int i = 0; i < laserGates.Count; i++)
 			{
 				laserGatesObj[i] = laserGates[i];
-				scene.AddChild(laserGatesObj[i].GetSprite());
+				scene.AddChild(laserGatesObj[i].getSprite());
 			}
 			
 			if(laserGates.Count != 0)

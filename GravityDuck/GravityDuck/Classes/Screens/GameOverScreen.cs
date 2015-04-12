@@ -72,6 +72,9 @@ namespace GravityDuck
 				restart = true;
 			}
 			
+			if (touches.Count > 0)
+				restart = true;
+			
 		}
 		
 		public void Show(float playerX, float playerY)

@@ -14,8 +14,8 @@ namespace GravityDuck
 		
 		private Direction halfRadialDirection;
 		
-		private const float radialDistance = 200.0f;
-		private const float forceModifier = 3.0f;
+		private const float radialDistance = 300.0f;
+		private const float forceModifier = 5.0f;
 		
 		private int tileIndex;
 		private new SpriteTile sprite;
@@ -102,8 +102,8 @@ namespace GravityDuck
 					isFacingAway = true;
 				else{}
 			
-			if(isFacingAway)
-			{
+			//if(isFacingAway)
+			//{
 				float distance = vectorTo.Length();
 				
 				// Direction of force will be towards the Black Hole
@@ -113,9 +113,28 @@ namespace GravityDuck
 				float forcePropToDist = distance / radialDistance;
 				
 				force = new Vector2(vectorTo.X * ((1 - forcePropToDist) * forceModifier), vectorTo.Y * ((1 - forcePropToDist) * forceModifier));			
-			}	
+			//}	
 			
 			return force;
+		}
+		
+		public new bool HasCollidedWithPlayer(SpriteUV player) //Check if the a sprite has hit a part of the maze
+		{
+			Bounds2 playerBounds = player.GetlContentLocalBounds();
+			player.GetContentWorldBounds(ref playerBounds); //Get sprite bounds (player bounds)
+			
+			Bounds2 holeBounds = sprite.GetlContentLocalBounds();
+			sprite.GetContentWorldBounds(ref holeBounds); //Get all of the maze bounds
+			
+			holeBounds.Max = holeBounds.Max - 15.0f;
+			holeBounds.Min = holeBounds.Min + 15.0f;
+			
+			if(playerBounds.Overlaps(holeBounds))
+			{
+				return true;
+			}
+			
+			return false;
 		}
 		
 		public bool CheckPlayerPos(Player player)

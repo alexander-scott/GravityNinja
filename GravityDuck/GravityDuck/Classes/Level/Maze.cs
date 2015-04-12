@@ -253,6 +253,33 @@ namespace GravityDuck
 					}
 				}
 			}
+			if (blackHoles != null)
+			{
+				foreach(BlackHole bh in blackHoles)
+				{
+					bool collide = bh.HasCollidedWithPlayer(sprite);
+					
+					if (collide)
+					{
+					   return true;
+					}
+				}
+			}
+			
+			if (laserGates != null)
+			{
+				foreach(LaserGate lg in laserGates)
+				{
+					bool collide = lg.HasCollidedWithPlayer(sprite);
+					
+					if (collide)
+					{
+					   return true;
+					}
+				}
+			}
+			
+			
 			return false;
 		}
 		
