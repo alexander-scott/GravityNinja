@@ -24,6 +24,7 @@ namespace GravityDuck
 		private int loadTime = 0;
 
 		private Sce.PlayStation.HighLevel.UI.Label	loadingLabel;
+		private Sce.PlayStation.HighLevel.UI.Label	levelLabel;
 		
 		public LoadingScreen (Sce.PlayStation.HighLevel.GameEngine2D.Scene scene, Sce.PlayStation.HighLevel.UI.Scene uiScene) : base(scene)
 		{
@@ -47,6 +48,14 @@ namespace GravityDuck
 			loadingLabel.Text = "Loading...";
 			loadingLabel.TextColor = new UIColor(0.0f, 0.0f, 0.0f, 1.0f);
 			uiScene.RootWidget.AddChildLast(loadingLabel);
+			
+			levelLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			levelLabel.X = 15.0f;
+			levelLabel.Y = 503.0f;
+			levelLabel.Text = "";
+			levelLabel.TextColor = new UIColor(0.0f, 0.0f, 0.0f, 1.0f);
+			//levelLabel.Font = new UIFont(FontAlias.System, 32, FontStyle.Regular);
+			uiScene.RootWidget.AddChildLast(levelLabel);
 			
 			loadingSymbol = new BusyIndicator(true);
 			loadingSymbol.SetPosition(910, 495);
@@ -122,6 +131,8 @@ namespace GravityDuck
 				sprite.Visible = true;
 				loadingLabel.Visible = true;
 				loadingSymbol.Visible = true;
+				levelLabel.Visible = true;
+				levelLabel.Text = "LEVEL " + level;
 				if (level == 0)
 				{
 					sprite.TextureInfo = loadingTexture0;
@@ -153,6 +164,7 @@ namespace GravityDuck
 				loadingLabel.Visible = false;
 				loadingSymbol.Visible = false;
 				readyButton.Visible = false;
+				levelLabel.Visible = false;
 				play = false;
 			}
 		}

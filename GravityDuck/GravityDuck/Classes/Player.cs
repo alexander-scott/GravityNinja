@@ -91,7 +91,6 @@ namespace GravityDuck
 			                              sprite.Position.Y + velocityChange.Y);
 			
 			momentum = 	velocityChange.Length() * mass;
-			Console.WriteLine(gravVelocity);
 		}                  
 		
 		public void Bounce(float side)

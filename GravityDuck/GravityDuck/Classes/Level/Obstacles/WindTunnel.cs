@@ -18,14 +18,29 @@ namespace GravityDuck
 		private const float forceModifier = 5.0f; 
 		private const float smallestDistance = 100.0f;	// This is to stop the distance being so small that the calculation will
 														//	increase the player's velocity by enormous amounts
+		private int tileIndex;
+		private new SpriteTile sprite;
 		
 		public WindTunnel() : base()
 		{			
-			textureInfo = new TextureInfo("/Application/textures/Level/windFan.png");
+			textureInfo = new TextureInfo(new Texture2D("/Application/textures/Level/WindFans.png", false), new Vector2i(4, 1));
 
-			sprite          = new SpriteUV(textureInfo);
-			sprite.Quad.S   = textureInfo.TextureSizef;
-			sprite.Pivot = new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
+			sprite          = new SpriteTile(textureInfo);
+			sprite.Quad.S   = textureInfo.TileSizeInPixelsf;
+			//sprite.Pivot = new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
+			
+			tileIndex = 0;
+			
+			sprite.ScheduleInterval( (dt) => 
+			{
+				if(tileIndex >= 4)
+				{
+					tileIndex = 0;
+				}
+				
+				sprite.TileIndex2D = new Vector2i(tileIndex, 0);
+				tileIndex++;
+			}, 0.10f);
 		}
 		
 		public void setDirection(int rotation)
@@ -167,6 +182,33 @@ namespace GravityDuck
 						}			
 							
 			return false;
+		}
+		
+		public new void setPosition(Vector2 newPosition)
+		{
+			position = newPosition;
+			sprite.Position = newPosition;
+		}
+		
+		public new void setRotation(float rotation)
+		{
+			float degreesToRad = (rotation * Sce.PlayStation.HighLevel.GameEngine2D.Base.Math.Pi) / 180;
+			sprite.Rotate(degreesToRad);
+		}
+		
+		public new SpriteTile getSprite()
+		{
+			return sprite;
+		}
+		
+		public new void Dispose()
+		{
+			textureInfo.Dispose();	
+		}
+		
+		public new void HideSprite()
+		{
+			sprite.Visible = false;
 		}
 	}
 }

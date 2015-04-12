@@ -129,7 +129,6 @@
     <Content Include="textures\gameOver.png" />
     <Content Include="textures\restartButton.png" />
     <Content Include="textures\options.png" />
-    <Content Include="textures\Level\blackHole.png" />
     <Content Include="textures\Level\breakableWall.png" />
     <Content Include="textures\Level\laserGate.png" />
     <Content Include="textures\Level\windFan.png" />
@@ -138,7 +137,6 @@
     <Content Include="textures\LoadingScreens\Level2Load.png" />
     <Content Include="textures\LoadingScreens\Level3Load.png" />
     <Content Include="textures\LoadingScreens\Level4Load.png" />
-    <Content Include="textures\LoadingScreens\Level5Load.png" />
     <Content Include="textures\GravityNina.png" />
     <Content Include="textures\LevelSelectBackground.png" />
     <Content Include="textures\Level\leftBlock1.png" />
@@ -159,5 +157,8 @@
     <Content Include="assets\buttons\BackToLevelSelectPressed.png" />
     <Content Include="assets\buttons\Replay.png" />
     <Content Include="assets\buttons\ReplayPressed.png" />
+    <Content Include="textures\LoadingScreens\Level5Load.png" />
+    <Content Include="textures\Level\BlackHoles.png" />
+    <Content Include="textures\Level\WindFans.png" />
   </ItemGroup>
 </Project>
