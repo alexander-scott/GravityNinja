@@ -15,7 +15,7 @@ namespace GravityDuck
 		private Direction halfRadialDirection;
 		
 		private const float radialDistance = 300.0f;
-		private const float forceModifier = 5.0f;
+		private const float forceModifier = 7.0f;
 		
 		private int tileIndex;
 		private new SpriteTile sprite;

@@ -90,6 +90,15 @@ namespace GravityDuck
 			UISystem.SetScene(uiScene);
 		}
 		
+		public void ReOrderZ(Sce.PlayStation.HighLevel.GameEngine2D.Scene scene)
+		{
+			sprite 			= null;
+			sprite 			= new SpriteUV(textureInfo);
+			sprite.Quad.S 	= textureInfo.TextureSizef;
+			sprite.Position = new Vector2(0.0f, 0.0f);
+			scene.AddChild(sprite);
+		}
+		
 		public void Update()
 		{
 			back = false;
@@ -126,10 +135,12 @@ namespace GravityDuck
 			if (levelSelected <= highestUnlockedLevel)
 			{
 				play = true;
-				backButton.Dispose();
+				//backButton.Dispose();
+				backButton.Visible = false;
 				for (int i = 0; i < numOfLevels; i++)
 				{
-					levelButtons[i].Dispose();
+					//levelButtons[i].Dispose();
+					levelButtons[i].Visible = false;
 				}
 			}
 			if (levelSelected <= highestUnlockedLevel)
@@ -166,6 +177,7 @@ namespace GravityDuck
 			visible = vis;
 			if (vis)
 			{
+				sprite.TextureInfo = textureInfo;
 				sprite.Visible = true;
 				backButton.Visible = true;
 				for (int i = 0; i < numOfLevels; i++)

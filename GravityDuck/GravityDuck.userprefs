@@ -2,8 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\AppMain.cs">
     <Files>
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="773" Column="70" />
-      <File FileName="GravityDuck\Classes\Level\Maze.cs" Line="273" Column="54" />
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="269" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

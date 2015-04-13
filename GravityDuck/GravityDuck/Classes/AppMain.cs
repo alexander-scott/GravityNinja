@@ -71,6 +71,7 @@ namespace GravityDuck
 		private static float endRotation;
 		public static float lastTime = 0.0f;
 		public static bool zoomedIn = false;
+
 //		private static float upperCameraRange = FMath.PI/4;
 //		private static float lowerCameraRange = -FMath.PI/4;
 		
@@ -265,7 +266,7 @@ namespace GravityDuck
 		public static void StartLevel()
 		{
 			currentScore = new Highscore(currentLevel, 0, "player");
-			
+			score = 0;
 			loadingScreen.SetVisible(false, currentLevel);
 			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); 
 			scoreLabel.Visible = true;
@@ -331,6 +332,7 @@ namespace GravityDuck
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
 						StartLevel();
 						currentState = States.PLAYING;
+						loadingScreen.SetVisible(false, currentLevel);
 						play = true;
 					}
 				break;
@@ -368,8 +370,8 @@ namespace GravityDuck
 					{
 						currentLevel++;
 						maze.RemoveLevel();
+						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(480.0f, 272.0f)); 
 						levelSelectScreen.SetVisible(true, currentLevel);
-						//loadingScreen.SetVisible(false, currentLevel-1);
 						currentState = States.LEVELSELECT;
 						play = false;
 						pause = false;
@@ -401,6 +403,8 @@ namespace GravityDuck
 						highscoreTab.Visible = false;
 						currentState = States.PLAYING;
 						timer.Reset();
+						levelComplete.ReOrderZ(gameScene);
+						gameOverScreen.ReOrderZ(gameScene);
 						score = 0;
 					}
 					else if (levelComplete.GetState() == 3) //Play the next level
@@ -425,6 +429,8 @@ namespace GravityDuck
 							highscoreLabel[i].Visible = false;
 						}
 						highscoreTab.Visible = false;
+						levelComplete.ReOrderZ(gameScene);
+						gameOverScreen.ReOrderZ(gameScene);
 						player.SetPos(maze.GetSpawnPoint());
 					}
 				break;
@@ -746,6 +752,7 @@ namespace GravityDuck
 			//}
 			//else
 			background.Update(player.GetPos(), -new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation)));
+			
 			if(zoomedIn)
 			{
 				zoom = 2.0f;
@@ -773,10 +780,14 @@ namespace GravityDuck
 					if (maze.HasHitSide(playerBox, currGrav)) //Check if it's a side tile
 					{
 						if (currGrav == 3 || currGrav == 1)
+						{
 							invert = true; //Set invert to false so the X axis gets inverted
+						}
 						else
+						{
 							invert = false;
-						player.SetPos(player.GetPos() - movementVector*9.65f); //Bounce the player off the sides (WILL MAKE SMOOTHER) 
+						}
+						player.SetPos(player.GetPos() - movementVector*10f); //Bounce the player off the sides (WILL MAKE SMOOTHER) 
 					}
 					else
 					{
@@ -933,6 +944,7 @@ namespace GravityDuck
 			}
 			//else
 			//	falling = true; //If no intersection then we are falling
+			
 			additionalForces = maze.CheckBlackHole(player) + maze.CheckWindTunnel(player);
 		}
 		

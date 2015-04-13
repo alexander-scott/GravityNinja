@@ -88,6 +88,23 @@ namespace GravityDuck
 			restartButtonSprite.Visible = true;
 		}
 		
+		public void ReOrderZ(Scene scene)
+		{
+			sprite = null;
+			sprite 			= new SpriteUV(textureInfo);
+			sprite.Quad.S 	= textureInfo.TextureSizef;
+			sprite.Position = new Vector2(0.0f, 0.0f);
+			scene.AddChild(sprite);
+			sprite.Visible = false;
+			
+			restartButtonSprite = null;
+			restartButtonSprite 			= new SpriteUV(restartButtonTexture);
+			restartButtonSprite.Quad.S 	= restartButtonTexture.TextureSizef;
+			restartButtonSprite.Position = new Vector2(0.0f, 0.0f);
+			scene.AddChild(restartButtonSprite);
+			restartButtonSprite.Visible = false;
+		}
+		
 		public bool CheckRestart()
 		{
 			return restart;

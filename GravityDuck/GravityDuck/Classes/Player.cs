@@ -54,10 +54,18 @@ namespace GravityDuck
 			if (!falling)
 			{
 				if(!invert)
-					tempDir = movement*5; //Normal movement caused by tilting the device
+				{
+					if (additionalForces != new Vector2(0.0f, 0.0f))
+						tempDir = movement*5*additionalForces; //Normal movement caused by tilting the device
+					else
+						tempDir = movement*5;
+				}
 				else
 				{
-					tempDir = movement*5; //Stop player moving
+					if (additionalForces != new Vector2(0.0f, 0.0f))
+						tempDir = movement*5*additionalForces; //Normal movement caused by tilting the device
+					else
+						tempDir = movement*5;
 				}
 			}
 			else
@@ -81,14 +89,11 @@ namespace GravityDuck
 					else
 						gravVelocity += gravSpeed;
 				}
-			
 			}
 							
-			Vector2 velocityChange = new Vector2((tempDir.X * gravVelocity) + additionalForces.X,
-			                                     (tempDir.Y * gravVelocity) + additionalForces.Y);
+			Vector2 velocityChange = new Vector2((tempDir.X * gravVelocity) + additionalForces.X, (tempDir.Y * gravVelocity) + additionalForces.Y);
 			//Move the player
-			sprite.Position = new Vector2(sprite.Position.X + velocityChange.X,
-			                              sprite.Position.Y + velocityChange.Y);
+			sprite.Position = new Vector2(sprite.Position.X + velocityChange.X, sprite.Position.Y + velocityChange.Y);
 			
 			momentum = 	velocityChange.Length() * mass;
 		}                  
