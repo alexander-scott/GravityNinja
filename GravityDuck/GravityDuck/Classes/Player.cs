@@ -150,6 +150,14 @@ namespace GravityDuck
 			alive = true;
 		}
 		
+		public void setVisibility(bool visible)
+		{
+			if(visible)
+				sprite.Visible = true;
+			else
+				sprite.Visible = false;
+		}
+		
 		public bool CheckFalling() { return falling; }
 				
 		public float GetX() { return sprite.Position.X; }

@@ -160,5 +160,34 @@
     <Content Include="textures\Level\BlackHoles.png" />
     <Content Include="textures\Level\WindFans.png" />
     <Content Include="textures\Level\LaserBeams.png" />
+    <Content Include="maps\level6.tmx" />
+    <Content Include="maps\level10.tmx" />
+    <Content Include="maps\level11.tmx" />
+    <Content Include="maps\level12.tmx" />
+    <Content Include="maps\level13.tmx" />
+    <Content Include="maps\level14.tmx" />
+    <Content Include="maps\level15.tmx" />
+    <Content Include="maps\level16.tmx" />
+    <Content Include="maps\level17.tmx" />
+    <Content Include="maps\level18.tmx" />
+    <Content Include="maps\level19.tmx" />
+    <Content Include="maps\level20.tmx" />
+    <Content Include="maps\level21.tmx" />
+    <Content Include="maps\level22.tmx" />
+    <Content Include="maps\level23.tmx" />
+    <Content Include="maps\level24.tmx" />
+    <Content Include="maps\level25.tmx" />
+    <Content Include="maps\level26.tmx" />
+    <Content Include="maps\level7.tmx" />
+    <Content Include="maps\level8.tmx" />
+    <Content Include="maps\level9.tmx" />
+    <Content Include="textures\LoadingScreens\Level6Load.png" />
+    <Content Include="textures\LoadingScreens\Level7Load.png" />
+    <Content Include="textures\LoadingScreens\Level8Load.png" />
+    <Content Include="textures\LoadingScreens\Level9Load.png" />
+    <Content Include="textures\LoadingScreens\Level10Load.png" />
+    <Content Include="textures\LoadingScreens\Level11Load.png" />
+    <Content Include="textures\LoadingScreens\Level12Load.png" />
+    <Content Include="textures\LoadingScreens\Level13Load.png" />
   </ItemGroup>
 </Project>

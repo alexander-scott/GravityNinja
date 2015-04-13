@@ -88,8 +88,8 @@ namespace GravityDuck
 		
 		//------ Level Data ------\\
 		private static int currentLevel = 1; //The level to load
-		private static int highestUnlockedLevel = 5; //Read this in from file eventually (local highscores)
-		private static int totalNumOfLevels = 6;
+		private static int highestUnlockedLevel = 1; //Read this in from file eventually (local highscores)
+		private static int totalNumOfLevels = 27;
 		private static List<List<Highscore>> loadedLevelHighscores;
 		private static Highscore currentScore;
 		
@@ -123,7 +123,7 @@ namespace GravityDuck
 			player.Dispose();
 			gameOverScreen.Dispose();
 			levelComplete.Dispose();
-			levelSelectScreen.Dispose();
+			levelSelectScreen.Dispose(true);
 			loadingScreen.Dispose();	
 		}
 
@@ -233,15 +233,15 @@ namespace GravityDuck
 				highscoreLabel[i].Y = 350.0f + (i * 30.0f);
 				
 				if(i == 0)
-					highscoreLabel[i].Text = "1st :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+					highscoreLabel[i].Text = "1st :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
 				else if(i == 1)
-					highscoreLabel[i].Text = "2nd : " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+					highscoreLabel[i].Text = "2nd : " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
 				else if(i == 2)
-					highscoreLabel[i].Text = "3rd :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+					highscoreLabel[i].Text = "3rd :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
 				else if(i == 3)
-					highscoreLabel[i].Text = "4th :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+					highscoreLabel[i].Text = "4th :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
 				else 
-					highscoreLabel[i].Text = "5th :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+					highscoreLabel[i].Text = "5th :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
 				
 				highscoreLabel[i].Visible = false;
 				uiScene.RootWidget.AddChildLast(highscoreLabel[i]);
@@ -295,6 +295,11 @@ namespace GravityDuck
 				}
 				case States.LEVELSELECT:
 				{
+					if (!levelSelectScreen.LoadedTextures())
+					{
+						levelSelectScreen.ReLoadTextures();
+						loadingScreen.ReLoadTextures();
+					}
 					if (levelSelectScreen.Selected()) 
 					{
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
@@ -306,6 +311,7 @@ namespace GravityDuck
 						loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
 						currentState = States.LOADING;
 						title.RemoveAll();
+						levelSelectScreen.Dispose(false);
 					}
 					if (levelSelectScreen.BackPressed())
 					{
@@ -334,6 +340,8 @@ namespace GravityDuck
 						currentState = States.PLAYING;
 						loadingScreen.SetVisible(false, currentLevel);
 						play = true;
+						player.setVisibility(true);
+						loadingScreen.Dispose();
 					}
 				break;
 				}
@@ -369,6 +377,7 @@ namespace GravityDuck
 					else if (levelComplete.GetState() == 1) //Back to level select screen
 					{
 						currentLevel++;
+						//levelSelectScreen.ReLoadTextures();
 						maze.RemoveLevel();
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(480.0f, 272.0f)); 
 						levelSelectScreen.SetVisible(true, currentLevel);
@@ -386,7 +395,8 @@ namespace GravityDuck
 						}
 						highscoreTab.Visible = false;
 						background.SetVisible(false);
-						
+						player.setVisibility(false);
+						//loadingScreen.ReLoadTextures();
 					}
 					else if (levelComplete.GetState() == 2) //Replay the current level
 					{
@@ -886,15 +896,15 @@ namespace GravityDuck
 				for(int i = 0; i < 5; i++)
 				{
 					if(i == 0)
-						highscoreLabel[i].Text = "1st :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+						highscoreLabel[i].Text = "1st :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
 					else if(i == 1)
-						highscoreLabel[i].Text = "2nd : " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+						highscoreLabel[i].Text = "2nd : " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
 					else if(i == 2)
-						highscoreLabel[i].Text = "3rd :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+						highscoreLabel[i].Text = "3rd :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
 					else if(i == 3)
-						highscoreLabel[i].Text = "4th :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+						highscoreLabel[i].Text = "4th :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
 					else 
-						highscoreLabel[i].Text = "5th :  " + loadedLevelHighscores[currentLevel - 1][i].GetScore();
+						highscoreLabel[i].Text = "5th :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
 					
 					highscoreLabel[i].Visible = true;
 				}
@@ -1013,7 +1023,7 @@ namespace GravityDuck
 			
 			for(int i = 0; i < 5; i++)
 			{
-				if(currentScore.GetScore() > loadedLevelHighscores[level - 1][i].GetScore())
+				if(currentScore.GetScore() > loadedLevelHighscores[(level != 0) ? level - 1 : level][i].GetScore())
 				{
 					highscorePos = i;
 					break;
@@ -1024,13 +1034,13 @@ namespace GravityDuck
 			{			
 				for(int i = 4; i > highscorePos; i--)
 				{
-					int movedScore = loadedLevelHighscores[level - 1][i - 1].GetScore();
+					int movedScore = loadedLevelHighscores[(level != 0) ? level - 1 : level][i - 1].GetScore();
 					
-					loadedLevelHighscores[level - 1][i].SetScore(movedScore);
+					loadedLevelHighscores[(level != 0) ? level - 1 : level][i].SetScore(movedScore);
 				}
 				
-				loadedLevelHighscores[level - 1][highscorePos].SetScore(currentScore.GetScore());
-				loadedLevelHighscores[level - 1][highscorePos].SetPlayerName(currentScore.GetPlayerName());
+				loadedLevelHighscores[(level != 0) ? level - 1 : level][highscorePos].SetScore(currentScore.GetScore());
+				loadedLevelHighscores[(level != 0) ? level - 1 : level][highscorePos].SetPlayerName(currentScore.GetPlayerName());
 			}
 			
 			

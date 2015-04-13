@@ -2,7 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\AppMain.cs">
     <Files>
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="269" Column="14" />
+      <File FileName="GravityDuck\Classes\Screens\LevelSelectScreen.cs" Line="317" Column="26" />
+      <File FileName="GravityDuck\Classes\Screens\LoadingScreen.cs" Line="71" Column="50" />
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="303" Column="40" />
+      <File FileName="GravityDuck\Classes\Player.cs" Line="158" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

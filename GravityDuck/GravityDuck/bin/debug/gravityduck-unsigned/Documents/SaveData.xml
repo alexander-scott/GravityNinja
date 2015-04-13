@@ -1,9 +1,21 @@
 <game>
+  <level id="0">
+    <player1>player</player1>
+    <highscore1>2450</highscore1>
+    <player2>player</player2>
+    <highscore2>1350</highscore2>
+    <player3>player</player3>
+    <highscore3>1300</highscore3>
+    <player4>player</player4>
+    <highscore4>1250</highscore4>
+    <player5>player</player5>
+    <highscore5>1250</highscore5>
+  </level>
   <level id="1">
     <player1>player</player1>
     <highscore1>2450</highscore1>
     <player2>player</player2>
-    <highscore2>2200</highscore2>
+    <highscore2>1350</highscore2>
     <player3>player</player3>
     <highscore3>1350</highscore3>
     <player4>player</player4>
@@ -13,27 +25,23 @@
   </level>
   <level id="2">
     <player1>player</player1>
-    <highscore1>2100</highscore1>
-    <player2>
-    </player2>
-    <highscore2>1400</highscore2>
+    <highscore1>450</highscore1>
+    <player2>player</player2>
+    <highscore2>450</highscore2>
     <player3>player</player3>
     <highscore3>450</highscore3>
-    <player4>
-    </player4>
-    <highscore4>0</highscore4>
-    <player5>
-    </player5>
-    <highscore5>0</highscore5>
+    <player4>player</player4>
+    <highscore4>450</highscore4>
+    <player5>player</player5>
+    <highscore5>450</highscore5>
   </level>
   <level id="3">
     <player1>player</player1>
     <highscore1>150</highscore1>
     <player2>player</player2>
     <highscore2>100</highscore2>
-    <player3>
-    </player3>
-    <highscore3>0</highscore3>
+    <player3>player</player3>
+    <highscore3>100</highscore3>
     <player4>
     </player4>
     <highscore4>0</highscore4>
@@ -56,6 +64,340 @@
     <highscore5>0</highscore5>
   </level>
   <level id="5">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>player</player2>
+    <highscore2>200</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="6">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="7">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="8">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="9">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="10">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>player</player2>
+    <highscore2>250</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="11">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="12">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="13">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="14">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="15">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="16">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="17">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="18">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="19">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="20">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="21">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="22">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="23">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="24">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="25">
+    <player1>player</player1>
+    <highscore1>600</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
+  </level>
+  <level id="26">
     <player1>player</player1>
     <highscore1>600</highscore1>
     <player2>
