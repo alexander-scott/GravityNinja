@@ -65,8 +65,8 @@ namespace GravityDuck
 								string xStr = reader["x"];
 								string yStr = reader["y"];
 							
-								float x = Convert.ToInt32(xStr);
-								float yTemp = Convert.ToInt32(yStr);
+								float x = (float)Convert.ToDouble(xStr);
+								float yTemp = (float)Convert.ToDouble(yStr);
 							
 								float levelHeight = level.GetLevelHeight();
 								float y = levelHeight - yTemp - 30.0f;

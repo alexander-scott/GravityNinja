@@ -127,7 +127,7 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="4" name="laserGate1" x="650" y="900" width="128" height="170" rotation="180">
+  <object id="4" name="laserGate1" x="630" y="800" width="128" height="170" rotation="180">
    <properties>
     <property name="Rotation" value="90"/>
     <property name="Type" value="Laser Gate"/>

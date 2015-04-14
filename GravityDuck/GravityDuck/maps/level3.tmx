@@ -183,14 +183,14 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="24" name="Black Hole" x="154" y="606" width="70" height="80">
+  <object id="24" name="Black Hole" x="154" y="630" width="70" height="80">
    <properties>
     <property name="Rotation" value="0"/>
     <property name="Type" value="Black Hole"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="28" name="Black Hole2" x="771" y="335" width="70" height="80">
+  <object id="28" name="Black Hole2" x="771" y="355" width="70" height="80">
    <properties>
     <property name="Rotation" value="0"/>
     <property name="Type" value="Black Hole"/>

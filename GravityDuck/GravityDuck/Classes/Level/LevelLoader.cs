@@ -400,7 +400,7 @@ namespace GravityDuck
 			for (int i = 0; i < blackHoles.Count; i++)
 			{
 				blackHolesObj[i] = blackHoles[i];
-				scene.AddChild(blackHolesObj[i].GetSprite());
+				scene.AddChild(blackHolesObj[i].getSprite());
 			}
 			
 			if(blackHoles.Count != 0)
@@ -440,7 +440,7 @@ namespace GravityDuck
 			for (int i = 0; i < laserGates.Count; i++)
 			{
 				laserGatesObj[i] = laserGates[i];
-				scene.AddChild(laserGatesObj[i].GetSprite());
+				scene.AddChild(laserGatesObj[i].getSprite());
 			}
 			
 			if(laserGates.Count != 0)
@@ -480,7 +480,7 @@ namespace GravityDuck
 			for (int i = 0; i < windTunnels.Count; i++)
 			{
 				windTunnelsObj[i] = windTunnels[i];
-				scene.AddChild(windTunnelsObj[i].GetSprite());
+				scene.AddChild(windTunnelsObj[i].getSprite());
 			}
 			
 			if(spikes.Count != 0)

@@ -24,7 +24,7 @@ namespace GravityDuck
 		private static Vector2      velocity = new Vector2(0.0f, 0.0f);
 		private static Vector2      acceleration = new Vector2(0.0f, 0.0f);
 		private static float     	duckRotation = 0.0f;
-		private static float		gravSpeed = 0.4f, maxGrav = 10.0f, gravVelocity = 2.0f;
+		private static float		gravSpeed = 0.5f, maxGrav = 10.0f, gravVelocity = 2.5f;
 		private static float 		momentum = 0.0f;
 		private static float 		mass = 10.0f;
 		
@@ -54,10 +54,18 @@ namespace GravityDuck
 			if (!falling)
 			{
 				if(!invert)
-					tempDir = movement*5; //Normal movement caused by tilting the device
+				{
+					if (additionalForces != new Vector2(0.0f, 0.0f))
+						tempDir = movement*5*additionalForces; //Normal movement caused by tilting the device
+					else
+						tempDir = movement*5;
+				}
 				else
 				{
-					tempDir = movement*5; //Stop player moving
+					if (additionalForces != new Vector2(0.0f, 0.0f))
+						tempDir = movement*5*additionalForces; //Normal movement caused by tilting the device
+					else
+						tempDir = movement*5;
 				}
 			}
 			else
@@ -81,17 +89,13 @@ namespace GravityDuck
 					else
 						gravVelocity += gravSpeed;
 				}
-			
 			}
 							
-			Vector2 velocityChange = new Vector2((tempDir.X * gravVelocity) + additionalForces.X,
-			                                     (tempDir.Y * gravVelocity) + additionalForces.Y);
+			Vector2 velocityChange = new Vector2((tempDir.X * gravVelocity) + additionalForces.X, (tempDir.Y * gravVelocity) + additionalForces.Y);
 			//Move the player
-			sprite.Position = new Vector2(sprite.Position.X + velocityChange.X,
-			                              sprite.Position.Y + velocityChange.Y);
+			sprite.Position = new Vector2(sprite.Position.X + velocityChange.X, sprite.Position.Y + velocityChange.Y);
 			
 			momentum = 	velocityChange.Length() * mass;
-			Console.WriteLine(gravVelocity);
 		}                  
 		
 		public void Bounce(float side)
@@ -144,6 +148,14 @@ namespace GravityDuck
 		public void setAlive()
 		{
 			alive = true;
+		}
+		
+		public void setVisibility(bool visible)
+		{
+			if(visible)
+				sprite.Visible = true;
+			else
+				sprite.Visible = false;
 		}
 		
 		public bool CheckFalling() { return falling; }

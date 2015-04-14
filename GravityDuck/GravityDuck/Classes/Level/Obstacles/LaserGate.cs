@@ -14,16 +14,32 @@ namespace GravityDuck
 		
 		private Direction laserDirection;
 		
-		private bool laserOn = true;
+		private bool laserOn = false;
+		
+		private int tileIndex;
+		private new SpriteTile sprite;
 			
 		public LaserGate() : base()
 		{
-			textureInfo = new TextureInfo("/Application/textures/Level/laserGate.png");
+			textureInfo = new TextureInfo(new Texture2D("/Application/textures/Level/LaserBeams.png", false), new Vector2i(18, 1));
 			
-			sprite          = new SpriteUV(textureInfo);
-			sprite.Quad.S   = textureInfo.TextureSizef;
+			sprite          = new SpriteTile(textureInfo);
+			sprite.Quad.S   = textureInfo.TileSizeInPixelsf;
 			
-			sprite.Pivot = new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
+			//sprite.Pivot = new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
+			
+			tileIndex = 0;
+			
+			sprite.ScheduleInterval( (dt) => 
+			{
+				if(tileIndex >= 18)
+				{
+					tileIndex = 0;
+				}
+				
+				sprite.TileIndex2D = new Vector2i(tileIndex, 0);
+				tileIndex++;
+			}, 0.10f);
 		}
 		
 		public void setDirection(int rotation)
@@ -79,6 +95,11 @@ namespace GravityDuck
 						playerHit = true;
 				}
 			
+			if (tileIndex > 5 && tileIndex < 15)
+				laserOn = true;
+			else
+				laserOn = false;
+			
 			// If the player is passing the Gate AND the laser is on, then the player is hit.	RMDS
 			if(playerHit)
 				if(laserOn)
@@ -87,6 +108,52 @@ namespace GravityDuck
 					return false;
 			else
 				return false;
+		}
+		
+		public new bool HasCollidedWithPlayer(SpriteUV player) //Check if the a sprite has hit a part of the maze
+		{
+			Bounds2 playerBounds = player.GetlContentLocalBounds();
+			player.GetContentWorldBounds(ref playerBounds); //Get sprite bounds (player bounds)
+			
+			Bounds2 laserBounds = sprite.GetlContentLocalBounds();
+			sprite.GetContentWorldBounds(ref laserBounds); //Get all of the maze bounds
+			
+			laserBounds.Max = laserBounds.Max - 15.0f;
+			laserBounds.Min = laserBounds.Min + 15.0f;
+			
+			if(playerBounds.Overlaps(laserBounds) && laserOn)
+			{
+				return true;
+			}
+			
+			return false;
+		}
+		
+		public new void setPosition(Vector2 newPosition)
+		{
+			position = newPosition;
+			sprite.Position = newPosition;
+		}
+		
+		public new void setRotation(float rotation)
+		{
+			float degreesToRad = (rotation * Sce.PlayStation.HighLevel.GameEngine2D.Base.Math.Pi) / 180;
+			sprite.Rotate(degreesToRad);
+		}
+		
+		public new SpriteTile getSprite()
+		{
+			return sprite;
+		}
+		
+		public new void Dispose()
+		{
+			textureInfo.Dispose();	
+		}
+		
+		public new void HideSprite()
+		{
+			sprite.Visible = false;
 		}
 	}
 }

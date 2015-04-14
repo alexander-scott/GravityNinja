@@ -72,6 +72,9 @@ namespace GravityDuck
 				restart = true;
 			}
 			
+			if (touches.Count > 0)
+				restart = true;
+			
 		}
 		
 		public void Show(float playerX, float playerY)
@@ -83,6 +86,23 @@ namespace GravityDuck
 			restartBox.Min = new Vector2(playerX - (Director.Instance.GL.Context.GetViewport().Width/2), playerY-270);
 			restartBox.Max = new Vector2(playerX + 500, playerY + 500);
 			restartButtonSprite.Visible = true;
+		}
+		
+		public void ReOrderZ(Scene scene)
+		{
+			sprite = null;
+			sprite 			= new SpriteUV(textureInfo);
+			sprite.Quad.S 	= textureInfo.TextureSizef;
+			sprite.Position = new Vector2(0.0f, 0.0f);
+			scene.AddChild(sprite);
+			sprite.Visible = false;
+			
+			restartButtonSprite = null;
+			restartButtonSprite 			= new SpriteUV(restartButtonTexture);
+			restartButtonSprite.Quad.S 	= restartButtonTexture.TextureSizef;
+			restartButtonSprite.Position = new Vector2(0.0f, 0.0f);
+			scene.AddChild(restartButtonSprite);
+			restartButtonSprite.Visible = false;
 		}
 		
 		public bool CheckRestart()

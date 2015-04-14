@@ -110,7 +110,6 @@ namespace GravityDuck
 		{
 			sprite.Position = new Vector2(playerX - (Director.Instance.GL.Context.GetViewport().Width/2), playerY-270);
 			sprite.Visible = true;
-			
 			starsSprite.Position = new Vector2(sprite.Position.X + (sprite.TextureInfo.TextureSizef.X/2) - (starsSprite.TextureInfo.TextureSizef.X/2), sprite.Position.Y + 90);
 			
 			if(stars==1)
@@ -125,6 +124,23 @@ namespace GravityDuck
 			backToLevelSelect.Visible = true;
 			nextLevel.Visible = true;
 			replayLevel.Visible = true;
+		}
+		
+		public void ReOrderZ(Sce.PlayStation.HighLevel.GameEngine2D.Scene scene)
+		{
+			sprite = null;
+			sprite 			= new SpriteUV(textureInfo);
+			sprite.Quad.S 	= textureInfo.TextureSizef;
+			sprite.Position = new Vector2(0.0f, 0.0f);
+			scene.AddChild(sprite);
+			sprite.Visible = false;
+			
+			starsSprite = null;
+			starsSprite 			= new SpriteUV(stars1Texture);
+			starsSprite.Quad.S 	= stars1Texture.TextureSizef;
+			starsSprite.Position = new Vector2(0.0f, 0.0f);
+			scene.AddChild(starsSprite);
+			starsSprite.Visible = false;
 		}
 		
 		/*
