@@ -87,8 +87,8 @@ namespace GravityDuck
 //		private static bool levelSelected = false;
 		
 		//------ Level Data ------\\
-		private static int currentLevel = 1; //The level to load
-		private static int highestUnlockedLevel = 1; //Read this in from file eventually (local highscores)
+		private static int currentLevel = 1; //The highest level we have unlocked, Read this in from file eventually (local highscores)
+		private static int highestUnlockedLevel = currentLevel;
 		private static int totalNumOfLevels = 27;
 		private static List<List<Highscore>> loadedLevelHighscores;
 		private static Highscore currentScore;
@@ -298,7 +298,7 @@ namespace GravityDuck
 					if (!levelSelectScreen.LoadedTextures())
 					{
 						levelSelectScreen.ReLoadTextures();
-						loadingScreen.ReLoadTextures();
+						loadingScreen.ReLoadTextures(100);
 					}
 					if (levelSelectScreen.Selected()) 
 					{
@@ -421,6 +421,7 @@ namespace GravityDuck
 					{
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
 						currentLevel++;
+						loadingScreen.ReLoadTextures(currentLevel);
 						maze.RemoveLevel();
 						maze.LoadLevel(gameScene, currentLevel);
 						loadingScreen.SetVisible(true, currentLevel);

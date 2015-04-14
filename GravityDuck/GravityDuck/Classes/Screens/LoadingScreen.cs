@@ -227,23 +227,57 @@ namespace GravityDuck
 			loadTime = time;
 		}
 		
-		public void ReLoadTextures()
+		public void ReLoadTextures(int levelToLoad)
 		{
-			textureInfo 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
-			loadingTexture0 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
-			loadingTexture1 	= new TextureInfo("/Application/textures/LoadingScreens/Level1Load.png");
-			loadingTexture2 	= new TextureInfo("/Application/textures/LoadingScreens/Level2Load.png");
-			loadingTexture3 	= new TextureInfo("/Application/textures/LoadingScreens/Level3Load.png");
-			loadingTexture4 	= new TextureInfo("/Application/textures/LoadingScreens/Level4Load.png");
-			loadingTexture5 	= new TextureInfo("/Application/textures/LoadingScreens/Level5Load.png");
-			loadingTexture6 	= new TextureInfo("/Application/textures/LoadingScreens/Level6Load.png");
-			loadingTexture7 	= new TextureInfo("/Application/textures/LoadingScreens/Level7Load.png");
-			loadingTexture8 	= new TextureInfo("/Application/textures/LoadingScreens/Level8Load.png");
-			loadingTexture9 	= new TextureInfo("/Application/textures/LoadingScreens/Level9Load.png");
-			loadingTexture10 	= new TextureInfo("/Application/textures/LoadingScreens/Level10Load.png");
-			loadingTexture11 	= new TextureInfo("/Application/textures/LoadingScreens/Level11Load.png");
-			loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
-			loadingTexture13 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+			if (levelToLoad == 0)
+			{
+				textureInfo 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
+				loadingTexture0 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
+			}
+			else if (levelToLoad ==1)
+				loadingTexture1 	= new TextureInfo("/Application/textures/LoadingScreens/Level1Load.png");
+			else if (levelToLoad ==1)
+				loadingTexture2 	= new TextureInfo("/Application/textures/LoadingScreens/Level2Load.png");
+			else if (levelToLoad ==1)
+				loadingTexture3 	= new TextureInfo("/Application/textures/LoadingScreens/Level3Load.png");
+			else if (levelToLoad ==1)
+				loadingTexture4 	= new TextureInfo("/Application/textures/LoadingScreens/Level4Load.png");
+			else if (levelToLoad ==1)
+				loadingTexture5 	= new TextureInfo("/Application/textures/LoadingScreens/Level5Load.png");
+			else if (levelToLoad ==1)
+				loadingTexture6 	= new TextureInfo("/Application/textures/LoadingScreens/Level6Load.png");
+			else if (levelToLoad ==1)
+				loadingTexture7 	= new TextureInfo("/Application/textures/LoadingScreens/Level7Load.png");
+			else if (levelToLoad ==1)
+				loadingTexture8 	= new TextureInfo("/Application/textures/LoadingScreens/Level8Load.png");
+			else if (levelToLoad ==1)
+				loadingTexture9 	= new TextureInfo("/Application/textures/LoadingScreens/Level9Load.png");
+			else if (levelToLoad ==1)
+				loadingTexture10 	= new TextureInfo("/Application/textures/LoadingScreens/Level10Load.png");
+			else if (levelToLoad ==1)
+				loadingTexture11 	= new TextureInfo("/Application/textures/LoadingScreens/Level11Load.png");
+			else if (levelToLoad ==1)
+				loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
+			else if (levelToLoad ==1)
+				loadingTexture13 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+			else
+			{
+				textureInfo 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
+				loadingTexture0 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
+				loadingTexture1 	= new TextureInfo("/Application/textures/LoadingScreens/Level1Load.png");
+				loadingTexture2 	= new TextureInfo("/Application/textures/LoadingScreens/Level2Load.png");
+				loadingTexture3 	= new TextureInfo("/Application/textures/LoadingScreens/Level3Load.png");
+				loadingTexture4 	= new TextureInfo("/Application/textures/LoadingScreens/Level4Load.png");
+				loadingTexture5 	= new TextureInfo("/Application/textures/LoadingScreens/Level5Load.png");
+				loadingTexture6 	= new TextureInfo("/Application/textures/LoadingScreens/Level6Load.png");
+				loadingTexture7 	= new TextureInfo("/Application/textures/LoadingScreens/Level7Load.png");
+				loadingTexture8 	= new TextureInfo("/Application/textures/LoadingScreens/Level8Load.png");
+				loadingTexture9 	= new TextureInfo("/Application/textures/LoadingScreens/Level9Load.png");
+				loadingTexture10 	= new TextureInfo("/Application/textures/LoadingScreens/Level10Load.png");
+				loadingTexture11 	= new TextureInfo("/Application/textures/LoadingScreens/Level11Load.png");
+				loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
+				loadingTexture13 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+			}
 			//loadingTexture14 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
 			//loadingTexture15 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
 			//loadingTexture16 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
