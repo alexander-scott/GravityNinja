@@ -1,13 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\AppMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\Level\Obstacles\LaserGate.cs">
     <Files>
-      <File FileName="GravityDuck\Classes\Screens\LevelSelectScreen.cs" Line="305" Column="30" />
-      <File FileName="GravityDuck\Classes\Screens\LoadingScreen.cs" Line="278" Column="97" />
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="90" Column="38" />
-      <File FileName="GravityDuck\Classes\Player.cs" Line="158" Column="28" />
-      <File FileName="GravityDuck\Classes\Level\LevelLoader.cs" Line="1" Column="1" />
-      <File FileName="GravityDuck\Classes\XMLLoader.cs" Line="69" Column="46" />
+      <File FileName="GravityDuck\Classes\Level\Obstacles\LaserGate.cs" Line="107" Column="3" />
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="853" Column="32" />
+      <File FileName="GravityDuck\Classes\Level\Maze.cs" Line="242" Column="15" />
+      <File FileName="GravityDuck\Classes\Level\LevelLoader.cs" Line="169" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

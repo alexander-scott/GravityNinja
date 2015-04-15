@@ -22,6 +22,7 @@ namespace GravityDuck
 		private bool loadedTextures = true;
 		private static int numOfLevels = 27;
 		private static int highestUnlockedLevel = 0;
+		
 		public int levelSelected = 0;
 		
 		public LevelSelectScreen (Sce.PlayStation.HighLevel.GameEngine2D.Scene scene, Sce.PlayStation.HighLevel.UI.Scene uiScene, int maxLevel) : base(scene)

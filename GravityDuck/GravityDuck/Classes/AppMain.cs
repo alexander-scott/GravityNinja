@@ -87,7 +87,7 @@ namespace GravityDuck
 //		private static bool levelSelected = false;
 		
 		//------ Level Data ------\\
-		private static int currentLevel = 1; //The highest level we have unlocked, Read this in from file eventually (local highscores)
+		private static int currentLevel = 13; //The highest level we have unlocked, Read this in from file eventually (local highscores)
 		private static int highestUnlockedLevel = currentLevel;
 		private static int totalNumOfLevels = 27;
 		private static List<List<Highscore>> loadedLevelHighscores;
@@ -295,11 +295,6 @@ namespace GravityDuck
 				}
 				case States.LEVELSELECT:
 				{
-					if (!levelSelectScreen.LoadedTextures())
-					{
-						levelSelectScreen.ReLoadTextures();
-						loadingScreen.ReLoadTextures(100);
-					}
 					if (levelSelectScreen.Selected()) 
 					{
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
@@ -311,7 +306,6 @@ namespace GravityDuck
 						loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
 						currentState = States.LOADING;
 						title.RemoveAll();
-						levelSelectScreen.Dispose(false);
 					}
 					if (levelSelectScreen.BackPressed())
 					{
@@ -321,11 +315,17 @@ namespace GravityDuck
 						title = new TitleScreen(gameScene);	
 					}
 					levelSelectScreen.Update();
+					if (!levelSelectScreen.LoadedTextures())
+					{
+						levelSelectScreen.ReLoadTextures();
+						loadingScreen.ReLoadTextures(100);
+					}
 				break;
 				}
 				case States.LOADING:
 				{
 					loadingScreen.SetVisible(true, currentLevel);
+					levelSelectScreen.Dispose(false);
 					currentState = States.LOADED;
 					InitializeGame();
 				break;

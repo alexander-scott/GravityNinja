@@ -19,7 +19,7 @@ namespace GravityDuck
 		private int tileIndex;
 		private new SpriteTile sprite;
 			
-		public LaserGate() : base()
+		public LaserGate(int random) : base()
 		{
 			textureInfo = new TextureInfo(new Texture2D("/Application/textures/Level/LaserBeams.png", false), new Vector2i(18, 1));
 			
@@ -27,8 +27,8 @@ namespace GravityDuck
 			sprite.Quad.S   = textureInfo.TileSizeInPixelsf;
 			
 			//sprite.Pivot = new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
-			
-			tileIndex = 0;
+
+			tileIndex = random;
 			
 			sprite.ScheduleInterval( (dt) => 
 			{
@@ -95,11 +95,6 @@ namespace GravityDuck
 						playerHit = true;
 				}
 			
-			if (tileIndex > 5 && tileIndex < 15)
-				laserOn = true;
-			else
-				laserOn = false;
-			
 			// If the player is passing the Gate AND the laser is on, then the player is hit.	RMDS
 			if(playerHit)
 				if(laserOn)
@@ -112,6 +107,11 @@ namespace GravityDuck
 		
 		public new bool HasCollidedWithPlayer(SpriteUV player) //Check if the a sprite has hit a part of the maze
 		{
+			if (tileIndex > 5 && tileIndex < 15)
+				laserOn = true;
+			else
+				laserOn = false;
+			
 			Bounds2 playerBounds = player.GetlContentLocalBounds();
 			player.GetContentWorldBounds(ref playerBounds); //Get sprite bounds (player bounds)
 			

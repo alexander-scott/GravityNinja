@@ -33,6 +33,8 @@ namespace GravityDuck
 		
 		public Vector2 playerPos;
 		
+		private Random rnd;
+		
 		public LevelLoader ()
 		{
 			// Level
@@ -48,6 +50,8 @@ namespace GravityDuck
 			laserGates = new List<LaserGate>();
 			spikes = new List<Spikes>();
 			windTunnels = new List<WindTunnel>();
+			
+			rnd = new Random();
 		}
 		
 		public void SetWidth(int width)
@@ -165,7 +169,7 @@ namespace GravityDuck
 				break;
 				
 				case "Laser Gate":
-					LaserGate laserGate = new LaserGate();
+					LaserGate laserGate = new LaserGate(rnd.Next(0,18));
 				
 					if(rotation == 0)
 					{
