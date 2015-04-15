@@ -28,6 +28,7 @@ namespace GravityDuck
 		//------ UI ------\\
 		private static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
 		private static Sce.PlayStation.HighLevel.UI.Label				scoreLabel;
+		private static Sce.PlayStation.HighLevel.UI.Label[]				highscoreLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				levelScore;
 		private static Sce.PlayStation.HighLevel.UI.Label				timerLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				levelTimer;
@@ -47,6 +48,7 @@ namespace GravityDuck
 		private static int currentTime;
 		private static int score;
 		private static SpriteUV	gravityArrow;
+		private static SpriteUV highscoreTab;
 		
 		//------ Player Movement ------\\
 		private static Vector2 gravityVector = new Vector2(0.0f, -1.0f); //The direction in which gravity is currently going
@@ -83,8 +85,10 @@ namespace GravityDuck
 		private static int timeStamp1, timeStamp2;
 		
 		//------ Level Data ------\\
-		private static int TotalNumOfLevels = 10;
-		private static List<Highscore> loadedHighscores;
+		private static int totalNumOfLevels = 5;
+		private static List<List<Highscore>> loadedLevelHighscores;
+		private static Highscore currentHighscore;
+		private static int level = 1;
 
 		public static void Main (string[] args)
 		{
@@ -196,6 +200,39 @@ namespace GravityDuck
 			levelScore.Visible = false;
 			uiScene.RootWidget.AddChildLast(levelScore);
 			
+			texture = new TextureInfo("/Application/textures/highscoreTab.png");
+			highscoreTab 				= new SpriteUV();
+			highscoreTab 				= new SpriteUV(texture);
+			highscoreTab.Quad.S 		= texture.TextureSizef;
+			highscoreTab.Scale 		= new Vector2(1.0f, 1.0f);
+			highscoreTab.Pivot 		= new Vector2(highscoreTab.Quad.S.X/2, highscoreTab.Quad.S.Y);
+			highscoreTab.Position 	= new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f, Director.Instance.GL.Context.GetViewport().Height*0.5f);
+			highscoreTab.Visible = false;
+			gameScene.AddChild(highscoreTab);
+			
+			highscoreLabel = new Sce.PlayStation.HighLevel.UI.Label[5];
+			
+			for(int i = 0; i < 5; i++)
+			{
+				highscoreLabel[i] = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Score Label
+				highscoreLabel[i].X = 50.0f;
+				highscoreLabel[i].Y = 350.0f + (i * 30.0f);
+				
+				if(i == 0)
+					highscoreLabel[i].Text = "1st :  " + loadedLevelHighscores[level - 1][i].GetScore();
+				else if(i == 1)
+					highscoreLabel[i].Text = "2nd : " + loadedLevelHighscores[level - 1][i].GetScore();
+				else if(i == 2)
+					highscoreLabel[i].Text = "3rd :  " + loadedLevelHighscores[level - 1][i].GetScore();
+				else if(i == 3)
+					highscoreLabel[i].Text = "4th :  " + loadedLevelHighscores[level - 1][i].GetScore();
+				else 
+					highscoreLabel[i].Text = "5th :  " + loadedLevelHighscores[level - 1][i].GetScore();
+				
+				highscoreLabel[i].Visible = false;
+				uiScene.RootWidget.AddChildLast(highscoreLabel[i]);
+			}
+			
 			timerLabel = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Timer Label
 			timerLabel.X = 743.0f;
 			timerLabel.Y = 33.0f;
@@ -222,6 +259,9 @@ namespace GravityDuck
 			timerLabel.Visible = true;
 			levelTimer.Visible = true;
 			levelScore.Visible = true;
+			
+			currentHighscore = new Highscore(1, 0, "player");
+			
 			timer.Reset();
 		}
 		
@@ -269,7 +309,7 @@ namespace GravityDuck
 					currentTime = time;
 					UpdateUI ();
 				}else if (!player.IsAlive())
-				{
+				{					
 					gameOverScreen.Update();
 					if (gameOverScreen.CheckRestart())
 					{
@@ -597,6 +637,26 @@ namespace GravityDuck
 				pause = true;
 				maze.SetLevelFinished(true);
 				AudioManager.PlaySound("Level Finished", false, 1.0f, 1.0f);
+				
+				highscoreTab.Position 	= new Vector2(player.GetPos().X - 600.0f, player.GetPos().Y - 300.0f);
+				
+				highscoreTab.Visible = true;
+				
+				for(int i = 0; i < 5; i++)
+				{
+					if(i == 0)
+						highscoreLabel[i].Text = "1st :  " + loadedLevelHighscores[level - 1][i].GetScore();
+					else if(i == 1)
+						highscoreLabel[i].Text = "2nd : " + loadedLevelHighscores[level - 1][i].GetScore();
+					else if(i == 2)
+						highscoreLabel[i].Text = "3rd :  " + loadedLevelHighscores[level - 1][i].GetScore();
+					else if(i == 3)
+						highscoreLabel[i].Text = "4th :  " + loadedLevelHighscores[level - 1][i].GetScore();
+					else 
+						highscoreLabel[i].Text = "5th :  " + loadedLevelHighscores[level - 1][i].GetScore();
+					
+					highscoreLabel[i].Visible = true;
+				}						
 			}
 			
 			// Check Laser Gate collision		RMDS
@@ -654,6 +714,12 @@ namespace GravityDuck
 			play = true;
 			pause = false;
 			score = 0;
+			
+			highscoreTab.Visible = false;
+			
+			for(int i = 0; i < 5; i++)
+					highscoreLabel[i].Visible = false;	
+			
 			timer.Reset();
 			//endRotation = FMath.PI/2.0f;
 			//cameraRotation = FMath.PI/2.0f;
@@ -695,7 +761,39 @@ namespace GravityDuck
 		
 		
 		public static void SaveData() // Save the game data (highscore)		RMDS
-		{						
+		{			
+			// Amend highscores of this current level
+			//currentHighscore
+			
+			currentHighscore.SetScore(DEBUGHIGHSCORE);
+			
+			int level = currentHighscore.GetLevel();
+			int highscorePos = -1;
+			
+			for(int i = 0; i < 5; i++)
+			{
+				if(currentHighscore.GetScore() > loadedLevelHighscores[level - 1][i].GetScore())
+				{
+					highscorePos = i;
+					break;
+				}		
+			}
+			
+			if(highscorePos != -1)
+			{			
+				for(int i = 4; i > highscorePos; i--)
+				{
+					int movedScore = loadedLevelHighscores[level - 1][i - 1].GetScore();
+					
+					loadedLevelHighscores[level - 1][i].SetScore(movedScore);
+				}
+				
+				loadedLevelHighscores[level - 1][highscorePos].SetScore(currentHighscore.GetScore());
+				loadedLevelHighscores[level - 1][highscorePos].SetPlayerName(currentHighscore.GetPlayerName());
+			}
+			
+			
+			
 			List<int> allId = new List<int>();
 			
 			XmlDocument doc = new XmlDocument();
@@ -706,7 +804,7 @@ namespace GravityDuck
 			
 			XmlNodeList list = doc.SelectNodes("game/level");
 
-			int numOfCompletedLevels = loadedHighscores.Count;
+			int numOfCompletedLevels = loadedLevelHighscores.Count;
 			
 			for(int i = 0; i < numOfCompletedLevels; i++)
 			{
@@ -715,12 +813,20 @@ namespace GravityDuck
 				// If the level data exists then append its children	RMDS
 				if(currentNode != null)
 				{
-					// Append highscore with player name
-					doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(0).InnerText =
-						loadedHighscores[i].GetPlayerName();
-					doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(1).InnerText =
-						loadedHighscores[i].GetScore().ToString();
-				}
+					for(int j = 0; j < 5; j++)
+					{
+						//// Append highscores
+						//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(0).InnerText =
+						//	loadedHighscores[i].GetPlayerName();
+						//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(1).InnerText =
+						//	loadedHighscores[i].GetScore().ToString();	
+						
+						currentNode.ChildNodes.Item(0 + (j * 2)).InnerText =
+							loadedLevelHighscores[i][j].GetPlayerName();
+						currentNode.ChildNodes.Item(1 + (j * 2)).InnerText =
+							loadedLevelHighscores[i][j].GetScore().ToString();	
+					}		
+				}				
 		
 		        doc.Save(@SAVE_DATA);			
 			}		
@@ -744,7 +850,6 @@ namespace GravityDuck
 //    ser.Serialize(writer, myNode);
 //    writer.Close();
 //}
-
 			
 		}
 		
@@ -755,43 +860,51 @@ namespace GravityDuck
 			{		
 				// The XML file loaded has data for each level about their highscore and the player
 				// that acquired that highscore.	RMDS
-				
-				
+							
 				XmlDocument doc = new XmlDocument();
-				List<int> allLevelIds = new List<int>();
 				doc.Load(@SAVE_DATA);
 				
 				// This will provide a list of all the levels that the player has currently earned a highscore in,
 				// therefore the player's total progress.	RMDS
-				loadedHighscores = new List<Highscore>();
-				
-				
+				loadedLevelHighscores = new List<List<Highscore>>();
+						
 				int level = 1;
 				
 				XmlNode currentNode = doc.SelectSingleNode("game/level[@id=\"" + level.ToString() + "\"]");
 					
 			
 				while(currentNode != null)
-				{
-
-					string playerName = currentNode.ChildNodes.Item(0).InnerText;
-					int highscore = Int32.Parse(currentNode.ChildNodes.Item(1).InnerText);
+				{			
+					string playerName;
+					int highscore;
+					List<Highscore> levelHighscores = new List<Highscore>();
 					
-					Highscore currentLoad = new Highscore(level, highscore, playerName);
+					for(int i = 0; i < 5; i++)
+					{
+						playerName = currentNode.ChildNodes.Item(0 + (i * 2)).InnerText;
+						
+						highscore = 0;
+						
+						if(!currentNode.ChildNodes.Item(1 + (i * 2)).InnerText.Equals(""))
+							highscore = Int32.Parse(currentNode.ChildNodes.Item(1 + (i * 2)).InnerText);
+						
+						Highscore currentLoad = new Highscore(level, highscore, playerName);
+						
+						levelHighscores.Add(currentLoad);
+					}	
 					
-					loadedHighscores.Add(currentLoad);
-					
-					// Load the next level data from the saved data file.	RMDS
-					level++;
-								
-					currentNode.Attributes.GetNamedItem("player");												
-					currentNode = doc.SelectSingleNode("game/level[@id=\"" + level.ToString() + "\"]");					
-				}		
-				
+						loadedLevelHighscores.Add(levelHighscores);
+						
+						// Load the next level data from the saved data file.	RMDS
+						level++;
+									
+						currentNode.Attributes.GetNamedItem("player");												
+						currentNode = doc.SelectSingleNode("game/level[@id=\"" + level.ToString() + "\"]");	
+				}			
 				
 				int numOfLevels = level - 1;
 				
-				if(numOfLevels > TotalNumOfLevels)
+				if(numOfLevels > totalNumOfLevels)
 					return false; // Should throw exception.	RMDS
 			}
 			else
@@ -799,6 +912,33 @@ namespace GravityDuck
 				 
 			return false;
 			
+		}
+		
+		public static bool DeleteData()
+		{
+			XmlDocument doc = new XmlDocument();
+			doc.Load(@SAVE_DATA);
+					
+			for(int i = 0; i < totalNumOfLevels; i++)
+			{		
+				XmlNode currentNode = doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]");
+				
+				if(currentNode != null)
+				{
+					for(int j = 0; j < 5; j++)
+					{
+						currentNode.ChildNodes.Item(0 + (j * 2)).InnerText = "";
+						currentNode.ChildNodes.Item(1 + (j * 2)).InnerText = "";	
+					}		
+				}
+				//// Reset all values
+				//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(0).InnerText = "";
+				//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(1).InnerText = "";
+					
+		        doc.Save(@SAVE_DATA);			
+			}
+			
+			return true;
 		}
 	}
 }

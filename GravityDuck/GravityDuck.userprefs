@@ -2,14 +2,14 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\AppMain.cs">
     <Files>
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="697" Column="54" />
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="263" Column="4" />
       <File FileName="GravityDuck\Classes\Level\Maze.cs" Line="448" Column="6" />
       <File FileName="GravityDuck\Classes\Level\Obstacles\BlackHole.cs" Line="14" Column="3" />
       <File FileName="GravityDuck\Classes\Level\Obstacles\BreakableWall.cs" Line="21" Column="78" />
       <File FileName="GravityDuck\Classes\Level\Obstacles\LaserGate.cs" Line="23" Column="31" />
       <File FileName="GravityDuck\Classes\Level\Obstacles\WindTunnel.cs" Line="1" Column="1" />
       <File FileName="GravityDuck\Classes\Level\Obstacles\Spikes.cs" Line="16" Column="5" />
-      <File FileName="GravityDuck\Classes\Player.cs" Line="1" Column="1" />
+      <File FileName="GravityDuck\Classes\Player.cs" Line="23" Column="44" />
       <File FileName="GravityDuck\Classes\Highscore.cs" Line="25" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
