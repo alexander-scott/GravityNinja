@@ -45,7 +45,6 @@ textures/gameOver.png
 textures/restartButton.png
 textures/options.png
 textures/Level/breakableWall.png
-textures/Level/laserGate.png
 textures/LoadingScreens/Level0Load.png
 textures/LoadingScreens/Level1Load.png
 textures/LoadingScreens/Level2Load.png
@@ -65,15 +64,8 @@ textures/bground.png
 maps/level4.tmx
 textures/highscoreTab.png
 maps/level5.tmx
-assets/buttons/NextLevel.png
-assets/buttons/NextLevelPressed.png
-assets/buttons/BackToLevelSelect.png
-assets/buttons/BackToLevelSelectPressed.png
-assets/buttons/Replay.png
-assets/buttons/ReplayPressed.png
 textures/LoadingScreens/Level5Load.png
 textures/Level/BlackHoles.png
-textures/Level/WindFans.png
 textures/Level/LaserBeams.png
 maps/level6.tmx
 maps/level10.tmx
@@ -104,3 +96,8 @@ textures/LoadingScreens/Level10Load.png
 textures/LoadingScreens/Level11Load.png
 textures/LoadingScreens/Level12Load.png
 textures/LoadingScreens/Level13Load.png
+textures/Level/DirectionalWinds.png
+textures/Level/Winds3.png
+assets/buttons/NewHome.png
+assets/buttons/NewNext.png
+assets/buttons/NewReplay.png

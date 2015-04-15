@@ -42,9 +42,8 @@
     <highscore2>100</highscore2>
     <player3>player</player3>
     <highscore3>100</highscore3>
-    <player4>
-    </player4>
-    <highscore4>0</highscore4>
+    <player4>player</player4>
+    <highscore4>50</highscore4>
     <player5>
     </player5>
     <highscore5>0</highscore5>
@@ -56,12 +55,10 @@
     <highscore2>450</highscore2>
     <player3>player</player3>
     <highscore3>400</highscore3>
-    <player4>
-    </player4>
-    <highscore4>0</highscore4>
-    <player5>
-    </player5>
-    <highscore5>0</highscore5>
+    <player4>player</player4>
+    <highscore4>100</highscore4>
+    <player5>player</player5>
+    <highscore5>100</highscore5>
   </level>
   <level id="5">
     <player1>player</player1>

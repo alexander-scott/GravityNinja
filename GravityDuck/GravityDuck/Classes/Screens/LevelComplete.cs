@@ -49,19 +49,19 @@ namespace GravityDuck
 			starsSprite.Visible = false;
 			
 			CustomButtonImageSettings customNextLevelImg = new CustomButtonImageSettings();
-			customNextLevelImg.BackgroundNormalImage = new ImageAsset("/Application/assets/buttons/NextLevel.png");
-			customNextLevelImg.BackgroundPressedImage = new ImageAsset("/Application/assets/buttons/NextLevelPressed.png");
-			customNextLevelImg.BackgroundDisabledImage = new ImageAsset("/Application/assets/buttons/NextLevel.png");
+			customNextLevelImg.BackgroundNormalImage = new ImageAsset("/Application/assets/buttons/NewNext.png");
+			customNextLevelImg.BackgroundPressedImage = new ImageAsset("/Application/assets/buttons/NewNext.png");
+			customNextLevelImg.BackgroundDisabledImage = new ImageAsset("/Application/assets/buttons/NewNext.png");
 			
 			CustomButtonImageSettings customReplayImg = new CustomButtonImageSettings();
-			customReplayImg.BackgroundNormalImage = new ImageAsset("/Application/assets/buttons/Replay.png");
-			customReplayImg.BackgroundPressedImage = new ImageAsset("/Application/assets/buttons/ReplayPressed.png");
-			customReplayImg.BackgroundDisabledImage = new ImageAsset("/Application/assets/buttons/Replay.png");
+			customReplayImg.BackgroundNormalImage = new ImageAsset("/Application/assets/buttons/NewReplay.png");
+			customReplayImg.BackgroundPressedImage = new ImageAsset("/Application/assets/buttons/NewReplay.png");
+			customReplayImg.BackgroundDisabledImage = new ImageAsset("/Application/assets/buttons/NewReplay.png");
 			
 			CustomButtonImageSettings customBackImg = new CustomButtonImageSettings();
-			customBackImg.BackgroundNormalImage = new ImageAsset("/Application/assets/buttons/BackToLevelSelect.png");
-			customBackImg.BackgroundPressedImage = new ImageAsset("/Application/assets/buttons/BackToLevelSelectPressed.png");
-			customBackImg.BackgroundDisabledImage = new ImageAsset("/Application/assets/buttons/BackToLevelSelect.png");
+			customBackImg.BackgroundNormalImage = new ImageAsset("/Application/assets/buttons/NewHome.png");
+			customBackImg.BackgroundPressedImage = new ImageAsset("/Application/assets/buttons/NewHome.png");
+			customBackImg.BackgroundDisabledImage = new ImageAsset("/Application/assets/buttons/NewHome.png");
 			
 			backToLevelSelect = new Button();
 			backToLevelSelect.SetPosition(750, 480);

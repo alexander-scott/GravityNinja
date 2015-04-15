@@ -23,7 +23,7 @@ namespace GravityDuck
 		
 		public WindTunnel() : base()
 		{			
-			textureInfo = new TextureInfo(new Texture2D("/Application/textures/Level/WindFans.png", false), new Vector2i(4, 1));
+			textureInfo = new TextureInfo(new Texture2D("/Application/textures/Level/Winds3.png", false), new Vector2i(9, 1));
 
 			sprite          = new SpriteTile(textureInfo);
 			sprite.Quad.S   = textureInfo.TileSizeInPixelsf;
@@ -33,14 +33,14 @@ namespace GravityDuck
 			
 			sprite.ScheduleInterval( (dt) => 
 			{
-				if(tileIndex >= 4)
+				if(tileIndex >= 9)
 				{
 					tileIndex = 0;
 				}
 				
 				sprite.TileIndex2D = new Vector2i(tileIndex, 0);
 				tileIndex++;
-			}, 0.10f);
+			}, 0.07f);
 		}
 		
 		public void setDirection(int rotation)

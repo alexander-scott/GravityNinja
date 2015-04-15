@@ -130,7 +130,6 @@
     <Content Include="textures\restartButton.png" />
     <Content Include="textures\options.png" />
     <Content Include="textures\Level\breakableWall.png" />
-    <Content Include="textures\Level\laserGate.png" />
     <Content Include="textures\LoadingScreens\Level0Load.png" />
     <Content Include="textures\LoadingScreens\Level1Load.png" />
     <Content Include="textures\LoadingScreens\Level2Load.png" />
@@ -150,15 +149,8 @@
     <Content Include="maps\level4.tmx" />
     <Content Include="textures\highscoreTab.png" />
     <Content Include="maps\level5.tmx" />
-    <Content Include="assets\buttons\NextLevel.png" />
-    <Content Include="assets\buttons\NextLevelPressed.png" />
-    <Content Include="assets\buttons\BackToLevelSelect.png" />
-    <Content Include="assets\buttons\BackToLevelSelectPressed.png" />
-    <Content Include="assets\buttons\Replay.png" />
-    <Content Include="assets\buttons\ReplayPressed.png" />
     <Content Include="textures\LoadingScreens\Level5Load.png" />
     <Content Include="textures\Level\BlackHoles.png" />
-    <Content Include="textures\Level\WindFans.png" />
     <Content Include="textures\Level\LaserBeams.png" />
     <Content Include="maps\level6.tmx" />
     <Content Include="maps\level10.tmx" />
@@ -189,5 +181,10 @@
     <Content Include="textures\LoadingScreens\Level11Load.png" />
     <Content Include="textures\LoadingScreens\Level12Load.png" />
     <Content Include="textures\LoadingScreens\Level13Load.png" />
+    <Content Include="textures\Level\DirectionalWinds.png" />
+    <Content Include="textures\Level\Winds3.png" />
+    <Content Include="assets\buttons\NewHome.png" />
+    <Content Include="assets\buttons\NewNext.png" />
+    <Content Include="assets\buttons\NewReplay.png" />
   </ItemGroup>
 </Project>

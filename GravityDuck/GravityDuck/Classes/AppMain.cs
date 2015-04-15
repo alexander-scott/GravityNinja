@@ -87,8 +87,8 @@ namespace GravityDuck
 //		private static bool levelSelected = false;
 		
 		//------ Level Data ------\\
-		private static int currentLevel = 13; //The highest level we have unlocked, Read this in from file eventually (local highscores)
-		private static int highestUnlockedLevel = currentLevel;
+		private static int currentLevel = 1; //The highest level we have unlocked, Read this in from file eventually (local highscores)
+		private static int highestUnlockedLevel = 13;
 		private static int totalNumOfLevels = 27;
 		private static List<List<Highscore>> loadedLevelHighscores;
 		private static Highscore currentScore;
@@ -287,7 +287,7 @@ namespace GravityDuck
 					if (title.CheckPlay())
 				    {
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-						levelSelectScreen.SetVisible(true, currentLevel);
+						levelSelectScreen.SetVisible(true, highestUnlockedLevel);
 						title.RemoveAll();
 						currentState = States.LEVELSELECT;
 					}
@@ -302,7 +302,7 @@ namespace GravityDuck
 						loadingScreen.SetVisible(true, currentLevel);
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
 						timeStamp1 = (int)timer.Milliseconds() + 1;
-						levelSelectScreen.SetVisible(false, currentLevel);
+						levelSelectScreen.SetVisible(false, highestUnlockedLevel);
 						loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
 						currentState = States.LOADING;
 						title.RemoveAll();
@@ -311,7 +311,7 @@ namespace GravityDuck
 					{
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
 						currentState = States.TITLE;
-						levelSelectScreen.SetVisible(false, currentLevel);
+						levelSelectScreen.SetVisible(false, highestUnlockedLevel);
 						title = new TitleScreen(gameScene);	
 					}
 					levelSelectScreen.Update();
@@ -370,6 +370,8 @@ namespace GravityDuck
 				}
 				case States.LEVELCOMPLETE:
 				{
+					if (currentLevel > highestUnlockedLevel)
+						highestUnlockedLevel = currentLevel;
 					if (levelComplete.GetState() == 0) //Waiting for the user to make a choice
 					{
 						
@@ -380,7 +382,7 @@ namespace GravityDuck
 						//levelSelectScreen.ReLoadTextures();
 						maze.RemoveLevel();
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(480.0f, 272.0f)); 
-						levelSelectScreen.SetVisible(true, currentLevel);
+						levelSelectScreen.SetVisible(true, highestUnlockedLevel);
 						currentState = States.LEVELSELECT;
 						play = false;
 						pause = false;
@@ -603,7 +605,12 @@ namespace GravityDuck
 				}
 
 				if(data.Status.Equals(TouchStatus.Up))	
-				{				
+				{			
+					if (cameraRotation > 60f)
+						cameraRotation = 0;
+					else if (cameraRotation < -60f)
+						cameraRotation = 0;
+					
 					if((oldTouchPos.Y - newTouchPos.Y) > 0.20f) // Swipe Upwards @AS @RMDS				
 					{
 						endRotation = cameraRotation + FMath.PI;
@@ -719,9 +726,9 @@ namespace GravityDuck
 				}
 				
 				playerDirection = -gravityVector; //Rotation is the invert of the gravity vector
-				//for( int i = 0; i < 25; i++ ) //Output details to console
-			    // 	Console.WriteLine("");
-				//Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- PlayerDir: " + playerDirection);
+				for( int i = 0; i < 25; i++ ) //Output details to console
+			     	Console.WriteLine("");
+				Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- PlayerDir: " + playerDirection + " --- CurrentState: " + currentState);
 			}
 		}
 
