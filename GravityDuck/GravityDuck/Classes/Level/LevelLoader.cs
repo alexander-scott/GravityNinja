@@ -331,6 +331,41 @@ namespace GravityDuck
 		
 		public void Dispose()
 		{
+			if (coins != null)
+			{
+				foreach(Coin theCoin in coins)
+					theCoin.HideSprite();
+			}
+			if (gems != null)
+			{
+				foreach(Gem theGem in gems)
+					theGem.HideSprite();
+			}
+			if (spikes != null)
+			{
+				foreach(Spikes s in spikes)
+					s.HideSprite();
+			}
+			if (breakableWalls != null)
+			{
+				foreach(BreakableWall bw in breakableWalls)
+					bw.HideSprite();
+			}
+			if (blackHoles != null)
+			{
+				foreach(BlackHole bh in blackHoles)
+					bh.HideSprite();
+			}
+			if (laserGates != null)
+			{
+				foreach(LaserGate lg in laserGates)
+					lg.HideSprite();
+			}
+			if (windTunnels != null)
+			{
+				foreach(WindTunnel wt in windTunnels)
+					wt.HideSprite();
+			}
 			level.Clear();
 			coins.Clear();
 			gems.Clear();
@@ -343,9 +378,7 @@ namespace GravityDuck
 			
 			foreach(int num in level)
 				level.RemoveAt(num);
-			
-			
-			
+
 			level = null;
 			coins = null;
 			gems = null;

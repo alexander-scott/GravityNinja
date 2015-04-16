@@ -8,8 +8,6 @@ System.Core.dll
 System.ServiceModel.Web.dll
 System.ServiceModel.dll
 Sce.PlayStation.HighLevel.UI.dll
-textures/background.png
-textures/duck.png
 textures/arrow.png
 textures/Level/ceilingBlock1.png
 textures/Level/ceilingBlock2.png
@@ -31,7 +29,6 @@ textures/stars1.png
 textures/stars2.png
 textures/stars3.png
 textures/titleScreen.png
-textures/Ninja.png
 textures/ninja2.png
 sounds/Effects/bounce.wav
 sounds/Effects/coinGrab.wav
@@ -101,3 +98,7 @@ textures/Level/Winds3.png
 assets/buttons/NewHome.png
 assets/buttons/NewNext.png
 assets/buttons/NewReplay.png
+textures/bground2.png
+textures/bground3.png
+textures/bground4.png
+textures/bground5.png

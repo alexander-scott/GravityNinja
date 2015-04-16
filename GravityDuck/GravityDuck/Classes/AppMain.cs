@@ -78,9 +78,11 @@ namespace GravityDuck
 		//------ Menu Data ------\\
 		private static bool play = false;
 		private static bool pause = false;
+		private static bool loadedTextures = false;
 		private static int timeStamp1;
 		private enum States {TITLE, LEVELSELECT, LOADING, LOADED, PLAYING, LEVELCOMPLETE};
 		private static States currentState;
+		public static TextureInfo loadingTexture0, loadingTexture1, loadingTexture2, loadingTexture3, loadingTexture4, loadingTexture5, loadingTexture6, loadingTexture7, loadingTexture8, loadingTexture9, loadingTexture10, loadingTexture11, loadingTexture12, loadingTexture13, loadingTexture14, loadingTexture15, loadingTexture16, loadingTexture17, loadingTexture18, loadingTexture19, loadingTexture20, loadingTexture21, loadingTexture22, loadingTexture23, loadingTexture24, loadingTexture25, loadingTexture26;
 //		private static bool loaded = false;
 //		private static bool startLoading = false;
 //		private static bool levelSelect = false;
@@ -116,6 +118,92 @@ namespace GravityDuck
 			Director.Terminate ();
 		}
 		
+		private static void LoadLoadingTextures(bool loadOrDispose, int levelToLoad)
+		{
+			if(loadOrDispose)
+			{
+				if (levelToLoad == 0)
+					loadingTexture0 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
+				else if (levelToLoad ==1)
+					loadingTexture1 	= new TextureInfo("/Application/textures/LoadingScreens/Level1Load.png");
+				else if (levelToLoad ==2)
+					loadingTexture2 	= new TextureInfo("/Application/textures/LoadingScreens/Level2Load.png");
+				else if (levelToLoad ==3)
+					loadingTexture3 	= new TextureInfo("/Application/textures/LoadingScreens/Level3Load.png");
+				else if (levelToLoad ==4)
+					loadingTexture4 	= new TextureInfo("/Application/textures/LoadingScreens/Level4Load.png");
+				else if (levelToLoad ==5)
+					loadingTexture5 	= new TextureInfo("/Application/textures/LoadingScreens/Level5Load.png");
+				else if (levelToLoad ==6)
+					loadingTexture6 	= new TextureInfo("/Application/textures/LoadingScreens/Level6Load.png");
+				else if (levelToLoad ==7)
+					loadingTexture7 	= new TextureInfo("/Application/textures/LoadingScreens/Level7Load.png");
+				else if (levelToLoad ==8)
+					loadingTexture8 	= new TextureInfo("/Application/textures/LoadingScreens/Level8Load.png");
+				else if (levelToLoad ==9)
+					loadingTexture9 	= new TextureInfo("/Application/textures/LoadingScreens/Level9Load.png");
+				else if (levelToLoad ==10)
+					loadingTexture10 	= new TextureInfo("/Application/textures/LoadingScreens/Level10Load.png");
+				else if (levelToLoad ==11)
+					loadingTexture11 	= new TextureInfo("/Application/textures/LoadingScreens/Level11Load.png");
+				else if (levelToLoad ==12)
+					loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
+				else if (levelToLoad ==13)
+					loadingTexture13	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+				else
+				{
+					loadingTexture13 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					loadingTexture0 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
+					loadingTexture1 	= new TextureInfo("/Application/textures/LoadingScreens/Level1Load.png");
+					loadingTexture2 	= new TextureInfo("/Application/textures/LoadingScreens/Level2Load.png");
+					loadingTexture3 	= new TextureInfo("/Application/textures/LoadingScreens/Level3Load.png");
+					loadingTexture4 	= new TextureInfo("/Application/textures/LoadingScreens/Level4Load.png");
+					loadingTexture5 	= new TextureInfo("/Application/textures/LoadingScreens/Level5Load.png");
+					loadingTexture6 	= new TextureInfo("/Application/textures/LoadingScreens/Level6Load.png");
+					loadingTexture7 	= new TextureInfo("/Application/textures/LoadingScreens/Level7Load.png");
+					loadingTexture8 	= new TextureInfo("/Application/textures/LoadingScreens/Level8Load.png");
+					loadingTexture9 	= new TextureInfo("/Application/textures/LoadingScreens/Level9Load.png");
+					loadingTexture10 	= new TextureInfo("/Application/textures/LoadingScreens/Level10Load.png");
+					loadingTexture11 	= new TextureInfo("/Application/textures/LoadingScreens/Level11Load.png");
+					loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
+					loadingTexture13 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture14 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture15 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture16 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture17 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");//
+					//loadingTexture18	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture19 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture20 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture21 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture22 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture23 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture24 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture25 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture26 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					loadedTextures = true;
+				}
+			}
+			else
+			{
+				loadingTexture0.Dispose();
+				loadingTexture1.Dispose();
+				loadingTexture2.Dispose();
+				loadingTexture3.Dispose();
+				loadingTexture4.Dispose();
+				loadingTexture5.Dispose();
+				loadingTexture6.Dispose();
+				loadingTexture7.Dispose();
+				loadingTexture8.Dispose();
+				loadingTexture9.Dispose();
+				loadingTexture10.Dispose();
+				loadingTexture11.Dispose();
+				loadingTexture12.Dispose();
+				loadingTexture13.Dispose();
+				loadedTextures = false;
+			}
+			
+		}
+		
 		public static void Dispose()
 		{	
 			background.Dispose();
@@ -123,8 +211,9 @@ namespace GravityDuck
 			player.Dispose();
 			gameOverScreen.Dispose();
 			levelComplete.Dispose();
-			levelSelectScreen.Dispose(true);
+			LoadLoadingTextures(false, 100);
 			loadingScreen.Dispose();	
+			levelSelectScreen.Dispose();
 		}
 
 		public static void Initialize ()
@@ -153,6 +242,8 @@ namespace GravityDuck
 			AudioManager.PlayMusic("Level1", true, 1.0f, 1.0f);
 			
 			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
+			
+			LoadLoadingTextures(true, 100);
 			
 			levelSelectScreen = new LevelSelectScreen(gameScene, uiScene, highestUnlockedLevel);
 			levelSelectScreen.SetVisible(false, currentLevel);
@@ -315,19 +406,18 @@ namespace GravityDuck
 						title = new TitleScreen(gameScene);	
 					}
 					levelSelectScreen.Update();
-					if (!levelSelectScreen.LoadedTextures())
+					if (!loadedTextures)
 					{
-						levelSelectScreen.ReLoadTextures();
-						loadingScreen.ReLoadTextures(100);
+						LoadLoadingTextures(true, 100);
 					}
 				break;
 				}
 				case States.LOADING:
 				{
 					loadingScreen.SetVisible(true, currentLevel);
-					levelSelectScreen.Dispose(false);
 					currentState = States.LOADED;
 					InitializeGame();
+					background.UpdateTexture(currentLevel);
 				break;
 				}
 				case States.LOADED:
@@ -341,7 +431,7 @@ namespace GravityDuck
 						loadingScreen.SetVisible(false, currentLevel);
 						play = true;
 						player.setVisibility(true);
-						loadingScreen.Dispose();
+						LoadLoadingTextures(false, 100);
 					}
 				break;
 				}
@@ -379,7 +469,6 @@ namespace GravityDuck
 					else if (levelComplete.GetState() == 1) //Back to level select screen
 					{
 						currentLevel++;
-						//levelSelectScreen.ReLoadTextures();
 						maze.RemoveLevel();
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(480.0f, 272.0f)); 
 						levelSelectScreen.SetVisible(true, highestUnlockedLevel);
@@ -398,7 +487,6 @@ namespace GravityDuck
 						highscoreTab.Visible = false;
 						background.SetVisible(false);
 						player.setVisibility(false);
-						//loadingScreen.ReLoadTextures();
 					}
 					else if (levelComplete.GetState() == 2) //Replay the current level
 					{
@@ -423,9 +511,10 @@ namespace GravityDuck
 					{
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
 						currentLevel++;
-						loadingScreen.ReLoadTextures(currentLevel);
+						LoadLoadingTextures(true, currentLevel);
 						maze.RemoveLevel();
 						maze.LoadLevel(gameScene, currentLevel);
+						background.UpdateTexture(currentLevel);
 						loadingScreen.SetVisible(true, currentLevel);
 						timeStamp1 = (int)timer.Milliseconds() + 1;
 						loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
@@ -726,9 +815,9 @@ namespace GravityDuck
 				}
 				
 				playerDirection = -gravityVector; //Rotation is the invert of the gravity vector
-				for( int i = 0; i < 25; i++ ) //Output details to console
-			     	Console.WriteLine("");
-				Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- PlayerDir: " + playerDirection + " --- CurrentState: " + currentState);
+				//for( int i = 0; i < 25; i++ ) //Output details to console
+			  //   	Console.WriteLine("");
+				//Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- PlayerDir: " + playerDirection + " --- CurrentState: " + currentState);
 			}
 		}
 

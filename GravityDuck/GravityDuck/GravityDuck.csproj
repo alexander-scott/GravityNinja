@@ -93,8 +93,6 @@
     <Folder Include="assets\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="textures\background.png" />
-    <Content Include="textures\duck.png" />
     <Content Include="textures\arrow.png" />
     <Content Include="textures\Level\ceilingBlock1.png" />
     <Content Include="textures\Level\ceilingBlock2.png" />
@@ -115,8 +113,6 @@
     <Content Include="textures\stars1.png" />
     <Content Include="textures\stars2.png" />
     <Content Include="textures\stars3.png" />
-    <Content Include="textures\titleScreen.png" />
-    <Content Include="textures\Ninja.png" />
     <Content Include="textures\ninja2.png" />
     <Content Include="sounds\Effects\bounce.wav" />
     <Content Include="sounds\Effects\coinGrab.wav" />
@@ -186,5 +182,9 @@
     <Content Include="assets\buttons\NewHome.png" />
     <Content Include="assets\buttons\NewNext.png" />
     <Content Include="assets\buttons\NewReplay.png" />
+    <Content Include="textures\bground2.png" />
+    <Content Include="textures\bground3.png" />
+    <Content Include="textures\bground4.png" />
+    <Content Include="textures\bground5.png" />
   </ItemGroup>
 </Project>
