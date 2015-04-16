@@ -23,6 +23,7 @@ namespace GravityDuck
 			
 			sprite          = new SpriteUV(textureInfo);
 			sprite.Quad.S   = textureInfo.TextureSizef;
+			sprite.Pivot 	= new Vector2(sprite.Quad.S.X/2, sprite.Quad.S.Y/2);
 		}
 	}
 }

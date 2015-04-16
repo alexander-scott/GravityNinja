@@ -10,42 +10,111 @@ namespace GravityDuck
 {
 	//Our Maze class V2 by @AW && @AS
 	public class Maze
-	{
+	{		
+		public static Vector2 spawnPoint;
+		
+		// Level Loader
 		private LevelLoader level;
 		
+		// Collectables
 		private Coin[] coins;
 		private Gem[] gems;
+		private LevelFlag levelFlag;
 		
+		// Obstacles
+		private BlackHole[] blackHoles;
+		private BreakableWall[] breakableWalls;
+		private LaserGate[] laserGates;
 		private Spikes[] spikes;
+		private WindTunnel[] windTunnels;
 		
+		// Level
 		private SpriteUV[,] sprites;
 		
-		private LevelFlag levelFlag;
-		private bool levelFinished;
+		private bool levelFinished = true;
 						
-		public Maze (Scene scene)
+		public Maze (Scene scene, int currentLevel)
 		{
+			LoadLevel(scene, currentLevel);
+		}
+		
+		public void LoadLevel(Scene scene, int levelNum)
+		{
+			string levelNumStr = Convert.ToString(levelNum);
+			
+			// Load In Level
 			level = new LevelLoader();
-			string filePath = "/Application/tiledMapRU.tmx";
+			string filePath = "/Application/maps/level" + levelNumStr + ".tmx";
 			XMLLoader.LoadLevel(level, filePath);
 			
-			// Obstacles
+			// Load In Objects
 			spikes = level.LoadInSpikes(scene);
 			
 			// Level
 			sprites = level.LoadInLevel(scene);
+				
+			// Obstacles
+			blackHoles = level.LoadInBlackHoles(scene);
+			breakableWalls = level.LoadInBreakableWalls(scene);
+			laserGates = level.LoadInLaserGates(scene);
+			windTunnels = level.LoadInWindTunnels(scene);
 			
 			// Collectables
 			coins = level.LoadInCoins(scene);
 			gems = level.LoadInGems(scene);
 			
+			//Player Position
+			spawnPoint = level.playerPos;
+			
 			levelFlag = level.LoadInFlag(scene);
 			
-			levelFinished = false;
+			//levelFinished = false;
 		}
 		
-		public void Dispose() //Dispose texture data
+		public void RemoveLevel() //Dispose texture data
 		{
+			levelFlag.HideSprite();
+			
+			foreach(SpriteUV spritess in sprites)
+				spritess.Visible = false;
+			
+			if (coins != null)
+			{
+				foreach(Coin theCoin in coins)
+					theCoin.HideSprite();
+			}
+			if (gems != null)
+			{
+				foreach(Gem theGem in gems)
+					theGem.HideSprite();
+			}
+			if (spikes != null)
+			{
+				foreach(Spikes s in spikes)
+					s.HideSprite();
+			}
+			if (breakableWalls != null)
+			{
+				foreach(BreakableWall bw in breakableWalls)
+					bw.HideSprite();
+			}
+			if (blackHoles != null)
+			{
+				foreach(BlackHole bh in blackHoles)
+					bh.HideSprite();
+			}
+			if (laserGates != null)
+			{
+				foreach(LaserGate lg in laserGates)
+					lg.HideSprite();
+			}
+			if (windTunnels != null)
+			{
+				foreach(WindTunnel wt in windTunnels)
+					wt.HideSprite();
+			}
+						
+			level = null;
 		}
 		
 		public bool HasCollidedWithPlayer(Bounds2 player) //Check if the a sprite has hit a part of the maze
@@ -58,7 +127,7 @@ namespace GravityDuck
 				if (player.Overlaps(mazeTile)) //Return true if the player overlaps with the maze
 				{
 				   return true;
-				}	
+				}
 			}
 			return false;
 	
@@ -99,9 +168,9 @@ namespace GravityDuck
 			}
 			else if (gravity == 2) // Right
 			{
-				if (((player.Point10.Y < mazeTile.Point10.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
+				if (((player.Point10.Y < mazeTile.Point11.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
 				{ //If the left side of the player is past the right side of the tile and vica versa
-					if ((player.Point11.X) < mazeTile.Point11.X) //If the tile is above the player
+					if ((player.Point00.X) > mazeTile.Point00.X) //If the tile is above the player
 						return true;	
 					else
 						return false;
@@ -111,9 +180,10 @@ namespace GravityDuck
 			}
 			else if (gravity == 3) // Up
 			{
-				if (((player.Point10.X < mazeTile.Point00.X) || (player.Point00.X > mazeTile.Point10.X)))
+				//if (((player.Point10.X < mazeTile.Point00.X) || (player.Point00.X > mazeTile.Point10.X)))
+				if (((player.Point01.X < mazeTile.Point11.X) || (player.Point11.X > mazeTile.Point01.X)))
 				{ //If the left side of the player is past the right side of the tile and vica versa
-					if ((player.Point10.Y) < mazeTile.Point10.Y) //If the tile is above the player
+					if ((player.Point10.Y) > mazeTile.Point10.Y) //If the tile is above the player
 						return true;
 					else
 						return false;
@@ -123,7 +193,7 @@ namespace GravityDuck
 			}
 			else if (gravity == 4) // Left
 			{
-				if (((player.Point10.Y < mazeTile.Point10.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
+				if (((player.Point10.Y < mazeTile.Point11.Y) || (player.Point10.Y > mazeTile.Point11.Y)))
 				{ //If the left side of the player is past the right side of the tile and vica versa
 					if ((player.Point11.X) < mazeTile.Point11.X) //If the tile is above the player
 						return true;	
@@ -169,15 +239,45 @@ namespace GravityDuck
 		//Check Obstacle Collisions
 		public bool CheckObstacleCollisions(SpriteUV sprite)
 		{
-			foreach(Spikes spike in spikes)
+			if (spikes != null)
 			{
-				bool collide = spike.HasCollidedWithPlayer(sprite);
-				
-				if (collide)
+				foreach(Spikes spike in spikes)
 				{
-				   return true;
+					bool collide = spike.HasCollidedWithPlayer(sprite);
+					
+					if (collide)
+					{
+					   return true;
+					}
 				}
 			}
+			if (blackHoles != null)
+			{
+				foreach(BlackHole bh in blackHoles)
+				{
+					bool collide = bh.HasCollidedWithPlayer(sprite);
+					
+					if (collide)
+					{
+					   return true;
+					}
+				}
+			}
+			
+			if (laserGates != null)
+			{
+				foreach(LaserGate lg in laserGates)
+				{
+					bool collide = lg.HasCollidedWithPlayer(sprite);
+					
+					if (collide)
+					{
+					   return true;
+					}
+				}
+			}
+			
+			
 			return false;
 		}
 		
@@ -199,10 +299,86 @@ namespace GravityDuck
 			return levelFinished;
 		}
 		
+		public Vector2 GetSpawnPoint()
+		{
+			return spawnPoint;
+		}
+		
 		//Set Level Complete Boolean
 		public void SetLevelFinished(bool newLevelFinished)
 		{
 			levelFinished = newLevelFinished;
 		}
+		
+		// Check collision between player and the wind force exerted by the Wind Tunnels	RMDS
+		public Vector2 CheckWindTunnel(Player player)
+		{
+			Vector2 force = new Vector2(0.0f, 0.0f);
+			
+			if(windTunnels != null)
+			{
+				foreach(WindTunnel windTunnel in windTunnels)
+				{
+					if(windTunnel.CheckPlayerPos(player))
+					{
+						force = windTunnel.CalculateForce(player);
+					}
+				}
+			}
+		
+			return force;
+		}
+		
+		// Check collision between player and Black Hole gravitational pulls	RMDS
+		public Vector2 CheckBlackHole(Player player)
+		{
+			Vector2 force = new Vector2(0.0f, 0.0f);
+			
+			if(blackHoles != null)
+			{
+				foreach (BlackHole blackHole in blackHoles)
+				{
+					if(blackHole.CheckPlayerPos(player))
+					{
+						force = blackHole.CalculateForce(player);
+					}
+				}
+			}
+			
+			return force;
+		}
+		
+		// Check collision between player and Laser Gates	RMDS
+		public bool CheckLaserGates(Player player)
+		{
+			if(laserGates != null)
+			{
+				foreach (LaserGate laserGate in laserGates)
+				{
+					if(laserGate.CheckPlayerPos(player))
+					{	
+						return true;
+					}
+				}
+			}
+			
+			return false;
+		}
+		
+		public bool CheckBreakableWalls(Player player)
+		{
+			if(breakableWalls != null)
+			{
+				foreach (BreakableWall breakableWall in breakableWalls)
+				{
+					if(breakableWall.HasCollidedWithPlayer(player.Sprite))
+					{
+						return breakableWall.CheckIfBreak(player.GetMomentum());
+					}
+				}
+			}
+			
+			return false;
+		}	
 	}
 }
