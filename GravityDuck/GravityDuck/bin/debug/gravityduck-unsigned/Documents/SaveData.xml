@@ -25,7 +25,7 @@
   </level>
   <level id="2">
     <player1>player</player1>
-    <highscore1>450</highscore1>
+    <highscore1>750</highscore1>
     <player2>player</player2>
     <highscore2>450</highscore2>
     <player3>player</player3>
@@ -37,16 +37,15 @@
   </level>
   <level id="3">
     <player1>player</player1>
-    <highscore1>250</highscore1>
+    <highscore1>300</highscore1>
     <player2>player</player2>
-    <highscore2>150</highscore2>
+    <highscore2>250</highscore2>
     <player3>player</player3>
-    <highscore3>100</highscore3>
+    <highscore3>150</highscore3>
     <player4>player</player4>
-    <highscore4>100</highscore4>
-    <player5>
-    </player5>
-    <highscore5>50</highscore5>
+    <highscore4>150</highscore4>
+    <player5>player</player5>
+    <highscore5>150</highscore5>
   </level>
   <level id="4">
     <player1>player</player1>

@@ -16,7 +16,7 @@ namespace GravityDuck
 		
 		public Background (Scene scene, Vector2 centrePos)
 		{
-			backgroundTexture 	= new TextureInfo("/Application/textures/bground.png");
+			backgroundTexture 	= new TextureInfo("/Application/textures/LevelBackgrounds/bground.png");
 			
 			sprite 			= new SpriteUV();
 			sprite 			= new SpriteUV(backgroundTexture);
@@ -37,16 +37,33 @@ namespace GravityDuck
 		
 		public void UpdateTexture(int level)
 		{
-			if (level == 0 || level == 5 || level == 10 || level == 15 || level == 20 || level == 25)
-				backgroundTexture = new TextureInfo("/Application/textures/bground.png");
-			if (level == 1 || level == 6 || level == 11 || level == 16 ||level ==  21 || level == 26)
-				backgroundTexture = new TextureInfo("/Application/textures/bground2.png");
-			if (level == 2 || level == 7 ||level ==  12 ||level ==  17 || level == 22)
-				backgroundTexture = new TextureInfo("/Application/textures/bground3.png");
-			if (level == 3 || level == 8 || level == 13 || level == 18 || level == 23)
-				backgroundTexture = new TextureInfo("/Application/textures/bground4.png");
-			if (level == 4 || level == 9 || level == 14 || level == 19 || level == 24)
-				backgroundTexture = new TextureInfo("/Application/textures/bground5.png");
+			if (level >= 0 && level <= 3)
+				backgroundTexture = new TextureInfo("/Application/textures/LevelBackgrounds/bground.png");
+			if (level >= 4 && level <= 7)
+				backgroundTexture = new TextureInfo("/Application/textures/LevelBackgrounds/bground2.png");
+			if (level >= 8 && level <= 11)
+				backgroundTexture = new TextureInfo("/Application/textures/LevelBackgrounds/bground3.png");
+			if (level >= 12 && level <= 15)
+				backgroundTexture = new TextureInfo("/Application/textures/LevelBackgrounds/bground4.png");
+			if (level >= 16 && level <= 19)
+				backgroundTexture = new TextureInfo("/Application/textures/LevelBackgrounds/bground5.png");
+			if (level >= 20 && level <= 23)
+				backgroundTexture = new TextureInfo("/Application/textures/LevelBackgrounds/bground6.png");
+			if (level >= 24 && level <= 26)
+				backgroundTexture = new TextureInfo("/Application/textures/LevelBackgrounds/bground7.png");
+//			
+//			
+//			
+//			if (level == 0 || level == 5 || level == 10 || level == 15 || level == 20 || level == 25)
+//				backgroundTexture = new TextureInfo("/Application/textures/LevelBackgrounds/bground.png");
+//			if (level == 1 || level == 6 || level == 11 || level == 16 ||level ==  21 || level == 26)
+//				backgroundTexture = new TextureInfo("/Application/textures/LevelBackgrounds/bground2.png");
+//			if (level == 2 || level == 7 ||level ==  12 ||level ==  17 || level == 22)
+//				backgroundTexture = new TextureInfo("/Application/textures/LevelBackgrounds/bground3.png");
+//			if (level == 3 || level == 8 || level == 13 || level == 18 || level == 23)
+//				backgroundTexture = new TextureInfo("/Application/textures/LevelBackgrounds/bground4.png");
+//			if (level == 4 || level == 9 || level == 14 || level == 19 || level == 24)
+//				backgroundTexture = new TextureInfo("/Application/textures/LevelBackgrounds/bground5.png");
 			sprite.TextureInfo = backgroundTexture;
 		}
 		

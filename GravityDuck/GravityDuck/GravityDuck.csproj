@@ -91,6 +91,7 @@
     <Folder Include="textures\LoadingScreens\" />
     <Folder Include="maps\" />
     <Folder Include="assets\" />
+    <Folder Include="textures\LevelBackgrounds\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="textures\arrow.png" />
@@ -141,7 +142,6 @@
     <Content Include="maps\level3.tmx" />
     <Content Include="maps\level1.tmx" />
     <Content Include="maps\level0.tmx" />
-    <Content Include="textures\bground.png" />
     <Content Include="maps\level4.tmx" />
     <Content Include="textures\highscoreTab.png" />
     <Content Include="maps\level5.tmx" />
@@ -182,9 +182,14 @@
     <Content Include="assets\buttons\NewHome.png" />
     <Content Include="assets\buttons\NewNext.png" />
     <Content Include="assets\buttons\NewReplay.png" />
-    <Content Include="textures\bground2.png" />
-    <Content Include="textures\bground3.png" />
-    <Content Include="textures\bground4.png" />
-    <Content Include="textures\bground5.png" />
+    <Content Include="textures\LevelBackgrounds\bground.png" />
+    <Content Include="textures\LevelBackgrounds\bground2.png" />
+    <Content Include="textures\LevelBackgrounds\bground3.png" />
+    <Content Include="textures\LevelBackgrounds\bground4.png" />
+    <Content Include="textures\LevelBackgrounds\bground5.png" />
+    <Content Include="textures\LevelBackgrounds\bground6.png" />
+    <Content Include="textures\LevelBackgrounds\bground7.PNG" />
+    <Content Include="assets\HUD Centre Piece.png" />
+    <Content Include="assets\HUD Side Piece.png" />
   </ItemGroup>
 </Project>

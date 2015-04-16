@@ -28,7 +28,6 @@ textures/playSelected.png
 textures/stars1.png
 textures/stars2.png
 textures/stars3.png
-textures/titleScreen.png
 textures/ninja2.png
 sounds/Effects/bounce.wav
 sounds/Effects/coinGrab.wav
@@ -57,7 +56,6 @@ maps/level2.tmx
 maps/level3.tmx
 maps/level1.tmx
 maps/level0.tmx
-textures/bground.png
 maps/level4.tmx
 textures/highscoreTab.png
 maps/level5.tmx
@@ -98,7 +96,12 @@ textures/Level/Winds3.png
 assets/buttons/NewHome.png
 assets/buttons/NewNext.png
 assets/buttons/NewReplay.png
-textures/bground2.png
-textures/bground3.png
-textures/bground4.png
-textures/bground5.png
+textures/LevelBackgrounds/bground.png
+textures/LevelBackgrounds/bground2.png
+textures/LevelBackgrounds/bground3.png
+textures/LevelBackgrounds/bground4.png
+textures/LevelBackgrounds/bground5.png
+textures/LevelBackgrounds/bground6.png
+textures/LevelBackgrounds/bground7.PNG
+assets/HUD Centre Piece.png
+assets/HUD Side Piece.png

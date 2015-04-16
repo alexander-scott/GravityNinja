@@ -28,6 +28,9 @@ namespace GravityDuck
 		private static Sce.PlayStation.HighLevel.UI.Label				levelScore;
 		private static Sce.PlayStation.HighLevel.UI.Label				timerLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				levelTimer;
+		private static Sce.PlayStation.HighLevel.UI.ImageBox			scoreHUD;
+		private static Sce.PlayStation.HighLevel.UI.ImageBox			timerHUD;
+		
 		
 		//------ Classes ------\\
 		private static Background background;
@@ -55,7 +58,7 @@ namespace GravityDuck
 		private static bool invert = false; //To switch between the Y and X axis movement
 		private static bool falling = true; //If the player isn't touching a tile then he's falling
 		private static Bounds2 playerBox; //Non-rotatable bounds that encompass the player
-		public static int currGrav = 1; //ID for the 4 types of camera rotation
+		public static int currGrav = 0; //ID for the 4 types of camera rotation
 		public static Vector2 additionalForces = new Vector2(0.0f, 0.0f); // External forces from other entities (Obstacles)
 		
 		//------ Touch Data ------\\
@@ -152,21 +155,34 @@ namespace GravityDuck
 					loadingTexture13	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
 				else
 				{
-					loadingTexture13 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+				if (highestUnlockedLevel >= 0)
 					loadingTexture0 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
+				if (highestUnlockedLevel >= 1)
 					loadingTexture1 	= new TextureInfo("/Application/textures/LoadingScreens/Level1Load.png");
+				if (highestUnlockedLevel >= 2)
 					loadingTexture2 	= new TextureInfo("/Application/textures/LoadingScreens/Level2Load.png");
+				if (highestUnlockedLevel >= 3)
 					loadingTexture3 	= new TextureInfo("/Application/textures/LoadingScreens/Level3Load.png");
+				if (highestUnlockedLevel >= 4)
 					loadingTexture4 	= new TextureInfo("/Application/textures/LoadingScreens/Level4Load.png");
+				if (highestUnlockedLevel >= 5)
 					loadingTexture5 	= new TextureInfo("/Application/textures/LoadingScreens/Level5Load.png");
+				if (highestUnlockedLevel >= 6)
 					loadingTexture6 	= new TextureInfo("/Application/textures/LoadingScreens/Level6Load.png");
+				if (highestUnlockedLevel >= 7)
 					loadingTexture7 	= new TextureInfo("/Application/textures/LoadingScreens/Level7Load.png");
+				if (highestUnlockedLevel >= 8)
 					loadingTexture8 	= new TextureInfo("/Application/textures/LoadingScreens/Level8Load.png");
+				if (highestUnlockedLevel >= 9)
 					loadingTexture9 	= new TextureInfo("/Application/textures/LoadingScreens/Level9Load.png");
+				if (highestUnlockedLevel >= 10)
 					loadingTexture10 	= new TextureInfo("/Application/textures/LoadingScreens/Level10Load.png");
+				if (highestUnlockedLevel >= 11)
 					loadingTexture11 	= new TextureInfo("/Application/textures/LoadingScreens/Level11Load.png");
+				if (highestUnlockedLevel >= 12)
 					loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
-					loadingTexture13 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+				if (highestUnlockedLevel >= 13)
+					loadingTexture13	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
 					//loadingTexture14 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
 					//loadingTexture15 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
 					//loadingTexture16 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
@@ -291,16 +307,25 @@ namespace GravityDuck
 			gameOverScreen = new GameOverScreen(gameScene);
 			playerBox = player.getBounds();
 			
+			scoreHUD = new Sce.PlayStation.HighLevel.UI.ImageBox();
+			scoreHUD.Image = new ImageAsset("/Application/assets/HUD Side Piece.png");
+			scoreHUD.ImageScaleType = ImageScaleType.Center;
+			scoreHUD.X = 23.0f;
+			scoreHUD.Y = -25.0f;
+			scoreHUD.SetSize(200, 200);
+			scoreHUD.Visible = false;
+			uiScene.RootWidget.AddChildLast(scoreHUD);
+			
 			scoreLabel = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Score Label
-			scoreLabel.X = 34.0f;
-			scoreLabel.Y = 33.0f;
+			scoreLabel.X = 55.0f;
+			scoreLabel.Y = 60.0f;
 			scoreLabel.Text = "Score";
 			scoreLabel.Visible = false;
 			uiScene.RootWidget.AddChildLast(scoreLabel);
 			
 			levelScore = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Score 
-			levelScore.X = 118.0f;
-			levelScore.Y = 33.0f;
+			levelScore.X = 140.0f;
+			levelScore.Y = 60.0f;
 			levelScore.Text = "" + score;
 			levelScore.Visible = false;
 			uiScene.RootWidget.AddChildLast(levelScore);
@@ -337,20 +362,29 @@ namespace GravityDuck
 				highscoreLabel[i].Visible = false;
 				uiScene.RootWidget.AddChildLast(highscoreLabel[i]);
 			}
+			timerHUD = new Sce.PlayStation.HighLevel.UI.ImageBox();
+			timerHUD.Image = new ImageAsset("/Application/assets/HUD Side Piece.png");
+			timerHUD.ImageScaleType = ImageScaleType.Center;
+			timerHUD.X = 729.0f;
+			timerHUD.Y = -25.0f;
+			timerHUD.SetSize(200, 200);
+			timerHUD.Visible = false;
+			uiScene.RootWidget.AddChildLast(timerHUD);
+			
 			timerLabel = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Timer Label
-			timerLabel.X = 743.0f;
-			timerLabel.Y = 33.0f;
+			timerLabel.X = 765.0f;
+			timerLabel.Y = 60.0f;
 			timerLabel.Text = "Time";
 			timerLabel.Visible = false;
 			uiScene.RootWidget.AddChildLast(timerLabel);
 			
 			levelTimer = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Timer
-			levelTimer.X = 819.0f;
-			levelTimer.Y = 33.0f;
+			levelTimer.X = 855.0f;
+			levelTimer.Y = 60.0f;
 			levelTimer.Visible = false;
 			levelTimer.Text = "" + currentTime;
-			
 			uiScene.RootWidget.AddChildLast(levelTimer);
+			
 			UISystem.SetScene(uiScene);
 		}
 		
@@ -362,6 +396,8 @@ namespace GravityDuck
 			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); 
 			scoreLabel.Visible = true;
 			timerLabel.Visible = true;
+			timerHUD.Visible = true;
+			scoreHUD.Visible = true;
 			levelTimer.Visible = true;
 			levelScore.Visible = true;
 			timer.Reset();
@@ -477,6 +513,8 @@ namespace GravityDuck
 						pause = false;
 						scoreLabel.Visible = false;
 						timerLabel.Visible = false;
+						timerHUD.Visible = false;
+						scoreHUD.Visible = false;
 						levelTimer.Visible = false;
 						levelScore.Visible = false;
 						levelComplete.HideScreen();
@@ -523,6 +561,8 @@ namespace GravityDuck
 						pause = false;
 						scoreLabel.Visible = false;
 						timerLabel.Visible = false;
+						timerHUD.Visible = false;
+						scoreHUD.Visible = false;
 						levelTimer.Visible = false;
 						levelScore.Visible = false;
 						levelComplete.HideScreen();
