@@ -77,7 +77,17 @@ namespace GravityDuck
 				soundPlayer.Volume = volume;
 				soundPlayer.Loop = isLooping;
 				soundPlayer.PlaybackRate = playbackRate;
-				soundPlayer.Play();
+				try
+				{
+					soundPlayer.Play();
+				}
+				catch
+				{
+					Console.WriteLine("CAN'T PLAY THE SOUND: " +key);
+				}
+				foreach(SoundPlayer sounds in soundPlayers)
+					sounds.Dispose();
+				soundPlayers.Clear();
 				soundPlayers.Add(soundPlayer);
 				return true;
 			}

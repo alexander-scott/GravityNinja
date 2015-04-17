@@ -141,7 +141,6 @@
     <Content Include="maps\level2.tmx" />
     <Content Include="maps\level3.tmx" />
     <Content Include="maps\level1.tmx" />
-    <Content Include="maps\level0.tmx" />
     <Content Include="maps\level4.tmx" />
     <Content Include="textures\highscoreTab.png" />
     <Content Include="maps\level5.tmx" />
@@ -198,5 +197,6 @@
     <Content Include="textures\LoadingScreens\Level18Load.png" />
     <Content Include="textures\LoadingScreens\Level19Load.png" />
     <Content Include="textures\LoadingScreens\Level20Load.png" />
+    <Content Include="maps\level0.tmx" />
   </ItemGroup>
 </Project>

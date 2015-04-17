@@ -566,6 +566,7 @@ namespace GravityDuck
 					}
 					else if (levelComplete.GetState() == 1) //Back to level select screen
 					{
+						cameraRotation = FMath.PI/2.0f;
 						currentLevel++;
 						if (currentLevel > highestUnlockedLevel)
 							highestUnlockedLevel = currentLevel;
@@ -592,6 +593,7 @@ namespace GravityDuck
 					}
 					else if (levelComplete.GetState() == 2) //Replay the current level
 					{
+						cameraRotation = FMath.PI/2.0f;
 						if (currentLevel+1 > highestUnlockedLevel)
 							highestUnlockedLevel = currentLevel+1;
 						maze.RemoveLevel();
@@ -614,6 +616,7 @@ namespace GravityDuck
 					}
 					else if (levelComplete.GetState() == 3) //Play the next level
 					{
+						cameraRotation = FMath.PI/2.0f;
 						if (currentLevel > highestUnlockedLevel)
 							highestUnlockedLevel = currentLevel;
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
@@ -1237,16 +1240,20 @@ namespace GravityDuck
 				{				
 					doc.SelectSingleNode("game/level[@id=\"" + (i).ToString() + "\"]").ChildNodes.Item(0).InnerText = "unlocked";
 				}
-				else if(i == highestUnlockedLevel && highestUnlockedLevel == currentLevel)
+				if(i == highestUnlockedLevel && highestUnlockedLevel == currentLevel)
 				{				
 					doc.SelectSingleNode("game/level[@id=\"" + (i+1).ToString() + "\"]").ChildNodes.Item(0).InnerText = "unlocked";
 				}
+				try
+				{
+		        	doc.Save(@SAVE_DATA);	
+				}
+				catch
+				{
+					Console.WriteLine("COULD NOT FIND SAVE FILE");
+				}
 				
-		        doc.Save(@SAVE_DATA);	
-				
-			}		
-			//highestUnlockedLevel = i + 1;	
-			
+			}			
 		}
 		
 		public static bool LoadData() // Load the game data (highscore)	RMDS
