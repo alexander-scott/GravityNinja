@@ -1,6 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\bin\debug\gravityduck-unsigned\Documents\SaveData.xml">
+    <Files>
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="1256" Column="7" />
+      <File FileName="GravityDuck\bin\debug\gravityduck-unsigned\Documents\SaveData.xml" Line="3" Column="18" />
+      <File FileName="c:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\Classes\Managers\AudioManager.cs" Line="87" Column="6" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
@@ -9,9 +14,11 @@
               <Node name="Level" expanded="True">
                 <Node name="Obstacles" expanded="True" />
               </Node>
+              <Node name="Managers" expanded="True" />
               <Node name="Screens" expanded="True" />
               <Node name="AppMain.cs" selected="True" />
             </Node>
+            <Node name="maps" expanded="True" />
           </Node>
         </State>
       </Pad>
