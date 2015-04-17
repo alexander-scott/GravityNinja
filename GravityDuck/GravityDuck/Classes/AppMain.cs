@@ -28,6 +28,9 @@ namespace GravityDuck
 		private static Sce.PlayStation.HighLevel.UI.Label				levelScore;
 		private static Sce.PlayStation.HighLevel.UI.Label				timerLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				levelTimer;
+		private static Sce.PlayStation.HighLevel.UI.ImageBox			scoreHUD;
+		private static Sce.PlayStation.HighLevel.UI.ImageBox			timerHUD;
+		
 		
 		//------ Classes ------\\
 		private static Background background;
@@ -46,6 +49,7 @@ namespace GravityDuck
 		private static int score;
 		private static SpriteUV	gravityArrow;
 		private static SpriteUV highscoreTab;
+		private static int overallLevelScore;
 		
 		//------ Player Movement ------\\
 		private static Vector2 gravityVector = new Vector2(0.0f, -1.0f); //The direction in which gravity is currently going
@@ -55,7 +59,7 @@ namespace GravityDuck
 		private static bool invert = false; //To switch between the Y and X axis movement
 		private static bool falling = true; //If the player isn't touching a tile then he's falling
 		private static Bounds2 playerBox; //Non-rotatable bounds that encompass the player
-		public static int currGrav = 1; //ID for the 4 types of camera rotation
+		public static int currGrav = 0; //ID for the 4 types of camera rotation
 		public static Vector2 additionalForces = new Vector2(0.0f, 0.0f); // External forces from other entities (Obstacles)
 		
 		//------ Touch Data ------\\
@@ -71,6 +75,7 @@ namespace GravityDuck
 		private static float endRotation;
 		public static float lastTime = 0.0f;
 		public static bool zoomedIn = false;
+		public static bool rotationNotAllowed = false;
 
 //		private static float upperCameraRange = FMath.PI/4;
 //		private static float lowerCameraRange = -FMath.PI/4;
@@ -78,17 +83,19 @@ namespace GravityDuck
 		//------ Menu Data ------\\
 		private static bool play = false;
 		private static bool pause = false;
+		private static bool loadedTextures = false;
 		private static int timeStamp1;
 		private enum States {TITLE, LEVELSELECT, LOADING, LOADED, PLAYING, LEVELCOMPLETE};
 		private static States currentState;
+		public static TextureInfo loadingTexture0, loadingTexture1, loadingTexture2, loadingTexture3, loadingTexture4, loadingTexture5, loadingTexture6, loadingTexture7, loadingTexture8, loadingTexture9, loadingTexture10, loadingTexture11, loadingTexture12, loadingTexture13, loadingTexture14, loadingTexture15, loadingTexture16, loadingTexture17, loadingTexture18, loadingTexture19, loadingTexture20, loadingTexture21, loadingTexture22, loadingTexture23, loadingTexture24, loadingTexture25, loadingTexture26;
 //		private static bool loaded = false;
 //		private static bool startLoading = false;
 //		private static bool levelSelect = false;
 //		private static bool levelSelected = false;
 		
 		//------ Level Data ------\\
-		private static int currentLevel = 1; //The highest level we have unlocked, Read this in from file eventually (local highscores)
-		private static int highestUnlockedLevel = currentLevel;
+		private static int currentLevel = 0; //The highest level we have unlocked, Read this in from file eventually (local highscores)
+		private static int highestUnlockedLevel = 0;
 		private static int totalNumOfLevels = 27;
 		private static List<List<Highscore>> loadedLevelHighscores;
 		private static Highscore currentScore;
@@ -116,6 +123,162 @@ namespace GravityDuck
 			Director.Terminate ();
 		}
 		
+		private static void LoadLoadingTextures(bool loadOrDispose, int levelToLoad)
+		{
+			if(loadOrDispose)
+			{
+				if (levelToLoad == 0)
+					loadingTexture0 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
+				else if (levelToLoad ==1)
+					loadingTexture1 	= new TextureInfo("/Application/textures/LoadingScreens/Level1Load.png");
+				else if (levelToLoad ==2)
+					loadingTexture2 	= new TextureInfo("/Application/textures/LoadingScreens/Level2Load.png");
+				else if (levelToLoad ==3)
+					loadingTexture3 	= new TextureInfo("/Application/textures/LoadingScreens/Level3Load.png");
+				else if (levelToLoad ==4)
+					loadingTexture4 	= new TextureInfo("/Application/textures/LoadingScreens/Level4Load.png");
+				else if (levelToLoad ==5)
+					loadingTexture5 	= new TextureInfo("/Application/textures/LoadingScreens/Level5Load.png");
+				else if (levelToLoad ==6)
+					loadingTexture6 	= new TextureInfo("/Application/textures/LoadingScreens/Level6Load.png");
+				else if (levelToLoad ==7)
+					loadingTexture7 	= new TextureInfo("/Application/textures/LoadingScreens/Level7Load.png");
+				else if (levelToLoad ==8)
+					loadingTexture8 	= new TextureInfo("/Application/textures/LoadingScreens/Level8Load.png");
+				else if (levelToLoad ==9)
+					loadingTexture9 	= new TextureInfo("/Application/textures/LoadingScreens/Level9Load.png");
+				else if (levelToLoad ==10)
+					loadingTexture10 	= new TextureInfo("/Application/textures/LoadingScreens/Level10Load.png");
+				else if (levelToLoad ==11)
+					loadingTexture11 	= new TextureInfo("/Application/textures/LoadingScreens/Level11Load.png");
+				else if (levelToLoad ==12)
+					loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
+				else if (levelToLoad ==13)
+					loadingTexture13	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+				else if (levelToLoad ==14)
+					loadingTexture14	= new TextureInfo("/Application/textures/LoadingScreens/Level14Load.png");
+				else if (levelToLoad ==15)
+					loadingTexture15	= new TextureInfo("/Application/textures/LoadingScreens/Level15Load.png");
+				else if (levelToLoad ==16)
+					loadingTexture16	= new TextureInfo("/Application/textures/LoadingScreens/Level16Load.png");
+				else if (levelToLoad ==17)
+					loadingTexture17	= new TextureInfo("/Application/textures/LoadingScreens/Level17Load.png");
+				else if (levelToLoad ==18)
+					loadingTexture18	= new TextureInfo("/Application/textures/LoadingScreens/Level18Load.png");
+				else if (levelToLoad ==19)
+					loadingTexture19	= new TextureInfo("/Application/textures/LoadingScreens/Level19Load.png");
+				else if (levelToLoad ==20)
+					loadingTexture20	= new TextureInfo("/Application/textures/LoadingScreens/Level20Load.png");
+				
+				else
+				{
+				if (highestUnlockedLevel >= 0)
+					loadingTexture0 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
+				if (highestUnlockedLevel >= 1)
+					loadingTexture1 	= new TextureInfo("/Application/textures/LoadingScreens/Level1Load.png");
+				if (highestUnlockedLevel >= 2)
+					loadingTexture2 	= new TextureInfo("/Application/textures/LoadingScreens/Level2Load.png");
+				if (highestUnlockedLevel >= 3)
+					loadingTexture3 	= new TextureInfo("/Application/textures/LoadingScreens/Level3Load.png");
+				if (highestUnlockedLevel >= 4)
+					loadingTexture4 	= new TextureInfo("/Application/textures/LoadingScreens/Level4Load.png");
+				if (highestUnlockedLevel >= 5)
+					loadingTexture5 	= new TextureInfo("/Application/textures/LoadingScreens/Level5Load.png");
+				if (highestUnlockedLevel >= 6)
+					loadingTexture6 	= new TextureInfo("/Application/textures/LoadingScreens/Level6Load.png");
+				if (highestUnlockedLevel >= 7)
+					loadingTexture7 	= new TextureInfo("/Application/textures/LoadingScreens/Level7Load.png");
+				if (highestUnlockedLevel >= 8)
+					loadingTexture8 	= new TextureInfo("/Application/textures/LoadingScreens/Level8Load.png");
+				if (highestUnlockedLevel >= 9)
+					loadingTexture9 	= new TextureInfo("/Application/textures/LoadingScreens/Level9Load.png");
+				if (highestUnlockedLevel >= 10)
+					loadingTexture10 	= new TextureInfo("/Application/textures/LoadingScreens/Level10Load.png");
+				if (highestUnlockedLevel >= 11)
+					loadingTexture11 	= new TextureInfo("/Application/textures/LoadingScreens/Level11Load.png");
+				if (highestUnlockedLevel >= 12)
+					loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
+				if (highestUnlockedLevel >= 13)
+					loadingTexture13	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+				if (highestUnlockedLevel >= 14)
+					loadingTexture14	= new TextureInfo("/Application/textures/LoadingScreens/Level14Load.png");
+				if (highestUnlockedLevel >= 15)
+					loadingTexture15	= new TextureInfo("/Application/textures/LoadingScreens/Level15Load.png");
+				if (highestUnlockedLevel >= 16)
+					loadingTexture16	= new TextureInfo("/Application/textures/LoadingScreens/Level16Load.png");
+				if (highestUnlockedLevel >= 17)
+					loadingTexture17	= new TextureInfo("/Application/textures/LoadingScreens/Level17Load.png");
+				if (highestUnlockedLevel >= 18)
+					loadingTexture18	= new TextureInfo("/Application/textures/LoadingScreens/Level18Load.png");
+				if (highestUnlockedLevel >= 19)
+					loadingTexture19	= new TextureInfo("/Application/textures/LoadingScreens/Level19Load.png");
+				if (highestUnlockedLevel >= 20)
+					loadingTexture20	= new TextureInfo("/Application/textures/LoadingScreens/Level20Load.png");
+					//loadingTexture14 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture15 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture16 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture17 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");//
+					//loadingTexture18	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture19 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture20 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture21 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture22 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture23 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture24 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture25 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					//loadingTexture26 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					loadedTextures = true;
+				}
+			}
+			else
+			{
+				if (highestUnlockedLevel >= 0)
+					loadingTexture0.Dispose();
+				if (highestUnlockedLevel >= 1)
+					loadingTexture1.Dispose();
+				if (highestUnlockedLevel >= 2)
+					loadingTexture2.Dispose();
+				if (highestUnlockedLevel >= 3)
+					loadingTexture3.Dispose();
+				if (highestUnlockedLevel >= 4)
+					loadingTexture4.Dispose();
+				if (highestUnlockedLevel >= 5)
+					loadingTexture5.Dispose();
+				if (highestUnlockedLevel >= 6)
+					loadingTexture6.Dispose();
+				if (highestUnlockedLevel >= 7)
+					loadingTexture7.Dispose();
+				if (highestUnlockedLevel >= 8)
+					loadingTexture8.Dispose();
+				if (highestUnlockedLevel >= 9)
+					loadingTexture9.Dispose();
+				if (highestUnlockedLevel >= 10)
+					loadingTexture10.Dispose();
+				if (highestUnlockedLevel >= 11)
+					loadingTexture11.Dispose();
+				if (highestUnlockedLevel >= 12)
+					loadingTexture12.Dispose();
+				if (highestUnlockedLevel >= 13)
+					loadingTexture13.Dispose();
+				if (highestUnlockedLevel >= 14)
+					loadingTexture14.Dispose();
+				if (highestUnlockedLevel >= 15)
+					loadingTexture15.Dispose();
+				if (highestUnlockedLevel >= 16)
+					loadingTexture16.Dispose();
+				if (highestUnlockedLevel >= 17)
+					loadingTexture17.Dispose();
+				if (highestUnlockedLevel >= 18)
+					loadingTexture18.Dispose();
+				if (highestUnlockedLevel >= 19)
+					loadingTexture19.Dispose();
+				if (highestUnlockedLevel >= 20)
+					loadingTexture20.Dispose();
+				loadedTextures = false;
+			}
+			
+		}
+		
 		public static void Dispose()
 		{	
 			background.Dispose();
@@ -123,8 +286,9 @@ namespace GravityDuck
 			player.Dispose();
 			gameOverScreen.Dispose();
 			levelComplete.Dispose();
-			levelSelectScreen.Dispose(true);
+			LoadLoadingTextures(false, 100);
 			loadingScreen.Dispose();	
+			levelSelectScreen.Dispose();
 		}
 
 		public static void Initialize ()
@@ -132,6 +296,16 @@ namespace GravityDuck
 			//Set up director and UISystem.
 			Director.Initialize ();
 			UISystem.Initialize(Director.Instance.GL.Context);
+			
+			//Load game data
+			if(doesDataFileExist = System.IO.File.Exists(SAVE_DATA))
+			{
+				LoadData();
+			}
+			
+			maze = null;
+			
+			currentLevel = highestUnlockedLevel;
 			
 			//Add Music and Sound Effects
 			AudioManager.AddMusic("/Application/sounds/Music/levelMusic.mp3", "Level1");
@@ -154,6 +328,8 @@ namespace GravityDuck
 			
 			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
 			
+			LoadLoadingTextures(true, 100);
+			
 			levelSelectScreen = new LevelSelectScreen(gameScene, uiScene, highestUnlockedLevel);
 			levelSelectScreen.SetVisible(false, currentLevel);
 			
@@ -168,13 +344,7 @@ namespace GravityDuck
 		}
 		
 		public static void InitializeGame()
-		{
-			//Load game data
-			if(doesDataFileExist = System.IO.File.Exists(SAVE_DATA))
-			{
-				LoadData();
-			}
-			
+		{		
 			//Background
 			background = new Background(gameScene, new Vector2(190.0f, 1215f));
 			
@@ -184,7 +354,7 @@ namespace GravityDuck
 			//Player
 			player = new Player(gameScene, maze.GetSpawnPoint());
 
-			TextureInfo texture = new TextureInfo("/Application/textures/arrow.png");
+			TextureInfo texture		= new TextureInfo("/Application/textures/arrow.png");
 			gravityArrow 			= new SpriteUV();
 			gravityArrow 			= new SpriteUV(texture);
 			gravityArrow.Quad.S 	= texture.TextureSizef;
@@ -200,16 +370,25 @@ namespace GravityDuck
 			gameOverScreen = new GameOverScreen(gameScene);
 			playerBox = player.getBounds();
 			
+			scoreHUD = new Sce.PlayStation.HighLevel.UI.ImageBox();
+			scoreHUD.Image = new ImageAsset("/Application/assets/HUD Side Piece.png");
+			scoreHUD.ImageScaleType = ImageScaleType.Center;
+			scoreHUD.X = 23.0f;
+			scoreHUD.Y = -25.0f;
+			scoreHUD.SetSize(200, 200);
+			scoreHUD.Visible = false;
+			uiScene.RootWidget.AddChildLast(scoreHUD);
+			
 			scoreLabel = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Score Label
-			scoreLabel.X = 34.0f;
-			scoreLabel.Y = 33.0f;
+			scoreLabel.X = 55.0f;
+			scoreLabel.Y = 60.0f;
 			scoreLabel.Text = "Score";
 			scoreLabel.Visible = false;
 			uiScene.RootWidget.AddChildLast(scoreLabel);
 			
 			levelScore = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Score 
-			levelScore.X = 118.0f;
-			levelScore.Y = 33.0f;
+			levelScore.X = 140.0f;
+			levelScore.Y = 60.0f;
 			levelScore.Text = "" + score;
 			levelScore.Visible = false;
 			uiScene.RootWidget.AddChildLast(levelScore);
@@ -246,20 +425,29 @@ namespace GravityDuck
 				highscoreLabel[i].Visible = false;
 				uiScene.RootWidget.AddChildLast(highscoreLabel[i]);
 			}
+			timerHUD = new Sce.PlayStation.HighLevel.UI.ImageBox();
+			timerHUD.Image = new ImageAsset("/Application/assets/HUD Side Piece.png");
+			timerHUD.ImageScaleType = ImageScaleType.Center;
+			timerHUD.X = 729.0f;
+			timerHUD.Y = -25.0f;
+			timerHUD.SetSize(200, 200);
+			timerHUD.Visible = false;
+			uiScene.RootWidget.AddChildLast(timerHUD);
+			
 			timerLabel = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Timer Label
-			timerLabel.X = 743.0f;
-			timerLabel.Y = 33.0f;
+			timerLabel.X = 765.0f;
+			timerLabel.Y = 60.0f;
 			timerLabel.Text = "Time";
 			timerLabel.Visible = false;
 			uiScene.RootWidget.AddChildLast(timerLabel);
 			
 			levelTimer = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Timer
-			levelTimer.X = 819.0f;
-			levelTimer.Y = 33.0f;
+			levelTimer.X = 855.0f;
+			levelTimer.Y = 60.0f;
 			levelTimer.Visible = false;
 			levelTimer.Text = "" + currentTime;
-			
 			uiScene.RootWidget.AddChildLast(levelTimer);
+			
 			UISystem.SetScene(uiScene);
 		}
 		
@@ -271,6 +459,8 @@ namespace GravityDuck
 			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); 
 			scoreLabel.Visible = true;
 			timerLabel.Visible = true;
+			timerHUD.Visible = true;
+			scoreHUD.Visible = true;
 			levelTimer.Visible = true;
 			levelScore.Visible = true;
 			timer.Reset();
@@ -287,7 +477,7 @@ namespace GravityDuck
 					if (title.CheckPlay())
 				    {
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-						levelSelectScreen.SetVisible(true, currentLevel);
+						levelSelectScreen.SetVisible(true, highestUnlockedLevel);
 						title.RemoveAll();
 						currentState = States.LEVELSELECT;
 					}
@@ -295,11 +485,6 @@ namespace GravityDuck
 				}
 				case States.LEVELSELECT:
 				{
-					if (!levelSelectScreen.LoadedTextures())
-					{
-						levelSelectScreen.ReLoadTextures();
-						loadingScreen.ReLoadTextures(100);
-					}
 					if (levelSelectScreen.Selected()) 
 					{
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
@@ -307,20 +492,23 @@ namespace GravityDuck
 						loadingScreen.SetVisible(true, currentLevel);
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
 						timeStamp1 = (int)timer.Milliseconds() + 1;
-						levelSelectScreen.SetVisible(false, currentLevel);
+						levelSelectScreen.SetVisible(false, highestUnlockedLevel);
 						loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
 						currentState = States.LOADING;
 						title.RemoveAll();
-						levelSelectScreen.Dispose(false);
 					}
 					if (levelSelectScreen.BackPressed())
 					{
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
 						currentState = States.TITLE;
-						levelSelectScreen.SetVisible(false, currentLevel);
+						levelSelectScreen.SetVisible(false, highestUnlockedLevel);
 						title = new TitleScreen(gameScene);	
 					}
 					levelSelectScreen.Update();
+					if (!loadedTextures)
+					{
+						LoadLoadingTextures(true, 100);
+					}
 				break;
 				}
 				case States.LOADING:
@@ -328,6 +516,7 @@ namespace GravityDuck
 					loadingScreen.SetVisible(true, currentLevel);
 					currentState = States.LOADED;
 					InitializeGame();
+					background.UpdateTexture(currentLevel);
 				break;
 				}
 				case States.LOADED:
@@ -341,7 +530,8 @@ namespace GravityDuck
 						loadingScreen.SetVisible(false, currentLevel);
 						play = true;
 						player.setVisibility(true);
-						loadingScreen.Dispose();
+						LoadLoadingTextures(false, 100);
+						maze.SetLevelFinished(false);
 					}
 				break;
 				}
@@ -377,15 +567,18 @@ namespace GravityDuck
 					else if (levelComplete.GetState() == 1) //Back to level select screen
 					{
 						currentLevel++;
-						//levelSelectScreen.ReLoadTextures();
+						if (currentLevel > highestUnlockedLevel)
+							highestUnlockedLevel = currentLevel;
 						maze.RemoveLevel();
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(480.0f, 272.0f)); 
-						levelSelectScreen.SetVisible(true, currentLevel);
+						levelSelectScreen.SetVisible(true, highestUnlockedLevel);
 						currentState = States.LEVELSELECT;
 						play = false;
 						pause = false;
 						scoreLabel.Visible = false;
 						timerLabel.Visible = false;
+						timerHUD.Visible = false;
+						scoreHUD.Visible = false;
 						levelTimer.Visible = false;
 						levelScore.Visible = false;
 						levelComplete.HideScreen();
@@ -396,10 +589,11 @@ namespace GravityDuck
 						highscoreTab.Visible = false;
 						background.SetVisible(false);
 						player.setVisibility(false);
-						//loadingScreen.ReLoadTextures();
 					}
 					else if (levelComplete.GetState() == 2) //Replay the current level
 					{
+						if (currentLevel+1 > highestUnlockedLevel)
+							highestUnlockedLevel = currentLevel+1;
 						maze.RemoveLevel();
 						maze.LoadLevel(gameScene, currentLevel);
 						player.SetPos(maze.GetSpawnPoint());
@@ -416,14 +610,18 @@ namespace GravityDuck
 						levelComplete.ReOrderZ(gameScene);
 						gameOverScreen.ReOrderZ(gameScene);
 						score = 0;
+						maze.SetLevelFinished(false);
 					}
 					else if (levelComplete.GetState() == 3) //Play the next level
 					{
+						if (currentLevel > highestUnlockedLevel)
+							highestUnlockedLevel = currentLevel;
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
 						currentLevel++;
-						loadingScreen.ReLoadTextures(currentLevel);
+						LoadLoadingTextures(true, currentLevel);
 						maze.RemoveLevel();
 						maze.LoadLevel(gameScene, currentLevel);
+						background.UpdateTexture(currentLevel);
 						loadingScreen.SetVisible(true, currentLevel);
 						timeStamp1 = (int)timer.Milliseconds() + 1;
 						loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
@@ -432,6 +630,8 @@ namespace GravityDuck
 						pause = false;
 						scoreLabel.Visible = false;
 						timerLabel.Visible = false;
+						timerHUD.Visible = false;
+						scoreHUD.Visible = false;
 						levelTimer.Visible = false;
 						levelScore.Visible = false;
 						levelComplete.HideScreen();
@@ -443,90 +643,11 @@ namespace GravityDuck
 						levelComplete.ReOrderZ(gameScene);
 						gameOverScreen.ReOrderZ(gameScene);
 						player.SetPos(maze.GetSpawnPoint());
+						maze.SetLevelFinished(false);
 					}
 				break;
 				}
 			}
-			
-//			if (!play)
-//			{
-//				if (!loaded) //Update title screen
-//					title.Update();
-//				else if (levelSelect) //Update level select screen
-//					levelSelectScreen.Update();
-//				else //Update loading screen
-//					loadingScreen.Update((int)timer.Milliseconds()); 
-//				
-//				if (title.CheckPlay() && !loaded && !startLoading) //If we have clicked play on the title screen
-//				{
-//					levelSelectScreen.SetVisible(true, currentLevel);
-//					title.RemoveAll();
-//					levelSelected = true;
-//				}
-//				
-//				if (levelSelected && levelSelectScreen.Selected()) //If we have picked a level
-//				{
-//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-//					levelSelect = true;
-//					currentLevel = levelSelectScreen.levelSelected;
-//				}
-//				else if (levelSelected && levelSelectScreen.BackPressed())
-//				{
-//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-//					levelSelected = false;
-//					levelSelectScreen.SetVisible(false, currentLevel);
-//					title = new TitleScreen(gameScene);	
-//				}
-//				
-//				if (levelSelect && !loaded && !startLoading)
-//				{
-//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-//					startLoading = true;
-//					loadingScreen.SetVisible(true, currentLevel);
-//					timeStamp1 = (int)timer.Milliseconds() + 1;
-//					levelSelect = false;
-//					levelSelected = false;
-//				}
-//				
-//				if (startLoading && timer.Milliseconds() > timeStamp1) //If the level has loaded
-//				{
-//					levelSelectScreen.SetVisible(false, currentLevel);
-//					InitializeGame();
-//					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
-//					loaded = true;
-//					startLoading = false;
-//					title.RemoveAll();
-//				}
-//				
-//				if (loaded && loadingScreen.CheckPlay()) //If the play button has been clicked on the loading screen
-//				{
-//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-//					StartLevel();
-//					play = true;
-//				}
-//			} 
-//			else
-//			{
-//				
-//				if (!pause && player.IsAlive())
-//				{
-//					time = (int)timer.Seconds();
-//					player.Update(gravityVector, playerDirection, movementVector, invert, falling, additionalForces);
-//					
-//					UpdateCamera();
-//					CheckCollisions();
-//					currentTime = time;
-//					UpdateUI ();
-//				}
-//				else if (!player.IsAlive())
-//				{
-//					gameOverScreen.Update();
-//					if (gameOverScreen.CheckRestart())
-//					{
-//						restartGame();
-//					}
-//				}
-//			}
 		}
 		
 		public static void CheckInput()
@@ -542,8 +663,8 @@ namespace GravityDuck
 			
 			if (Input2.GamePad0.Triangle.Down) //Reset player
 			{
-				player.SetPos(new Vector2(190.0f, 330.0f));
-				player.SetVelocity(0.5f);
+				player.SetPos(maze.GetSpawnPoint());
+				player.SetVelocity(0.0f);
 				cameraRotation = FMath.PI/2.0f;
 			}
 			
@@ -588,7 +709,7 @@ namespace GravityDuck
 				keyboardVector = new Vector2(0.0f, 0.0f);
 				
 			}
-
+			
 			foreach(TouchData data in touches) //Get touch data
 			{
 				if(data.Status.Equals(TouchStatus.Down))
@@ -601,9 +722,23 @@ namespace GravityDuck
 				{
 					newTouchPos = new Vector2( data.X, data.Y ); // Records the last position of swipe if movement is detected.	RMDS
 				}
-
-				if(data.Status.Equals(TouchStatus.Up))	
-				{				
+				
+				if(maze == null)
+				{
+					rotationNotAllowed = true;
+				}
+				else
+				{
+					rotationNotAllowed = maze.IsLevelComplete();
+				}
+				
+				if(data.Status.Equals(TouchStatus.Up) && rotationNotAllowed == false)	
+				{			
+					if (cameraRotation > 60f)
+						cameraRotation = 0;
+					else if (cameraRotation < -60f)
+						cameraRotation = 0;
+					
 					if((oldTouchPos.Y - newTouchPos.Y) > 0.20f) // Swipe Upwards @AS @RMDS				
 					{
 						endRotation = cameraRotation + FMath.PI;
@@ -642,44 +777,52 @@ namespace GravityDuck
 			
 			if (rotating) //If we're rotating the camera
 			{
-				if (!sideRotation) //Rotating upwards
+				if (!player.IsAlive())
 				{
-					cameraRotation += FMath.PI/10;
-					if(cameraRotation >= endRotation)
-						rotating = false;
-					else
-						rotating = true;
+					cameraRotation = FMath.PI/2.0f;
+					rotating = false;
 				}
 				else
 				{
-					if (rightRotation) //Rotating right
+					if (!sideRotation) //Rotating upwards
 					{
 						cameraRotation += FMath.PI/10;
 						if(cameraRotation >= endRotation)
-						{
 							rotating = false;
-							sideRotation = false;
-							rightRotation = false;
-						}
 						else
-						{
 							rotating = true;
-							rightRotation = true;
-						}
 					}
-					else //Rotating left
+					else
 					{
-						cameraRotation -= FMath.PI/10;
-						if(cameraRotation <= endRotation)
+						if (rightRotation) //Rotating right
 						{
-							rotating = false;
-							sideRotation = false;
-							rightRotation = false;
+							cameraRotation += FMath.PI/10;
+							if(cameraRotation >= endRotation)
+							{
+								rotating = false;
+								sideRotation = false;
+								rightRotation = false;
+							}
+							else
+							{
+								rotating = true;
+								rightRotation = true;
+							}
 						}
-						else
-							rotating = true;
-					}
-				}		
+						else //Rotating left
+						{
+							cameraRotation -= FMath.PI/10;
+							if(cameraRotation <= endRotation)
+							{
+								rotating = false;
+								sideRotation = false;
+								rightRotation = false;
+							}
+							else
+								rotating = true;
+						}
+					}		
+				}
 			}
 			
 			if(play)
@@ -720,8 +863,8 @@ namespace GravityDuck
 				
 				playerDirection = -gravityVector; //Rotation is the invert of the gravity vector
 				//for( int i = 0; i < 25; i++ ) //Output details to console
-			    // 	Console.WriteLine("");
-				//Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- PlayerDir: " + playerDirection);
+			  //   	Console.WriteLine("");
+				//Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- PlayerDir: " + playerDirection + " --- CurrentState: " + currentState);
 			}
 		}
 
@@ -868,16 +1011,20 @@ namespace GravityDuck
 			{
 				cameraRotation = FMath.PI/2.0f;
 				UpdateCamera();
+				
+				overallLevelScore = maze.GetOverallLevelScore();
+				
 				int starScore = 0;
-				if(score <= 500)
+				
+				if(score <= (int)(overallLevelScore * 0.33))
 				{
 					starScore = 1;
 				}
-				else if(score > 500 && score <= 800)
+				else if(score > (int)(overallLevelScore * 0.33) && score <= (int)(overallLevelScore * 0.66))
 				{
 					starScore = 2;
 				}
-				else if(score > 800 && score <= 1000)
+				else if(score > (int)(overallLevelScore * 0.66))
 				{
 					starScore = 3;
 				}
@@ -961,14 +1108,20 @@ namespace GravityDuck
 		
 		public static void restartGame()
 		{
-			//cameraRotation = FMath.PI/2.0f;
+			cameraRotation = FMath.PI/2.0f;
 			player.setAlive();
 			player.SetPos(maze.GetSpawnPoint());
+			player.SetVelocity(0.0f);
 			gameOverScreen.Reset();
 			play = true;
 			pause = false;
 			score = 0;
-			
+			maze.RemoveLevel();
+			maze.LoadLevel(gameScene, currentLevel);
+			levelComplete.ReOrderZ(gameScene);
+			gameOverScreen.ReOrderZ(gameScene);
+			currentState = States.PLAYING;
+
 			highscoreTab.Visible = false;
 			
 			for(int i = 0; i < 5; i++)
@@ -978,7 +1131,6 @@ namespace GravityDuck
 			timer.Reset();
 			//endRotation = FMath.PI/2.0f;
 			//cameraRotation = FMath.PI/2.0f;
-			SaveData();	
 		}
 		
 		
@@ -1073,16 +1225,28 @@ namespace GravityDuck
 						//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(1).InnerText =
 						//	loadedHighscores[i].GetScore().ToString();	
 						
-						currentNode.ChildNodes.Item(0 + (j * 2)).InnerText =
-							loadedLevelHighscores[i][j].GetPlayerName();
 						currentNode.ChildNodes.Item(1 + (j * 2)).InnerText =
+							loadedLevelHighscores[i][j].GetPlayerName();
+						currentNode.ChildNodes.Item(2 + (j * 2)).InnerText =
 							loadedLevelHighscores[i][j].GetScore().ToString();	
 					}		
 				}				
 		
-		        doc.Save(@SAVE_DATA);			
+				// Unlock the following level
+				if(i < highestUnlockedLevel)
+				{				
+					doc.SelectSingleNode("game/level[@id=\"" + (i).ToString() + "\"]").ChildNodes.Item(0).InnerText = "unlocked";
+				}
+				else if(i == highestUnlockedLevel && highestUnlockedLevel == currentLevel)
+				{				
+					doc.SelectSingleNode("game/level[@id=\"" + (i+1).ToString() + "\"]").ChildNodes.Item(0).InnerText = "unlocked";
+				}
+				
+		        doc.Save(@SAVE_DATA);	
+				
 			}		
-									
+			//highestUnlockedLevel = i + 1;	
+			
 		}
 		
 		public static bool LoadData() // Load the game data (highscore)	RMDS
@@ -1106,18 +1270,27 @@ namespace GravityDuck
 			
 				while(currentNode != null)
 				{			
+					bool unlocked;
 					string playerName;
 					int highscore;
 					List<Highscore> levelHighscores = new List<Highscore>();
 					
+					if(currentNode.ChildNodes.Item(0).InnerText.Equals("unlocked"))
+						unlocked = true;
+					else
+						unlocked = false;
+						
+					if(unlocked)
+						highestUnlockedLevel = level;
+					
 					for(int i = 0; i < 5; i++)
 					{
-						playerName = currentNode.ChildNodes.Item(0 + (i * 2)).InnerText;
+						playerName = currentNode.ChildNodes.Item(1 + (i * 2)).InnerText;
 						
 						highscore = 0;
 						
-						if(!currentNode.ChildNodes.Item(1 + (i * 2)).InnerText.Equals(""))
-							highscore = Int32.Parse(currentNode.ChildNodes.Item(1 + (i * 2)).InnerText);
+						if(!currentNode.ChildNodes.Item(2 + (i * 2)).InnerText.Equals(""))
+							highscore = Int32.Parse(currentNode.ChildNodes.Item(2 + (i * 2)).InnerText);
 						
 						Highscore currentLoad = new Highscore(level, highscore, playerName);
 						
@@ -1156,10 +1329,12 @@ namespace GravityDuck
 				
 				if(currentNode != null)
 				{
+					currentNode.ChildNodes.Item(0).InnerText = "locked";
+					
 					for(int j = 0; j < 5; j++)
 					{
-						currentNode.ChildNodes.Item(0 + (j * 2)).InnerText = "";
-						currentNode.ChildNodes.Item(1 + (j * 2)).InnerText = "";	
+						currentNode.ChildNodes.Item(1 + (j * 2)).InnerText = "";
+						currentNode.ChildNodes.Item(2 + (j * 2)).InnerText = "";	
 					}		
 				}
 				//// Reset all values

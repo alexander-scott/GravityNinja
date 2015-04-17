@@ -50,22 +50,22 @@ namespace GravityDuck
 			playSelectTexture 	= new TextureInfo("/Application/textures/playSelected.png");
 			playSprite 			= new SpriteUV();
 			playSprite 			= new SpriteUV(playSelectTexture);
-			playSprite.Quad.S 	= playTexture.TextureSizef;
-			playSprite.Position = new Vector2(Director.Instance.GL.Context.GetViewport().Width/2 - (playTexture.TextureSizef.X/2),110);
+			playSprite.Quad.S 	= playTexture.TextureSizef*0.7f;
+			playSprite.Position = new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.75f - (playTexture.TextureSizef.X/2),200);
 			
 			hiscoreTexture 	= new TextureInfo("/Application/textures/hiscores.png");
 			hiscoreSelectTexture 	= new TextureInfo("/Application/textures/hiscoresSelected.png");
 			hiscoreSprite 			= new SpriteUV();
 			hiscoreSprite 			= new SpriteUV(hiscoreTexture);
-			hiscoreSprite.Quad.S 	= hiscoreTexture.TextureSizef;
+			hiscoreSprite.Quad.S 	= hiscoreTexture.TextureSizef*0.7f;
 			hiscoreSprite.Position = new Vector2(10.0f, 10.0f);
 			
 			controlTexture 	= new TextureInfo("/Application/textures/controls.png");
 			controlSelectTexture 	= new TextureInfo("/Application/textures/controlsSelected.png");
 			controlSprite 			= new SpriteUV();
 			controlSprite 			= new SpriteUV(controlTexture);
-			controlSprite.Quad.S 	= controlTexture.TextureSizef;
-			controlSprite.Position = new Vector2(Director.Instance.GL.Context.GetViewport().Width - controlTexture.TextureSizef.X , 10.0f);
+			controlSprite.Quad.S 	= controlTexture.TextureSizef*0.7f;
+			controlSprite.Position = new Vector2(Director.Instance.GL.Context.GetViewport().Width - controlTexture.TextureSizef.X*0.8f , 10.0f);
 			
 			playBox.Min = playSprite.Position;
 			playBox.Max = playSprite.Position + playSprite.TextureInfo.TextureSizef;

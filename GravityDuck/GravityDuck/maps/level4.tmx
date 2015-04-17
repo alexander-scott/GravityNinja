@@ -183,7 +183,7 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="27" name="WindFan2" x="460" y="716" width="80" height="70">
+  <object id="27" name="WindFan2" x="460" y="800" width="80" height="70">
    <properties>
     <property name="Rotation" value="180"/>
     <property name="Type" value="Wind Tunnel"/>

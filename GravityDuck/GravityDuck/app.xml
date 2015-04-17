@@ -13,7 +13,7 @@
     <rating type="ESRB" value="3" age="3" code="" />
     <rating type="PEGIEX" value="3" age="3" code="" />
   </rating_list>
-  <images />
+ 
   <genre_list>
     <genre value="Games:Adventure" />
     <genre value="Games:Puzzle" />

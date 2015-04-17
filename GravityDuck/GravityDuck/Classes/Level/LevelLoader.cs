@@ -33,6 +33,8 @@ namespace GravityDuck
 		
 		public Vector2 playerPos;
 		
+		private Random rnd;
+		
 		public LevelLoader ()
 		{
 			// Level
@@ -48,6 +50,8 @@ namespace GravityDuck
 			laserGates = new List<LaserGate>();
 			spikes = new List<Spikes>();
 			windTunnels = new List<WindTunnel>();
+			
+			rnd = new Random();
 		}
 		
 		public void SetWidth(int width)
@@ -165,7 +169,7 @@ namespace GravityDuck
 				break;
 				
 				case "Laser Gate":
-					LaserGate laserGate = new LaserGate();
+					LaserGate laserGate = new LaserGate(rnd.Next(0,18));
 				
 					if(rotation == 0)
 					{
@@ -327,6 +331,41 @@ namespace GravityDuck
 		
 		public void Dispose()
 		{
+			if (coins != null)
+			{
+				foreach(Coin theCoin in coins)
+					theCoin.HideSprite();
+			}
+			if (gems != null)
+			{
+				foreach(Gem theGem in gems)
+					theGem.HideSprite();
+			}
+			if (spikes != null)
+			{
+				foreach(Spikes s in spikes)
+					s.HideSprite();
+			}
+			if (breakableWalls != null)
+			{
+				foreach(BreakableWall bw in breakableWalls)
+					bw.HideSprite();
+			}
+			if (blackHoles != null)
+			{
+				foreach(BlackHole bh in blackHoles)
+					bh.HideSprite();
+			}
+			if (laserGates != null)
+			{
+				foreach(LaserGate lg in laserGates)
+					lg.HideSprite();
+			}
+			if (windTunnels != null)
+			{
+				foreach(WindTunnel wt in windTunnels)
+					wt.HideSprite();
+			}
 			level.Clear();
 			coins.Clear();
 			gems.Clear();
@@ -339,9 +378,7 @@ namespace GravityDuck
 			
 			foreach(int num in level)
 				level.RemoveAt(num);
-			
-			
-			
+
 			level = null;
 			coins = null;
 			gems = null;
@@ -483,7 +520,7 @@ namespace GravityDuck
 				scene.AddChild(windTunnelsObj[i].getSprite());
 			}
 			
-			if(spikes.Count != 0)
+			if(windTunnels.Count != 0)
 			{
 				return windTunnelsObj;
 			}
@@ -498,6 +535,14 @@ namespace GravityDuck
 			scene.AddChild(levelFlag.GetSprite());
 			
 			return levelFlag;
+		}
+		
+		public int CalculateOverallLevelScore()
+		{
+			int NumOfCoins = coins.Count;
+			int NumOfGems = gems.Count;
+			int overallLevelScore = (NumOfCoins*50) +(NumOfGems*200);
+			return overallLevelScore;
 		}
 	}
 }
