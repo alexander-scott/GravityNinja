@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="15" height="15" tilewidth="128" tileheight="142" nextobjectid="62">
+ <tileset firstgid="1" name="GroundBlock1" tilewidth="128" tileheight="142">
+  <image source="textures/Level/groundBlock1.png" width="128" height="142"/>
+ </tileset>
+ <tileset firstgid="2" name="GroundBlock2" tilewidth="128" tileheight="142">
+  <image source="textures/Level/groundBlock2.png" width="128" height="142"/>
+ </tileset>
+ <tileset firstgid="3" name="CeilingBlock1" tilewidth="128" tileheight="142">
+  <image source="textures/Level/ceilingBlock1.png" width="128" height="142"/>
+ </tileset>
+ <tileset firstgid="4" name="CeilingBlock2" tilewidth="128" tileheight="142">
+  <image source="textures/Level/ceilingBlock2.png" width="128" height="142"/>
+ </tileset>
+ <tileset firstgid="5" name="TreeBlock" tilewidth="128" tileheight="142">
+  <image source="textures/Level/treeBlock.png" width="128" height="142"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="15" height="15">
+  <data>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="3"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="3"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="3"/>
+   <tile gid="4"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <object id="3" x="348.591" y="1247.64" width="341" height="126">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Large Spikes"/>
+   </properties>
+  </object>
+  <object id="4" x="900" y="1462.21" width="64" height="170">
+   <properties>
+    <property name="Rotation" value="270"/>
+    <property name="Type" value="Laser Gate"/>
+   </properties>
+  </object>
+  <object id="6" x="470.667" y="1783">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="7" x="594.667" y="1783">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="8" x="714.667" y="1784">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="14" x="1178.06" y="1762.82" width="70" height="80">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Black Hole"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="17" x="1052.69" y="1775.98" rotation="2.75266">
+   <properties>
+    <property name="Type" value="Gem"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="34" x="922.909" y="321.939" width="47" height="86">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Level"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="36" x="201.5" y="1736" width="47" height="86">
+   <properties>
+    <property name="Type" value="Player"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="39" x="1755.91" y="1317.58" width="70" height="80">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Black Hole"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="40" x="524.485" y="1173.48">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="41" x="768.485" y="1174.48">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="42" x="648.485" y="1173.48">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="43" x="1308.97" y="1181.42">
+   <properties>
+    <property name="Type" value="Gem"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="44" x="1552.97" y="1182.42">
+   <properties>
+    <property name="Type" value="Gem"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="45" x="1432.97" y="1181.42">
+   <properties>
+    <property name="Type" value="Gem"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="46" x="451.515" y="781.818">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="47" x="1460.61" y="787.879">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="48" x="116.485" y="908.939" width="64" height="170">
+   <properties>
+    <property name="Rotation" value="90"/>
+    <property name="Type" value="Laser Gate"/>
+   </properties>
+  </object>
+  <object id="49" x="1649.82" y="908.939" width="64" height="170">
+   <properties>
+    <property name="Rotation" value="90"/>
+    <property name="Type" value="Laser Gate"/>
+   </properties>
+  </object>
+  <object id="52" x="344.879" y="327.424">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="53" x="468.879" y="327.424">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="54" x="588.879" y="328.424">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="55" x="1201.45" y="314.152">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="56" x="1325.45" y="314.152">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="57" x="1445.45" y="315.152">
+   <properties>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="58" x="875" y="1400" width="64" height="170">
+   <properties>
+    <property name="Rotation" value="90"/>
+    <property name="Type" value="Laser Gate"/>
+   </properties>
+  </object>
+  <object id="59" x="1090.11" y="1243.06" width="341" height="126">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Large Spikes"/>
+   </properties>
+  </object>
+  <object id="60" x="447.682" y="382.455" width="341" height="126">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Large Spikes"/>
+   </properties>
+  </object>
+  <object id="61" x="1129.5" y="379.424" width="341" height="126">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Large Spikes"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

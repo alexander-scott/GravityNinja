@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="8" height="6" tilewidth="128" tileheight="142" nextobjectid="101">
+ <tileset firstgid="1" name="GroundBlock1" tilewidth="128" tileheight="142">
+  <image source="textures/Level/groundBlock1.png" width="128" height="142"/>
+ </tileset>
+ <tileset firstgid="2" name="GroundBlock2" tilewidth="128" tileheight="142">
+  <image source="textures/Level/groundBlock2.png" width="128" height="142"/>
+ </tileset>
+ <tileset firstgid="3" name="CeilingBlock1" tilewidth="128" tileheight="142">
+  <image source="textures/Level/ceilingBlock1.png" width="128" height="142"/>
+ </tileset>
+ <tileset firstgid="4" name="CeilingBlock2" tilewidth="128" tileheight="142">
+  <image source="textures/Level/ceilingBlock2.png" width="128" height="142"/>
+ </tileset>
+ <tileset firstgid="5" name="TreeBlock" tilewidth="128" tileheight="142">
+  <image source="textures/Level/treeBlock.png" width="128" height="142"/>
+ </tileset>
+ <tileset firstgid="6" name="LeftBlock1" tilewidth="128" tileheight="142">
+  <image source="textures/Level/leftBlock1.png" width="128" height="142"/>
+ </tileset>
+ <tileset firstgid="7" name="LeftBlock2" tilewidth="128" tileheight="142">
+  <image source="textures/Level/leftBlock2.png" width="128" height="142"/>
+ </tileset>
+ <tileset firstgid="8" name="RightBlock1" tilewidth="128" tileheight="142">
+  <image source="textures/Level/rightBlock1.png" width="128" height="142"/>
+ </tileset>
+ <tileset firstgid="9" name="RightBlock2" tilewidth="128" tileheight="142">
+  <image source="textures/Level/rightBlock2.png" width="128" height="142"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="8" height="6">
+  <data>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <object id="19" name="spices" x="137.392" y="683.942" width="158.55" height="21.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="20" name="spices" x="316.725" y="685.275" width="158.55" height="21.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="21" name="spices" x="721.725" y="681.275" width="158.55" height="21.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="22" name="spices" x="513.725" y="684.275" width="158.55" height="21.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="23" name="spices" x="184.905" y="337.611" width="158.55" height="21.45" rotation="88.6147">
+   <properties>
+    <property name="Rotation" value="90"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="25" name="spices" x="184.311" y="148.667" width="158.55" height="21.45" rotation="88.6147">
+   <properties>
+    <property name="Rotation" value="90"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="26" name="spices" x="183.667" y="517.53" width="158.55" height="21.45" rotation="88.6147">
+   <properties>
+    <property name="Rotation" value="90"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="27" name="spices" x="1025.82" y="554.386" width="158.55" height="21.45" rotation="-91.7788">
+   <properties>
+    <property name="Rotation" value="-90"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="28" name="spices" x="1020.92" y="364.471" width="158.55" height="21.45" rotation="-91.7788">
+   <properties>
+    <property name="Rotation" value="-90"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="29" name="spices" x="1023.81" y="167.527" width="158.55" height="21.45" rotation="-91.7788">
+   <properties>
+    <property name="Rotation" value="-90"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="30" name="spices" x="731.761" y="-29.4563" width="158.55" height="21.45" rotation="-179.648">
+   <properties>
+    <property name="Rotation" value="180"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="31" name="spices" x="326.744" y="-27.9473" width="158.55" height="21.45" rotation="-179.648">
+   <properties>
+    <property name="Rotation" value="180"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="32" name="spices" x="921.757" y="-28.2873" width="158.55" height="21.45" rotation="-179.648">
+   <properties>
+    <property name="Rotation" value="180"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="33" name="spices" x="534.758" y="-29.6683" width="158.55" height="21.45" rotation="-179.648">
+   <properties>
+    <property name="Rotation" value="180"/>
+    <property name="Type" value="Small Spikes"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="35" name="coin1" x="750.725" y="612.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="36" name="coin1" x="196.725" y="320.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="37" name="coin1" x="199.725" y="382.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="38" name="coin1" x="676.725" y="614.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="39" name="coin1" x="605.725" y="617.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="40" name="coin1" x="533.725" y="621.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="41" name="coin1" x="461.725" y="619.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="42" name="coin1" x="394.725" y="620.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="43" name="coin1" x="323.725" y="621.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="44" name="coin1" x="257.725" y="621.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="45" name="coin1" x="204.725" y="445.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="46" name="coin1" x="197.725" y="262.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="47" name="coin1" x="207.725" y="510.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="49" name="coin1" x="208.725" y="570.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="50" name="coin1" x="805.225" y="561.775" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="52" name="coin1" x="804.225" y="501.775" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="53" name="coin1" x="801.225" y="436.775" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="55" name="coin1" x="796.225" y="373.775" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="56" name="coin1" x="793.225" y="311.775" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="57" name="coin1" x="590.725" y="257.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="58" name="coin1" x="657.725" y="256.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="59" name="coin1" x="729.725" y="258.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="60" name="coin1" x="519.725" y="258.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="61" name="coin1" x="453.725" y="258.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="62" name="coin1" x="382.725" y="258.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="70" name="coin1" x="333.225" y="454.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="71" name="coin1" x="330.225" y="389.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="72" name="coin1" x="325.225" y="326.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="73" name="coin1" x="535.225" y="507.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="74" name="coin1" x="469.225" y="507.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="75" name="coin1" x="398.225" y="507.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="76" name="coin1" x="603.725" y="505.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="82" name="coin1" x="664.725" y="389.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="84" name="coin1" x="667.725" y="454.275" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="88" name="coin1" x="518.225" y="386.775" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="90" name="coin1" x="589.225" y="385.775" width="54.55" height="45.45">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Coin"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="91" name="levelFlag" x="397.7" y="341.4" width="64.6" height="95.2">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Level"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="92" name="player" x="198" y="196" width="50" height="50">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Player"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="94" name="gem1" x="473" y="398" width="30" height="30" rotation="1.96717">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Gem"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="95" name="gem1" x="680" y="510" width="30" height="30" rotation="1.96717">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Gem"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="96" name="gem1" x="817" y="624" width="30" height="30" rotation="1.96717">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Gem"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="97" name="gem1" x="805" y="264" width="30" height="30" rotation="1.96717">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Gem"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="98" name="gem1" x="224" y="632" width="30" height="30" rotation="1.96717">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Gem"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="99" name="gem1" x="335" y="273" width="30" height="30" rotation="1.96717">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Gem"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="100" name="gem1" x="348" y="516" width="30" height="30" rotation="1.96717">
+   <properties>
+    <property name="Rotation" value="0"/>
+    <property name="Type" value="Gem"/>
+   </properties>
+   <ellipse/>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,31 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="GravityDuck" expanded="True">
+            <Node name="Classes" expanded="True">
+              <Node name="Level" expanded="True">
+                <Node name="Obstacles" expanded="True" />
+              </Node>
+              <Node name="Screens" expanded="True" />
+              <Node name="AppMain.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\LATEST3\GravityNinja-Alex\GravityDuck\GravityDuck\Classes\AppMain.cs" line="596" />
+      <Breakpoint file="C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\LATEST3\GravityNinja-Alex\GravityDuck\GravityDuck\Classes\AppMain.cs" line="571" />
+      <Breakpoint file="C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\LATEST3\GravityNinja-Alex\GravityDuck\GravityDuck\Classes\AppMain.cs" line="618" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

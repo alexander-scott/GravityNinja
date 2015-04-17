@@ -1,0 +1,1476 @@
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\obj\Debug\GravityDuck.csprojResolveAssemblyReference.cache
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\testBlock.png
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\w007863c\Documents\Projects\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\testBlock.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\obj\Debug\GravityDuck.csprojResolveAssemblyReference.cache
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+E:\uni\GravityDuck\GravityDuck\obj\Debug\GravityDuck.csprojResolveAssemblyReference.cache
+E:\uni\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+E:\uni\GravityDuck\GravityDuck\obj\Debug\app.exe
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+E:\uni\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+E:\uni\GravityDuck\GravityDuck\obj\Debug\app.pdb
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+E:\uni\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\mizukami\Desktop\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\m008455c\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\m008455c\GravityDuck\GravityDuck\obj\Debug\GravityDuck.csprojResolveAssemblyReference.cache
+C:\Users\m008455c\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\m008455c\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\m008455c\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\m008455c\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\m008455c\NewGravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\m008455c\NewGravityDuck\GravityDuck\obj\Debug\GravityDuck.csprojResolveAssemblyReference.cache
+C:\Users\m008455c\NewGravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\m008455c\NewGravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\m008455c\NewGravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\m008455c\NewGravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\obj\Debug\GravityDuck.csprojResolveAssemblyReference.cache
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Ninja.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Ninja.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Ninja.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Ninja.png
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\obj\Debug\GravityDuck.csprojResolveAssemblyReference.cache
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\m025603c\Downloads\DangerDucks-master\DangerDucks-master\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\ninja2.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\ninja2.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\bounce.wav
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\coinGrab.wav
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\levelFinish.wav
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\screenFlip.wav
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\spikesDeath.wav
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Music\levelMusic.mp3
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\bounce.wav
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\coinGrab.wav
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\levelFinish.wav
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\screenFlip.wav
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\spikesDeath.wav
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Music\levelMusic.mp3
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\levelFlag.png
+C:\Users\s005973c\Downloads\DangerDucks-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\levelFlag.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Ninja.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\ninja2.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\bounce.wav
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\coinGrab.wav
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\levelFinish.wav
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\screenFlip.wav
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\spikesDeath.wav
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Music\levelMusic.mp3
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\levelFlag.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Ninja.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\ninja2.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\bounce.wav
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\coinGrab.wav
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\levelFinish.wav
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\screenFlip.wav
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\spikesDeath.wav
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Music\levelMusic.mp3
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\levelFlag.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Ninja.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\ninja2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\bounce.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\coinGrab.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\levelFinish.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\screenFlip.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\spikesDeath.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Music\levelMusic.mp3
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\levelFlag.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Ninja.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\ninja2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\bounce.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\coinGrab.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\levelFinish.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\screenFlip.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\spikesDeath.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Music\levelMusic.mp3
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\levelFlag.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\obj\Debug\GravityDuck.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Ninja.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\ninja2.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\bounce.wav
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\coinGrab.wav
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\levelFinish.wav
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\screenFlip.wav
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\spikesDeath.wav
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Music\levelMusic.mp3
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\levelFlag.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Ninja.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\ninja2.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\bounce.wav
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\coinGrab.wav
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\levelFinish.wav
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\screenFlip.wav
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\spikesDeath.wav
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Music\levelMusic.mp3
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\levelFlag.png
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\m017310b\Downloads\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Ninja.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\ninja2.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\bounce.wav
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\coinGrab.wav
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\levelFinish.wav
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\screenFlip.wav
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\spikesDeath.wav
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Music\levelMusic.mp3
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\levelFlag.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Ninja.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\ninja2.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\bounce.wav
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\coinGrab.wav
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\levelFinish.wav
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\screenFlip.wav
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\spikesDeath.wav
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Music\levelMusic.mp3
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\levelFlag.png
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\m008455c\Downloads\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Ninja.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\ninja2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\bounce.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\coinGrab.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\levelFinish.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\screenFlip.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\spikesDeath.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Music\levelMusic.mp3
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\levelFlag.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Ninja.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\ninja2.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\bounce.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\coinGrab.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\levelFinish.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\screenFlip.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\spikesDeath.wav
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Music\levelMusic.mp3
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\levelFlag.png
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\GravityDuckUPDATED\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Ninja.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\ninja2.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\bounce.wav
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\coinGrab.wav
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\levelFinish.wav
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\screenFlip.wav
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\spikesDeath.wav
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Music\levelMusic.mp3
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\levelFlag.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level1Load.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\click.wav
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Ninja.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\ninja2.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\bounce.wav
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\coinGrab.wav
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\levelFinish.wav
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\screenFlip.wav
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\spikesDeath.wav
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Music\levelMusic.mp3
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\levelFlag.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level1Load.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\click.wav
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\gameOver.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\gameOver.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\restartButton.png
+C:\Users\Smurf\Dropbox\GravityNinja-7a6d663f7db0401735a5f66f2147b7cc2a10489b\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\restartButton.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Ninja.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\ninja2.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\bounce.wav
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\coinGrab.wav
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\levelFinish.wav
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\screenFlip.wav
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\spikesDeath.wav
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Music\levelMusic.mp3
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\levelFlag.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level1Load.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\click.wav
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\gameOver.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\restartButton.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\options.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Ninja.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\ninja2.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\bounce.wav
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\coinGrab.wav
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\levelFinish.wav
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\screenFlip.wav
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\spikesDeath.wav
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Music\levelMusic.mp3
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\levelFlag.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level1Load.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\click.wav
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\gameOver.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\restartButton.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\options.png
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\Smurf\Dropbox\GravityDuck\DangerDucks\GravDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Ninja.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\ninja2.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\bounce.wav
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\coinGrab.wav
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\levelFinish.wav
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\screenFlip.wav
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\spikesDeath.wav
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Music\levelMusic.mp3
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\levelFlag.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level1Load.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\click.wav
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\gameOver.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\restartButton.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\options.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\blackHole.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\breakableWall.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\laserGate.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\windFan.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Ninja.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\ninja2.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\bounce.wav
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\coinGrab.wav
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\levelFinish.wav
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\screenFlip.wav
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\spikesDeath.wav
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Music\levelMusic.mp3
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\levelFlag.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level1Load.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\click.wav
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\gameOver.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\restartButton.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\options.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\blackHole.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\breakableWall.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\laserGate.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\windFan.png
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\maps\level1.tmx
+C:\Users\w007863c\Downloads\GravityNinja-master\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\maps\level1.tmx
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\obj\Debug\app.exe
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.info
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\shaders\Simple.cgx
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Json.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Xml.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.Core.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\System.ServiceModel.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\app.exe.mdb
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\background.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\duck.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\arrow.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock1.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\ceilingBlock2.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\gem.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\goldCoin.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock1.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\groundBlock2.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\largeSpikes.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\smallSpikes.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\treeBlock.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controls.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\controlsSelected.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscores.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\hiscoresSelected.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\levelComplete.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\play.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\playSelected.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars1.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars2.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\stars3.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\titleScreen.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Ninja.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\ninja2.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\bounce.wav
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\coinGrab.wav
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\levelFinish.wav
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\screenFlip.wav
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\spikesDeath.wav
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Music\levelMusic.mp3
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\levelFlag.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\click.wav
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\gameOver.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\restartButton.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\options.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\blackHole.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\breakableWall.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\laserGate.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\windFan.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\maps\level1.tmx
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LoadingScreens\Level0Load.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LoadingScreens\Level1Load.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LoadingScreens\Level2Load.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LoadingScreens\Level3Load.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LoadingScreens\Level4Load.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LoadingScreens\Level5Load.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\GravityNina.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LevelSelectBackground.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.info
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\shaders\Simple.cgx
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Json.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Xml.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Runtime.Serialization.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.Core.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.Web.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\System.ServiceModel.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\app.exe.mdb
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\background.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\duck.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\arrow.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock1.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\ceilingBlock2.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\gem.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\goldCoin.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock1.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\groundBlock2.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\largeSpikes.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\smallSpikes.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\treeBlock.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controls.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\controlsSelected.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscores.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\hiscoresSelected.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\levelComplete.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\play.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\playSelected.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars1.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars2.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\stars3.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\titleScreen.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Ninja.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\ninja2.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\bounce.wav
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\coinGrab.wav
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\levelFinish.wav
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\screenFlip.wav
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\spikesDeath.wav
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Music\levelMusic.mp3
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\levelFlag.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\click.wav
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\gameOver.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\restartButton.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\options.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\blackHole.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\breakableWall.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\laserGate.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\windFan.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\maps\level1.tmx
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LoadingScreens\Level0Load.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LoadingScreens\Level1Load.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LoadingScreens\Level2Load.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LoadingScreens\Level3Load.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LoadingScreens\Level4Load.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LoadingScreens\Level5Load.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\GravityNina.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LevelSelectBackground.png
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\bin\Debug\GravityDuck.psdp
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\w007863c\Downloads\GravityNinja\GravityDuck\GravityDuck\obj\Debug\app.pdb
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\sounds\Effects\click.wav
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\gameOver.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\restartButton.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\options.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\blackHole.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\breakableWall.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\laserGate.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\windFan.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LoadingScreens\Level0Load.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LoadingScreens\Level1Load.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LoadingScreens\Level2Load.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LoadingScreens\Level3Load.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LoadingScreens\Level4Load.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LoadingScreens\Level5Load.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\GravityNina.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\LevelSelectBackground.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\leftBlock1.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\leftBlock2.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\rightBlock1.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\Level\rightBlock2.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\maps\level2.tmx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\maps\level3.tmx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\maps\level1.tmx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\maps\level0.tmx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\bground.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\maps\level4.tmx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\sounds\Effects\click.wav
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\gameOver.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\restartButton.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\options.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\blackHole.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\breakableWall.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\laserGate.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\windFan.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LoadingScreens\Level0Load.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LoadingScreens\Level1Load.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LoadingScreens\Level2Load.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LoadingScreens\Level3Load.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LoadingScreens\Level4Load.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LoadingScreens\Level5Load.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\GravityNina.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\LevelSelectBackground.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\leftBlock1.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\leftBlock2.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\rightBlock1.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\Level\rightBlock2.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\maps\level2.tmx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\maps\level3.tmx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\maps\level1.tmx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\maps\level0.tmx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\bground.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\maps\level4.tmx
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-unsigned\Application\textures\highscoreTab.png
+C:\Users\s005973c\Downloads\GravityDuck\GravityDuck\bin\Debug\GravityDuck-signed\Application\textures\highscoreTab.png
