@@ -12,6 +12,7 @@ namespace GravityDuck
 	public class Maze
 	{		
 		public static Vector2 spawnPoint;
+		public static int overallLevelScore;
 		
 		// Level Loader
 		private LevelLoader level;
@@ -31,12 +32,11 @@ namespace GravityDuck
 		// Level
 		private SpriteUV[,] sprites;
 		
-		private bool levelFinished;
+		private bool levelFinished = true;
 						
 		public Maze (Scene scene, int currentLevel)
 		{
 			LoadLevel(scene, currentLevel);
-			levelFinished = false;
 		}
 		
 		public void LoadLevel(Scene scene, int levelNum)
@@ -70,7 +70,7 @@ namespace GravityDuck
 			
 			levelFlag = level.LoadInFlag(scene);
 			
-			levelFinished = false;
+			overallLevelScore = level.CalculateOverallLevelScore();
 		}
 		
 		public void RemoveLevel() //Dispose texture data
@@ -268,6 +268,11 @@ namespace GravityDuck
 		public Vector2 GetSpawnPoint()
 		{
 			return spawnPoint;
+		}
+		
+		public int GetOverallLevelScore()
+		{
+			return overallLevelScore;
 		}
 		
 		//Set Level Complete Boolean

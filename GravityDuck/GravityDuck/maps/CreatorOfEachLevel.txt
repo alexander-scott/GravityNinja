@@ -1,0 +1,5 @@
+ALEX:0-5
+NILE:6-10
+SMUF:11-15
+RIU:16-20
+aslfdusdaier:21-24

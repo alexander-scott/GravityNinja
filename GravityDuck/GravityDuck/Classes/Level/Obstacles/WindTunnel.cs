@@ -40,7 +40,7 @@ namespace GravityDuck
 				
 				sprite.TileIndex2D = new Vector2i(tileIndex, 0);
 				tileIndex++;
-			}, 0.07f);
+			}, 0.10f);
 		}
 		
 		public void setDirection(int rotation)
@@ -49,6 +49,7 @@ namespace GravityDuck
 			{
 				case 0:
 					windDirection = Direction.UP;
+
 				break;
 				
 				case 360:
@@ -70,17 +71,12 @@ namespace GravityDuck
 			
 			if(windDirection == Direction.LEFT)
 			{
-				sprite.Rotate(FMath.PI/2);
-				
+				sprite.Rotate(FMath.PI);
 			}
-			else if(windDirection == Direction.DOWN)
-				{
-					sprite.Rotate(FMath.PI);
-				}
-				else if(windDirection == Direction.RIGHT)
-					{
-						sprite.Rotate(-FMath.PI/2);
-					}
+			else if(windDirection == Direction.RIGHT)
+			{
+				sprite.Rotate(FMath.PI);
+			}
 		}	
 		
 		public Vector2 CalculateForce(Player player)
@@ -166,7 +162,7 @@ namespace GravityDuck
 					{
 						if(player.GetPos().X < sprite.Position.X || player.GetPos().X > sprite.Position.X + sprite.Quad.S.X)
 							return false;
-						else if(player.GetPos().Y > sprite.Position.Y || player.GetPos().Y < sprite.Position.Y + windDistance)
+						else if(player.GetPos().Y > sprite.Position.Y || player.GetPos().Y < sprite.Position.Y - windDistance)
 							return false;
 						else
 							return true;

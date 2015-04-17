@@ -520,7 +520,7 @@ namespace GravityDuck
 				scene.AddChild(windTunnelsObj[i].getSprite());
 			}
 			
-			if(spikes.Count != 0)
+			if(windTunnels.Count != 0)
 			{
 				return windTunnelsObj;
 			}
@@ -535,6 +535,14 @@ namespace GravityDuck
 			scene.AddChild(levelFlag.GetSprite());
 			
 			return levelFlag;
+		}
+		
+		public int CalculateOverallLevelScore()
+		{
+			int NumOfCoins = coins.Count;
+			int NumOfGems = gems.Count;
+			int overallLevelScore = (NumOfCoins*50) +(NumOfGems*200);
+			return overallLevelScore;
 		}
 	}
 }

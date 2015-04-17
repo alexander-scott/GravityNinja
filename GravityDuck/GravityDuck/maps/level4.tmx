@@ -178,21 +178,21 @@
   </object>
   <object id="24" name="WindFan" x="154" y="1190" width="80" height="70">
    <properties>
-    <property name="Rotation" value="180"/>
+    <property name="Rotation" value="0"/>
     <property name="Type" value="Wind Tunnel"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="27" name="WindFan2" x="460" y="716" width="80" height="70">
+  <object id="27" name="WindFan2" x="460" y="800" width="80" height="70">
    <properties>
-    <property name="Rotation" value="0"/>
+    <property name="Rotation" value="180"/>
     <property name="Type" value="Wind Tunnel"/>
    </properties>
    <ellipse/>
   </object>
   <object id="28" name="WindFan3" x="150" y="328" width="80" height="70">
    <properties>
-    <property name="Rotation" value="180"/>
+    <property name="Rotation" value="270"/>
     <property name="Type" value="Wind Tunnel"/>
    </properties>
    <ellipse/>

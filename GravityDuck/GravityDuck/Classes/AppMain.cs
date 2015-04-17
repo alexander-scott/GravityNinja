@@ -49,6 +49,7 @@ namespace GravityDuck
 		private static int score;
 		private static SpriteUV	gravityArrow;
 		private static SpriteUV highscoreTab;
+		private static int overallLevelScore;
 		
 		//------ Player Movement ------\\
 		private static Vector2 gravityVector = new Vector2(0.0f, -1.0f); //The direction in which gravity is currently going
@@ -74,6 +75,7 @@ namespace GravityDuck
 		private static float endRotation;
 		public static float lastTime = 0.0f;
 		public static bool zoomedIn = false;
+		public static bool rotationNotAllowed = false;
 
 //		private static float upperCameraRange = FMath.PI/4;
 //		private static float lowerCameraRange = -FMath.PI/4;
@@ -92,8 +94,8 @@ namespace GravityDuck
 //		private static bool levelSelected = false;
 		
 		//------ Level Data ------\\
-		private static int currentLevel = 1; //The highest level we have unlocked, Read this in from file eventually (local highscores)
-		private static int highestUnlockedLevel = 20;
+		private static int currentLevel = 0; //The highest level we have unlocked, Read this in from file eventually (local highscores)
+		private static int highestUnlockedLevel = 0;
 		private static int totalNumOfLevels = 27;
 		private static List<List<Highscore>> loadedLevelHighscores;
 		private static Highscore currentScore;
@@ -295,6 +297,16 @@ namespace GravityDuck
 			Director.Initialize ();
 			UISystem.Initialize(Director.Instance.GL.Context);
 			
+			//Load game data
+			if(doesDataFileExist = System.IO.File.Exists(SAVE_DATA))
+			{
+				LoadData();
+			}
+			
+			maze = null;
+			
+			currentLevel = highestUnlockedLevel;
+			
 			//Add Music and Sound Effects
 			AudioManager.AddMusic("/Application/sounds/Music/levelMusic.mp3", "Level1");
 			
@@ -332,13 +344,7 @@ namespace GravityDuck
 		}
 		
 		public static void InitializeGame()
-		{
-			//Load game data
-			if(doesDataFileExist = System.IO.File.Exists(SAVE_DATA))
-			{
-				LoadData();
-			}
-			
+		{		
 			//Background
 			background = new Background(gameScene, new Vector2(190.0f, 1215f));
 			
@@ -348,7 +354,7 @@ namespace GravityDuck
 			//Player
 			player = new Player(gameScene, maze.GetSpawnPoint());
 
-			TextureInfo texture = new TextureInfo("/Application/textures/arrow.png");
+			TextureInfo texture		= new TextureInfo("/Application/textures/arrow.png");
 			gravityArrow 			= new SpriteUV();
 			gravityArrow 			= new SpriteUV(texture);
 			gravityArrow.Quad.S 	= texture.TextureSizef;
@@ -525,6 +531,7 @@ namespace GravityDuck
 						play = true;
 						player.setVisibility(true);
 						LoadLoadingTextures(false, 100);
+						maze.SetLevelFinished(false);
 					}
 				break;
 				}
@@ -553,8 +560,6 @@ namespace GravityDuck
 				}
 				case States.LEVELCOMPLETE:
 				{
-					if (currentLevel > highestUnlockedLevel)
-						highestUnlockedLevel = currentLevel;
 					if (levelComplete.GetState() == 0) //Waiting for the user to make a choice
 					{
 						
@@ -562,6 +567,8 @@ namespace GravityDuck
 					else if (levelComplete.GetState() == 1) //Back to level select screen
 					{
 						currentLevel++;
+						if (currentLevel > highestUnlockedLevel)
+							highestUnlockedLevel = currentLevel;
 						maze.RemoveLevel();
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(480.0f, 272.0f)); 
 						levelSelectScreen.SetVisible(true, highestUnlockedLevel);
@@ -585,6 +592,8 @@ namespace GravityDuck
 					}
 					else if (levelComplete.GetState() == 2) //Replay the current level
 					{
+						if (currentLevel+1 > highestUnlockedLevel)
+							highestUnlockedLevel = currentLevel+1;
 						maze.RemoveLevel();
 						maze.LoadLevel(gameScene, currentLevel);
 						player.SetPos(maze.GetSpawnPoint());
@@ -601,9 +610,12 @@ namespace GravityDuck
 						levelComplete.ReOrderZ(gameScene);
 						gameOverScreen.ReOrderZ(gameScene);
 						score = 0;
+						maze.SetLevelFinished(false);
 					}
 					else if (levelComplete.GetState() == 3) //Play the next level
 					{
+						if (currentLevel > highestUnlockedLevel)
+							highestUnlockedLevel = currentLevel;
 						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
 						currentLevel++;
 						LoadLoadingTextures(true, currentLevel);
@@ -631,90 +643,11 @@ namespace GravityDuck
 						levelComplete.ReOrderZ(gameScene);
 						gameOverScreen.ReOrderZ(gameScene);
 						player.SetPos(maze.GetSpawnPoint());
+						maze.SetLevelFinished(false);
 					}
 				break;
 				}
 			}
-			
-//			if (!play)
-//			{
-//				if (!loaded) //Update title screen
-//					title.Update();
-//				else if (levelSelect) //Update level select screen
-//					levelSelectScreen.Update();
-//				else //Update loading screen
-//					loadingScreen.Update((int)timer.Milliseconds()); 
-//				
-//				if (title.CheckPlay() && !loaded && !startLoading) //If we have clicked play on the title screen
-//				{
-//					levelSelectScreen.SetVisible(true, currentLevel);
-//					title.RemoveAll();
-//					levelSelected = true;
-//				}
-//				
-//				if (levelSelected && levelSelectScreen.Selected()) //If we have picked a level
-//				{
-//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-//					levelSelect = true;
-//					currentLevel = levelSelectScreen.levelSelected;
-//				}
-//				else if (levelSelected && levelSelectScreen.BackPressed())
-//				{
-//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-//					levelSelected = false;
-//					levelSelectScreen.SetVisible(false, currentLevel);
-//					title = new TitleScreen(gameScene);	
-//				}
-//				
-//				if (levelSelect && !loaded && !startLoading)
-//				{
-//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-//					startLoading = true;
-//					loadingScreen.SetVisible(true, currentLevel);
-//					timeStamp1 = (int)timer.Milliseconds() + 1;
-//					levelSelect = false;
-//					levelSelected = false;
-//				}
-//				
-//				if (startLoading && timer.Milliseconds() > timeStamp1) //If the level has loaded
-//				{
-//					levelSelectScreen.SetVisible(false, currentLevel);
-//					InitializeGame();
-//					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
-//					loaded = true;
-//					startLoading = false;
-//					title.RemoveAll();
-//				}
-//				
-//				if (loaded && loadingScreen.CheckPlay()) //If the play button has been clicked on the loading screen
-//				{
-//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-//					StartLevel();
-//					play = true;
-//				}
-//			} 
-//			else
-//			{
-//				
-//				if (!pause && player.IsAlive())
-//				{
-//					time = (int)timer.Seconds();
-//					player.Update(gravityVector, playerDirection, movementVector, invert, falling, additionalForces);
-//					
-//					UpdateCamera();
-//					CheckCollisions();
-//					currentTime = time;
-//					UpdateUI ();
-//				}
-//				else if (!player.IsAlive())
-//				{
-//					gameOverScreen.Update();
-//					if (gameOverScreen.CheckRestart())
-//					{
-//						restartGame();
-//					}
-//				}
-//			}
 		}
 		
 		public static void CheckInput()
@@ -730,8 +663,8 @@ namespace GravityDuck
 			
 			if (Input2.GamePad0.Triangle.Down) //Reset player
 			{
-				player.SetPos(new Vector2(190.0f, 330.0f));
-				player.SetVelocity(0.5f);
+				player.SetPos(maze.GetSpawnPoint());
+				player.SetVelocity(0.0f);
 				cameraRotation = FMath.PI/2.0f;
 			}
 			
@@ -776,7 +709,7 @@ namespace GravityDuck
 				keyboardVector = new Vector2(0.0f, 0.0f);
 				
 			}
-
+			
 			foreach(TouchData data in touches) //Get touch data
 			{
 				if(data.Status.Equals(TouchStatus.Down))
@@ -789,8 +722,17 @@ namespace GravityDuck
 				{
 					newTouchPos = new Vector2( data.X, data.Y ); // Records the last position of swipe if movement is detected.	RMDS
 				}
-
-				if(data.Status.Equals(TouchStatus.Up))	
+				
+				if(maze == null)
+				{
+					rotationNotAllowed = true;
+				}
+				else
+				{
+					rotationNotAllowed = maze.IsLevelComplete();
+				}
+				
+				if(data.Status.Equals(TouchStatus.Up) && rotationNotAllowed == false)	
 				{			
 					if (cameraRotation > 60f)
 						cameraRotation = 0;
@@ -835,44 +777,52 @@ namespace GravityDuck
 			
 			if (rotating) //If we're rotating the camera
 			{
-				if (!sideRotation) //Rotating upwards
+				if (!player.IsAlive())
 				{
-					cameraRotation += FMath.PI/10;
-					if(cameraRotation >= endRotation)
-						rotating = false;
-					else
-						rotating = true;
+					cameraRotation = FMath.PI/2.0f;
+					rotating = false;
 				}
 				else
 				{
-					if (rightRotation) //Rotating right
+					if (!sideRotation) //Rotating upwards
 					{
 						cameraRotation += FMath.PI/10;
 						if(cameraRotation >= endRotation)
-						{
 							rotating = false;
-							sideRotation = false;
-							rightRotation = false;
-						}
 						else
-						{
 							rotating = true;
-							rightRotation = true;
-						}
 					}
-					else //Rotating left
+					else
 					{
-						cameraRotation -= FMath.PI/10;
-						if(cameraRotation <= endRotation)
+						if (rightRotation) //Rotating right
 						{
-							rotating = false;
-							sideRotation = false;
-							rightRotation = false;
+							cameraRotation += FMath.PI/10;
+							if(cameraRotation >= endRotation)
+							{
+								rotating = false;
+								sideRotation = false;
+								rightRotation = false;
+							}
+							else
+							{
+								rotating = true;
+								rightRotation = true;
+							}
 						}
-						else
-							rotating = true;
-					}
-				}		
+						else //Rotating left
+						{
+							cameraRotation -= FMath.PI/10;
+							if(cameraRotation <= endRotation)
+							{
+								rotating = false;
+								sideRotation = false;
+								rightRotation = false;
+							}
+							else
+								rotating = true;
+						}
+					}		
+				}
 			}
 			
 			if(play)
@@ -1061,16 +1011,20 @@ namespace GravityDuck
 			{
 				cameraRotation = FMath.PI/2.0f;
 				UpdateCamera();
+				
+				overallLevelScore = maze.GetOverallLevelScore();
+				
 				int starScore = 0;
-				if(score <= 500)
+				
+				if(score <= (int)(overallLevelScore * 0.33))
 				{
 					starScore = 1;
 				}
-				else if(score > 500 && score <= 800)
+				else if(score > (int)(overallLevelScore * 0.33) && score <= (int)(overallLevelScore * 0.66))
 				{
 					starScore = 2;
 				}
-				else if(score > 800 && score <= 1000)
+				else if(score > (int)(overallLevelScore * 0.66))
 				{
 					starScore = 3;
 				}
@@ -1154,14 +1108,20 @@ namespace GravityDuck
 		
 		public static void restartGame()
 		{
-			//cameraRotation = FMath.PI/2.0f;
+			cameraRotation = FMath.PI/2.0f;
 			player.setAlive();
 			player.SetPos(maze.GetSpawnPoint());
+			player.SetVelocity(0.0f);
 			gameOverScreen.Reset();
 			play = true;
 			pause = false;
 			score = 0;
-			
+			maze.RemoveLevel();
+			maze.LoadLevel(gameScene, currentLevel);
+			levelComplete.ReOrderZ(gameScene);
+			gameOverScreen.ReOrderZ(gameScene);
+			currentState = States.PLAYING;
+
 			highscoreTab.Visible = false;
 			
 			for(int i = 0; i < 5; i++)
@@ -1171,7 +1131,6 @@ namespace GravityDuck
 			timer.Reset();
 			//endRotation = FMath.PI/2.0f;
 			//cameraRotation = FMath.PI/2.0f;
-			SaveData();	
 		}
 		
 		
@@ -1266,16 +1225,28 @@ namespace GravityDuck
 						//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(1).InnerText =
 						//	loadedHighscores[i].GetScore().ToString();	
 						
-						currentNode.ChildNodes.Item(0 + (j * 2)).InnerText =
-							loadedLevelHighscores[i][j].GetPlayerName();
 						currentNode.ChildNodes.Item(1 + (j * 2)).InnerText =
+							loadedLevelHighscores[i][j].GetPlayerName();
+						currentNode.ChildNodes.Item(2 + (j * 2)).InnerText =
 							loadedLevelHighscores[i][j].GetScore().ToString();	
 					}		
 				}				
 		
-		        doc.Save(@SAVE_DATA);			
+				// Unlock the following level
+				if(i < highestUnlockedLevel)
+				{				
+					doc.SelectSingleNode("game/level[@id=\"" + (i).ToString() + "\"]").ChildNodes.Item(0).InnerText = "unlocked";
+				}
+				else if(i == highestUnlockedLevel && highestUnlockedLevel == currentLevel)
+				{				
+					doc.SelectSingleNode("game/level[@id=\"" + (i+1).ToString() + "\"]").ChildNodes.Item(0).InnerText = "unlocked";
+				}
+				
+		        doc.Save(@SAVE_DATA);	
+				
 			}		
-									
+			//highestUnlockedLevel = i + 1;	
+			
 		}
 		
 		public static bool LoadData() // Load the game data (highscore)	RMDS
@@ -1299,18 +1270,27 @@ namespace GravityDuck
 			
 				while(currentNode != null)
 				{			
+					bool unlocked;
 					string playerName;
 					int highscore;
 					List<Highscore> levelHighscores = new List<Highscore>();
 					
+					if(currentNode.ChildNodes.Item(0).InnerText.Equals("unlocked"))
+						unlocked = true;
+					else
+						unlocked = false;
+						
+					if(unlocked)
+						highestUnlockedLevel = level;
+					
 					for(int i = 0; i < 5; i++)
 					{
-						playerName = currentNode.ChildNodes.Item(0 + (i * 2)).InnerText;
+						playerName = currentNode.ChildNodes.Item(1 + (i * 2)).InnerText;
 						
 						highscore = 0;
 						
-						if(!currentNode.ChildNodes.Item(1 + (i * 2)).InnerText.Equals(""))
-							highscore = Int32.Parse(currentNode.ChildNodes.Item(1 + (i * 2)).InnerText);
+						if(!currentNode.ChildNodes.Item(2 + (i * 2)).InnerText.Equals(""))
+							highscore = Int32.Parse(currentNode.ChildNodes.Item(2 + (i * 2)).InnerText);
 						
 						Highscore currentLoad = new Highscore(level, highscore, playerName);
 						
@@ -1349,10 +1329,12 @@ namespace GravityDuck
 				
 				if(currentNode != null)
 				{
+					currentNode.ChildNodes.Item(0).InnerText = "locked";
+					
 					for(int j = 0; j < 5; j++)
 					{
-						currentNode.ChildNodes.Item(0 + (j * 2)).InnerText = "";
-						currentNode.ChildNodes.Item(1 + (j * 2)).InnerText = "";	
+						currentNode.ChildNodes.Item(1 + (j * 2)).InnerText = "";
+						currentNode.ChildNodes.Item(2 + (j * 2)).InnerText = "";	
 					}		
 				}
 				//// Reset all values
