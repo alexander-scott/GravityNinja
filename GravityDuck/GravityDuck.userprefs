@@ -1,11 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\AppMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\Classes\Screens\LoadingScreen.cs">
     <Files>
       <File FileName="GravityDuck\Classes\Level\Background.cs" Line="48" Column="35" />
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="174" Column="35" />
-      <File FileName="GravityDuck\Classes\Screens\LevelSelectScreen.cs" Line="30" Column="79" />
-      <File FileName="c:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\Classes\Screens\LoadingScreen.cs" Line="61" Column="1" />
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="96" Column="47" />
+      <File FileName="GravityDuck\Classes\Screens\LevelSelectScreen.cs" Line="252" Column="51" />
+      <File FileName="c:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\Classes\Screens\LoadingScreen.cs" Line="232" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

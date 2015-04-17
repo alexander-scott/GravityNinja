@@ -93,7 +93,7 @@ namespace GravityDuck
 		
 		//------ Level Data ------\\
 		private static int currentLevel = 1; //The highest level we have unlocked, Read this in from file eventually (local highscores)
-		private static int highestUnlockedLevel = 13;
+		private static int highestUnlockedLevel = 20;
 		private static int totalNumOfLevels = 27;
 		private static List<List<Highscore>> loadedLevelHighscores;
 		private static Highscore currentScore;
@@ -153,6 +153,21 @@ namespace GravityDuck
 					loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
 				else if (levelToLoad ==13)
 					loadingTexture13	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+				else if (levelToLoad ==14)
+					loadingTexture14	= new TextureInfo("/Application/textures/LoadingScreens/Level14Load.png");
+				else if (levelToLoad ==15)
+					loadingTexture15	= new TextureInfo("/Application/textures/LoadingScreens/Level15Load.png");
+				else if (levelToLoad ==16)
+					loadingTexture16	= new TextureInfo("/Application/textures/LoadingScreens/Level16Load.png");
+				else if (levelToLoad ==17)
+					loadingTexture17	= new TextureInfo("/Application/textures/LoadingScreens/Level17Load.png");
+				else if (levelToLoad ==18)
+					loadingTexture18	= new TextureInfo("/Application/textures/LoadingScreens/Level18Load.png");
+				else if (levelToLoad ==19)
+					loadingTexture19	= new TextureInfo("/Application/textures/LoadingScreens/Level19Load.png");
+				else if (levelToLoad ==20)
+					loadingTexture20	= new TextureInfo("/Application/textures/LoadingScreens/Level20Load.png");
+				
 				else
 				{
 				if (highestUnlockedLevel >= 0)
@@ -183,6 +198,20 @@ namespace GravityDuck
 					loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
 				if (highestUnlockedLevel >= 13)
 					loadingTexture13	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+				if (highestUnlockedLevel >= 14)
+					loadingTexture14	= new TextureInfo("/Application/textures/LoadingScreens/Level14Load.png");
+				if (highestUnlockedLevel >= 15)
+					loadingTexture15	= new TextureInfo("/Application/textures/LoadingScreens/Level15Load.png");
+				if (highestUnlockedLevel >= 16)
+					loadingTexture16	= new TextureInfo("/Application/textures/LoadingScreens/Level16Load.png");
+				if (highestUnlockedLevel >= 17)
+					loadingTexture17	= new TextureInfo("/Application/textures/LoadingScreens/Level17Load.png");
+				if (highestUnlockedLevel >= 18)
+					loadingTexture18	= new TextureInfo("/Application/textures/LoadingScreens/Level18Load.png");
+				if (highestUnlockedLevel >= 19)
+					loadingTexture19	= new TextureInfo("/Application/textures/LoadingScreens/Level19Load.png");
+				if (highestUnlockedLevel >= 20)
+					loadingTexture20	= new TextureInfo("/Application/textures/LoadingScreens/Level20Load.png");
 					//loadingTexture14 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
 					//loadingTexture15 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
 					//loadingTexture16 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
@@ -201,20 +230,48 @@ namespace GravityDuck
 			}
 			else
 			{
-				loadingTexture0.Dispose();
-				loadingTexture1.Dispose();
-				loadingTexture2.Dispose();
-				loadingTexture3.Dispose();
-				loadingTexture4.Dispose();
-				loadingTexture5.Dispose();
-				loadingTexture6.Dispose();
-				loadingTexture7.Dispose();
-				loadingTexture8.Dispose();
-				loadingTexture9.Dispose();
-				loadingTexture10.Dispose();
-				loadingTexture11.Dispose();
-				loadingTexture12.Dispose();
-				loadingTexture13.Dispose();
+				if (highestUnlockedLevel >= 0)
+					loadingTexture0.Dispose();
+				if (highestUnlockedLevel >= 1)
+					loadingTexture1.Dispose();
+				if (highestUnlockedLevel >= 2)
+					loadingTexture2.Dispose();
+				if (highestUnlockedLevel >= 3)
+					loadingTexture3.Dispose();
+				if (highestUnlockedLevel >= 4)
+					loadingTexture4.Dispose();
+				if (highestUnlockedLevel >= 5)
+					loadingTexture5.Dispose();
+				if (highestUnlockedLevel >= 6)
+					loadingTexture6.Dispose();
+				if (highestUnlockedLevel >= 7)
+					loadingTexture7.Dispose();
+				if (highestUnlockedLevel >= 8)
+					loadingTexture8.Dispose();
+				if (highestUnlockedLevel >= 9)
+					loadingTexture9.Dispose();
+				if (highestUnlockedLevel >= 10)
+					loadingTexture10.Dispose();
+				if (highestUnlockedLevel >= 11)
+					loadingTexture11.Dispose();
+				if (highestUnlockedLevel >= 12)
+					loadingTexture12.Dispose();
+				if (highestUnlockedLevel >= 13)
+					loadingTexture13.Dispose();
+				if (highestUnlockedLevel >= 14)
+					loadingTexture14.Dispose();
+				if (highestUnlockedLevel >= 15)
+					loadingTexture15.Dispose();
+				if (highestUnlockedLevel >= 16)
+					loadingTexture16.Dispose();
+				if (highestUnlockedLevel >= 17)
+					loadingTexture17.Dispose();
+				if (highestUnlockedLevel >= 18)
+					loadingTexture18.Dispose();
+				if (highestUnlockedLevel >= 19)
+					loadingTexture19.Dispose();
+				if (highestUnlockedLevel >= 20)
+					loadingTexture20.Dispose();
 				loadedTextures = false;
 			}
 			

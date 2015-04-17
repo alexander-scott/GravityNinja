@@ -223,6 +223,34 @@ namespace GravityDuck
 				{
 					sprite.TextureInfo = AppMain.loadingTexture13;
 				}
+				else if (levelSelected == 14)
+				{
+					sprite.TextureInfo = AppMain.loadingTexture14;
+				}
+				else if (levelSelected == 15)
+				{
+					sprite.TextureInfo = AppMain.loadingTexture15;
+				}
+				else if (levelSelected == 16)
+				{
+					sprite.TextureInfo = AppMain.loadingTexture16;
+				}
+				else if (levelSelected == 17)
+				{
+					sprite.TextureInfo = AppMain.loadingTexture17;
+				}
+				else if (levelSelected == 18)
+				{
+					sprite.TextureInfo = AppMain.loadingTexture18;
+				}
+				else if (levelSelected == 19)
+				{
+					sprite.TextureInfo = AppMain.loadingTexture19;
+				}
+				else if (levelSelected == 20)
+				{
+					sprite.TextureInfo = AppMain.loadingTexture20;
+				}
 			}		
 		}
 		

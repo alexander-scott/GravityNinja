@@ -191,5 +191,12 @@
     <Content Include="textures\LevelBackgrounds\bground7.PNG" />
     <Content Include="assets\HUD Centre Piece.png" />
     <Content Include="assets\HUD Side Piece.png" />
+    <Content Include="textures\LoadingScreens\Level14Load.png" />
+    <Content Include="textures\LoadingScreens\Level15Load.png" />
+    <Content Include="textures\LoadingScreens\Level16Load.png" />
+    <Content Include="textures\LoadingScreens\Level17Load.png" />
+    <Content Include="textures\LoadingScreens\Level18Load.png" />
+    <Content Include="textures\LoadingScreens\Level19Load.png" />
+    <Content Include="textures\LoadingScreens\Level20Load.png" />
   </ItemGroup>
 </Project>
