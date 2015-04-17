@@ -10,7 +10,7 @@ namespace GravityDuck
 {
 	public class Gem : Collectable
 	{
-		public Gem (Scene scene) : base(scene)
+		public Gem () : base()
 		{
 			textureInfo = new TextureInfo(new Texture2D("/Application/textures/Level/gem.png", false), new Vector2i(8, 1));
 			
@@ -19,7 +19,7 @@ namespace GravityDuck
 			
 			tileIndex = 0;
 			
-			scoreValue = 20;
+			scoreValue = 200;
 			
 			sprite.ScheduleInterval( (dt) => 
 			{
@@ -31,8 +31,6 @@ namespace GravityDuck
 				sprite.TileIndex2D = new Vector2i(tileIndex, 0);
 				tileIndex++;
 			}, 0.12f);
-			
-			scene.AddChild(sprite);
 		}
 	}
 }

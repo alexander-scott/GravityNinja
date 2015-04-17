@@ -10,7 +10,7 @@ namespace GravityDuck
 {
 	public class Coin : Collectable
 	{
-		public Coin (Scene scene) : base(scene)
+		public Coin () : base()
 		{
 			textureInfo = new TextureInfo(new Texture2D("/Application/textures/Level/goldCoin.png", false), new Vector2i(6, 1));
 			
@@ -19,7 +19,7 @@ namespace GravityDuck
 			
 			tileIndex = 0;
 			
-			scoreValue = 5;
+			scoreValue = 50;
 			
 			sprite.ScheduleInterval( (dt) => 
 			{
@@ -31,8 +31,6 @@ namespace GravityDuck
 				sprite.TileIndex2D = new Vector2i(tileIndex, 0);
 				tileIndex++;
 			}, 0.10f);
-			
-			scene.AddChild(sprite);
 		}
 	}
 }

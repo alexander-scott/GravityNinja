@@ -24,16 +24,18 @@ namespace GravityDuck
 		private static Vector2      velocity = new Vector2(0.0f, 0.0f);
 		private static Vector2      acceleration = new Vector2(0.0f, 0.0f);
 		private static float     	duckRotation = 0.0f;
-		private static float		gravSpeed = 0.4f, maxGrav = 6.0f, gravVelocity = 0.5f;
+		private static float		gravSpeed = 0.5f, maxGrav = 10.0f, gravVelocity = 2.5f;
+		private static float 		momentum = 0.0f;
+		private static float 		mass = 10.0f;
 		
-		public Player (Scene scene)
+		public Player (Scene scene, Vector2 spawnPoint)
 		{	
 			textureInfo = new TextureInfo("/Application/textures/ninja2.png"); //Load in our lovely duck texture
 			
 			sprite	 		= new SpriteUV();
 			sprite 			= new SpriteUV(textureInfo);	
 			sprite.Quad.S 	= textureInfo.TextureSizef; //Might need to make smaller or bigger in the future
-			sprite.Position = new Vector2(190.0f, 330.0f);; //Starting position (will be changed)
+			sprite.Position = spawnPoint; //Starting position (will be changed)
 			sprite.CenterSprite(new Vector2(0.5f,0.5f)); //Set the origin of the sprite to the centre of the duck
 			sprite.Scale    = new Vector2(0.5f, 0.5f);
 			sprite.Angle = 0.0f;
@@ -43,7 +45,7 @@ namespace GravityDuck
 		}
 		
 		//Update player V2.1 @AS
-		public void Update(Vector2 gravity, Vector2 rotate, Vector2 movement, bool invert, bool falling)
+		public void Update(Vector2 gravity, Vector2 rotate, Vector2 movement, bool invert, bool falling, Vector2 additionalForces)
 		{	        
 			duckRotation = -(float)FMath.Atan2(rotate.X, rotate.Y);
 			sprite.Angle = duckRotation; //Rotate the duck so it's always facing upright
@@ -52,10 +54,18 @@ namespace GravityDuck
 			if (!falling)
 			{
 				if(!invert)
-					tempDir = movement*5; //Normal movement caused by tilting the device
+				{
+					if (additionalForces != new Vector2(0.0f, 0.0f))
+						tempDir = movement*5*additionalForces; //Normal movement caused by tilting the device
+					else
+						tempDir = movement*5;
+				}
 				else
 				{
-					tempDir = movement*5; //Stop player moving
+					if (additionalForces != new Vector2(0.0f, 0.0f))
+						tempDir = movement*5*additionalForces; //Normal movement caused by tilting the device
+					else
+						tempDir = movement*5;
 				}
 			}
 			else
@@ -79,11 +89,13 @@ namespace GravityDuck
 					else
 						gravVelocity += gravSpeed;
 				}
-			
 			}
 							
+			Vector2 velocityChange = new Vector2((tempDir.X * gravVelocity) + additionalForces.X, (tempDir.Y * gravVelocity) + additionalForces.Y);
 			//Move the player
-			sprite.Position = new Vector2(sprite.Position.X + ((tempDir.X) * gravVelocity), sprite.Position.Y + ((tempDir.Y) * gravVelocity));	
+			sprite.Position = new Vector2(sprite.Position.X + velocityChange.X, sprite.Position.Y + velocityChange.Y);
+			
+			momentum = 	velocityChange.Length() * mass;
 		}                  
 		
 		public void Bounce(float side)
@@ -130,12 +142,20 @@ namespace GravityDuck
 		
 		public void resetPosition()
 		{
-			sprite.Position = new Vector2(190.0f, 330.0f);
+			sprite.Position = new Vector2(175.0f, 184.0f);
 		}
 		
 		public void setAlive()
 		{
 			alive = true;
+		}
+		
+		public void setVisibility(bool visible)
+		{
+			if(visible)
+				sprite.Visible = true;
+			else
+				sprite.Visible = false;
 		}
 		
 		public bool CheckFalling() { return falling; }
@@ -148,6 +168,8 @@ namespace GravityDuck
 		
 		public Vector2 GetPos()	{ return sprite.Position; }
 		
+		public float GetMomentum() { return momentum; }
+			
 		public bool IsAlive(){ return alive; }
 		
 		public Bounds2 getBounds() {return sprite.GetlContentLocalBounds(); }

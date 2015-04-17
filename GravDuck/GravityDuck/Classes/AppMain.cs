@@ -9,6 +9,8 @@ using Sce.PlayStation.Core.Input;
 using Sce.PlayStation.HighLevel.GameEngine2D;
 using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 using Sce.PlayStation.HighLevel.UI;
+using System.Xml.Serialization;
+using System.Xml;
 	
 namespace GravityDuck
 {
@@ -16,9 +18,13 @@ namespace GravityDuck
 	{
 		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene 	gameScene;
 		
+		private static string SAVE_DATA = "/Documents/savedata.xml";
+		private static bool	doesDataFileExist = false;
+		
 		//------ UI ------\\
 		private static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
 		private static Sce.PlayStation.HighLevel.UI.Label				scoreLabel;
+		private static Sce.PlayStation.HighLevel.UI.Label[]				highscoreLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				levelScore;
 		private static Sce.PlayStation.HighLevel.UI.Label				timerLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				levelTimer;
@@ -31,6 +37,7 @@ namespace GravityDuck
 		private static LevelComplete levelComplete;
 		private static LoadingScreen loadingScreen;
 		private static GameOverScreen gameOverScreen;
+		private static LevelSelectScreen levelSelectScreen;
 				
 		//------ HUD ------\\
 		private static Timer timer;
@@ -38,6 +45,7 @@ namespace GravityDuck
 		private static int currentTime;
 		private static int score;
 		private static SpriteUV	gravityArrow;
+		private static SpriteUV highscoreTab;
 		
 		//------ Player Movement ------\\
 		private static Vector2 gravityVector = new Vector2(0.0f, -1.0f); //The direction in which gravity is currently going
@@ -48,6 +56,7 @@ namespace GravityDuck
 		private static bool falling = true; //If the player isn't touching a tile then he's falling
 		private static Bounds2 playerBox; //Non-rotatable bounds that encompass the player
 		public static int currGrav = 1; //ID for the 4 types of camera rotation
+		public static Vector2 additionalForces = new Vector2(0.0f, 0.0f); // External forces from other entities (Obstacles)
 		
 		//------ Touch Data ------\\
 		private static Vector2 oldTouchPos = new Vector2( 0.0f, 0.0f ); // Position of first touch on screen
@@ -62,15 +71,27 @@ namespace GravityDuck
 		private static float endRotation;
 		public static float lastTime = 0.0f;
 		public static bool zoomedIn = false;
-		private static float upperCameraRange = FMath.PI/4;
-		private static float lowerCameraRange = -FMath.PI/4;
+
+//		private static float upperCameraRange = FMath.PI/4;
+//		private static float lowerCameraRange = -FMath.PI/4;
 		
 		//------ Menu Data ------\\
 		private static bool play = false;
 		private static bool pause = false;
-		private static bool loaded = false;
-		private static bool startLoading = false;
-		private static int timeStamp1, timeStamp2;
+		private static int timeStamp1;
+		private enum States {TITLE, LEVELSELECT, LOADING, LOADED, PLAYING, LEVELCOMPLETE};
+		private static States currentState;
+//		private static bool loaded = false;
+//		private static bool startLoading = false;
+//		private static bool levelSelect = false;
+//		private static bool levelSelected = false;
+		
+		//------ Level Data ------\\
+		private static int currentLevel = 1; //The level to load
+		private static int highestUnlockedLevel = 1; //Read this in from file eventually (local highscores)
+		private static int totalNumOfLevels = 27;
+		private static List<List<Highscore>> loadedLevelHighscores;
+		private static Highscore currentScore;
 		
 		public static void Main (string[] args)
 		{
@@ -91,12 +112,19 @@ namespace GravityDuck
 				Director.Instance.GL.Context.SwapBuffers();
 				Director.Instance.PostSwap();
 			}
-			
-			background.Dispose();
-			maze.Dispose();
-			player.Dispose();
-			
+	
 			Director.Terminate ();
+		}
+		
+		public static void Dispose()
+		{	
+			background.Dispose();
+			//maze.Dispose();
+			player.Dispose();
+			gameOverScreen.Dispose();
+			levelComplete.Dispose();
+			levelSelectScreen.Dispose(true);
+			loadingScreen.Dispose();	
 		}
 
 		public static void Initialize ()
@@ -115,19 +143,22 @@ namespace GravityDuck
 			AudioManager.AddSound("/Application/sounds/Effects/levelFinish.wav", "Level Finished");
 			AudioManager.AddSound("/Application/sounds/Effects/click.wav", "Click");
 			
-			AudioManager.PlayMusic("Level1", true, 1.0f, 1.0f);
-			
 			//Set game scene
 			gameScene = new Sce.PlayStation.HighLevel.GameEngine2D.Scene();
 			gameScene.Camera.SetViewFromViewport();
 			
+			currentState = States.TITLE;
+			
+			title = new TitleScreen(gameScene);	
+			AudioManager.PlayMusic("Level1", true, 1.0f, 1.0f);
 			
 			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
 			
-			title = new TitleScreen(gameScene);	
+			levelSelectScreen = new LevelSelectScreen(gameScene, uiScene, highestUnlockedLevel);
+			levelSelectScreen.SetVisible(false, currentLevel);
 			
 			loadingScreen = new LoadingScreen(gameScene, uiScene);
-			loadingScreen.SetVisible(false);
+			loadingScreen.SetVisible(false, currentLevel);
 			
 			//Begin Timer
 			timer = new Timer();
@@ -138,28 +169,34 @@ namespace GravityDuck
 		
 		public static void InitializeGame()
 		{
-			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
-			//Background
-			background = new Background(gameScene);
+			//Load game data
+			if(doesDataFileExist = System.IO.File.Exists(SAVE_DATA))
+			{
+				LoadData();
+			}
 			
-			//Player
-			player = new Player(gameScene);
+			//Background
+			background = new Background(gameScene, new Vector2(190.0f, 1215f));
 			
 			//Maze
-			maze = new Maze(gameScene);
+			maze = new Maze(gameScene, currentLevel);
+			
+			//Player
+			player = new Player(gameScene, maze.GetSpawnPoint());
 
 			TextureInfo texture = new TextureInfo("/Application/textures/arrow.png");
 			gravityArrow 			= new SpriteUV();
 			gravityArrow 			= new SpriteUV(texture);
 			gravityArrow.Quad.S 	= texture.TextureSizef;
-			gravityArrow.Scale 		= new Vector2(1.0f, 1.0f);
+			gravityArrow.Scale 		= new Vector2(0.5f, .5f);
 			gravityArrow.Pivot 		= new Vector2(gravityArrow.Quad.S.X/2, gravityArrow.Quad.S.Y);
 			gravityArrow.Position 	= new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f,
 			                                  (Director.Instance.GL.Context.GetViewport().Height*0.5f) - gravityArrow.Quad.S.Y);
-			gravityArrow.Visible = false;
-			gameScene.AddChild(gravityArrow);
 			
-			levelComplete = new LevelComplete(gameScene);
+			gameScene.AddChild(gravityArrow);
+			gravityArrow.Visible = false;
+			
+			levelComplete = new LevelComplete(gameScene, uiScene);
 			gameOverScreen = new GameOverScreen(gameScene);
 			playerBox = player.getBounds();
 			
@@ -177,6 +214,38 @@ namespace GravityDuck
 			levelScore.Visible = false;
 			uiScene.RootWidget.AddChildLast(levelScore);
 			
+			texture = new TextureInfo("/Application/textures/highscoreTab.png");
+			highscoreTab 				= new SpriteUV();
+			highscoreTab 				= new SpriteUV(texture);
+			highscoreTab.Quad.S 		= texture.TextureSizef;
+			highscoreTab.Scale 		= new Vector2(1.0f, 1.0f);
+			highscoreTab.Pivot 		= new Vector2(highscoreTab.Quad.S.X/2, highscoreTab.Quad.S.Y);
+			highscoreTab.Position 	= new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.5f, Director.Instance.GL.Context.GetViewport().Height*0.5f);
+			highscoreTab.Visible = false;
+			gameScene.AddChild(highscoreTab);
+			
+			highscoreLabel = new Sce.PlayStation.HighLevel.UI.Label[5];
+			
+			for(int i = 0; i < 5; i++)
+			{
+				highscoreLabel[i] = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Score Label
+				highscoreLabel[i].X = 50.0f;
+				highscoreLabel[i].Y = 350.0f + (i * 30.0f);
+				
+				if(i == 0)
+					highscoreLabel[i].Text = "1st :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
+				else if(i == 1)
+					highscoreLabel[i].Text = "2nd : " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
+				else if(i == 2)
+					highscoreLabel[i].Text = "3rd :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
+				else if(i == 3)
+					highscoreLabel[i].Text = "4th :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
+				else 
+					highscoreLabel[i].Text = "5th :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
+				
+				highscoreLabel[i].Visible = false;
+				uiScene.RootWidget.AddChildLast(highscoreLabel[i]);
+			}
 			timerLabel = new Sce.PlayStation.HighLevel.UI.Label(); //Set the Timer Label
 			timerLabel.X = 743.0f;
 			timerLabel.Y = 33.0f;
@@ -190,14 +259,15 @@ namespace GravityDuck
 			levelTimer.Visible = false;
 			levelTimer.Text = "" + currentTime;
 			
-			
 			uiScene.RootWidget.AddChildLast(levelTimer);
 			UISystem.SetScene(uiScene);
 		}
 		
 		public static void StartLevel()
 		{
-			loadingScreen.SetVisible(false);
+			currentScore = new Highscore(currentLevel, 0, "player");
+			score = 0;
+			loadingScreen.SetVisible(false, currentLevel);
 			gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), player.GetPos()); 
 			scoreLabel.Visible = true;
 			timerLabel.Visible = true;
@@ -209,55 +279,253 @@ namespace GravityDuck
 		public static void Update()
 		{		
 			CheckInput();
-			if (!play)
+			switch (currentState)
 			{
-				if (!loaded)
+				case States.TITLE:
+				{
 					title.Update();
-				else
-					loadingScreen.Update((int)timer.Milliseconds());
-				if (title.CheckPlay() && !loaded && !startLoading)
-				{
-					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-					loadingScreen.SetVisible(true);
-					startLoading = true;
-					timeStamp1 = (int)timer.Milliseconds() + 1;
-				}
-				if (startLoading && timer.Milliseconds() > timeStamp1)
-				{
-					InitializeGame();
-					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 3000);
-					loaded = true;
-					startLoading = false;
-					title.RemoveAll();
-				}
-				if (loaded && loadingScreen.CheckPlay())
-				{
-					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
-					StartLevel();
-					play = true;
-				}
-			} 
-			else
-			{
-				
-				if (!pause && player.IsAlive())
-				{
-					time = (int)timer.Seconds();
-					player.Update(gravityVector, playerDirection, movementVector, invert, falling);
-					
-					UpdateCamera();
-					CheckCollisions();
-					currentTime = time;
-					UpdateUI ();
-				}else if (!player.IsAlive())
-				{
-					gameOverScreen.Update();
-					if (gameOverScreen.CheckRestart())
-					{
-						restartGame();
+					if (title.CheckPlay())
+				    {
+						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+						levelSelectScreen.SetVisible(true, currentLevel);
+						title.RemoveAll();
+						currentState = States.LEVELSELECT;
 					}
+				break;
+				}
+				case States.LEVELSELECT:
+				{
+					if (!levelSelectScreen.LoadedTextures())
+					{
+						levelSelectScreen.ReLoadTextures();
+						loadingScreen.ReLoadTextures();
+					}
+					if (levelSelectScreen.Selected()) 
+					{
+						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+						currentLevel = levelSelectScreen.levelSelected;
+						loadingScreen.SetVisible(true, currentLevel);
+						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
+						timeStamp1 = (int)timer.Milliseconds() + 1;
+						levelSelectScreen.SetVisible(false, currentLevel);
+						loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
+						currentState = States.LOADING;
+						title.RemoveAll();
+						levelSelectScreen.Dispose(false);
+					}
+					if (levelSelectScreen.BackPressed())
+					{
+						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+						currentState = States.TITLE;
+						levelSelectScreen.SetVisible(false, currentLevel);
+						title = new TitleScreen(gameScene);	
+					}
+					levelSelectScreen.Update();
+				break;
+				}
+				case States.LOADING:
+				{
+					loadingScreen.SetVisible(true, currentLevel);
+					currentState = States.LOADED;
+					InitializeGame();
+				break;
+				}
+				case States.LOADED:
+				{
+					loadingScreen.Update((int)timer.Milliseconds());
+					if (loadingScreen.CheckPlay())
+					{
+						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+						StartLevel();
+						currentState = States.PLAYING;
+						loadingScreen.SetVisible(false, currentLevel);
+						play = true;
+						player.setVisibility(true);
+						loadingScreen.Dispose();
+					}
+				break;
+				}
+				case States.PLAYING:
+				{
+				
+					if (!pause && player.IsAlive())
+					{
+						time = (int)timer.Seconds();
+						player.Update(gravityVector, playerDirection, movementVector, invert, falling, additionalForces);
+						UpdateCamera();
+						CheckCollisions();
+						currentTime = time;
+						UpdateUI ();
+					}
+					else if (!player.IsAlive())
+					{
+						UpdateCamera();
+						gameOverScreen.Update();
+						if (gameOverScreen.CheckRestart())
+						{
+							restartGame();
+						}
+					}
+				break;
+				}
+				case States.LEVELCOMPLETE:
+				{
+					if (levelComplete.GetState() == 0) //Waiting for the user to make a choice
+					{
+						
+					}
+					else if (levelComplete.GetState() == 1) //Back to level select screen
+					{
+						currentLevel++;
+						//levelSelectScreen.ReLoadTextures();
+						maze.RemoveLevel();
+						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(480.0f, 272.0f)); 
+						levelSelectScreen.SetVisible(true, currentLevel);
+						currentState = States.LEVELSELECT;
+						play = false;
+						pause = false;
+						scoreLabel.Visible = false;
+						timerLabel.Visible = false;
+						levelTimer.Visible = false;
+						levelScore.Visible = false;
+						levelComplete.HideScreen();
+						for(int i = 0; i < 5; i++)
+						{
+							highscoreLabel[i].Visible = false;
+						}
+						highscoreTab.Visible = false;
+						background.SetVisible(false);
+						player.setVisibility(false);
+						//loadingScreen.ReLoadTextures();
+					}
+					else if (levelComplete.GetState() == 2) //Replay the current level
+					{
+						maze.RemoveLevel();
+						maze.LoadLevel(gameScene, currentLevel);
+						player.SetPos(maze.GetSpawnPoint());
+						play = true;
+						pause = false;
+						levelComplete.HideScreen();
+						for(int i = 0; i < 5; i++)
+						{
+							highscoreLabel[i].Visible = false;
+						}
+						highscoreTab.Visible = false;
+						currentState = States.PLAYING;
+						timer.Reset();
+						levelComplete.ReOrderZ(gameScene);
+						gameOverScreen.ReOrderZ(gameScene);
+						score = 0;
+					}
+					else if (levelComplete.GetState() == 3) //Play the next level
+					{
+						gameScene.Camera2D.SetViewY(new Vector2((Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Cos(cameraRotation), (Director.Instance.GL.Context.GetViewport().Height * zoom) * FMath.Sin(cameraRotation)), new Vector2(-5000.0f, -5000.0f)); 
+						currentLevel++;
+						maze.RemoveLevel();
+						maze.LoadLevel(gameScene, currentLevel);
+						loadingScreen.SetVisible(true, currentLevel);
+						timeStamp1 = (int)timer.Milliseconds() + 1;
+						loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
+						currentState = States.LOADED;
+						play = false;
+						pause = false;
+						scoreLabel.Visible = false;
+						timerLabel.Visible = false;
+						levelTimer.Visible = false;
+						levelScore.Visible = false;
+						levelComplete.HideScreen();
+						for(int i = 0; i < 5; i++)
+						{
+							highscoreLabel[i].Visible = false;
+						}
+						highscoreTab.Visible = false;
+						levelComplete.ReOrderZ(gameScene);
+						gameOverScreen.ReOrderZ(gameScene);
+						player.SetPos(maze.GetSpawnPoint());
+					}
+				break;
 				}
 			}
+			
+//			if (!play)
+//			{
+//				if (!loaded) //Update title screen
+//					title.Update();
+//				else if (levelSelect) //Update level select screen
+//					levelSelectScreen.Update();
+//				else //Update loading screen
+//					loadingScreen.Update((int)timer.Milliseconds()); 
+//				
+//				if (title.CheckPlay() && !loaded && !startLoading) //If we have clicked play on the title screen
+//				{
+//					levelSelectScreen.SetVisible(true, currentLevel);
+//					title.RemoveAll();
+//					levelSelected = true;
+//				}
+//				
+//				if (levelSelected && levelSelectScreen.Selected()) //If we have picked a level
+//				{
+//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+//					levelSelect = true;
+//					currentLevel = levelSelectScreen.levelSelected;
+//				}
+//				else if (levelSelected && levelSelectScreen.BackPressed())
+//				{
+//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+//					levelSelected = false;
+//					levelSelectScreen.SetVisible(false, currentLevel);
+//					title = new TitleScreen(gameScene);	
+//				}
+//				
+//				if (levelSelect && !loaded && !startLoading)
+//				{
+//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+//					startLoading = true;
+//					loadingScreen.SetVisible(true, currentLevel);
+//					timeStamp1 = (int)timer.Milliseconds() + 1;
+//					levelSelect = false;
+//					levelSelected = false;
+//				}
+//				
+//				if (startLoading && timer.Milliseconds() > timeStamp1) //If the level has loaded
+//				{
+//					levelSelectScreen.SetVisible(false, currentLevel);
+//					InitializeGame();
+//					loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
+//					loaded = true;
+//					startLoading = false;
+//					title.RemoveAll();
+//				}
+//				
+//				if (loaded && loadingScreen.CheckPlay()) //If the play button has been clicked on the loading screen
+//				{
+//					AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
+//					StartLevel();
+//					play = true;
+//				}
+//			} 
+//			else
+//			{
+//				
+//				if (!pause && player.IsAlive())
+//				{
+//					time = (int)timer.Seconds();
+//					player.Update(gravityVector, playerDirection, movementVector, invert, falling, additionalForces);
+//					
+//					UpdateCamera();
+//					CheckCollisions();
+//					currentTime = time;
+//					UpdateUI ();
+//				}
+//				else if (!player.IsAlive())
+//				{
+//					gameOverScreen.Update();
+//					if (gameOverScreen.CheckRestart())
+//					{
+//						restartGame();
+//					}
+//				}
+//			}
 		}
 		
 		public static void CheckInput()
@@ -283,9 +551,9 @@ namespace GravityDuck
 				gravityArrow.Visible = true;
 			}
 			
-			if (Input2.GamePad0.Circle.Down) //Include gravity arrow
+			if (Input2.GamePad0.Circle.Down) //Exits app
 			{
-				Director.Terminate();
+				//Director.Terminate();
 			}
 			
 			if (Input2.GamePad0.Square.Down) //Change camera zoom
@@ -427,7 +695,7 @@ namespace GravityDuck
 					movementVector = new Vector2(-motionData.Acceleration.X + keyboardVector.X, 0.0f);	
 					gravityVector = new Vector2(-FMath.Cos(cameraRotation) - motionData.Acceleration.X + keyboardVector.X, -FMath.Sin(cameraRotation));
 				}
-				else 
+				else  
 				{
 						if (-FMath.Cos(cameraRotation) == 1f) //Right
 						{
@@ -493,6 +761,7 @@ namespace GravityDuck
 			//		                            new Vector2(Director.Instance.GL.Context.GetViewport().Width*0.4f, Director.Instance.GL.Context.GetViewport().Height*0.4f));
 			//}
 			//else
+			background.Update(player.GetPos(), -new Vector2(-FMath.Cos(cameraRotation), -FMath.Sin(cameraRotation)));
 			
 			if(zoomedIn)
 			{
@@ -514,39 +783,66 @@ namespace GravityDuck
 			playerBox.Min.Y = player.GetPos().Y - 25;
 			playerBox.Max.Y = player.GetPos().Y + 25;
 				
-			if(maze.HasCollidedWithPlayer(playerBox)) //If the box has collided with a tile
-			{	
-				if (maze.HasHitSide(playerBox, currGrav)) //Check if it's a side tile
-				{
-					invert = true; //Set invert to true so the Y axis gets inverted
-					player.SetPos(player.GetPos() - movementVector*10); //Bounce the player off the sides (WILL MAKE SMOOTHER)
-				}
-				else
-				{
-					if (currGrav == 3 || currGrav == 1)
-						invert = false; //Set invert to false so the X axis gets inverted
+			if (play)
+			{
+				if(maze.HasCollidedWithPlayer(playerBox)) //If the box has collided with a tile
+				{	
+					if (maze.HasHitSide(playerBox, currGrav)) //Check if it's a side tile
+					{
+						if (currGrav == 3 || currGrav == 1)
+						{
+							invert = true; //Set invert to false so the X axis gets inverted
+						}
+						else
+						{
+							invert = false;
+						}
+						player.SetPos(player.GetPos() - movementVector*10f); //Bounce the player off the sides (WILL MAKE SMOOTHER) 
+					}
 					else
-						invert = true;
-				}
-
-				if (player.GetVelocity() > -2.0f && player.GetVelocity() < 2.0f)
-				{
-					falling = false; //If he's moving too slowly stop him bouncing
-					if (player.GetVelocity() < 0)
-						player.SetVelocity(-player.GetVelocity()); 
+					{
+						if (currGrav == 3 || currGrav == 1)
+							invert = false; //Set invert to false so the X axis gets inverted
+						else
+							invert = true;
+					}
+	
+					if (player.GetVelocity() > -2.0f && player.GetVelocity() < 2.0f)
+					{
+						falling = false; //If he's moving too slowly stop him bouncing
+						if (player.GetVelocity() < 0)
+							player.SetVelocity(-player.GetVelocity()); 
+					}
+					else
+					{
+						if (player.GetVelocity() > 6f)
+							player.SetVelocity(-6f);
+						else
+							player.SetVelocity(-player.GetVelocity()); //Invert the velocity so the player bounces
+					}
 				}
 				else
-				{
-					player.SetVelocity(-player.GetVelocity()); //Invert the velocity so the player bounces
-				}
-	
+					falling = true; //If no intersection then we are falling
 			}
-			else
-				falling = true; //If no intersection then we are falling
 			
 			//Scoring collsions @AW
 			int prevScore = score;
-			score += maze.CheckCollectableCollision(player.Sprite, gameScene);
+			if(time < 20)
+			{
+				score += (int)(maze.CheckCollectableCollision(player.Sprite, gameScene));
+			}
+			else if(time < 40 && time >= 20)
+			{
+				score += (int)(maze.CheckCollectableCollision(player.Sprite, gameScene) * 0.75);
+			}
+			else if(time < 60 && time >= 40)
+			{
+				score += (int)(maze.CheckCollectableCollision(player.Sprite, gameScene) * 0.50);
+			}
+			else if(time >= 60)
+			{
+				score += (int)(maze.CheckCollectableCollision(player.Sprite, gameScene) * 0.25);
+			}
 			
 			if(score != prevScore)
 			{
@@ -571,28 +867,123 @@ namespace GravityDuck
 			{
 				cameraRotation = FMath.PI/2.0f;
 				UpdateCamera();
-				levelComplete.Show(player.GetX(), player.GetY(), 3);
+				int starScore = 0;
+				if(score <= 500)
+				{
+					starScore = 1;
+				}
+				else if(score > 500 && score <= 800)
+				{
+					starScore = 2;
+				}
+				else if(score > 800 && score <= 1000)
+				{
+					starScore = 3;
+				}
+				levelComplete.Show(player.GetX(), player.GetY(), starScore);
 				pause = true;
 				maze.SetLevelFinished(true);
 				AudioManager.PlaySound("Level Finished", false, 1.0f, 1.0f);
+				
+				currentScore.SetScore(score);
+				
+				SaveData();
+				
+				highscoreTab.Position 	= new Vector2(player.GetPos().X - 600.0f, player.GetPos().Y - 300.0f);
+				
+				highscoreTab.Visible = true;
+				
+				for(int i = 0; i < 5; i++)
+				{
+					if(i == 0)
+						highscoreLabel[i].Text = "1st :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
+					else if(i == 1)
+						highscoreLabel[i].Text = "2nd : " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
+					else if(i == 2)
+						highscoreLabel[i].Text = "3rd :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
+					else if(i == 3)
+						highscoreLabel[i].Text = "4th :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
+					else 
+						highscoreLabel[i].Text = "5th :  " + loadedLevelHighscores[(currentLevel != 0) ? currentLevel - 1 : currentLevel][i].GetScore();
+					
+					highscoreLabel[i].Visible = true;
+				}
+				currentState = States.LEVELCOMPLETE;
+				collide = false;
 			}
+			
+			// Check Laser Gate collision		RMDS
+			//collide = maze.CheckLaserGates(player);
+				
+			if(collide && player.IsAlive())
+			{
+				AudioManager.PlaySound("Spikes Death", false, 1.0f, 1.0f);
+				player.Dead();
+			}
+			
+			// Check Breakable Wall collision	
+			collide = maze.CheckBreakableWalls(player);
+			
+			if(collide) //If the box has collided with a tile
+			{	
+				if (maze.HasHitSide(playerBox, currGrav)) //Check if it's a side tile
+				{
+					invert = true; //Set invert to true so the Y axis gets inverted
+					player.SetPos(player.GetPos() - movementVector*10);
+				}
+				else
+				{
+					if (currGrav == 3 || currGrav == 1)
+						invert = false; //Set invert to false so the X axis gets inverted
+					else
+						invert = true;
+				}
+							
+				//if (player.GetVelocity() > -6.1f && player.GetVelocity() < 6.1f)
+				//{
+					if (player.GetVelocity() > -2.0f && player.GetVelocity() < 2.0f)
+					{
+						falling = false; //If he's moving too slowly stop him falling
+					}
+					else
+					{
+						player.SetVelocity(-player.GetVelocity()); //Invert the velocity so the player rebounds
+					}
+					
+				//}
+			}
+			//else
+			//	falling = true; //If no intersection then we are falling
+			
+			additionalForces = maze.CheckBlackHole(player) + maze.CheckWindTunnel(player);
 		}
 		
 		public static void restartGame()
 		{
-			cameraRotation = FMath.PI/2.0f;
+			//cameraRotation = FMath.PI/2.0f;
 			player.setAlive();
-			player.resetPosition();
+			player.SetPos(maze.GetSpawnPoint());
 			gameOverScreen.Reset();
+			
+			maze.RemoveLevel();
+			maze.LoadLevel(gameScene, currentLevel);
+			currentState = States.PLAYING;
+				
 			play = true;
 			pause = false;
 			score = 0;
+			
+			highscoreTab.Visible = false;
+			
+			for(int i = 0; i < 5; i++)
+					highscoreLabel[i].Visible = false;	
+			
+			
 			timer.Reset();
 			//endRotation = FMath.PI/2.0f;
 			//cameraRotation = FMath.PI/2.0f;
-			
+			SaveData();	
 		}
-		
 		
 		public static void UpdateUI()
 		{
@@ -624,6 +1015,164 @@ namespace GravityDuck
 //			
 //			uiScene.RootWidget.AddChildLast(levelTimer);
 //			UISystem.SetScene(uiScene);
+		}
+		
+		public static void SaveData() // Save the game data (highscore)		RMDS
+		{			
+			// Amend highscores of this current level
+			//currentHighscore
+			
+			int level = currentScore.GetLevel();
+			int highscorePos = -1;
+			
+			for(int i = 0; i < 5; i++)
+			{
+				if(currentScore.GetScore() > loadedLevelHighscores[(level != 0) ? level - 1 : level][i].GetScore())
+				{
+					highscorePos = i;
+					break;
+				}		
+			}
+			
+			if(highscorePos != -1)
+			{			
+				for(int i = 4; i > highscorePos; i--)
+				{
+					int movedScore = loadedLevelHighscores[(level != 0) ? level - 1 : level][i - 1].GetScore();
+					
+					loadedLevelHighscores[(level != 0) ? level - 1 : level][i].SetScore(movedScore);
+				}
+				
+				loadedLevelHighscores[(level != 0) ? level - 1 : level][highscorePos].SetScore(currentScore.GetScore());
+				loadedLevelHighscores[(level != 0) ? level - 1 : level][highscorePos].SetPlayerName(currentScore.GetPlayerName());
+			}
+			
+			
+			
+			List<int> allId = new List<int>();
+			
+			XmlDocument doc = new XmlDocument();
+			
+			if(System.IO.File.Exists(@SAVE_DATA) == true)
+				doc.Load(@SAVE_DATA);
+			
+			
+			XmlNodeList list = doc.SelectNodes("game/level");
+
+			int numOfCompletedLevels = loadedLevelHighscores.Count;
+			
+			for(int i = 0; i < numOfCompletedLevels; i++)
+			{
+				XmlNode currentNode = doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]");
+				
+				// If the level data exists then append its children	RMDS
+				if(currentNode != null)
+				{
+					for(int j = 0; j < 5; j++)
+					{
+						//// Append highscores
+						//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(0).InnerText =
+						//	loadedHighscores[i].GetPlayerName();
+						//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(1).InnerText =
+						//	loadedHighscores[i].GetScore().ToString();	
+						
+						currentNode.ChildNodes.Item(0 + (j * 2)).InnerText =
+							loadedLevelHighscores[i][j].GetPlayerName();
+						currentNode.ChildNodes.Item(1 + (j * 2)).InnerText =
+							loadedLevelHighscores[i][j].GetScore().ToString();	
+					}		
+				}				
+		
+		        doc.Save(@SAVE_DATA);			
+			}		
+									
+		}
+		
+		public static bool LoadData() // Load the game data (highscore)	RMDS
+		{
+			if(System.IO.File.Exists(@SAVE_DATA) == true)
+			{		
+				// The XML file loaded has data for each level about their highscore and the player
+				// that acquired that highscore.	RMDS
+							
+				XmlDocument doc = new XmlDocument();
+				doc.Load(@SAVE_DATA);
+				
+				// This will provide a list of all the levels that the player has currently earned a highscore in,
+				// therefore the player's total progress.	RMDS
+				loadedLevelHighscores = new List<List<Highscore>>();
+						
+				int level = 1;
+				
+				XmlNode currentNode = doc.SelectSingleNode("game/level[@id=\"" + level.ToString() + "\"]");
+					
+			
+				while(currentNode != null)
+				{			
+					string playerName;
+					int highscore;
+					List<Highscore> levelHighscores = new List<Highscore>();
+					
+					for(int i = 0; i < 5; i++)
+					{
+						playerName = currentNode.ChildNodes.Item(0 + (i * 2)).InnerText;
+						
+						highscore = 0;
+						
+						if(!currentNode.ChildNodes.Item(1 + (i * 2)).InnerText.Equals(""))
+							highscore = Int32.Parse(currentNode.ChildNodes.Item(1 + (i * 2)).InnerText);
+						
+						Highscore currentLoad = new Highscore(level, highscore, playerName);
+						
+						levelHighscores.Add(currentLoad);
+					}	
+					
+						loadedLevelHighscores.Add(levelHighscores);
+						
+						// Load the next level data from the saved data file.	RMDS
+						level++;
+									
+						currentNode.Attributes.GetNamedItem("player");												
+						currentNode = doc.SelectSingleNode("game/level[@id=\"" + level.ToString() + "\"]");	
+				}			
+				
+				int numOfLevels = level - 1;
+				
+				if(numOfLevels > totalNumOfLevels)
+					return false; // Should throw exception.	RMDS
+			}
+			else
+				return true;
+				 
+			return false;
+			
+		}
+		
+		public static bool DeleteData()
+		{
+			XmlDocument doc = new XmlDocument();
+			doc.Load(@SAVE_DATA);
+					
+			for(int i = 0; i < totalNumOfLevels; i++)
+			{		
+				XmlNode currentNode = doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]");
+				
+				if(currentNode != null)
+				{
+					for(int j = 0; j < 5; j++)
+					{
+						currentNode.ChildNodes.Item(0 + (j * 2)).InnerText = "";
+						currentNode.ChildNodes.Item(1 + (j * 2)).InnerText = "";	
+					}		
+				}
+				//// Reset all values
+				//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(0).InnerText = "";
+				//doc.SelectSingleNode("game/level[@id=\"" + (i + 1).ToString() + "\"]").ChildNodes.Item(1).InnerText = "";
+					
+		        doc.Save(@SAVE_DATA);			
+			}
+			
+			return true;
 		}
 	}
 }
