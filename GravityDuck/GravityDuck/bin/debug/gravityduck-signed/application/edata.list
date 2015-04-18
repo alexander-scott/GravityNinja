@@ -18,10 +18,6 @@ textures/Level/groundBlock2.png
 textures/Level/largeSpikes.png
 textures/Level/smallSpikes.png
 textures/Level/treeBlock.png
-textures/controls.png
-textures/controlsSelected.png
-textures/hiscores.png
-textures/hiscoresSelected.png
 textures/levelComplete.png
 textures/play.png
 textures/playSelected.png
@@ -39,14 +35,12 @@ textures/Level/levelFlag.png
 sounds/Effects/click.wav
 textures/gameOver.png
 textures/restartButton.png
-textures/options.png
 textures/Level/breakableWall.png
 textures/LoadingScreens/Level0Load.png
 textures/LoadingScreens/Level1Load.png
 textures/LoadingScreens/Level2Load.png
 textures/LoadingScreens/Level3Load.png
 textures/LoadingScreens/Level4Load.png
-textures/GravityNina.png
 textures/LevelSelectBackground.png
 textures/Level/leftBlock1.png
 textures/Level/leftBlock2.png
@@ -112,3 +106,11 @@ textures/LoadingScreens/Level18Load.png
 textures/LoadingScreens/Level19Load.png
 textures/LoadingScreens/Level20Load.png
 maps/level0.tmx
+textures/cog.png
+textures/GravityNinja.png
+textures/LoadingScreens/Level21Load.png
+textures/LoadingScreens/Level22Load.png
+textures/LoadingScreens/Level23Load.png
+textures/LoadingScreens/Level24Load.png
+textures/LoadingScreens/Level25Load.png
+textures/LoadingScreens/Level26Load.png

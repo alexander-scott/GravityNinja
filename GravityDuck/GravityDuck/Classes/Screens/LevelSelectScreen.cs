@@ -253,27 +253,27 @@ namespace GravityDuck
 				}
 				else if (levelSelected == 21)
 				{
-					sprite.TextureInfo = AppMain.loadingTexture20;
+					sprite.TextureInfo = AppMain.loadingTexture21;
 				}
 				else if (levelSelected == 22)
 				{
-					sprite.TextureInfo = AppMain.loadingTexture20;
+					sprite.TextureInfo = AppMain.loadingTexture22;
 				}
 				else if (levelSelected == 23)
 				{
-					sprite.TextureInfo = AppMain.loadingTexture20;
+					sprite.TextureInfo = AppMain.loadingTexture23;
 				}
 				else if (levelSelected == 24)
 				{
-					sprite.TextureInfo = AppMain.loadingTexture20;
+					sprite.TextureInfo = AppMain.loadingTexture24;
 				}
 				else if (levelSelected == 25)
 				{
-					sprite.TextureInfo = AppMain.loadingTexture20;
+					sprite.TextureInfo = AppMain.loadingTexture25;
 				}
 				else if (levelSelected == 26)
 				{
-					sprite.TextureInfo = AppMain.loadingTexture20;
+					sprite.TextureInfo = AppMain.loadingTexture26;
 				}
 			}		
 		}
@@ -293,6 +293,8 @@ namespace GravityDuck
 						levelButtons[i].BackgroundFilterColor = new UIColor(0.0f, 255.0f, 0.0f, 1.0f);
 					if (i == level)
 						levelButtons[i].BackgroundFilterColor = new UIColor(0.0f, 191.0f, 255.0f, 1.0f);
+					if (i > level)
+						levelButtons[i].BackgroundFilterColor = new UIColor(0.0f, 0.0f, 0.0f, 1.0f);
 					levelButtons[i].Visible = true;
 				}
 				

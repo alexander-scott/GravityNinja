@@ -1,10 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\bin\debug\gravityduck-unsigned\Documents\SaveData.xml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\Screens\LoadingScreen.cs">
     <Files>
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="1256" Column="7" />
-      <File FileName="GravityDuck\bin\debug\gravityduck-unsigned\Documents\SaveData.xml" Line="3" Column="18" />
-      <File FileName="c:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\Classes\Managers\AudioManager.cs" Line="87" Column="6" />
+      <File FileName="GravityDuck\Classes\Screens\LoadingScreen.cs" Line="86" Column="34" />
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="311" Column="21" />
+      <File FileName="GravityDuck\Classes\Screens\LevelSelectScreen.cs" Line="269" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,10 +15,14 @@
                 <Node name="Obstacles" expanded="True" />
               </Node>
               <Node name="Managers" expanded="True" />
-              <Node name="Screens" expanded="True" />
-              <Node name="AppMain.cs" selected="True" />
+              <Node name="Screens" expanded="True">
+                <Node name="LoadingScreen.cs" selected="True" />
+              </Node>
             </Node>
             <Node name="maps" expanded="True" />
+            <Node name="textures" expanded="True">
+              <Node name="LoadingScreens" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

@@ -169,7 +169,18 @@ namespace GravityDuck
 					loadingTexture19	= new TextureInfo("/Application/textures/LoadingScreens/Level19Load.png");
 				else if (levelToLoad ==20)
 					loadingTexture20	= new TextureInfo("/Application/textures/LoadingScreens/Level20Load.png");
-				
+				else if (levelToLoad ==21)
+					loadingTexture21	= new TextureInfo("/Application/textures/LoadingScreens/Level21Load.png");
+				else if (levelToLoad ==22)
+					loadingTexture22	= new TextureInfo("/Application/textures/LoadingScreens/Level22Load.png");
+				else if (levelToLoad ==23)
+					loadingTexture23	= new TextureInfo("/Application/textures/LoadingScreens/Level23Load.png");
+				else if (levelToLoad ==24)
+					loadingTexture24	= new TextureInfo("/Application/textures/LoadingScreens/Level24Load.png");
+				else if (levelToLoad ==25)
+					loadingTexture25	= new TextureInfo("/Application/textures/LoadingScreens/Level25Load.png");
+				else if (levelToLoad ==26)
+					loadingTexture26	= new TextureInfo("/Application/textures/LoadingScreens/Level26Load.png");
 				else
 				{
 				if (highestUnlockedLevel >= 0)
@@ -198,7 +209,7 @@ namespace GravityDuck
 					loadingTexture11 	= new TextureInfo("/Application/textures/LoadingScreens/Level11Load.png");
 				if (highestUnlockedLevel >= 12)
 					loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
-				if (highestUnlockedLevel >= 13)
+				if (highestUnlockedLevel >= 13)	
 					loadingTexture13	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
 				if (highestUnlockedLevel >= 14)
 					loadingTexture14	= new TextureInfo("/Application/textures/LoadingScreens/Level14Load.png");
@@ -214,6 +225,18 @@ namespace GravityDuck
 					loadingTexture19	= new TextureInfo("/Application/textures/LoadingScreens/Level19Load.png");
 				if (highestUnlockedLevel >= 20)
 					loadingTexture20	= new TextureInfo("/Application/textures/LoadingScreens/Level20Load.png");
+				if (highestUnlockedLevel >= 21)
+					loadingTexture21	= new TextureInfo("/Application/textures/LoadingScreens/Level21Load.png");
+				if (highestUnlockedLevel >= 22)
+					loadingTexture22	= new TextureInfo("/Application/textures/LoadingScreens/Level22Load.png");
+				if (highestUnlockedLevel >= 23)
+					loadingTexture23	= new TextureInfo("/Application/textures/LoadingScreens/Level23Load.png");
+				if (highestUnlockedLevel >= 24)
+					loadingTexture24	= new TextureInfo("/Application/textures/LoadingScreens/Level24Load.png");
+				if (highestUnlockedLevel >= 25)
+					loadingTexture25	= new TextureInfo("/Application/textures/LoadingScreens/Level25Load.png");
+				if (highestUnlockedLevel >= 26)
+					loadingTexture26	= new TextureInfo("/Application/textures/LoadingScreens/Level26Load.png");
 					//loadingTexture14 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
 					//loadingTexture15 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
 					//loadingTexture16 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
@@ -274,6 +297,18 @@ namespace GravityDuck
 					loadingTexture19.Dispose();
 				if (highestUnlockedLevel >= 20)
 					loadingTexture20.Dispose();
+				if (highestUnlockedLevel >= 21)
+					loadingTexture21.Dispose();
+				if (highestUnlockedLevel >= 22)
+					loadingTexture22.Dispose();
+				if (highestUnlockedLevel >= 23)
+					loadingTexture23.Dispose();
+				if (highestUnlockedLevel >= 24)
+					loadingTexture24.Dispose();
+				if (highestUnlockedLevel >= 25)
+					loadingTexture25.Dispose();
+				if (highestUnlockedLevel >= 26)
+					loadingTexture26.Dispose();
 				loadedTextures = false;
 			}
 			
@@ -323,7 +358,7 @@ namespace GravityDuck
 			
 			currentState = States.TITLE;
 			
-			title = new TitleScreen(gameScene);	
+			title = new TitleScreen(gameScene, uiScene);	
 			AudioManager.PlayMusic("Level1", true, 1.0f, 1.0f);
 			
 			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
@@ -474,6 +509,12 @@ namespace GravityDuck
 				case States.TITLE:
 				{
 					title.Update();
+					if(title.HighestLevelChanged())
+					{
+						highestUnlockedLevel = title.NewHighestLevel();
+						LoadLoadingTextures(false, currentLevel);
+						LoadLoadingTextures(true, highestUnlockedLevel);
+					}
 					if (title.CheckPlay())
 				    {
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
@@ -502,7 +543,7 @@ namespace GravityDuck
 						AudioManager.PlaySound("Click", false, 1.0f, 1.0f);
 						currentState = States.TITLE;
 						levelSelectScreen.SetVisible(false, highestUnlockedLevel);
-						title = new TitleScreen(gameScene);	
+						title = new TitleScreen(gameScene, uiScene);	
 					}
 					levelSelectScreen.Update();
 					if (!loadedTextures)
@@ -590,6 +631,7 @@ namespace GravityDuck
 						highscoreTab.Visible = false;
 						background.SetVisible(false);
 						player.setVisibility(false);
+						System.GC.Collect();
 					}
 					else if (levelComplete.GetState() == 2) //Replay the current level
 					{
@@ -625,6 +667,7 @@ namespace GravityDuck
 						maze.RemoveLevel();
 						maze.LoadLevel(gameScene, currentLevel);
 						background.UpdateTexture(currentLevel);
+						System.GC.Collect();
 						loadingScreen.SetVisible(true, currentLevel);
 						timeStamp1 = (int)timer.Milliseconds() + 1;
 						loadingScreen.SetLoadTime((int)timer.Milliseconds() + 1500);
@@ -678,25 +721,25 @@ namespace GravityDuck
 			
 			if (Input2.GamePad0.Circle.Down) //Exits app
 			{
-				//Director.Terminate();
+				SystemMemory.Dump();
 			}
 			
 			if (Input2.GamePad0.Square.Down) //Change camera zoom
 			{
-				if (play)
-				{
-					if(lastTime == 0)
-						lastTime = time;
-					else if((time - lastTime) < 300.0f) // May need to replace value
-					{
-						zoomedIn = !zoomedIn;
-						lastTime = 0;
-					}
-					else
-					{
-						lastTime = time;
-					}
-				}
+//				if (play)
+//				{
+//					if(lastTime == 0)
+//						lastTime = time;
+//					else if((time - lastTime) < 300.0f) // May need to replace value
+//					{
+//						zoomedIn = !zoomedIn;
+//						lastTime = 0;
+//					}
+//					else
+//					{
+//						lastTime = time;
+//					}
+//				}
 			}
 			
 			if (Input2.GamePad0.Right.Down) //Move right
