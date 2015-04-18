@@ -106,7 +106,7 @@ namespace GravityDuck
 			//CheckInput();
 		}
 		
-		public void Show(float playerX, float playerY, int stars)
+		public void Show(float playerX, float playerY, int stars, int level)
 		{
 			sprite.Position = new Vector2(playerX - (Director.Instance.GL.Context.GetViewport().Width/2), playerY-270);
 			sprite.Visible = true;
@@ -120,8 +120,8 @@ namespace GravityDuck
 				starsSprite.TextureInfo = stars3Texture;
 			
 			starsSprite.Visible = true;
-			
 			backToLevelSelect.Visible = true;
+			if(level != 26)
 			nextLevel.Visible = true;
 			replayLevel.Visible = true;
 		}

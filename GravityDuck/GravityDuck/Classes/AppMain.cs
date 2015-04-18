@@ -17,10 +17,7 @@ namespace GravityDuck
 	public class AppMain
 	{
 		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene 	gameScene;
-		
-		private static string SAVE_DATA = "/Documents/savedata.xml";
-		private static bool	doesDataFileExist = false;
-		
+				
 		//------ UI ------\\
 		private static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
 		private static Sce.PlayStation.HighLevel.UI.Label				scoreLabel;
@@ -51,6 +48,10 @@ namespace GravityDuck
 		private static SpriteUV highscoreTab;
 		private static int overallLevelScore;
 		
+		//------ I/O ------\\
+		private static string SAVE_DATA;
+		private static bool	doesDataFileExist = false;
+		
 		//------ Player Movement ------\\
 		private static Vector2 gravityVector = new Vector2(0.0f, -1.0f); //The direction in which gravity is currently going
 		private static Vector2 playerDirection; //Rotation of the player sprite
@@ -76,9 +77,6 @@ namespace GravityDuck
 		public static float lastTime = 0.0f;
 		public static bool zoomedIn = false;
 		public static bool rotationNotAllowed = false;
-
-//		private static float upperCameraRange = FMath.PI/4;
-//		private static float lowerCameraRange = -FMath.PI/4;
 		
 		//------ Menu Data ------\\
 		private static bool play = false;
@@ -88,10 +86,6 @@ namespace GravityDuck
 		private enum States {TITLE, LEVELSELECT, LOADING, LOADED, PLAYING, LEVELCOMPLETE};
 		private static States currentState;
 		public static TextureInfo loadingTexture0, loadingTexture1, loadingTexture2, loadingTexture3, loadingTexture4, loadingTexture5, loadingTexture6, loadingTexture7, loadingTexture8, loadingTexture9, loadingTexture10, loadingTexture11, loadingTexture12, loadingTexture13, loadingTexture14, loadingTexture15, loadingTexture16, loadingTexture17, loadingTexture18, loadingTexture19, loadingTexture20, loadingTexture21, loadingTexture22, loadingTexture23, loadingTexture24, loadingTexture25, loadingTexture26;
-//		private static bool loaded = false;
-//		private static bool startLoading = false;
-//		private static bool levelSelect = false;
-//		private static bool levelSelected = false;
 		
 		//------ Level Data ------\\
 		private static int currentLevel = 0; //The highest level we have unlocked, Read this in from file eventually (local highscores)
@@ -183,74 +177,61 @@ namespace GravityDuck
 					loadingTexture26	= new TextureInfo("/Application/textures/LoadingScreens/Level26Load.png");
 				else
 				{
-				if (highestUnlockedLevel >= 0)
-					loadingTexture0 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
-				if (highestUnlockedLevel >= 1)
-					loadingTexture1 	= new TextureInfo("/Application/textures/LoadingScreens/Level1Load.png");
-				if (highestUnlockedLevel >= 2)
-					loadingTexture2 	= new TextureInfo("/Application/textures/LoadingScreens/Level2Load.png");
-				if (highestUnlockedLevel >= 3)
-					loadingTexture3 	= new TextureInfo("/Application/textures/LoadingScreens/Level3Load.png");
-				if (highestUnlockedLevel >= 4)
-					loadingTexture4 	= new TextureInfo("/Application/textures/LoadingScreens/Level4Load.png");
-				if (highestUnlockedLevel >= 5)
-					loadingTexture5 	= new TextureInfo("/Application/textures/LoadingScreens/Level5Load.png");
-				if (highestUnlockedLevel >= 6)
-					loadingTexture6 	= new TextureInfo("/Application/textures/LoadingScreens/Level6Load.png");
-				if (highestUnlockedLevel >= 7)
-					loadingTexture7 	= new TextureInfo("/Application/textures/LoadingScreens/Level7Load.png");
-				if (highestUnlockedLevel >= 8)
-					loadingTexture8 	= new TextureInfo("/Application/textures/LoadingScreens/Level8Load.png");
-				if (highestUnlockedLevel >= 9)
-					loadingTexture9 	= new TextureInfo("/Application/textures/LoadingScreens/Level9Load.png");
-				if (highestUnlockedLevel >= 10)
-					loadingTexture10 	= new TextureInfo("/Application/textures/LoadingScreens/Level10Load.png");
-				if (highestUnlockedLevel >= 11)
-					loadingTexture11 	= new TextureInfo("/Application/textures/LoadingScreens/Level11Load.png");
-				if (highestUnlockedLevel >= 12)
-					loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
-				if (highestUnlockedLevel >= 13)	
-					loadingTexture13	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-				if (highestUnlockedLevel >= 14)
-					loadingTexture14	= new TextureInfo("/Application/textures/LoadingScreens/Level14Load.png");
-				if (highestUnlockedLevel >= 15)
-					loadingTexture15	= new TextureInfo("/Application/textures/LoadingScreens/Level15Load.png");
-				if (highestUnlockedLevel >= 16)
-					loadingTexture16	= new TextureInfo("/Application/textures/LoadingScreens/Level16Load.png");
-				if (highestUnlockedLevel >= 17)
-					loadingTexture17	= new TextureInfo("/Application/textures/LoadingScreens/Level17Load.png");
-				if (highestUnlockedLevel >= 18)
-					loadingTexture18	= new TextureInfo("/Application/textures/LoadingScreens/Level18Load.png");
-				if (highestUnlockedLevel >= 19)
-					loadingTexture19	= new TextureInfo("/Application/textures/LoadingScreens/Level19Load.png");
-				if (highestUnlockedLevel >= 20)
-					loadingTexture20	= new TextureInfo("/Application/textures/LoadingScreens/Level20Load.png");
-				if (highestUnlockedLevel >= 21)
-					loadingTexture21	= new TextureInfo("/Application/textures/LoadingScreens/Level21Load.png");
-				if (highestUnlockedLevel >= 22)
-					loadingTexture22	= new TextureInfo("/Application/textures/LoadingScreens/Level22Load.png");
-				if (highestUnlockedLevel >= 23)
-					loadingTexture23	= new TextureInfo("/Application/textures/LoadingScreens/Level23Load.png");
-				if (highestUnlockedLevel >= 24)
-					loadingTexture24	= new TextureInfo("/Application/textures/LoadingScreens/Level24Load.png");
-				if (highestUnlockedLevel >= 25)
-					loadingTexture25	= new TextureInfo("/Application/textures/LoadingScreens/Level25Load.png");
-				if (highestUnlockedLevel >= 26)
-					loadingTexture26	= new TextureInfo("/Application/textures/LoadingScreens/Level26Load.png");
-					//loadingTexture14 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-					//loadingTexture15 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-					//loadingTexture16 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-					//loadingTexture17 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");//
-					//loadingTexture18	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-					//loadingTexture19 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-					//loadingTexture20 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-					//loadingTexture21 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-					//loadingTexture22 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-					//loadingTexture23 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-					//loadingTexture24 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-					//loadingTexture25 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-					//loadingTexture26 	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
-					loadedTextures = true;
+					if (highestUnlockedLevel >= 0)
+						loadingTexture0 	= new TextureInfo("/Application/textures/LoadingScreens/Level0Load.png");
+					if (highestUnlockedLevel >= 1)
+						loadingTexture1 	= new TextureInfo("/Application/textures/LoadingScreens/Level1Load.png");
+					if (highestUnlockedLevel >= 2)
+						loadingTexture2 	= new TextureInfo("/Application/textures/LoadingScreens/Level2Load.png");
+					if (highestUnlockedLevel >= 3)
+						loadingTexture3 	= new TextureInfo("/Application/textures/LoadingScreens/Level3Load.png");
+					if (highestUnlockedLevel >= 4)
+						loadingTexture4 	= new TextureInfo("/Application/textures/LoadingScreens/Level4Load.png");
+					if (highestUnlockedLevel >= 5)
+						loadingTexture5 	= new TextureInfo("/Application/textures/LoadingScreens/Level5Load.png");
+					if (highestUnlockedLevel >= 6)
+						loadingTexture6 	= new TextureInfo("/Application/textures/LoadingScreens/Level6Load.png");
+					if (highestUnlockedLevel >= 7)
+						loadingTexture7 	= new TextureInfo("/Application/textures/LoadingScreens/Level7Load.png");
+					if (highestUnlockedLevel >= 8)
+						loadingTexture8 	= new TextureInfo("/Application/textures/LoadingScreens/Level8Load.png");
+					if (highestUnlockedLevel >= 9)
+						loadingTexture9 	= new TextureInfo("/Application/textures/LoadingScreens/Level9Load.png");
+					if (highestUnlockedLevel >= 10)
+						loadingTexture10 	= new TextureInfo("/Application/textures/LoadingScreens/Level10Load.png");
+					if (highestUnlockedLevel >= 11)
+						loadingTexture11 	= new TextureInfo("/Application/textures/LoadingScreens/Level11Load.png");
+					if (highestUnlockedLevel >= 12)
+						loadingTexture12 	= new TextureInfo("/Application/textures/LoadingScreens/Level12Load.png");
+					if (highestUnlockedLevel >= 13)	
+						loadingTexture13	= new TextureInfo("/Application/textures/LoadingScreens/Level13Load.png");
+					if (highestUnlockedLevel >= 14)
+						loadingTexture14	= new TextureInfo("/Application/textures/LoadingScreens/Level14Load.png");
+					if (highestUnlockedLevel >= 15)
+						loadingTexture15	= new TextureInfo("/Application/textures/LoadingScreens/Level15Load.png");
+					if (highestUnlockedLevel >= 16)
+						loadingTexture16	= new TextureInfo("/Application/textures/LoadingScreens/Level16Load.png");
+					if (highestUnlockedLevel >= 17)
+						loadingTexture17	= new TextureInfo("/Application/textures/LoadingScreens/Level17Load.png");
+					if (highestUnlockedLevel >= 18)
+						loadingTexture18	= new TextureInfo("/Application/textures/LoadingScreens/Level18Load.png");
+					if (highestUnlockedLevel >= 19)
+						loadingTexture19	= new TextureInfo("/Application/textures/LoadingScreens/Level19Load.png");
+					if (highestUnlockedLevel >= 20)
+						loadingTexture20	= new TextureInfo("/Application/textures/LoadingScreens/Level20Load.png");
+					if (highestUnlockedLevel >= 21)
+						loadingTexture21	= new TextureInfo("/Application/textures/LoadingScreens/Level21Load.png");
+					if (highestUnlockedLevel >= 22)
+						loadingTexture22	= new TextureInfo("/Application/textures/LoadingScreens/Level22Load.png");
+					if (highestUnlockedLevel >= 23)
+						loadingTexture23	= new TextureInfo("/Application/textures/LoadingScreens/Level23Load.png");
+					if (highestUnlockedLevel >= 24)
+						loadingTexture24	= new TextureInfo("/Application/textures/LoadingScreens/Level24Load.png");
+					if (highestUnlockedLevel >= 25)
+						loadingTexture25	= new TextureInfo("/Application/textures/LoadingScreens/Level25Load.png");
+					if (highestUnlockedLevel >= 26)
+						loadingTexture26	= new TextureInfo("/Application/textures/LoadingScreens/Level26Load.png");
+						loadedTextures = true;
 				}
 			}
 			else
@@ -311,7 +292,6 @@ namespace GravityDuck
 					loadingTexture26.Dispose();
 				loadedTextures = false;
 			}
-			
 		}
 		
 		public static void Dispose()
@@ -332,10 +312,25 @@ namespace GravityDuck
 			Director.Initialize ();
 			UISystem.Initialize(Director.Instance.GL.Context);
 			
-			//Load game data
-			if(doesDataFileExist = System.IO.File.Exists(SAVE_DATA))
+			try
 			{
-				LoadData();
+				var motionData = Motion.GetData(0);
+				if(motionData.Acceleration.X == 0) //If we're on the simulator
+					SAVE_DATA = "/Documents/savedata.xml";
+				else //If we're on the vita
+					SAVE_DATA = "/Application/Documents/savedata.xml";
+				
+				//Load game data
+				if(doesDataFileExist = System.IO.File.Exists(@SAVE_DATA))
+				{
+					LoadData(); 
+				}
+				else
+					Console.WriteLine("COULD NOT ACCESS SAVE");
+			}
+			catch
+			{
+				Console.WriteLine("COULD NOT ACCESS SAVE");
 			}
 			
 			maze = null;
@@ -716,7 +711,7 @@ namespace GravityDuck
 			
 			if (Input2.GamePad0.Cross.Down) //Include gravity arrow
 			{
-				gravityArrow.Visible = true;
+				//gravityArrow.Visible = true;
 			}
 			
 			if (Input2.GamePad0.Circle.Down) //Exits app
@@ -909,8 +904,8 @@ namespace GravityDuck
 				
 				playerDirection = -gravityVector; //Rotation is the invert of the gravity vector
 				//for( int i = 0; i < 25; i++ ) //Output details to console
-			  //   	Console.WriteLine("");
-				//Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- PlayerDir: " + playerDirection + " --- CurrentState: " + currentState);
+			    //   Console.WriteLine("");
+				//Console.WriteLine("Current Gravity: " + currGrav + " --- Falling: " + falling + " --- Invert: " + invert + " --- GravVec:  " + gravityVector + " --- CamRot: " + cameraRotation + " --- MotionData: " + motionData.Acceleration.X + " --- CurrentState: " + currentState + " --- HighestLevel: " + highestUnlockedLevel);
 			}
 		}
 
@@ -1074,7 +1069,7 @@ namespace GravityDuck
 				{
 					starScore = 3;
 				}
-				levelComplete.Show(player.GetX(), player.GetY(), starScore);
+				levelComplete.Show(player.GetX(), player.GetY(), starScore, currentLevel);
 				pause = true;
 				maze.SetLevelFinished(true);
 				AudioManager.PlaySound("Level Finished", false, 1.0f, 1.0f);
@@ -1279,11 +1274,11 @@ namespace GravityDuck
 				}				
 		
 				// Unlock the following level
-				if(i < highestUnlockedLevel)
+				if(i < highestUnlockedLevel + 1)
 				{				
 					doc.SelectSingleNode("game/level[@id=\"" + (i).ToString() + "\"]").ChildNodes.Item(0).InnerText = "unlocked";
 				}
-				if(i == highestUnlockedLevel && highestUnlockedLevel == currentLevel)
+				if(i == highestUnlockedLevel + 1 && highestUnlockedLevel + 1 == currentLevel)
 				{				
 					doc.SelectSingleNode("game/level[@id=\"" + (i+1).ToString() + "\"]").ChildNodes.Item(0).InnerText = "unlocked";
 				}
