@@ -90,8 +90,6 @@ namespace GravityDuck
 				
 				float force = (windDistance / playerDistance) * forceModifier;
 				
-				Console.WriteLine(force);
-				
 				return new Vector2(0.0f, force);
 			}
 			else if (windDirection == Direction.LEFT)
@@ -102,9 +100,7 @@ namespace GravityDuck
 						playerDistance = smallestDistance;
 				
 					float force = (windDistance / playerDistance) * forceModifier;
-					
-					Console.WriteLine(-force);
-					
+
 					return new Vector2(-force, 0.0f);
 				}
 				else if (windDirection == Direction.DOWN)
@@ -115,9 +111,7 @@ namespace GravityDuck
 							playerDistance = smallestDistance;
 				
 						float force = (windDistance / playerDistance) * forceModifier;
-						
-						Console.WriteLine(-force);
-						
+
 						return new Vector2(0.0f, -force);
 					}
 					else if (windDirection == Direction.RIGHT)
@@ -128,9 +122,7 @@ namespace GravityDuck
 								playerDistance = smallestDistance;
 				
 							float force = (windDistance / playerDistance) * forceModifier;
-							
-							Console.WriteLine(force);
-							
+
 							return new Vector2(force, 0.0f);
 						}
 						

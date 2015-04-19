@@ -16,11 +16,13 @@ namespace GravityDuck
 	{
 		private static BusyIndicator loadingSymbol;
 		private static Button readyButton;
+		private static Button readyButton2;
 		
 		private Bounds2 startBox;
 		private bool play = false;
 		
 		private int loadTime = 0;
+		private int level = 0;
 
 		private Sce.PlayStation.HighLevel.UI.Label	loadingLabel;
 		private Sce.PlayStation.HighLevel.UI.Label	levelLabel;
@@ -73,7 +75,7 @@ namespace GravityDuck
 			levelLabel.X = 15.0f;
 			levelLabel.Y = 503.0f;
 			levelLabel.Text = "";
-			levelLabel.TextColor = new UIColor(0.0f, 0.0f, 0.0f, 1.0f);
+			levelLabel.TextColor = new UIColor(1.0f, 1.0f, 1.0f, 1.0f);
 			//levelLabel.Font = new UIFont(FontAlias.System, 32, FontStyle.Regular);
 			uiScene.RootWidget.AddChildLast(levelLabel);
 			
@@ -93,6 +95,15 @@ namespace GravityDuck
 			readyButton.Visible = false;
 			uiScene.RootWidget.AddChildLast(readyButton);
 			
+			readyButton2 = new Button();
+			readyButton2.SetPosition(190, 450);
+			readyButton2.Text = "JOIN X";
+			readyButton2.SetSize(88,48);
+			readyButton2.BackgroundFilterColor = new UIColor(255.0f, 255.0f, 0.0f, 1.0f);
+			readyButton2.ButtonAction += HandleButtonAction;
+			readyButton2.Visible = false;
+			uiScene.RootWidget.AddChildLast(readyButton2);
+			
 			scene.AddChild(sprite);
 			UISystem.SetScene(uiScene);
 			
@@ -107,6 +118,8 @@ namespace GravityDuck
 				CheckInput();	
 				loadingSymbol.Visible = false;
 				readyButton.Visible = true;
+				if(level == 26)
+					readyButton2.Visible = true;
 				loadingLabel.Visible = false;
 			}	
 		}
@@ -146,13 +159,19 @@ namespace GravityDuck
 		
 		public void SetVisible(bool visible, int level)
 		{
+			this.level = level;
 			if (visible)
 			{
 				sprite.Visible = true;
-				loadingLabel.Visible = true;
-				loadingSymbol.Visible = true;
+				if(level != 26)
+				{
+					loadingLabel.Visible = true;
+					loadingSymbol.Visible = true;
+				}
 				levelLabel.Visible = true;
-				levelLabel.Text = "LEVEL " + level;
+				levelLabel.Text = "L" + level;
+				readyButton.SetPosition(860, 490);
+				readyButton.Text = "PLAY";
 				if (level == 0)
 				{
 					sprite.TextureInfo = AppMain.loadingTexture0;
@@ -239,27 +258,29 @@ namespace GravityDuck
 				}
 				else if (level == 21)
 				{
-					sprite.TextureInfo = AppMain.loadingTexture20;
+					sprite.TextureInfo = AppMain.loadingTexture21;
 				}
 				else if (level == 22)
 				{
-					sprite.TextureInfo = AppMain.loadingTexture20;
+					sprite.TextureInfo = AppMain.loadingTexture22;
 				}
 				else if (level == 23)
 				{
-					sprite.TextureInfo = AppMain.loadingTexture20;
+					sprite.TextureInfo = AppMain.loadingTexture23;
 				}
 				else if (level == 24)
 				{
-					sprite.TextureInfo = AppMain.loadingTexture20;
+					sprite.TextureInfo = AppMain.loadingTexture24;
 				}
 				else if (level == 25)
 				{
-					sprite.TextureInfo = AppMain.loadingTexture20;
+					sprite.TextureInfo = AppMain.loadingTexture25;
 				}
 				else if (level == 26)
 				{
-					sprite.TextureInfo = AppMain.loadingTexture20;
+					readyButton.SetPosition(700,450);
+					readyButton.Text = "JOIN DD";
+					sprite.TextureInfo = AppMain.loadingTexture26;
 				}
 			}
 			else
@@ -268,6 +289,7 @@ namespace GravityDuck
 				loadingLabel.Visible = false;
 				loadingSymbol.Visible = false;
 				readyButton.Visible = false;
+				readyButton2.Visible = false;
 				levelLabel.Visible = false;
 				play = false;
 			}

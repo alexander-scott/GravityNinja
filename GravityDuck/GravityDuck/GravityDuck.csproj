@@ -61,7 +61,6 @@
     <Compile Include="Classes\Screens\LevelComplete.cs" />
     <Compile Include="Classes\Screens\LevelSelectScreen.cs" />
     <Compile Include="Classes\Screens\LoadingScreen.cs" />
-    <Compile Include="Classes\Screens\OptionsScreen.cs" />
     <Compile Include="Classes\Screens\Screen.cs" />
     <Compile Include="Classes\Screens\TitleScreen.cs" />
     <Compile Include="Classes\Level\Highscore.cs" />
@@ -92,6 +91,7 @@
     <Folder Include="maps\" />
     <Folder Include="assets\" />
     <Folder Include="textures\LevelBackgrounds\" />
+    <Folder Include="Documents\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="textures\arrow.png" />
@@ -104,10 +104,6 @@
     <Content Include="textures\Level\largeSpikes.png" />
     <Content Include="textures\Level\smallSpikes.png" />
     <Content Include="textures\Level\treeBlock.png" />
-    <Content Include="textures\controls.png" />
-    <Content Include="textures\controlsSelected.png" />
-    <Content Include="textures\hiscores.png" />
-    <Content Include="textures\hiscoresSelected.png" />
     <Content Include="textures\levelComplete.png" />
     <Content Include="textures\play.png" />
     <Content Include="textures\playSelected.png" />
@@ -125,14 +121,22 @@
     <Content Include="sounds\Effects\click.wav" />
     <Content Include="textures\gameOver.png" />
     <Content Include="textures\restartButton.png" />
-    <Content Include="textures\options.png" />
     <Content Include="textures\Level\breakableWall.png" />
-    <Content Include="textures\LoadingScreens\Level0Load.png" />
-    <Content Include="textures\LoadingScreens\Level1Load.png" />
-    <Content Include="textures\LoadingScreens\Level2Load.png" />
-    <Content Include="textures\LoadingScreens\Level3Load.png" />
-    <Content Include="textures\LoadingScreens\Level4Load.png" />
-    <Content Include="textures\GravityNina.png" />
+    <Content Include="textures\LoadingScreens\Level0Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level1Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level2Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level3Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level4Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
     <Content Include="textures\LevelSelectBackground.png" />
     <Content Include="textures\Level\leftBlock1.png" />
     <Content Include="textures\Level\leftBlock2.png" />
@@ -140,11 +144,12 @@
     <Content Include="textures\Level\rightBlock2.png" />
     <Content Include="maps\level2.tmx" />
     <Content Include="maps\level3.tmx" />
-    <Content Include="maps\level1.tmx" />
     <Content Include="maps\level4.tmx" />
     <Content Include="textures\highscoreTab.png" />
     <Content Include="maps\level5.tmx" />
-    <Content Include="textures\LoadingScreens\Level5Load.png" />
+    <Content Include="textures\LoadingScreens\Level5Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
     <Content Include="textures\Level\BlackHoles.png" />
     <Content Include="textures\Level\LaserBeams.png" />
     <Content Include="maps\level6.tmx" />
@@ -168,14 +173,30 @@
     <Content Include="maps\level7.tmx" />
     <Content Include="maps\level8.tmx" />
     <Content Include="maps\level9.tmx" />
-    <Content Include="textures\LoadingScreens\Level6Load.png" />
-    <Content Include="textures\LoadingScreens\Level7Load.png" />
-    <Content Include="textures\LoadingScreens\Level8Load.png" />
-    <Content Include="textures\LoadingScreens\Level9Load.png" />
-    <Content Include="textures\LoadingScreens\Level10Load.png" />
-    <Content Include="textures\LoadingScreens\Level11Load.png" />
-    <Content Include="textures\LoadingScreens\Level12Load.png" />
-    <Content Include="textures\LoadingScreens\Level13Load.png" />
+    <Content Include="textures\LoadingScreens\Level6Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level7Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level8Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level9Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level10Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level11Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level12Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level13Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
     <Content Include="textures\Level\DirectionalWinds.png" />
     <Content Include="textures\Level\Winds3.png" />
     <Content Include="assets\buttons\NewHome.png" />
@@ -190,13 +211,51 @@
     <Content Include="textures\LevelBackgrounds\bground7.PNG" />
     <Content Include="assets\HUD Centre Piece.png" />
     <Content Include="assets\HUD Side Piece.png" />
-    <Content Include="textures\LoadingScreens\Level14Load.png" />
-    <Content Include="textures\LoadingScreens\Level15Load.png" />
-    <Content Include="textures\LoadingScreens\Level16Load.png" />
-    <Content Include="textures\LoadingScreens\Level17Load.png" />
-    <Content Include="textures\LoadingScreens\Level18Load.png" />
-    <Content Include="textures\LoadingScreens\Level19Load.png" />
-    <Content Include="textures\LoadingScreens\Level20Load.png" />
+    <Content Include="textures\LoadingScreens\Level14Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level15Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level16Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level17Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level18Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level19Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level20Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
     <Content Include="maps\level0.tmx" />
+    <Content Include="textures\cog.png" />
+    <Content Include="textures\GravityNinja.png" />
+    <Content Include="textures\LoadingScreens\Level21Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level22Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level23Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level24Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level25Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="textures\LoadingScreens\Level26Load.png">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="Documents\SaveData.xml">
+      <PSM-Content-Protection>Plain</PSM-Content-Protection>
+    </Content>
+    <Content Include="maps\level1.tmx" />
   </ItemGroup>
 </Project>

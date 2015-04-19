@@ -18,10 +18,6 @@ textures/Level/groundBlock2.png
 textures/Level/largeSpikes.png
 textures/Level/smallSpikes.png
 textures/Level/treeBlock.png
-textures/controls.png
-textures/controlsSelected.png
-textures/hiscores.png
-textures/hiscoresSelected.png
 textures/levelComplete.png
 textures/play.png
 textures/playSelected.png
@@ -39,14 +35,7 @@ textures/Level/levelFlag.png
 sounds/Effects/click.wav
 textures/gameOver.png
 textures/restartButton.png
-textures/options.png
 textures/Level/breakableWall.png
-textures/LoadingScreens/Level0Load.png
-textures/LoadingScreens/Level1Load.png
-textures/LoadingScreens/Level2Load.png
-textures/LoadingScreens/Level3Load.png
-textures/LoadingScreens/Level4Load.png
-textures/GravityNina.png
 textures/LevelSelectBackground.png
 textures/Level/leftBlock1.png
 textures/Level/leftBlock2.png
@@ -54,11 +43,9 @@ textures/Level/rightBlock1.png
 textures/Level/rightBlock2.png
 maps/level2.tmx
 maps/level3.tmx
-maps/level1.tmx
 maps/level4.tmx
 textures/highscoreTab.png
 maps/level5.tmx
-textures/LoadingScreens/Level5Load.png
 textures/Level/BlackHoles.png
 textures/Level/LaserBeams.png
 maps/level6.tmx
@@ -82,14 +69,6 @@ maps/level26.tmx
 maps/level7.tmx
 maps/level8.tmx
 maps/level9.tmx
-textures/LoadingScreens/Level6Load.png
-textures/LoadingScreens/Level7Load.png
-textures/LoadingScreens/Level8Load.png
-textures/LoadingScreens/Level9Load.png
-textures/LoadingScreens/Level10Load.png
-textures/LoadingScreens/Level11Load.png
-textures/LoadingScreens/Level12Load.png
-textures/LoadingScreens/Level13Load.png
 textures/Level/DirectionalWinds.png
 textures/Level/Winds3.png
 assets/buttons/NewHome.png
@@ -104,11 +83,7 @@ textures/LevelBackgrounds/bground6.png
 textures/LevelBackgrounds/bground7.PNG
 assets/HUD Centre Piece.png
 assets/HUD Side Piece.png
-textures/LoadingScreens/Level14Load.png
-textures/LoadingScreens/Level15Load.png
-textures/LoadingScreens/Level16Load.png
-textures/LoadingScreens/Level17Load.png
-textures/LoadingScreens/Level18Load.png
-textures/LoadingScreens/Level19Load.png
-textures/LoadingScreens/Level20Load.png
 maps/level0.tmx
+textures/cog.png
+textures/GravityNinja.png
+maps/level1.tmx

@@ -13,78 +13,100 @@
     <highscore5>1250</highscore5>
   </level>
   <level id="1">
-    <lockstate>locked</lockstate>
+    <lockstate>unlocked</lockstate>
     <player1>player</player1>
-    <highscore1>2450</highscore1>
+    <highscore1>1350</highscore1>
     <player2>player</player2>
-    <highscore2>1350</highscore2>
-    <player3>player</player3>
-    <highscore3>1350</highscore3>
-    <player4>player</player4>
-    <highscore4>1350</highscore4>
-    <player5>player</player5>
-    <highscore5>1300</highscore5>
+    <highscore2>600</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
   </level>
   <level id="2">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>750</highscore1>
-    <player2>player</player2>
-    <highscore2>450</highscore2>
-    <player3>player</player3>
-    <highscore3>450</highscore3>
-    <player4>player</player4>
-    <highscore4>450</highscore4>
-    <player5>player</player5>
-    <highscore5>450</highscore5>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
   </level>
   <level id="3">
-    <lockstate>locked</lockstate>
+    <lockstate>unlocked</lockstate>
     <player1>player</player1>
-    <highscore1>200</highscore1>
-    <player2>player</player2>
-    <highscore2>150</highscore2>
-    <player3>player</player3>
-    <highscore3>150</highscore3>
-    <player4>player</player4>
-    <highscore4>150</highscore4>
-    <player5>player</player5>
-    <highscore5>150</highscore5>
+    <highscore1>150</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
+    <player5>
+    </player5>
+    <highscore5>0</highscore5>
   </level>
   <level id="4">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>724</highscore1>
-    <player2>player</player2>
-    <highscore2>700</highscore2>
-    <player3>player</player3>
-    <highscore3>500</highscore3>
-    <player4>player</player4>
-    <highscore4>450</highscore4>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
     <player5>
     </player5>
-    <highscore5>400</highscore5>
+    <highscore5>0</highscore5>
   </level>
   <level id="5">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
-    <player2>player</player2>
-    <highscore2>200</highscore2>
-    <player3>player</player3>
-    <highscore3>200</highscore3>
-    <player4>player</player4>
-    <highscore4>150</highscore4>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
+    <player3>
+    </player3>
+    <highscore3>0</highscore3>
+    <player4>
+    </player4>
+    <highscore4>0</highscore4>
     <player5>
     </player5>
-    <highscore5>100</highscore5>
+    <highscore5>0</highscore5>
   </level>
   <level id="6">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
-    <player2>player</player2>
-    <highscore2>450</highscore2>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
     <player3>
     </player3>
     <highscore3>0</highscore3>
@@ -96,11 +118,13 @@
     <highscore5>0</highscore5>
   </level>
   <level id="7">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
-    <player2>player</player2>
-    <highscore2>400</highscore2>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
     <player3>
     </player3>
     <highscore3>0</highscore3>
@@ -112,11 +136,13 @@
     <highscore5>0</highscore5>
   </level>
   <level id="8">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
-    <player2>player</player2>
-    <highscore2>500</highscore2>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
     <player3>
     </player3>
     <highscore3>0</highscore3>
@@ -128,9 +154,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="9">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -145,11 +172,13 @@
     <highscore5>0</highscore5>
   </level>
   <level id="10">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
-    <player2>player</player2>
-    <highscore2>250</highscore2>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
+    <player2>
+    </player2>
+    <highscore2>0</highscore2>
     <player3>
     </player3>
     <highscore3>0</highscore3>
@@ -161,9 +190,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="11">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -178,9 +208,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="12">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -195,9 +226,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="13">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -212,9 +244,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="14">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -229,9 +262,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="15">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -246,9 +280,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="16">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -263,9 +298,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="17">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -280,9 +316,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="18">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -297,9 +334,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="19">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -314,9 +352,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="20">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -331,9 +370,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="21">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -348,9 +388,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="22">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -365,9 +406,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="23">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -382,9 +424,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="24">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -399,9 +442,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="25">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>
@@ -416,9 +460,10 @@
     <highscore5>0</highscore5>
   </level>
   <level id="26">
-    <lockstate>locked</lockstate>
-    <player1>player</player1>
-    <highscore1>600</highscore1>
+    <lockstate>unlocked</lockstate>
+    <player1>
+    </player1>
+    <highscore1>0</highscore1>
     <player2>
     </player2>
     <highscore2>0</highscore2>

@@ -1,10 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\bin\debug\gravityduck-unsigned\Documents\SaveData.xml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\AppMain.cs">
     <Files>
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="1256" Column="7" />
-      <File FileName="GravityDuck\bin\debug\gravityduck-unsigned\Documents\SaveData.xml" Line="3" Column="18" />
-      <File FileName="c:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\Classes\Managers\AudioManager.cs" Line="87" Column="6" />
+      <File FileName="GravityDuck\Classes\AppMain.cs" Line="1160" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,11 +12,10 @@
               <Node name="Level" expanded="True">
                 <Node name="Obstacles" expanded="True" />
               </Node>
-              <Node name="Managers" expanded="True" />
               <Node name="Screens" expanded="True" />
               <Node name="AppMain.cs" selected="True" />
             </Node>
-            <Node name="maps" expanded="True" />
+            <Node name="Documents" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -29,9 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\LATEST3\GravityNinja-Alex\GravityDuck\GravityDuck\Classes\AppMain.cs" line="596" />
-      <Breakpoint file="C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\LATEST3\GravityNinja-Alex\GravityDuck\GravityDuck\Classes\AppMain.cs" line="571" />
-      <Breakpoint file="C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\Temp\LATEST3\GravityNinja-Alex\GravityDuck\GravityDuck\Classes\AppMain.cs" line="618" />
+      <Breakpoint file="C:\Users\Alex\Dropbox\University Year 2\TECHNICAL GAMES PRODUCTION\Semester 2\DangerDucks\GravityDuck\GravityDuck\Classes\AppMain.cs" line="321" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
