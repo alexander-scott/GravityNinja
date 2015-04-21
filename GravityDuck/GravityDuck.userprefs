@@ -1,21 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GravityDuck\Classes\AppMain.cs">
-    <Files>
-      <File FileName="GravityDuck\Classes\AppMain.cs" Line="1160" Column="22" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="GravityDuck" expanded="True">
             <Node name="Classes" expanded="True">
               <Node name="Level" expanded="True">
-                <Node name="Obstacles" expanded="True" />
+                <Node name="Obstacles" expanded="True">
+                  <Node name="BreakableWall.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Screens" expanded="True" />
-              <Node name="AppMain.cs" selected="True" />
             </Node>
             <Node name="Documents" expanded="True" />
+            <Node name="maps" expanded="True" />
           </Node>
         </State>
       </Pad>

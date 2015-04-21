@@ -18,7 +18,7 @@ namespace GravityDuck
 		
 		private bool intact = true;
 		
-		private float requiredMomentum = 0.0f;
+		private float requiredMomentum = 7.0f;
 		
 		public BreakableWall() : base()
 		{
